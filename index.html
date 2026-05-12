@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>臺北榮民總醫院火警探測器圖面查詢</title>
+    <link rel="stylesheet" href="./assets/styles.css?v=20260512k">
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">北榮</div>
+          <div class="brand-copy">
+            <strong>臺北榮民總醫院</strong>
+            <span>火警探測器圖面查詢</span>
+          </div>
+        </div>
+
+        <form class="search-bar" id="searchForm">
+          <input
+            id="searchInput"
+            type="search"
+            autocomplete="off"
+            placeholder="輸入 M1-66 或 長青樓 6F M2-66"
+            aria-label="搜尋探測器、棟別或樓層"
+          >
+          <button class="primary-button" type="submit">搜尋</button>
+        </form>
+
+        <div class="system-status" id="systemStatus">載入索引中</div>
+      </header>
+
+      <main class="app-shell">
+        <aside class="building-panel" aria-label="棟別">
+          <div class="panel-heading">
+            <h1>棟別</h1>
+            <span id="buildingCount">0 座</span>
+          </div>
+          <div class="building-groups" id="buildingGroups"></div>
+        </aside>
+
+        <section class="workspace" aria-label="圖面工作區">
+          <div class="floor-panel">
+            <div class="floor-heading">
+              <div>
+                <span class="eyebrow">樓層</span>
+                <strong id="selectedBuildingName">請選擇棟別</strong>
+              </div>
+              <span id="selectedFloorMeta">尚未開啟圖面</span>
+            </div>
+            <div class="floor-grid" id="floorGrid"></div>
+          </div>
+
+          <div class="pdf-toolbar" id="pdfToolbar">
+            <div class="current-file" id="currentFile">尚未開啟 PDF</div>
+            <form class="pdf-search" id="pdfSearchForm">
+              <input
+                id="pdfSearchInput"
+                type="search"
+                autocomplete="off"
+                placeholder="搜尋定址碼"
+                aria-label="搜尋目前圖面的定址碼"
+              >
+              <button type="submit" class="tool-button" id="pdfSearchButton">搜尋</button>
+              <span class="pdf-search-message" id="pdfSearchMessage"></span>
+            </form>
+            <div class="tool-buttons" aria-label="PDF 工具">
+              <button type="button" class="tool-button" id="prevPageButton" title="上一頁">上一頁</button>
+              <span class="page-status" id="pageStatus">-</span>
+              <button type="button" class="tool-button" id="nextPageButton" title="下一頁">下一頁</button>
+              <button type="button" class="tool-button" id="zoomOutButton" title="縮小">縮小</button>
+              <button type="button" class="tool-button" id="fitButton" title="適合寬度">適合</button>
+              <button type="button" class="tool-button" id="zoomInButton" title="放大">放大</button>
+              <button type="button" class="tool-button" id="clearMarkerButton" title="清除標記">清除</button>
+              <button type="button" class="tool-button" id="openPdfButton" title="開啟原始 PDF">原始</button>
+            </div>
+          </div>
+
+          <div class="viewer-shell" id="viewerShell">
+            <div class="empty-state" id="emptyState">
+              <div class="empty-badge">使用說明</div>
+              <h2>請搜尋探測器編號，或從左側選擇棟別與樓層。</h2>
+              <ul>
+                <li>只輸入 <strong>M1-66</strong> 時，會先列出符合的棟別與樓層。</li>
+                <li>輸入 <strong>長青樓 6F M2-66</strong> 時，會直接開啟圖面並圈選標籤。</li>
+                <li>點選搜尋結果後，才會載入 PDF 並用粗線標示位置。</li>
+              </ul>
+            </div>
+            <div class="pdf-search-overlay is-hidden" id="pdfSearchOverlay">
+              <button type="button" class="overlay-close" id="pdfSearchOverlayClose" aria-label="關閉圖面搜尋">×</button>
+              <div class="overlay-kicker">目前圖面搜尋</div>
+              <strong>搜尋定址碼</strong>
+              <form id="pdfSearchOverlayForm">
+                <input
+                  id="pdfSearchOverlayInput"
+                  type="search"
+                  autocomplete="off"
+                  placeholder="例如 M1-75"
+                  aria-label="搜尋目前圖面的定址碼"
+                >
+                <button type="submit" class="primary-button">搜尋</button>
+              </form>
+            </div>
+            <div class="pdf-page" id="pdfPage" hidden>
+              <canvas id="pdfCanvas"></canvas>
+              <div class="marker-layer" id="markerLayer"></div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="results-panel" aria-label="搜尋結果">
+          <div class="panel-heading">
+            <h1>搜尋結果</h1>
+            <span id="resultCount">0 筆</span>
+          </div>
+          <div class="result-summary" id="resultSummary">輸入探測器編號後會顯示可選位置。</div>
+          <div class="results-list" id="resultsList"></div>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="./assets/app.js?v=20260512k"></script>
+  </body>
+</html>

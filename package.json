@@ -1,0 +1,10 @@
+{
+  "name": "vghtpe-fire-detector-map",
+  "version": "0.1.0",
+  "private": true,
+  "description": "臺北榮民總醫院火警探測器圖面查詢單頁工具",
+  "scripts": {
+    "build:index": "node scripts/build-index.js",
+    "start": "node server.js"
+  }
+}
