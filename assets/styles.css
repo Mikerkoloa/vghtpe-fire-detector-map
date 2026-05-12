@@ -27,6 +27,7 @@ body {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--ink);
   background: #edf3f1;
   font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", Arial, sans-serif;
@@ -34,6 +35,7 @@ body {
 
 button,
 input {
+  min-width: 0;
   font: inherit;
 }
 
@@ -100,6 +102,7 @@ button {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 92px;
   gap: 10px;
+  min-width: 0;
 }
 
 .search-bar input {
@@ -678,8 +681,17 @@ button {
 }
 
 @media (max-width: 960px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
   .app {
-    min-height: 100vh;
+    height: auto;
+    min-height: 100dvh;
   }
 
   .app-header {
@@ -692,9 +704,18 @@ button {
   }
 
   .app-shell {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(560px, 1fr) auto;
-    overflow: auto;
+    display: flex;
+    flex: initial;
+    flex-direction: column;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .building-panel,
+  .results-panel,
+  .workspace {
+    width: 100%;
+    min-width: 0;
   }
 
   .building-panel,
@@ -711,26 +732,49 @@ button {
   }
 
   .building-groups {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 10px;
+    overflow: visible;
     padding: 10px 14px 14px;
+    width: 100%;
+    min-width: 0;
   }
 
-  .building-group {
-    flex: 0 0 min(360px, 82vw);
+  .building-group,
+  .building-list {
+    display: contents;
   }
 
   .building-group + .building-group {
     margin-top: 0;
   }
 
+  .building-group-title {
+    grid-column: 1 / -1;
+    margin: 10px 2px 0;
+  }
+
+  .building-button {
+    min-width: 0;
+  }
+
   .workspace {
-    min-height: 560px;
+    min-height: auto;
+  }
+
+  .viewer-shell {
+    flex: none;
+    height: min(68dvh, 640px);
+    min-height: 460px;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
   }
 
   .results-list {
-    max-height: 360px;
+    max-height: none;
+    overflow: visible;
   }
 }
 
@@ -745,29 +789,59 @@ button {
     height: 46px;
   }
 
+  .brand-copy strong {
+    font-size: 16px;
+  }
+
+  .brand-copy span {
+    font-size: 13px;
+  }
+
   .search-bar {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) 76px;
+    gap: 8px;
   }
 
   .primary-button {
-    width: 100%;
+    width: auto;
   }
 
   .floor-heading,
   .pdf-toolbar {
     align-items: stretch;
     flex-direction: column;
+    justify-content: flex-start;
   }
 
   .tool-buttons {
+    width: 100%;
     justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
+    overflow-x: visible;
+    flex-wrap: wrap;
+  }
+
+  .current-file {
+    flex: none;
+  }
+
+  .tool-button {
+    min-width: 72px;
+    white-space: nowrap;
   }
 
   .pdf-search,
   .pdf-search-overlay form {
     grid-template-columns: 1fr;
+  }
+
+  .pdf-search {
+    flex: none;
+    width: 100%;
+  }
+
+  .viewer-shell {
+    height: 66dvh;
+    min-height: 420px;
   }
 
   .empty-state {
@@ -777,5 +851,19 @@ button {
 
   .empty-state h2 {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .building-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .primary-button {
+    width: 100%;
   }
 }
