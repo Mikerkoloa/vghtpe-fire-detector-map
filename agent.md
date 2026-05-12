@@ -163,11 +163,35 @@ node scripts/build-index.js
 
 使用者要求建立公開 GitHub repository 並上傳。
 
-目前這台環境：
+GitHub repository 已建立並推送：
+
+```text
+https://github.com/Mikerkoloa/vghtpe-fire-detector-map
+```
+
+## Vercel 部署狀態
+
+已部署到 Vercel production：
+
+```text
+https://vghtpe-fire-detector-map.vercel.app
+```
+
+檢查結果：
+
+- 首頁 `/` 回應 200。
+- `data/buildings.json` 回應 200。
+- `data/fire-map-index.json` 回應 200。
+- PDF 靜態檔案可讀取，例如 `一門診2F 火警圖.pdf` 回應 200。
+
+目前這台環境曾經遇到：
 
 - `git` 可用。
 - `gh` CLI 不可用。
 - 沒有偵測到 `GITHUB_TOKEN` 或 `GH_TOKEN` 類環境變數。
+- 但本機 git credential 可用，因此已透過 GitHub API 建立 repository。
+- Vercel CLI 透過 `npx.cmd vercel` 執行，已登入 `mikerkoloa`，Vercel scope 是 `weimi-s-projects`。
+- Vercel project 為 `vghtpe-fire-detector-map`。
 
 若要由 Codex 繼續建立 GitHub repository，有幾種方式：
 

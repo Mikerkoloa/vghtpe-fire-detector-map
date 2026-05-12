@@ -35,6 +35,14 @@ http://localhost:4173
 
 如果只是關掉瀏覽器分頁，而 `node server.js` 還在執行，重新打開上面的網址即可。
 
+## 線上版本
+
+目前已部署到 Vercel：
+
+```text
+https://vghtpe-fire-detector-map.vercel.app
+```
+
 ## 更新 PDF 後重建索引
 
 新增、刪除或更換 `火警圖 PDF` 內的檔案後，請執行：
