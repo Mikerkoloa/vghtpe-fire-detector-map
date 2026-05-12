@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-12T06:36:43.704Z",
+  "generatedAt": "2026-05-12T09:01:05.199Z",
   "groups": [
     {
       "id": "common",
@@ -388,7 +388,7 @@
           "label": "7F",
           "fileId": "pdf-0087",
           "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診7F 火警圖.pdf",
-          "detectorCount": 67,
+          "detectorCount": 73,
           "pageCount": 1,
           "sortValue": 7
         },
@@ -449,7 +449,7 @@
           "sortValue": -1
         }
       ],
-      "totalDetectors": 657
+      "totalDetectors": 663
     },
     {
       "name": "三門診",
