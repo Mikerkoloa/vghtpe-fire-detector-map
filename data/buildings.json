@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-12T01:05:06.396Z",
+  "generatedAt": "2026-05-12T06:36:43.704Z",
   "groups": [
     {
       "id": "common",
@@ -53,23 +53,15 @@
       "floors": [
         {
           "label": "R2F",
-          "fileId": "pdf-0018",
+          "fileId": "pdf-0017",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓R2F 火警.pdf",
           "detectorCount": 1,
           "pageCount": 1,
           "sortValue": 2002
         },
         {
-          "label": "R2F~B3",
-          "fileId": "pdf-0001",
-          "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓 R2F~B3 火警.pdf",
-          "detectorCount": 2388,
-          "pageCount": 17,
-          "sortValue": 2002
-        },
-        {
           "label": "R1F",
-          "fileId": "pdf-0017",
+          "fileId": "pdf-0016",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓R1F 火警.pdf",
           "detectorCount": 26,
           "pageCount": 1,
@@ -77,7 +69,7 @@
         },
         {
           "label": "12F",
-          "fileId": "pdf-0004",
+          "fileId": "pdf-0003",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓12F 火警.pdf",
           "detectorCount": 152,
           "pageCount": 1,
@@ -85,7 +77,7 @@
         },
         {
           "label": "11F",
-          "fileId": "pdf-0003",
+          "fileId": "pdf-0002",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓11F 火警.pdf",
           "detectorCount": 134,
           "pageCount": 1,
@@ -93,7 +85,7 @@
         },
         {
           "label": "10F",
-          "fileId": "pdf-0002",
+          "fileId": "pdf-0001",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓10F 火警.pdf",
           "detectorCount": 156,
           "pageCount": 1,
@@ -101,7 +93,7 @@
         },
         {
           "label": "9F",
-          "fileId": "pdf-0013",
+          "fileId": "pdf-0012",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓9F 火警.pdf",
           "detectorCount": 133,
           "pageCount": 1,
@@ -109,7 +101,7 @@
         },
         {
           "label": "8F",
-          "fileId": "pdf-0012",
+          "fileId": "pdf-0011",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓8F 火警.pdf",
           "detectorCount": 134,
           "pageCount": 1,
@@ -117,7 +109,7 @@
         },
         {
           "label": "7F",
-          "fileId": "pdf-0011",
+          "fileId": "pdf-0010",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓7F 火警.pdf",
           "detectorCount": 134,
           "pageCount": 1,
@@ -125,7 +117,7 @@
         },
         {
           "label": "6F",
-          "fileId": "pdf-0010",
+          "fileId": "pdf-0009",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓6F 火警.pdf",
           "detectorCount": 137,
           "pageCount": 1,
@@ -133,7 +125,7 @@
         },
         {
           "label": "5F",
-          "fileId": "pdf-0009",
+          "fileId": "pdf-0008",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓5F 火警.pdf",
           "detectorCount": 132,
           "pageCount": 1,
@@ -141,7 +133,7 @@
         },
         {
           "label": "4F",
-          "fileId": "pdf-0008",
+          "fileId": "pdf-0007",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓4F 火警.pdf",
           "detectorCount": 148,
           "pageCount": 1,
@@ -149,7 +141,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0007",
+          "fileId": "pdf-0006",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓3F 火警.pdf",
           "detectorCount": 138,
           "pageCount": 1,
@@ -157,7 +149,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0006",
+          "fileId": "pdf-0005",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓2F 火警.pdf",
           "detectorCount": 164,
           "pageCount": 1,
@@ -165,7 +157,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0005",
+          "fileId": "pdf-0004",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓1F 火警.pdf",
           "detectorCount": 153,
           "pageCount": 1,
@@ -173,7 +165,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0014",
+          "fileId": "pdf-0013",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓B1F 火警.pdf",
           "detectorCount": 215,
           "pageCount": 1,
@@ -181,7 +173,7 @@
         },
         {
           "label": "B2F",
-          "fileId": "pdf-0015",
+          "fileId": "pdf-0014",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓B2F 火警.pdf",
           "detectorCount": 189,
           "pageCount": 1,
@@ -189,14 +181,14 @@
         },
         {
           "label": "B3F",
-          "fileId": "pdf-0016",
+          "fileId": "pdf-0015",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓B3F 火警.pdf",
           "detectorCount": 241,
           "pageCount": 1,
           "sortValue": -3
         }
       ],
-      "totalDetectors": 4775
+      "totalDetectors": 2387
     },
     {
       "name": "思源樓",
@@ -204,7 +196,7 @@
       "floors": [
         {
           "label": "RF",
-          "fileId": "pdf-0031",
+          "fileId": "pdf-0030",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓RF 火警圖.pdf",
           "detectorCount": 16,
           "pageCount": 1,
@@ -212,7 +204,7 @@
         },
         {
           "label": "11F",
-          "fileId": "pdf-0020",
+          "fileId": "pdf-0019",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓11F 火警圖.pdf",
           "detectorCount": 118,
           "pageCount": 1,
@@ -220,7 +212,7 @@
         },
         {
           "label": "10F",
-          "fileId": "pdf-0019",
+          "fileId": "pdf-0018",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓10F 火警圖.pdf",
           "detectorCount": 114,
           "pageCount": 1,
@@ -228,7 +220,7 @@
         },
         {
           "label": "9F",
-          "fileId": "pdf-0029",
+          "fileId": "pdf-0028",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓9F 火警圖.pdf",
           "detectorCount": 121,
           "pageCount": 1,
@@ -236,7 +228,7 @@
         },
         {
           "label": "8F",
-          "fileId": "pdf-0028",
+          "fileId": "pdf-0027",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓8F 火警圖.pdf",
           "detectorCount": 115,
           "pageCount": 1,
@@ -244,7 +236,7 @@
         },
         {
           "label": "7F",
-          "fileId": "pdf-0027",
+          "fileId": "pdf-0026",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓7F 火警圖.pdf",
           "detectorCount": 118,
           "pageCount": 1,
@@ -252,7 +244,7 @@
         },
         {
           "label": "6F",
-          "fileId": "pdf-0026",
+          "fileId": "pdf-0025",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓6F 火警圖.pdf",
           "detectorCount": 104,
           "pageCount": 1,
@@ -260,7 +252,7 @@
         },
         {
           "label": "5F",
-          "fileId": "pdf-0025",
+          "fileId": "pdf-0024",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓5F 火警圖.pdf",
           "detectorCount": 138,
           "pageCount": 1,
@@ -268,7 +260,7 @@
         },
         {
           "label": "4F",
-          "fileId": "pdf-0024",
+          "fileId": "pdf-0023",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓4F 火警圖.pdf",
           "detectorCount": 109,
           "pageCount": 1,
@@ -276,7 +268,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0023",
+          "fileId": "pdf-0022",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓3F 火警圖.pdf",
           "detectorCount": 136,
           "pageCount": 1,
@@ -284,7 +276,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0022",
+          "fileId": "pdf-0021",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓2F 火警圖.pdf",
           "detectorCount": 123,
           "pageCount": 1,
@@ -292,7 +284,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0021",
+          "fileId": "pdf-0020",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓1F 火警圖.pdf",
           "detectorCount": 193,
           "pageCount": 1,
@@ -300,7 +292,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0030",
+          "fileId": "pdf-0029",
           "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓B1F 火警圖.pdf",
           "detectorCount": 129,
           "pageCount": 1,
@@ -315,7 +307,7 @@
       "floors": [
         {
           "label": "RF",
-          "fileId": "pdf-0081",
+          "fileId": "pdf-0080",
           "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診RF 火警圖.pdf",
           "detectorCount": 2,
           "pageCount": 1,
@@ -323,7 +315,7 @@
         },
         {
           "label": "4F",
-          "fileId": "pdf-0079",
+          "fileId": "pdf-0078",
           "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診4F 火警圖.pdf",
           "detectorCount": 55,
           "pageCount": 1,
@@ -331,7 +323,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0078",
+          "fileId": "pdf-0077",
           "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診3F 火警圖.pdf",
           "detectorCount": 54,
           "pageCount": 1,
@@ -339,7 +331,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0077",
+          "fileId": "pdf-0076",
           "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診2F 火警圖.pdf",
           "detectorCount": 40,
           "pageCount": 1,
@@ -347,7 +339,7 @@
         },
         {
           "label": "1MF",
-          "fileId": "pdf-0076",
+          "fileId": "pdf-0075",
           "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診1MF 火警圖.pdf",
           "detectorCount": 23,
           "pageCount": 1,
@@ -355,7 +347,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0075",
+          "fileId": "pdf-0074",
           "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診1F 火警圖.pdf",
           "detectorCount": 24,
           "pageCount": 1,
@@ -363,7 +355,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0080",
+          "fileId": "pdf-0079",
           "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診B1F 火警圖.pdf",
           "detectorCount": 40,
           "pageCount": 1,
@@ -378,7 +370,7 @@
       "floors": [
         {
           "label": "RF",
-          "fileId": "pdf-0091",
+          "fileId": "pdf-0090",
           "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診RF 火警圖.pdf",
           "detectorCount": 10,
           "pageCount": 1,
@@ -386,7 +378,7 @@
         },
         {
           "label": "8F",
-          "fileId": "pdf-0089",
+          "fileId": "pdf-0088",
           "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診8F 火警圖.pdf",
           "detectorCount": 75,
           "pageCount": 1,
@@ -394,7 +386,7 @@
         },
         {
           "label": "7F",
-          "fileId": "pdf-0088",
+          "fileId": "pdf-0087",
           "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診7F 火警圖.pdf",
           "detectorCount": 67,
           "pageCount": 1,
@@ -402,7 +394,7 @@
         },
         {
           "label": "6F",
-          "fileId": "pdf-0087",
+          "fileId": "pdf-0086",
           "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診6F 火警圖.pdf",
           "detectorCount": 75,
           "pageCount": 1,
@@ -410,7 +402,7 @@
         },
         {
           "label": "5F",
-          "fileId": "pdf-0086",
+          "fileId": "pdf-0085",
           "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診5F 火警圖.pdf",
           "detectorCount": 88,
           "pageCount": 1,
@@ -418,7 +410,7 @@
         },
         {
           "label": "4F",
-          "fileId": "pdf-0085",
+          "fileId": "pdf-0084",
           "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診4F 火警圖.pdf",
           "detectorCount": 83,
           "pageCount": 1,
@@ -426,7 +418,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0084",
+          "fileId": "pdf-0083",
           "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診3F 火警圖.pdf",
           "detectorCount": 61,
           "pageCount": 1,
@@ -434,7 +426,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0083",
+          "fileId": "pdf-0082",
           "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診2F 火警圖.pdf",
           "detectorCount": 68,
           "pageCount": 1,
@@ -442,7 +434,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0082",
+          "fileId": "pdf-0081",
           "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診1F 火警圖.pdf",
           "detectorCount": 44,
           "pageCount": 1,
@@ -450,7 +442,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0090",
+          "fileId": "pdf-0089",
           "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診B1F 火警圖.pdf",
           "detectorCount": 86,
           "pageCount": 1,
@@ -465,7 +457,7 @@
       "floors": [
         {
           "label": "R2F",
-          "fileId": "pdf-0045",
+          "fileId": "pdf-0044",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診R2F.pdf",
           "detectorCount": 4,
           "pageCount": 1,
@@ -473,7 +465,7 @@
         },
         {
           "label": "R1F",
-          "fileId": "pdf-0044",
+          "fileId": "pdf-0043",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診R1F.pdf",
           "detectorCount": 31,
           "pageCount": 1,
@@ -481,7 +473,7 @@
         },
         {
           "label": "9F",
-          "fileId": "pdf-0040",
+          "fileId": "pdf-0039",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診9F.pdf",
           "detectorCount": 217,
           "pageCount": 1,
@@ -489,7 +481,7 @@
         },
         {
           "label": "8F",
-          "fileId": "pdf-0039",
+          "fileId": "pdf-0038",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診8F.pdf",
           "detectorCount": 242,
           "pageCount": 1,
@@ -497,7 +489,7 @@
         },
         {
           "label": "7F",
-          "fileId": "pdf-0038",
+          "fileId": "pdf-0037",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診7F.pdf",
           "detectorCount": 271,
           "pageCount": 1,
@@ -505,7 +497,7 @@
         },
         {
           "label": "6F",
-          "fileId": "pdf-0037",
+          "fileId": "pdf-0036",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診6F.pdf",
           "detectorCount": 264,
           "pageCount": 1,
@@ -513,7 +505,7 @@
         },
         {
           "label": "5F",
-          "fileId": "pdf-0036",
+          "fileId": "pdf-0035",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診5F.pdf",
           "detectorCount": 239,
           "pageCount": 1,
@@ -521,7 +513,7 @@
         },
         {
           "label": "4F",
-          "fileId": "pdf-0035",
+          "fileId": "pdf-0034",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診4F.pdf",
           "detectorCount": 221,
           "pageCount": 1,
@@ -529,7 +521,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0034",
+          "fileId": "pdf-0033",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診3F.pdf",
           "detectorCount": 217,
           "pageCount": 1,
@@ -537,7 +529,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0033",
+          "fileId": "pdf-0032",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診2F.pdf",
           "detectorCount": 196,
           "pageCount": 1,
@@ -545,7 +537,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0032",
+          "fileId": "pdf-0031",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診1F.pdf",
           "detectorCount": 122,
           "pageCount": 1,
@@ -553,7 +545,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0041",
+          "fileId": "pdf-0040",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診B1F.pdf",
           "detectorCount": 172,
           "pageCount": 1,
@@ -561,7 +553,7 @@
         },
         {
           "label": "B2F",
-          "fileId": "pdf-0042",
+          "fileId": "pdf-0041",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診B2F.pdf",
           "detectorCount": 123,
           "pageCount": 1,
@@ -569,7 +561,7 @@
         },
         {
           "label": "B3F",
-          "fileId": "pdf-0043",
+          "fileId": "pdf-0042",
           "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診B3F.pdf",
           "detectorCount": 127,
           "pageCount": 1,
@@ -584,7 +576,7 @@
       "floors": [
         {
           "label": "RF",
-          "fileId": "pdf-0111",
+          "fileId": "pdf-0110",
           "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子RF 火警圖.pdf",
           "detectorCount": 12,
           "pageCount": 1,
@@ -592,7 +584,7 @@
         },
         {
           "label": "4F",
-          "fileId": "pdf-0109",
+          "fileId": "pdf-0108",
           "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子4F 火警圖.pdf",
           "detectorCount": 67,
           "pageCount": 1,
@@ -600,7 +592,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0108",
+          "fileId": "pdf-0107",
           "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子3F 火警圖.pdf",
           "detectorCount": 77,
           "pageCount": 1,
@@ -608,7 +600,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0107",
+          "fileId": "pdf-0106",
           "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子2F 火警圖.pdf",
           "detectorCount": 95,
           "pageCount": 1,
@@ -616,7 +608,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0106",
+          "fileId": "pdf-0105",
           "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子1F 火警圖.pdf",
           "detectorCount": 82,
           "pageCount": 1,
@@ -624,7 +616,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0110",
+          "fileId": "pdf-0109",
           "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子B1F 火警圖.pdf",
           "detectorCount": 154,
           "pageCount": 1,
@@ -639,7 +631,7 @@
       "floors": [
         {
           "label": "4F",
-          "fileId": "pdf-0095",
+          "fileId": "pdf-0094",
           "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心4F 火警圖.pdf",
           "detectorCount": 17,
           "pageCount": 1,
@@ -647,7 +639,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0094",
+          "fileId": "pdf-0093",
           "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心3F 火警圖.pdf",
           "detectorCount": 23,
           "pageCount": 1,
@@ -655,7 +647,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0093",
+          "fileId": "pdf-0092",
           "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心2F 火警圖.pdf",
           "detectorCount": 28,
           "pageCount": 1,
@@ -663,7 +655,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0092",
+          "fileId": "pdf-0091",
           "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心1F 火警圖.pdf",
           "detectorCount": 32,
           "pageCount": 1,
@@ -671,7 +663,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0096",
+          "fileId": "pdf-0095",
           "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心B1F 火警圖.pdf",
           "detectorCount": 34,
           "pageCount": 1,
@@ -679,7 +671,7 @@
         },
         {
           "label": "B2F",
-          "fileId": "pdf-0097",
+          "fileId": "pdf-0096",
           "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心B2F 火警圖.pdf",
           "detectorCount": 15,
           "pageCount": 1,
@@ -694,7 +686,7 @@
       "floors": [
         {
           "label": "8F",
-          "fileId": "pdf-0053",
+          "fileId": "pdf-0052",
           "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心8F 火警圖.pdf",
           "detectorCount": 86,
           "pageCount": 1,
@@ -702,7 +694,7 @@
         },
         {
           "label": "7F",
-          "fileId": "pdf-0052",
+          "fileId": "pdf-0051",
           "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心7F 火警圖.pdf",
           "detectorCount": 80,
           "pageCount": 1,
@@ -710,7 +702,7 @@
         },
         {
           "label": "6F",
-          "fileId": "pdf-0051",
+          "fileId": "pdf-0050",
           "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心6F 火警圖.pdf",
           "detectorCount": 78,
           "pageCount": 1,
@@ -718,7 +710,7 @@
         },
         {
           "label": "5F",
-          "fileId": "pdf-0050",
+          "fileId": "pdf-0049",
           "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心5F 火警圖.pdf",
           "detectorCount": 78,
           "pageCount": 1,
@@ -726,7 +718,7 @@
         },
         {
           "label": "4F",
-          "fileId": "pdf-0049",
+          "fileId": "pdf-0048",
           "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心4F 火警圖.pdf",
           "detectorCount": 73,
           "pageCount": 1,
@@ -734,7 +726,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0048",
+          "fileId": "pdf-0047",
           "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心3F 火警圖.pdf",
           "detectorCount": 77,
           "pageCount": 1,
@@ -742,7 +734,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0047",
+          "fileId": "pdf-0046",
           "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心2F 火警圖.pdf",
           "detectorCount": 92,
           "pageCount": 1,
@@ -750,7 +742,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0046",
+          "fileId": "pdf-0045",
           "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心1F 火警圖.pdf",
           "detectorCount": 112,
           "pageCount": 1,
@@ -758,7 +750,7 @@
         },
         {
           "label": "洗衣工廠B1F",
-          "fileId": "pdf-0054",
+          "fileId": "pdf-0053",
           "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心洗衣工廠B1F 火警圖.pdf",
           "detectorCount": 66,
           "pageCount": 1,
@@ -766,7 +758,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0055",
+          "fileId": "pdf-0054",
           "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心B1F 火警圖.pdf",
           "detectorCount": 166,
           "pageCount": 1,
@@ -781,7 +773,7 @@
       "floors": [
         {
           "label": "4F-RF",
-          "fileId": "pdf-0115",
+          "fileId": "pdf-0114",
           "path": "火警圖 PDF/115.04.26 精神樓火警圖PDF/精神樓4F-RF 火警圖.pdf",
           "detectorCount": 74,
           "pageCount": 1,
@@ -789,7 +781,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0114",
+          "fileId": "pdf-0113",
           "path": "火警圖 PDF/115.04.26 精神樓火警圖PDF/精神樓3F 火警圖.pdf",
           "detectorCount": 74,
           "pageCount": 1,
@@ -797,7 +789,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0113",
+          "fileId": "pdf-0112",
           "path": "火警圖 PDF/115.04.26 精神樓火警圖PDF/精神樓2F 火警圖.pdf",
           "detectorCount": 67,
           "pageCount": 1,
@@ -805,7 +797,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0112",
+          "fileId": "pdf-0111",
           "path": "火警圖 PDF/115.04.26 精神樓火警圖PDF/精神樓1F 火警圖.pdf",
           "detectorCount": 55,
           "pageCount": 1,
@@ -820,7 +812,7 @@
       "floors": [
         {
           "label": "R3",
-          "fileId": "pdf-0067",
+          "fileId": "pdf-0066",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓R3 火警圖.pdf",
           "detectorCount": 8,
           "pageCount": 1,
@@ -828,7 +820,7 @@
         },
         {
           "label": "R2F",
-          "fileId": "pdf-0066",
+          "fileId": "pdf-0065",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓R2F 火警圖.pdf",
           "detectorCount": 33,
           "pageCount": 1,
@@ -836,7 +828,7 @@
         },
         {
           "label": "R1F",
-          "fileId": "pdf-0065",
+          "fileId": "pdf-0064",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓R1F 火警圖.pdf",
           "detectorCount": 22,
           "pageCount": 1,
@@ -844,7 +836,7 @@
         },
         {
           "label": "8F",
-          "fileId": "pdf-0063",
+          "fileId": "pdf-0062",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓8F 火警圖.pdf",
           "detectorCount": 125,
           "pageCount": 1,
@@ -852,7 +844,7 @@
         },
         {
           "label": "7F",
-          "fileId": "pdf-0062",
+          "fileId": "pdf-0061",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓7F 火警圖.pdf",
           "detectorCount": 104,
           "pageCount": 1,
@@ -860,7 +852,7 @@
         },
         {
           "label": "6F",
-          "fileId": "pdf-0061",
+          "fileId": "pdf-0060",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓6F 火警圖.pdf",
           "detectorCount": 101,
           "pageCount": 1,
@@ -868,7 +860,7 @@
         },
         {
           "label": "5F",
-          "fileId": "pdf-0060",
+          "fileId": "pdf-0059",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓5F 火警圖.pdf",
           "detectorCount": 119,
           "pageCount": 1,
@@ -876,7 +868,7 @@
         },
         {
           "label": "4F",
-          "fileId": "pdf-0059",
+          "fileId": "pdf-0058",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓4F 火警圖.pdf",
           "detectorCount": 116,
           "pageCount": 1,
@@ -884,7 +876,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0058",
+          "fileId": "pdf-0057",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓3F 火警圖.pdf",
           "detectorCount": 64,
           "pageCount": 1,
@@ -892,7 +884,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0057",
+          "fileId": "pdf-0056",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓2F 火警圖.pdf",
           "detectorCount": 51,
           "pageCount": 1,
@@ -900,7 +892,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0056",
+          "fileId": "pdf-0055",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓1F 火警圖.pdf",
           "detectorCount": 119,
           "pageCount": 1,
@@ -908,7 +900,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0064",
+          "fileId": "pdf-0063",
           "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓B1F 火警圖.pdf",
           "detectorCount": 122,
           "pageCount": 1,
@@ -923,7 +915,7 @@
       "floors": [
         {
           "label": "5F",
-          "fileId": "pdf-0104",
+          "fileId": "pdf-0103",
           "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警5F 火警圖.pdf",
           "detectorCount": 13,
           "pageCount": 1,
@@ -931,7 +923,7 @@
         },
         {
           "label": "4F",
-          "fileId": "pdf-0103",
+          "fileId": "pdf-0102",
           "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警4F 火警圖.pdf",
           "detectorCount": 32,
           "pageCount": 1,
@@ -939,7 +931,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0102",
+          "fileId": "pdf-0101",
           "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警3F 火警圖.pdf",
           "detectorCount": 28,
           "pageCount": 1,
@@ -947,7 +939,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0101",
+          "fileId": "pdf-0100",
           "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警2F 火警圖.pdf",
           "detectorCount": 25,
           "pageCount": 1,
@@ -955,7 +947,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0100",
+          "fileId": "pdf-0099",
           "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警1F 火警圖.pdf",
           "detectorCount": 55,
           "pageCount": 1,
@@ -963,7 +955,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0105",
+          "fileId": "pdf-0104",
           "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警B1F 火警圖.pdf",
           "detectorCount": 16,
           "pageCount": 1,
@@ -978,7 +970,7 @@
       "floors": [
         {
           "label": "RF~R3F",
-          "fileId": "pdf-0134",
+          "fileId": "pdf-0133",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍RF~R3F 火警圖.pdf",
           "detectorCount": 28,
           "pageCount": 1,
@@ -986,7 +978,7 @@
         },
         {
           "label": "18F",
-          "fileId": "pdf-0124",
+          "fileId": "pdf-0123",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍18F 火警圖.pdf",
           "detectorCount": 61,
           "pageCount": 1,
@@ -994,7 +986,7 @@
         },
         {
           "label": "17F",
-          "fileId": "pdf-0123",
+          "fileId": "pdf-0122",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍17F 火警圖.pdf",
           "detectorCount": 59,
           "pageCount": 1,
@@ -1002,7 +994,7 @@
         },
         {
           "label": "16F",
-          "fileId": "pdf-0122",
+          "fileId": "pdf-0121",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍16F 火警圖.pdf",
           "detectorCount": 58,
           "pageCount": 1,
@@ -1010,7 +1002,7 @@
         },
         {
           "label": "15F",
-          "fileId": "pdf-0121",
+          "fileId": "pdf-0120",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍15F 火警圖.pdf",
           "detectorCount": 60,
           "pageCount": 1,
@@ -1018,7 +1010,7 @@
         },
         {
           "label": "14F",
-          "fileId": "pdf-0120",
+          "fileId": "pdf-0119",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍14F 火警圖.pdf",
           "detectorCount": 59,
           "pageCount": 1,
@@ -1026,7 +1018,7 @@
         },
         {
           "label": "13F",
-          "fileId": "pdf-0119",
+          "fileId": "pdf-0118",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍13F 火警圖.pdf",
           "detectorCount": 58,
           "pageCount": 1,
@@ -1034,7 +1026,7 @@
         },
         {
           "label": "12F",
-          "fileId": "pdf-0118",
+          "fileId": "pdf-0117",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍12F 火警圖.pdf",
           "detectorCount": 61,
           "pageCount": 1,
@@ -1042,7 +1034,7 @@
         },
         {
           "label": "11F",
-          "fileId": "pdf-0117",
+          "fileId": "pdf-0116",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍11F 火警圖.pdf",
           "detectorCount": 59,
           "pageCount": 1,
@@ -1050,7 +1042,7 @@
         },
         {
           "label": "10F",
-          "fileId": "pdf-0116",
+          "fileId": "pdf-0115",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍10F 火警圖.pdf",
           "detectorCount": 58,
           "pageCount": 1,
@@ -1058,7 +1050,7 @@
         },
         {
           "label": "9F",
-          "fileId": "pdf-0133",
+          "fileId": "pdf-0132",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍9F 火警圖.pdf",
           "detectorCount": 62,
           "pageCount": 1,
@@ -1066,7 +1058,7 @@
         },
         {
           "label": "8F",
-          "fileId": "pdf-0132",
+          "fileId": "pdf-0131",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍8F 火警圖.pdf",
           "detectorCount": 59,
           "pageCount": 1,
@@ -1074,7 +1066,7 @@
         },
         {
           "label": "7F",
-          "fileId": "pdf-0131",
+          "fileId": "pdf-0130",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍7F 火警圖.pdf",
           "detectorCount": 58,
           "pageCount": 1,
@@ -1082,7 +1074,7 @@
         },
         {
           "label": "6F",
-          "fileId": "pdf-0130",
+          "fileId": "pdf-0129",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍6F 火警圖.pdf",
           "detectorCount": 61,
           "pageCount": 1,
@@ -1090,7 +1082,7 @@
         },
         {
           "label": "5F",
-          "fileId": "pdf-0129",
+          "fileId": "pdf-0128",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍5F 火警圖.pdf",
           "detectorCount": 59,
           "pageCount": 1,
@@ -1098,7 +1090,7 @@
         },
         {
           "label": "4F",
-          "fileId": "pdf-0128",
+          "fileId": "pdf-0127",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍4F 火警圖.pdf",
           "detectorCount": 58,
           "pageCount": 1,
@@ -1106,7 +1098,7 @@
         },
         {
           "label": "3F",
-          "fileId": "pdf-0127",
+          "fileId": "pdf-0126",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍3F 火警圖.pdf",
           "detectorCount": 61,
           "pageCount": 1,
@@ -1114,7 +1106,7 @@
         },
         {
           "label": "2F",
-          "fileId": "pdf-0126",
+          "fileId": "pdf-0125",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍2F 火警圖.pdf",
           "detectorCount": 59,
           "pageCount": 1,
@@ -1122,7 +1114,7 @@
         },
         {
           "label": "1F",
-          "fileId": "pdf-0125",
+          "fileId": "pdf-0124",
           "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍1F 火警圖.pdf",
           "detectorCount": 60,
           "pageCount": 1,
@@ -1137,7 +1129,7 @@
       "floors": [
         {
           "label": "B1F",
-          "fileId": "pdf-0068",
+          "fileId": "pdf-0067",
           "path": "火警圖 PDF/115.04.26 2號門停車場火警圖PDF/2號門停車場B1F火警圖.pdf",
           "detectorCount": 36,
           "pageCount": 1,
@@ -1145,7 +1137,7 @@
         },
         {
           "label": "B2F",
-          "fileId": "pdf-0069",
+          "fileId": "pdf-0068",
           "path": "火警圖 PDF/115.04.26 2號門停車場火警圖PDF/2號門停車場B2F火警圖.pdf",
           "detectorCount": 66,
           "pageCount": 1,
@@ -1153,7 +1145,7 @@
         },
         {
           "label": "B3F",
-          "fileId": "pdf-0070",
+          "fileId": "pdf-0069",
           "path": "火警圖 PDF/115.04.26 2號門停車場火警圖PDF/2號門停車場B3F火警圖.pdf",
           "detectorCount": 54,
           "pageCount": 1,
@@ -1168,7 +1160,7 @@
       "floors": [
         {
           "label": "1F",
-          "fileId": "pdf-0071",
+          "fileId": "pdf-0070",
           "path": "火警圖 PDF/115.04.26 3號門停車場火警圖PDF/3號門停車場1F火警圖.pdf",
           "detectorCount": 8,
           "pageCount": 1,
@@ -1176,7 +1168,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0072",
+          "fileId": "pdf-0071",
           "path": "火警圖 PDF/115.04.26 3號門停車場火警圖PDF/3號門停車場B1F火警圖.pdf",
           "detectorCount": 52,
           "pageCount": 1,
@@ -1184,7 +1176,7 @@
         },
         {
           "label": "B2F",
-          "fileId": "pdf-0073",
+          "fileId": "pdf-0072",
           "path": "火警圖 PDF/115.04.26 3號門停車場火警圖PDF/3號門停車場B2F火警圖.pdf",
           "detectorCount": 30,
           "pageCount": 1,
@@ -1192,7 +1184,7 @@
         },
         {
           "label": "B3F",
-          "fileId": "pdf-0074",
+          "fileId": "pdf-0073",
           "path": "火警圖 PDF/115.04.26 3號門停車場火警圖PDF/3號門停車場B3F火警圖.pdf",
           "detectorCount": 39,
           "pageCount": 1,
@@ -1207,7 +1199,7 @@
       "floors": [
         {
           "label": "1F",
-          "fileId": "pdf-0098",
+          "fileId": "pdf-0097",
           "path": "火警圖 PDF/115.04.26 地下連通道火警圖PDF/地下連通道1F 火警圖.pdf",
           "detectorCount": 6,
           "pageCount": 1,
@@ -1215,7 +1207,7 @@
         },
         {
           "label": "B1F",
-          "fileId": "pdf-0099",
+          "fileId": "pdf-0098",
           "path": "火警圖 PDF/115.04.26 地下連通道火警圖PDF/地下連通道B1F 火警圖.pdf",
           "detectorCount": 97,
           "pageCount": 1,
