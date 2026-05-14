@@ -5,6 +5,11 @@
   "description": "臺北榮民總醫院火警探測器圖面查詢單頁工具",
   "scripts": {
     "build:index": "node scripts/build-index.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "win:start": "powershell -ExecutionPolicy Bypass -File scripts/windows/start-background.ps1",
+    "win:stop": "powershell -ExecutionPolicy Bypass -File scripts/windows/stop-background.ps1 -Force",
+    "win:status": "powershell -ExecutionPolicy Bypass -File scripts/windows/status-background.ps1",
+    "win:register": "powershell -ExecutionPolicy Bypass -File scripts/windows/register-startup-task.ps1",
+    "win:unregister": "powershell -ExecutionPolicy Bypass -File scripts/windows/unregister-startup-task.ps1 -StopServer"
   }
 }

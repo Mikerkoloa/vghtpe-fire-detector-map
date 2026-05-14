@@ -58,6 +58,62 @@ node scripts/build-index.js
 
 之後重新整理瀏覽器即可使用新資料。
 
+## Windows 10 背景執行與自動啟動
+
+這個專案可以在 Windows 10 背景執行，並在使用者登入 Windows 後自動啟動。
+
+先用 PowerShell 進入專案資料夾：
+
+```powershell
+cd C:\code\北榮火警探測器搜尋網頁
+```
+
+手動背景啟動：
+
+```powershell
+npm run win:start
+```
+
+查看狀態：
+
+```powershell
+npm run win:status
+```
+
+停止背景服務：
+
+```powershell
+npm run win:stop
+```
+
+註冊「開機後登入自動啟動」：
+
+```powershell
+npm run win:register
+```
+
+取消自動啟動並停止服務：
+
+```powershell
+npm run win:unregister
+```
+
+啟動後開啟：
+
+```text
+http://localhost:4173
+```
+
+背景執行記錄會寫到：
+
+```text
+logs/server.out.log
+logs/server.err.log
+logs/server.pid
+```
+
+注意：目前腳本使用 Windows 工作排程器的「使用者登入時啟動」。也就是電腦重開機後，需要登入該 Windows 使用者，網站才會自動啟動。若要在尚未登入 Windows 前就啟動，建議改用 Windows Service 工具，例如 NSSM 或 WinSW。
+
 ## 專案結構
 
 ```text
@@ -75,7 +131,8 @@ node scripts/build-index.js
 │  ├─ buildings.json
 │  └─ fire-map-index.json
 ├─ scripts/
-│  └─ build-index.js
+│  ├─ build-index.js
+│  └─ windows/
 └─ 火警圖 PDF/
 ```
 

@@ -232,3 +232,15 @@ vghtpe-fire-detector-map
 - 使用者更新 `火警圖 PDF/115.04.26 二門診火警圖PDF/二門診7F 火警圖.pdf`。
 - 已重新執行 `node scripts/build-index.js`。
 - 索引統計更新為 133 份 PDF、11,721 筆探測器文字標籤。
+
+## 2026-05-14 Windows 10 背景執行腳本
+
+- 新增 `scripts/windows/` 內的背景執行與工作排程腳本。
+- 預設方式是 Windows 工作排程器「使用者登入時」啟動，不需要額外安裝服務工具。
+- 常用指令：
+  - `npm run win:start`
+  - `npm run win:status`
+  - `npm run win:stop`
+  - `npm run win:register`
+  - `npm run win:unregister`
+- 注意：`win:register` 需要使用者自己執行，Codex 沒有直接替使用者註冊開機自動啟動。
