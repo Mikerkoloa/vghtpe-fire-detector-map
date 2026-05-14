@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>使用手冊｜臺北榮民總醫院火警探測器圖面查詢</title>
+    <link rel="stylesheet" href="./assets/manual.css?v=20260514a">
+  </head>
+  <body>
+    <header class="manual-hero">
+      <nav class="topbar" aria-label="主要連結">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark">北榮</span>
+          <span>
+            <strong>臺北榮民總醫院</strong>
+            <small>火警探測器圖面查詢</small>
+          </span>
+        </a>
+        <a class="manual-link" href="./index.html">開啟查詢系統</a>
+      </nav>
+
+      <div class="hero-content">
+        <div>
+          <p class="eyebrow">使用手冊</p>
+          <h1>先找到圖面，再圈出探測器位置。</h1>
+          <p class="hero-copy">
+            本手冊把查詢流程拆成清楚步驟：輸入定址碼、選擇棟別與樓層、在 PDF 中搜尋、更新圖資與 Windows 背景啟動。
+          </p>
+        </div>
+        <div class="hero-panel" aria-label="快速範例">
+          <span>快速範例</span>
+          <strong>長青樓 6F M2-66</strong>
+          <p>輸入完整棟別、樓層、定址碼後，系統會直接開啟 PDF 並以粗線圈選文字標籤。</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="quick-map" aria-label="操作總覽">
+        <a href="#search" class="map-card">
+          <span class="step-dot">1</span>
+          <strong>搜尋探測器</strong>
+          <small>輸入 M1-66 或完整條件</small>
+        </a>
+        <a href="#building" class="map-card">
+          <span class="step-dot">2</span>
+          <strong>選棟別樓層</strong>
+          <small>不用下拉選單，直接點按鈕</small>
+        </a>
+        <a href="#viewer" class="map-card">
+          <span class="step-dot">3</span>
+          <strong>查看 PDF</strong>
+          <small>縮放、拖曳、圈選位置</small>
+        </a>
+        <a href="#maintain" class="map-card">
+          <span class="step-dot">4</span>
+          <strong>維護資料</strong>
+          <small>更新 PDF、重建索引、背景啟動</small>
+        </a>
+      </section>
+
+      <section class="section-grid" id="search">
+        <div class="section-heading">
+          <p class="eyebrow">一般使用</p>
+          <h2>搜尋方式</h2>
+          <p>搜尋欄可以只輸入定址碼，也可以輸入完整棟別與樓層。輸入越完整，系統越能直接定位。</p>
+        </div>
+
+        <div class="example-board">
+          <article class="example-card">
+            <span class="tag">只知道定址碼</span>
+            <code>M1-66</code>
+            <p>列出所有符合的棟別與樓層，由使用者點選正確位置。</p>
+          </article>
+          <article class="example-card">
+            <span class="tag">知道棟別</span>
+            <code>長青樓 M1-66</code>
+            <p>只列出長青樓內符合的結果，減少誤選。</p>
+          </article>
+          <article class="example-card is-strong">
+            <span class="tag">最完整</span>
+            <code>長青樓 6F M2-66</code>
+            <p>直接開啟該樓層 PDF，並圈出探測器編號文字標籤。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="flow-section" id="building">
+        <div class="section-heading">
+          <p class="eyebrow">圖面選擇</p>
+          <h2>從棟別與樓層進入</h2>
+          <p>不知道定址碼時，可以先進入指定樓層，再搜尋目前 PDF 內的定址碼。</p>
+        </div>
+
+        <div class="flow">
+          <div class="flow-step">
+            <span>1</span>
+            <strong>點選棟別</strong>
+            <p>例如：一門診、二門診、長青樓、重粒子。</p>
+          </div>
+          <div class="flow-step">
+            <span>2</span>
+            <strong>點選樓層</strong>
+            <p>樓層按鈕會依 RF、樓層、地下層排序。</p>
+          </div>
+          <div class="flow-step">
+            <span>3</span>
+            <strong>顯示 PDF</strong>
+            <p>第一次進入圖面時，中央會跳出「搜尋定址碼」。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="viewer-section" id="viewer">
+        <div class="section-heading">
+          <p class="eyebrow">PDF 操作</p>
+          <h2>圈選與移動圖面</h2>
+          <p>圈選目標採用探測器編號文字標籤，使用粗線與橘色標籤，方便在圖面上辨識。</p>
+        </div>
+
+        <div class="viewer-demo" aria-label="PDF 操作示意">
+          <div class="fake-toolbar">
+            <button>縮小</button>
+            <button>適合</button>
+            <button>放大</button>
+            <button>清除</button>
+            <button>原始</button>
+          </div>
+          <div class="fake-plan">
+            <span class="room r1"></span>
+            <span class="room r2"></span>
+            <span class="room r3"></span>
+            <span class="room r4"></span>
+            <span class="marker">M1-82</span>
+          </div>
+        </div>
+
+        <div class="tip-grid">
+          <article>
+            <strong>滑鼠滾輪</strong>
+            <p>在 PDF 上滾動可放大或縮小。</p>
+          </article>
+          <article>
+            <strong>左鍵拖曳</strong>
+            <p>按住左鍵可移動畫面。</p>
+          </article>
+          <article>
+            <strong>點圈選兩下</strong>
+            <p>快速放大圈選的位置。</p>
+          </article>
+          <article>
+            <strong>手機操作</strong>
+            <p>先用頁面上下捲動找到 PDF，再用工具列放大或適合寬度。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-grid" id="maintain">
+        <div class="section-heading">
+          <p class="eyebrow">維護者</p>
+          <h2>更新 PDF 與背景啟動</h2>
+          <p>PDF 檔案有新增、刪除或替換時，一定要重新產生索引，搜尋結果才會跟著更新。</p>
+        </div>
+
+        <div class="maintenance-list">
+          <article class="command-card">
+            <span class="tag">更新 PDF 後</span>
+            <strong>重新建立索引</strong>
+            <pre><code>node scripts/build-index.js</code></pre>
+            <p>會更新 `data/fire-map-index.json` 與 `data/buildings.json`。</p>
+          </article>
+
+          <article class="command-card">
+            <span class="tag">本機背景執行</span>
+            <strong>Windows 10 啟動</strong>
+            <pre><code>npm run win:start
+npm run win:status
+npm run win:stop</code></pre>
+            <p>啟動後開啟 `http://localhost:4173`。</p>
+          </article>
+
+          <article class="command-card">
+            <span class="tag">重開機自動啟動</span>
+            <strong>註冊工作排程</strong>
+            <pre><code>npm run win:register
+npm run win:unregister</code></pre>
+            <p>目前設計為「登入 Windows 後自動啟動」。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="notice-section">
+        <div>
+          <p class="eyebrow">重要提醒</p>
+          <h2>搜尋不到或位置不對時</h2>
+        </div>
+        <ul>
+          <li>確認 PDF 是否已放入 `火警圖 PDF` 資料夾。</li>
+          <li>更新 PDF 後，必須重新執行 `node scripts/build-index.js`。</li>
+          <li>如果線上版仍是舊資料，請重新部署 Vercel，並在瀏覽器按 `Ctrl + F5` 強制重新整理。</li>
+          <li>目前圈選的是文字標籤，不是探測器圖符本體。</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

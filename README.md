@@ -104,6 +104,12 @@ npm run win:unregister
 http://localhost:4173
 ```
 
+使用手冊頁面：
+
+```text
+http://localhost:4173/manual.html
+```
+
 背景執行記錄會寫到：
 
 ```text

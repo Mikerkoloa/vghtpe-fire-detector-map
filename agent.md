@@ -244,3 +244,10 @@ vghtpe-fire-detector-map
   - `npm run win:register`
   - `npm run win:unregister`
 - 注意：`win:register` 需要使用者自己執行，Codex 沒有直接替使用者註冊開機自動啟動。
+
+## 2026-05-14 HTML 使用手冊
+
+- 新增 `manual.html` 與 `assets/manual.css`。
+- 主查詢頁右上角新增「使用手冊」入口。
+- 手冊內容分成一般使用者與維護者：搜尋方式、選棟別樓層、PDF 操作、更新 PDF、Windows 背景啟動。
+- 已用桌面與 430px 手機尺寸檢查；手機版 `scrollWidth = 430`、`clientWidth = 430`，沒有水平溢出。
