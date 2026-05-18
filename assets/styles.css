@@ -447,10 +447,15 @@ button {
     linear-gradient(0deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px),
     #dfe8e5;
   background-size: 28px 28px;
+  touch-action: pan-x pan-y;
 }
 
 .viewer-shell.is-panning {
   cursor: grabbing;
+}
+
+.viewer-shell.is-zoomed {
+  touch-action: none;
 }
 
 .pdf-search-overlay {

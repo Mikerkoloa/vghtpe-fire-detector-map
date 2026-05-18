@@ -60,6 +60,14 @@ const state = {
   panStartY: 0,
   panStartLeft: 0,
   panStartTop: 0,
+  isTouchPanning: false,
+  isTouchZooming: false,
+  touchStartDistance: 0,
+  touchStartZoom: 1,
+  touchZoomTimer: null,
+  touchZoomFocus: null,
+  activeTouchPointers: new Map(),
+  touchPanPointerId: null,
 };
 
 const MIN_ZOOM = 0.45;
@@ -602,16 +610,60 @@ function updatePdfControls() {
   const hasPdf = Boolean(state.pdfDoc);
   dom.prevPageButton.disabled = !hasPdf || state.currentPage <= 1;
   dom.nextPageButton.disabled = !hasPdf || state.currentPage >= state.currentPageCount;
-  dom.zoomOutButton.disabled = !hasPdf || state.zoom <= 0.45;
+  dom.zoomOutButton.disabled = !hasPdf || state.zoom <= MIN_ZOOM;
   dom.fitButton.disabled = !hasPdf;
-  dom.zoomInButton.disabled = !hasPdf || state.zoom >= 4;
+  dom.zoomInButton.disabled = !hasPdf || state.zoom >= MAX_ZOOM;
   dom.clearMarkerButton.disabled = !hasPdf || state.markers.length === 0;
   dom.openPdfButton.disabled = !hasPdf || !state.currentPath;
   dom.pageStatus.textContent = hasPdf ? `${state.currentPage} / ${state.currentPageCount}` : "-";
+  dom.viewerShell.classList.toggle("is-zoomed", hasPdf && canUseTouchPan());
 }
 
 function clampZoom(value) {
   return Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, value));
+}
+
+function isViewerControlTarget(target) {
+  if (!(target instanceof Element)) return false;
+  return Boolean(target.closest(".pdf-search-overlay, input, button, textarea, select, a"));
+}
+
+function pointDistance(points) {
+  if (points.length < 2) return 0;
+
+  const first = points[0];
+  const second = points[1];
+  return Math.hypot(second.x - first.x, second.y - first.y);
+}
+
+function pointCenter(points) {
+  const total = points.reduce(
+    (point, touch) => ({
+      x: point.x + touch.x,
+      y: point.y + touch.y,
+    }),
+    { x: 0, y: 0 },
+  );
+
+  return {
+    x: total.x / points.length,
+    y: total.y / points.length,
+  };
+}
+
+function touchPoints(touches) {
+  return Array.from(touches, (touch) => ({
+    x: touch.clientX,
+    y: touch.clientY,
+  }));
+}
+
+function activePointerPoints() {
+  return [...state.activeTouchPointers.values()];
+}
+
+function canUseTouchPan() {
+  return state.zoom > 1.02;
 }
 
 async function rerenderWithZoom(nextZoom, focusPoint = null, options = {}) {
@@ -639,7 +691,7 @@ async function rerenderWithZoom(nextZoom, focusPoint = null, options = {}) {
 
 function scheduleWheelZoom(event) {
   if (!state.pdfDoc) return;
-  if (event.target.closest(".pdf-search-overlay, input, button, textarea, select")) return;
+  if (isViewerControlTarget(event.target)) return;
 
   event.preventDefault();
   const factor = event.deltaY < 0 ? 1.14 : 1 / 1.14;
@@ -654,7 +706,7 @@ function scheduleWheelZoom(event) {
 
 function startPan(event) {
   if (!state.pdfDoc || event.button !== 0) return;
-  if (event.target.closest(".pdf-search-overlay, input, button, textarea, select")) return;
+  if (isViewerControlTarget(event.target)) return;
 
   state.isPanning = true;
   state.panStartX = event.clientX;
@@ -678,6 +730,196 @@ function endPan() {
   if (!state.isPanning) return;
 
   state.isPanning = false;
+  dom.viewerShell.classList.remove("is-panning");
+}
+
+function scheduleTouchZoom(nextZoom, focusPoint) {
+  state.zoom = clampZoom(nextZoom);
+  state.touchZoomFocus = focusPoint;
+  updatePdfControls();
+
+  window.clearTimeout(state.touchZoomTimer);
+  state.touchZoomTimer = window.setTimeout(() => {
+    state.touchZoomTimer = null;
+    rerenderWithZoom(state.zoom, state.touchZoomFocus);
+  }, 55);
+}
+
+function startTouchGesture(event) {
+  if (!state.pdfDoc) return;
+  if (isViewerControlTarget(event.target)) return;
+
+  if (event.touches.length >= 2) {
+    const points = touchPoints(event.touches);
+    state.isTouchZooming = true;
+    state.isTouchPanning = false;
+    state.touchStartDistance = pointDistance(points);
+    state.touchStartZoom = state.zoom;
+    state.touchZoomFocus = pointCenter(points);
+    dom.viewerShell.classList.add("is-panning");
+    event.preventDefault();
+    return;
+  }
+
+  if (event.touches.length === 1 && canUseTouchPan()) {
+    const touch = event.touches[0];
+    state.isTouchPanning = true;
+    state.panStartX = touch.clientX;
+    state.panStartY = touch.clientY;
+    state.panStartLeft = dom.viewerShell.scrollLeft;
+    state.panStartTop = dom.viewerShell.scrollTop;
+    dom.viewerShell.classList.add("is-panning");
+  }
+}
+
+function moveTouchGesture(event) {
+  if (!state.pdfDoc) return;
+
+  if (state.isTouchZooming && event.touches.length >= 2) {
+    const points = touchPoints(event.touches);
+    const distance = pointDistance(points);
+    const focusPoint = pointCenter(points);
+    if (state.touchStartDistance > 0) {
+      scheduleTouchZoom(state.touchStartZoom * (distance / state.touchStartDistance), focusPoint);
+    }
+    event.preventDefault();
+    return;
+  }
+
+  if (state.isTouchPanning && event.touches.length === 1) {
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - state.panStartX;
+    const deltaY = touch.clientY - state.panStartY;
+    dom.viewerShell.scrollLeft = state.panStartLeft - deltaX;
+    dom.viewerShell.scrollTop = state.panStartTop - deltaY;
+    event.preventDefault();
+  }
+}
+
+function endTouchGesture(event) {
+  if (state.isTouchZooming && event.touches.length < 2) {
+    const focusPoint = state.touchZoomFocus;
+    window.clearTimeout(state.touchZoomTimer);
+    state.touchZoomTimer = null;
+    state.isTouchZooming = false;
+    state.touchStartDistance = 0;
+    rerenderWithZoom(state.zoom, focusPoint);
+  }
+
+  if (event.touches.length === 1 && canUseTouchPan()) {
+    const touch = event.touches[0];
+    state.isTouchPanning = true;
+    state.panStartX = touch.clientX;
+    state.panStartY = touch.clientY;
+    state.panStartLeft = dom.viewerShell.scrollLeft;
+    state.panStartTop = dom.viewerShell.scrollTop;
+    return;
+  }
+
+  state.isTouchPanning = false;
+  dom.viewerShell.classList.remove("is-panning");
+}
+
+function cancelTouchGesture() {
+  window.clearTimeout(state.touchZoomTimer);
+  state.touchZoomTimer = null;
+  state.isTouchPanning = false;
+  state.isTouchZooming = false;
+  state.touchStartDistance = 0;
+  state.activeTouchPointers.clear();
+  state.touchPanPointerId = null;
+  dom.viewerShell.classList.remove("is-panning");
+}
+
+function startPointerGesture(event) {
+  if (!state.pdfDoc || event.pointerType !== "touch") return;
+  if (isViewerControlTarget(event.target)) return;
+
+  state.activeTouchPointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+  dom.viewerShell.setPointerCapture?.(event.pointerId);
+
+  const points = activePointerPoints();
+  if (points.length >= 2) {
+    state.isTouchZooming = true;
+    state.isTouchPanning = false;
+    state.touchPanPointerId = null;
+    state.touchStartDistance = pointDistance(points);
+    state.touchStartZoom = state.zoom;
+    state.touchZoomFocus = pointCenter(points);
+    dom.viewerShell.classList.add("is-panning");
+    event.preventDefault();
+    return;
+  }
+
+  if (points.length === 1 && canUseTouchPan()) {
+    state.isTouchPanning = true;
+    state.touchPanPointerId = event.pointerId;
+    state.panStartX = event.clientX;
+    state.panStartY = event.clientY;
+    state.panStartLeft = dom.viewerShell.scrollLeft;
+    state.panStartTop = dom.viewerShell.scrollTop;
+    dom.viewerShell.classList.add("is-panning");
+    event.preventDefault();
+  }
+}
+
+function movePointerGesture(event) {
+  if (!state.pdfDoc || event.pointerType !== "touch") return;
+  if (!state.activeTouchPointers.has(event.pointerId)) return;
+
+  state.activeTouchPointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+  const points = activePointerPoints();
+
+  if (state.isTouchZooming && points.length >= 2) {
+    const distance = pointDistance(points);
+    const focusPoint = pointCenter(points);
+    if (state.touchStartDistance > 0) {
+      scheduleTouchZoom(state.touchStartZoom * (distance / state.touchStartDistance), focusPoint);
+    }
+    event.preventDefault();
+    return;
+  }
+
+  if (state.isTouchPanning && state.touchPanPointerId === event.pointerId) {
+    const deltaX = event.clientX - state.panStartX;
+    const deltaY = event.clientY - state.panStartY;
+    dom.viewerShell.scrollLeft = state.panStartLeft - deltaX;
+    dom.viewerShell.scrollTop = state.panStartTop - deltaY;
+    event.preventDefault();
+  }
+}
+
+function endPointerGesture(event) {
+  if (event.pointerType !== "touch") return;
+
+  state.activeTouchPointers.delete(event.pointerId);
+  if (dom.viewerShell.hasPointerCapture?.(event.pointerId)) {
+    dom.viewerShell.releasePointerCapture(event.pointerId);
+  }
+
+  const points = activePointerPoints();
+  if (state.isTouchZooming && points.length < 2) {
+    const focusPoint = state.touchZoomFocus;
+    window.clearTimeout(state.touchZoomTimer);
+    state.touchZoomTimer = null;
+    state.isTouchZooming = false;
+    state.touchStartDistance = 0;
+    rerenderWithZoom(state.zoom, focusPoint);
+  }
+
+  if (points.length === 1 && canUseTouchPan()) {
+    const [point] = points;
+    state.isTouchPanning = true;
+    state.touchPanPointerId = state.activeTouchPointers.keys().next().value;
+    state.panStartX = point.x;
+    state.panStartY = point.y;
+    state.panStartLeft = dom.viewerShell.scrollLeft;
+    state.panStartTop = dom.viewerShell.scrollTop;
+    return;
+  }
+
+  state.isTouchPanning = false;
+  state.touchPanPointerId = null;
   dom.viewerShell.classList.remove("is-panning");
 }
 
@@ -716,6 +958,17 @@ dom.fitButton.addEventListener("click", () => rerenderWithZoom(1));
 
 dom.viewerShell.addEventListener("wheel", scheduleWheelZoom, { passive: false });
 dom.viewerShell.addEventListener("mousedown", startPan);
+if (window.TouchEvent) {
+  dom.viewerShell.addEventListener("touchstart", startTouchGesture, { passive: false });
+  dom.viewerShell.addEventListener("touchmove", moveTouchGesture, { passive: false });
+  dom.viewerShell.addEventListener("touchend", endTouchGesture, { passive: false });
+  dom.viewerShell.addEventListener("touchcancel", cancelTouchGesture, { passive: false });
+} else if (window.PointerEvent) {
+  dom.viewerShell.addEventListener("pointerdown", startPointerGesture, { passive: false });
+  dom.viewerShell.addEventListener("pointermove", movePointerGesture, { passive: false });
+  dom.viewerShell.addEventListener("pointerup", endPointerGesture, { passive: false });
+  dom.viewerShell.addEventListener("pointercancel", cancelTouchGesture, { passive: false });
+}
 window.addEventListener("mousemove", movePan);
 window.addEventListener("mouseup", endPan);
 
