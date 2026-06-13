@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>維護手冊｜北榮火警探測器圖面查詢</title>
+    <style>
+      :root {
+        --ink: #1a2520;
+        --muted: #5e716b;
+        --line: #d4e0dc;
+        --surface: #ffffff;
+        --soft: #f3f8f6;
+        --brand: #075e50;
+        --brand-dark: #044a3e;
+        --accent: #e86a1c;
+        --gold: #dba54a;
+        --code-bg: #0f2822;
+        --shadow: 0 12px 36px rgba(16, 40, 34, 0.1);
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #edf3f1;
+        font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", system-ui, sans-serif;
+        line-height: 1.7;
+      }
+      a { color: var(--brand); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      code { font-family: Consolas, "Courier New", monospace; }
+
+      .page { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+      header {
+        color: #fff;
+        background: linear-gradient(135deg, var(--brand-dark), var(--brand), #0a7a8f);
+        border-bottom: 4px solid var(--gold);
+        padding: 48px 20px 42px;
+      }
+      header .page { display: flex; flex-direction: column; gap: 8px; }
+      header h1 { margin: 0; font-size: 36px; letter-spacing: -0.5px; }
+      header p { margin: 0; color: rgba(255,255,255,0.82); font-size: 17px; }
+      header .badge {
+        display: inline-block;
+        margin-top: 14px;
+        padding: 6px 14px;
+        background: rgba(255,255,255,0.15);
+        border: 1px solid rgba(255,255,255,0.3);
+        border-radius: 99px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      nav.toc {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+        padding: 12px 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      }
+      nav.toc .page {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+      }
+      nav.toc a {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--muted);
+        padding: 4px 0;
+      }
+      nav.toc a:hover { color: var(--brand); text-decoration: none; }
+
+      main { padding: 36px 0 80px; }
+      main .page { display: grid; gap: 32px; }
+
+      section {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 28px 30px;
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        margin: 0 0 4px;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      h2 { margin: 0 0 14px; font-size: 24px; }
+      h3 { margin: 20px 0 8px; font-size: 18px; color: var(--brand-dark); }
+
+      pre {
+        margin: 12px 0;
+        padding: 16px 20px;
+        background: var(--code-bg);
+        color: #c8f0e6;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      pre strong { color: #7fdbca; font-weight: 400; }
+      pre .comment { color: #6a9b8e; }
+
+      .inline-code {
+        display: inline-block;
+        padding: 2px 8px;
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      .cmd-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .cmd-card {
+        padding: 16px;
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+      .cmd-card strong { display: block; margin-bottom: 6px; font-size: 15px; }
+      .cmd-card code { font-size: 14px; color: var(--brand-dark); }
+      .cmd-card p { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
+
+      .url-box {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 8px 0;
+        padding: 10px 16px;
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .url-box::before { content: "🔗"; }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 14px 0;
+        font-size: 14px;
+      }
+      th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+      th { background: var(--soft); font-weight: 700; font-size: 13px; color: var(--muted); }
+      tr:last-child td { border-bottom: none; }
+
+      .warn {
+        margin: 16px 0;
+        padding: 14px 18px;
+        background: #fff8ee;
+        border-left: 4px solid var(--gold);
+        border-radius: 6px;
+        font-size: 14px;
+        color: #6b4e12;
+      }
+
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 14px;
+      }
+      .stat {
+        padding: 12px 18px;
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        text-align: center;
+      }
+      .stat strong { display: block; font-size: 26px; color: var(--brand); }
+      .stat small { font-size: 12px; color: var(--muted); }
+
+      @media (max-width: 640px) {
+        header { padding: 32px 16px; }
+        header h1 { font-size: 28px; }
+        section { padding: 20px 18px; }
+        .cmd-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="page">
+        <h1>🛠️ 維護手冊</h1>
+        <p>北榮火警探測器圖面查詢系統 — 日常操作、部署、快速指令</p>
+        <span class="badge">最後更新：2026-06-13</span>
+      </div>
+    </header>
+
+    <nav class="toc">
+      <div class="page">
+        <a href="#quick">快速指令</a>
+        <a href="#start">啟動服務</a>
+        <a href="#update-pdf">更新 PDF</a>
+        <a href="#push">推送 GitHub</a>
+        <a href="#deploy">Vercel 部署</a>
+        <a href="#windows">Windows 背景</a>
+        <a href="#structure">專案結構</a>
+        <a href="#stats">目前統計</a>
+        <a href="#links">連結</a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="page">
+
+        <section id="quick">
+          <p class="eyebrow">速查</p>
+          <h2>每天會用到的指令</h2>
+          <div class="cmd-grid">
+            <div class="cmd-card">
+              <strong>啟動伺服器</strong>
+              <code>node server.js</code>
+              <p>開啟 http://localhost:4173</p>
+            </div>
+            <div class="cmd-card">
+              <strong>重建索引</strong>
+              <code>node scripts/build-index.js</code>
+              <p>更新 PDF 後執行</p>
+            </div>
+            <div class="cmd-card">
+              <strong>快速推 GitHub</strong>
+              <code>npm run push</code>
+              <p>add → commit "update" → push</p>
+            </div>
+            <div class="cmd-card">
+              <strong>自訂訊息推送</strong>
+              <code>powershell -File scripts/push.ps1 -Message "修正XX"</code>
+              <p>commit 訊息自訂</p>
+            </div>
+            <div class="cmd-card">
+              <strong>背景啟動</strong>
+              <code>npm run win:start</code>
+              <p>不佔 terminal</p>
+            </div>
+            <div class="cmd-card">
+              <strong>停止背景</strong>
+              <code>npm run win:stop</code>
+              <p>關閉背景 node</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="start">
+          <p class="eyebrow">啟動</p>
+          <h2>啟動本機伺服器</h2>
+          <pre><span class="comment"># 進入專案資料夾</span>
+cd C:\code\北榮火警探測器搜尋網頁
+
+<span class="comment"># 前景啟動（關掉 terminal 就停）</span>
+<strong>node server.js</strong>
+
+<span class="comment"># 或背景啟動</span>
+<strong>npm run win:start</strong></pre>
+          <div class="url-box">http://localhost:4173</div>
+          <div class="url-box">http://localhost:4173/manual.html</div>
+        </section>
+
+        <section id="update-pdf">
+          <p class="eyebrow">更新圖資</p>
+          <h2>更新 PDF 後重建索引</h2>
+          <p>新增、刪除或替換 <code class="inline-code">火警圖 PDF/</code> 資料夾內的檔案後：</p>
+          <pre><strong>node scripts/build-index.js</strong></pre>
+          <p>會重新產生：</p>
+          <table>
+            <tr><th>檔案</th><th>用途</th></tr>
+            <tr><td><code>data/fire-map-index.json</code></td><td>探測器文字標籤與 PDF 座標</td></tr>
+            <tr><td><code>data/buildings.json</code></td><td>棟別與樓層清單</td></tr>
+          </table>
+          <div class="warn">⚠️ 不重建索引的話，搜尋不會出現新的 PDF 資料。</div>
+        </section>
+
+        <section id="push">
+          <p class="eyebrow">版本控制</p>
+          <h2>推送到 GitHub</h2>
+
+          <h3>一鍵推送（預設訊息 "update"）</h3>
+          <pre><strong>npm run push</strong></pre>
+
+          <h3>自訂 commit 訊息</h3>
+          <pre><strong>powershell -File scripts/push.ps1 -Message "更新長青樓B1F火警圖"</strong></pre>
+
+          <h3>手動推送</h3>
+          <pre>git add -A
+git commit -m "你的訊息"
+git push</pre>
+          <div class="warn">⚠️ 推送前請確認 <code>火警圖 PDF/</code> 內沒有不該公開的機密資料。整個 repo 是公開的。</div>
+        </section>
+
+        <section id="deploy">
+          <p class="eyebrow">部署</p>
+          <h2>Vercel 部署</h2>
+          <p>GitHub 推送後 Vercel 會自動重新部署（已綁定 main 分支）。</p>
+          <div class="url-box">https://vghtpe-fire-detector-map.vercel.app</div>
+          <p>如果自動部署沒觸發，可以手動：</p>
+          <pre><strong>npx vercel --prod</strong></pre>
+          <div class="warn">⚠️ 部署後瀏覽器可能有快取，按 <kbd>Ctrl + F5</kbd> 強制重新整理。</div>
+        </section>
+
+        <section id="windows">
+          <p class="eyebrow">系統管理</p>
+          <h2>Windows 背景執行與開機啟動</h2>
+          <div class="cmd-grid">
+            <div class="cmd-card">
+              <strong>背景啟動</strong>
+              <code>npm run win:start</code>
+            </div>
+            <div class="cmd-card">
+              <strong>查看狀態</strong>
+              <code>npm run win:status</code>
+            </div>
+            <div class="cmd-card">
+              <strong>停止服務</strong>
+              <code>npm run win:stop</code>
+            </div>
+            <div class="cmd-card">
+              <strong>註冊開機自動啟動</strong>
+              <code>npm run win:register</code>
+            </div>
+            <div class="cmd-card">
+              <strong>取消自動啟動</strong>
+              <code>npm run win:unregister</code>
+            </div>
+          </div>
+          <h3>記錄檔</h3>
+          <table>
+            <tr><th>路徑</th><th>內容</th></tr>
+            <tr><td><code>logs/server.out.log</code></td><td>正常輸出</td></tr>
+            <tr><td><code>logs/server.err.log</code></td><td>錯誤輸出</td></tr>
+            <tr><td><code>logs/server.pid</code></td><td>背景 process ID</td></tr>
+          </table>
+          <div class="warn">⚠️ 目前使用 Windows 工作排程器的「登入後啟動」。電腦重開機後需登入 Windows 才會自動啟動。</div>
+        </section>
+
+        <section id="structure">
+          <p class="eyebrow">架構</p>
+          <h2>專案結構</h2>
+          <pre>.
+├─ index.html          <span class="comment"># 主查詢頁面</span>
+├─ manual.html         <span class="comment"># 使用者手冊</span>
+├─ dev-guide.html      <span class="comment"># 本頁（維護手冊）</span>
+├─ server.js           <span class="comment"># 靜態伺服器 port 4173</span>
+├─ package.json        <span class="comment"># npm scripts</span>
+├─ agent.md            <span class="comment"># AI 交接紀錄</span>
+├─ claude.md           <span class="comment"># → 轉址 agent.md</span>
+├─ assets/
+│  ├─ app.js           <span class="comment"># 前端主邏輯</span>
+│  ├─ styles.css       <span class="comment"># 主查詢頁樣式</span>
+│  ├─ manual.css       <span class="comment"># 手冊樣式</span>
+│  └─ vendor/pdfjs/    <span class="comment"># PDF.js 離線版</span>
+├─ data/
+│  ├─ buildings.json
+│  └─ fire-map-index.json
+├─ scripts/
+│  ├─ build-index.js   <span class="comment"># 索引產生器</span>
+│  ├─ push.ps1         <span class="comment"># 快速推 GitHub</span>
+│  └─ windows/         <span class="comment"># 背景啟動腳本</span>
+└─ 火警圖 PDF/          <span class="comment"># 原始圖面（公開 repo）</span></pre>
+        </section>
+
+        <section id="stats">
+          <p class="eyebrow">資料統計</p>
+          <h2>目前狀態</h2>
+          <div class="stats">
+            <div class="stat"><strong>133</strong><small>PDF 檔案</small></div>
+            <div class="stat"><strong>11,727</strong><small>探測器標籤</small></div>
+            <div class="stat"><strong>15</strong><small>棟別</small></div>
+            <div class="stat"><strong>~35 MB</strong><small>PDF 總大小</small></div>
+          </div>
+        </section>
+
+        <section id="links">
+          <p class="eyebrow">常用連結</p>
+          <h2>連結總覽</h2>
+          <table>
+            <tr><th>用途</th><th>網址</th></tr>
+            <tr><td>本機查詢系統</td><td><a href="http://localhost:4173">http://localhost:4173</a></td></tr>
+            <tr><td>本機使用手冊</td><td><a href="http://localhost:4173/manual.html">http://localhost:4173/manual.html</a></td></tr>
+            <tr><td>本機維護手冊</td><td><a href="http://localhost:4173/dev-guide.html">http://localhost:4173/dev-guide.html</a></td></tr>
+            <tr><td>線上版</td><td><a href="https://vghtpe-fire-detector-map.vercel.app" target="_blank">vghtpe-fire-detector-map.vercel.app</a></td></tr>
+            <tr><td>GitHub Repo</td><td><a href="https://github.com/Mikerkoloa/vghtpe-fire-detector-map" target="_blank">Mikerkoloa/vghtpe-fire-detector-map</a></td></tr>
+          </table>
+        </section>
+
+      </div>
+    </main>
+  </body>
+</html>
