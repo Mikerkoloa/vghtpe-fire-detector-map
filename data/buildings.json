@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-18T08:12:47.401Z",
+  "generatedAt": "2026-06-13T03:18:43.387Z",
   "groups": [
     {
       "id": "common",
@@ -167,7 +167,7 @@
           "label": "B1F",
           "fileId": "pdf-0013",
           "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓B1F 火警.pdf",
-          "detectorCount": 215,
+          "detectorCount": 216,
           "pageCount": 1,
           "sortValue": -1
         },
@@ -188,7 +188,7 @@
           "sortValue": -3
         }
       ],
-      "totalDetectors": 2387
+      "totalDetectors": 2388
     },
     {
       "name": "思源樓",
