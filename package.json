@@ -6,6 +6,7 @@
   "scripts": {
     "build:index": "node scripts/build-index.js",
     "start": "node server.js",
+    "push": "powershell -ExecutionPolicy Bypass -File scripts/push.ps1",
     "win:start": "powershell -ExecutionPolicy Bypass -File scripts/windows/start-background.ps1",
     "win:stop": "powershell -ExecutionPolicy Bypass -File scripts/windows/stop-background.ps1 -Force",
     "win:status": "powershell -ExecutionPolicy Bypass -File scripts/windows/status-background.ps1",
