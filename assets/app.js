@@ -81,8 +81,8 @@ const state = {
   touchStartZoom: 1,
   touchStartScrollLeft: 0,
   touchStartScrollTop: 0,
-  touchStartContentX: 0,
-  touchStartContentY: 0,
+  touchStartFocusX: 0,
+  touchStartFocusY: 0,
   touchZoomTimer: null,
   touchZoomFocus: null,
   activeTouchPointers: new Map(),
@@ -1243,27 +1243,47 @@ function canUseTouchPan() {
   return state.zoom > 1.02;
 }
 
-async function rerenderWithZoom(nextZoom, focusPoint = null, options = {}) {
-  const shell = dom.viewerShell;
-  const previousWidth = Math.max(1, shell.scrollWidth);
-  const previousHeight = Math.max(1, shell.scrollHeight);
-  const viewportPoint = focusPoint || {
-    x: shell.getBoundingClientRect().left + shell.clientWidth / 2,
-    y: shell.getBoundingClientRect().top + shell.clientHeight / 2,
+function clampRatio(value) {
+  return Math.max(0, Math.min(1, value));
+}
+
+function pageFocusRatio(viewportPoint) {
+  const pageRect = dom.pdfPage.getBoundingClientRect();
+  const point = viewportPoint || {
+    x: pageRect.left + pageRect.width / 2,
+    y: pageRect.top + pageRect.height / 2,
   };
+
+  return {
+    x: clampRatio((point.x - pageRect.left) / Math.max(1, pageRect.width)),
+    y: clampRatio((point.y - pageRect.top) / Math.max(1, pageRect.height)),
+  };
+}
+
+function scrollPageRatioIntoView(ratio, viewportPoint) {
+  const shell = dom.viewerShell;
   const shellRect = shell.getBoundingClientRect();
-  const offsetX = viewportPoint.x - shellRect.left;
-  const offsetY = viewportPoint.y - shellRect.top;
-  const contentX = shell.scrollLeft + offsetX;
-  const contentY = shell.scrollTop + offsetY;
+  const pageRect = dom.pdfPage.getBoundingClientRect();
+  const point = viewportPoint || {
+    x: shellRect.left + shell.clientWidth / 2,
+    y: shellRect.top + shell.clientHeight / 2,
+  };
+  const offsetX = point.x - shellRect.left;
+  const offsetY = point.y - shellRect.top;
+  const pageLeft = shell.scrollLeft + pageRect.left - shellRect.left;
+  const pageTop = shell.scrollTop + pageRect.top - shellRect.top;
+
+  shell.scrollLeft = Math.max(0, pageLeft + pageRect.width * ratio.x - offsetX);
+  shell.scrollTop = Math.max(0, pageTop + pageRect.height * ratio.y - offsetY);
+}
+
+async function rerenderWithZoom(nextZoom, focusPoint = null, options = {}) {
+  const ratio = pageFocusRatio(focusPoint);
 
   state.zoom = clampZoom(nextZoom);
   await renderCurrentPage({ scrollToMarker: options.scrollToMarker ?? false });
 
-  const widthRatio = shell.scrollWidth / previousWidth;
-  const heightRatio = shell.scrollHeight / previousHeight;
-  shell.scrollLeft = Math.max(0, contentX * widthRatio - offsetX);
-  shell.scrollTop = Math.max(0, contentY * heightRatio - offsetY);
+  scrollPageRatioIntoView(ratio, focusPoint);
 }
 
 function scheduleWheelZoom(event) {
@@ -1312,9 +1332,9 @@ function endPan() {
 
 function beginTouchZoom(points) {
   const focusPoint = pointCenter(points);
-  const shellRect = dom.viewerShell.getBoundingClientRect();
-  const offsetX = focusPoint.x - shellRect.left;
-  const offsetY = focusPoint.y - shellRect.top;
+  const pageRect = dom.pdfPage.getBoundingClientRect();
+  const originX = Math.max(0, Math.min(pageRect.width, focusPoint.x - pageRect.left));
+  const originY = Math.max(0, Math.min(pageRect.height, focusPoint.y - pageRect.top));
 
   state.isTouchZooming = true;
   state.isTouchPanning = false;
@@ -1323,11 +1343,11 @@ function beginTouchZoom(points) {
   state.touchStartZoom = state.zoom;
   state.touchStartScrollLeft = dom.viewerShell.scrollLeft;
   state.touchStartScrollTop = dom.viewerShell.scrollTop;
-  state.touchStartContentX = state.touchStartScrollLeft + offsetX;
-  state.touchStartContentY = state.touchStartScrollTop + offsetY;
+  state.touchStartFocusX = focusPoint.x;
+  state.touchStartFocusY = focusPoint.y;
   state.touchZoomFocus = focusPoint;
   dom.viewerShell.classList.add("is-panning", "is-touch-zooming");
-  dom.pdfPage.style.transformOrigin = "0 0";
+  dom.pdfPage.style.transformOrigin = `${originX}px ${originY}px`;
   dom.pdfPage.style.willChange = "transform";
 }
 
@@ -1338,15 +1358,14 @@ function previewTouchZoom(points) {
   const focusPoint = pointCenter(points);
   const nextZoom = clampZoom(state.touchStartZoom * (distance / state.touchStartDistance));
   const previewScale = nextZoom / state.touchStartZoom;
-  const shellRect = dom.viewerShell.getBoundingClientRect();
-  const offsetX = focusPoint.x - shellRect.left;
-  const offsetY = focusPoint.y - shellRect.top;
+  const deltaX = focusPoint.x - state.touchStartFocusX;
+  const deltaY = focusPoint.y - state.touchStartFocusY;
 
   state.zoom = nextZoom;
   state.touchZoomFocus = focusPoint;
   dom.pdfPage.style.transform = `scale(${previewScale})`;
-  dom.viewerShell.scrollLeft = Math.max(0, state.touchStartContentX * previewScale - offsetX);
-  dom.viewerShell.scrollTop = Math.max(0, state.touchStartContentY * previewScale - offsetY);
+  dom.viewerShell.scrollLeft = Math.max(0, state.touchStartScrollLeft - deltaX);
+  dom.viewerShell.scrollTop = Math.max(0, state.touchStartScrollTop - deltaY);
   updatePdfControls();
 }
 

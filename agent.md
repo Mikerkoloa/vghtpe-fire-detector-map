@@ -287,6 +287,7 @@ vghtpe-fire-detector-map
 
 - 原本兩指縮放會在手指移動時排程 PDF.js 重渲染，手機上容易看起來像倍率跳段。
 - 已改為 pinch 過程用 CSS transform 即時預覽縮放，放開手指後才用 PDF.js 重渲染到最後倍率，讓互動更滑順並保留清晰度。
+- 後續修正聚焦偏左：pinch 預覽不再固定從 PDF 左上角縮放，改用兩指中點在 PDF 頁面內的位置作為 `transform-origin`；重渲染後也用 PDF 頁面比例維持焦點，避免 PDF 置中 margin 造成焦點偏移。
 
 
 ## 排查問題前的標準流程
