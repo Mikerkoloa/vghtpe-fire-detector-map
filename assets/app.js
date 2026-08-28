@@ -88,6 +88,7 @@ const state = {
 
 const MIN_ZOOM = 0.45;
 const MAX_ZOOM = 4;
+const EXPORT_IMAGE_SCALE = 2;
 const DETECTOR_SCAN_PATTERN = /(?:\d+:)?M\d+-\d+|M[1-9]\d*/gi;
 const DETECTOR_AUTO_COMMIT_DELAY = 520;
 
@@ -900,23 +901,17 @@ function renderMarkers(viewport, baseViewport) {
 
   dom.markerLayer.innerHTML = pageMarkers
     .map((marker) => {
-      const markerRect = convertMarkerToViewportRect(marker, viewport, baseViewport);
-      const left = markerRect.left;
-      const top = markerRect.top;
-      const width = Math.max(24, markerRect.width);
-      const height = Math.max(14, markerRect.height);
-      const paddingX = Math.max(14, width * 0.38);
-      const paddingY = Math.max(10, height * 1.2);
+      const markerRect = markerHighlightRect(convertMarkerToViewportRect(marker, viewport, baseViewport));
 
       return `
         <div
           class="detector-marker"
           data-label="${marker.label}"
           style="
-            left: ${Math.max(0, left - paddingX)}px;
-            top: ${Math.max(0, top - paddingY)}px;
-            width: ${width + paddingX * 2}px;
-            height: ${height + paddingY * 2}px;
+            left: ${markerRect.left}px;
+            top: ${markerRect.top}px;
+            width: ${markerRect.width}px;
+            height: ${markerRect.height}px;
           "
         ></div>
       `;
@@ -935,6 +930,20 @@ function convertMarkerToViewportRect(marker, viewport, baseViewport) {
   return { left, top, width, height };
 }
 
+function markerHighlightRect(rect, scale = 1) {
+  const width = Math.max(24 * scale, rect.width);
+  const height = Math.max(14 * scale, rect.height);
+  const paddingX = Math.max(14 * scale, width * 0.38);
+  const paddingY = Math.max(10 * scale, height * 1.2);
+
+  return {
+    left: Math.max(0, rect.left - paddingX),
+    top: Math.max(0, rect.top - paddingY),
+    width: width + paddingX * 2,
+    height: height + paddingY * 2,
+  };
+}
+
 function sanitizeFileName(value) {
   return String(value || "")
     .replace(/[\\/:*?"<>|]+/g, "-")
@@ -943,15 +952,11 @@ function sanitizeFileName(value) {
     .replace(/^-|-$/g, "");
 }
 
-function currentMarkerElements() {
-  return [...dom.markerLayer.querySelectorAll(".detector-marker")];
-}
-
 function drawExportMarker(context, marker, rect, scale) {
-  const left = rect.left * scale;
-  const top = rect.top * scale;
-  const width = rect.width * scale;
-  const height = rect.height * scale;
+  const left = rect.left;
+  const top = rect.top;
+  const width = rect.width;
+  const height = rect.height;
   const centerX = left + width / 2;
   const centerY = top + height / 2;
   const radiusX = Math.max(17 * scale, width / 2);
@@ -1041,7 +1046,7 @@ function isAppleMobile() {
 }
 
 async function createCurrentPageImageFile() {
-  if (!state.pdfDoc || state.markers.length === 0 || !dom.pdfCanvas) return null;
+  if (!state.pdfDoc || state.markers.length === 0) return null;
 
   const pageMarkers = state.markers.filter((marker) => marker.page === state.currentPage);
   if (pageMarkers.length === 0) {
@@ -1049,25 +1054,20 @@ async function createCurrentPageImageFile() {
     return null;
   }
 
+  const page = await state.pdfDoc.getPage(state.currentPage);
+  const baseViewport = page.getViewport({ scale: 1 });
+  const exportViewport = page.getViewport({ scale: EXPORT_IMAGE_SCALE });
   const exportCanvas = document.createElement("canvas");
-  exportCanvas.width = dom.pdfCanvas.width;
-  exportCanvas.height = dom.pdfCanvas.height;
+  exportCanvas.width = Math.floor(exportViewport.width);
+  exportCanvas.height = Math.floor(exportViewport.height);
   const context = exportCanvas.getContext("2d");
   context.fillStyle = "#ffffff";
   context.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
-  context.drawImage(dom.pdfCanvas, 0, 0);
+  await page.render({ canvasContext: context, viewport: exportViewport }).promise;
 
-  const scale = exportCanvas.width / Math.max(1, dom.pdfCanvas.clientWidth);
-  const markerElements = currentMarkerElements();
-  pageMarkers.forEach((marker, index) => {
-    const element = markerElements[index];
-    if (!element) return;
-    drawExportMarker(context, marker, {
-      left: Number.parseFloat(element.style.left) || 0,
-      top: Number.parseFloat(element.style.top) || 0,
-      width: Number.parseFloat(element.style.width) || element.offsetWidth,
-      height: Number.parseFloat(element.style.height) || element.offsetHeight,
-    }, scale);
+  pageMarkers.forEach((marker) => {
+    const sourceRect = convertMarkerToViewportRect(marker, exportViewport, baseViewport);
+    drawExportMarker(context, marker, markerHighlightRect(sourceRect, EXPORT_IMAGE_SCALE), EXPORT_IMAGE_SCALE);
   });
 
   const file = state.filesById.get(state.selectedFileId);

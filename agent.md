@@ -275,6 +275,7 @@ vghtpe-fire-detector-map
 - 存圖會將目前頁面的 PDF canvas 與該頁圈選橢圓、標籤文字合成為 PNG 下載。
 - 匯出的是目前頁面，不是整份 PDF；若標記在其他頁，需先切到該頁再存圖。
 - 2026-08-28 後續修正：iPhone/Safari/Chrome 不可靠支援 `data:image/png` 搭配 `<a download>`，已改為用 Blob/File。桌機直接下載；手機/平板開啟圖片預覽並優先呼叫 Web Share API 分享圖片，另提供下載備援與長按圖片保存。
+- 2026-08-29 後續修正：存圖不再複製目前螢幕顯示的 PDF canvas，也不讀取 DOM marker 尺寸；改為用 PDF.js 以固定 2x 比例重新渲染目前頁面，並用索引座標重新畫圈，避免手機縮放比例造成匯出圖片圈選過大。
 
 ## 2026-08-28 搜尋與結果跳轉
 
