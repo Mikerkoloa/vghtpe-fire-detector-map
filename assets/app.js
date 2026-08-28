@@ -4,6 +4,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL("./vendor/pdfjs/pdf.worker.mjs"
 
 const dom = {
   searchForm: document.querySelector("#searchForm"),
+  searchTokenInput: document.querySelector("#searchTokenInput"),
+  searchTokens: document.querySelector("#searchTokens"),
   searchInput: document.querySelector("#searchInput"),
   systemStatus: document.querySelector("#systemStatus"),
   buildingCount: document.querySelector("#buildingCount"),
@@ -13,10 +15,14 @@ const dom = {
   floorGrid: document.querySelector("#floorGrid"),
   currentFile: document.querySelector("#currentFile"),
   pdfSearchForm: document.querySelector("#pdfSearchForm"),
+  pdfSearchTokenInput: document.querySelector("#pdfSearchTokenInput"),
+  pdfSearchTokens: document.querySelector("#pdfSearchTokens"),
   pdfSearchInput: document.querySelector("#pdfSearchInput"),
   pdfSearchMessage: document.querySelector("#pdfSearchMessage"),
   pdfSearchOverlay: document.querySelector("#pdfSearchOverlay"),
   pdfSearchOverlayForm: document.querySelector("#pdfSearchOverlayForm"),
+  pdfSearchOverlayTokenInput: document.querySelector("#pdfSearchOverlayTokenInput"),
+  pdfSearchOverlayTokens: document.querySelector("#pdfSearchOverlayTokens"),
   pdfSearchOverlayInput: document.querySelector("#pdfSearchOverlayInput"),
   pdfSearchOverlayClose: document.querySelector("#pdfSearchOverlayClose"),
   pageStatus: document.querySelector("#pageStatus"),
@@ -26,6 +32,7 @@ const dom = {
   fitButton: document.querySelector("#fitButton"),
   zoomInButton: document.querySelector("#zoomInButton"),
   clearMarkerButton: document.querySelector("#clearMarkerButton"),
+  saveImageButton: document.querySelector("#saveImageButton"),
   openPdfButton: document.querySelector("#openPdfButton"),
   viewerShell: document.querySelector("#viewerShell"),
   emptyState: document.querySelector("#emptyState"),
@@ -72,6 +79,8 @@ const state = {
 
 const MIN_ZOOM = 0.45;
 const MAX_ZOOM = 4;
+const DETECTOR_SCAN_PATTERN = /(?:\d+:)?M\d+-\d+|M[1-9]\d*/gi;
+const DETECTOR_AUTO_COMMIT_DELAY = 520;
 
 function normalizeText(value) {
   return String(value || "")
@@ -82,9 +91,212 @@ function normalizeText(value) {
     .toUpperCase();
 }
 
+function normalizeLooseText(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .replace(/[－–—]/g, "-")
+    .replace(/[：]/g, ":")
+    .toUpperCase();
+}
+
+function normalizeDetectorCode(value) {
+  const normalized = normalizeText(value);
+  const fullCode = /^(?:\d+:)?M(\d+)-(\d+)$/.exec(normalized);
+
+  if (fullCode) {
+    const loop = Number(fullCode[1]);
+    const detector = Number(fullCode[2]);
+    if (!Number.isInteger(loop) || !Number.isInteger(detector) || loop <= 0 || detector <= 0) return null;
+    return `M${loop}-${detector}`;
+  }
+
+  const shortCode = /^M([1-9])(\d+)$/.exec(normalized);
+  if (shortCode) {
+    const detector = Number(shortCode[2]);
+    if (!Number.isInteger(detector) || detector <= 0) return null;
+    return `M${shortCode[1]}-${detector}`;
+  }
+
+  return null;
+}
+
+function detectorNumberDigitLength(value) {
+  const normalized = normalizeText(value);
+  const fullCode = /^(?:\d+:)?M\d+-(\d+)$/.exec(normalized);
+  if (fullCode) return fullCode[1].length;
+
+  const shortCode = /^M[1-9](\d+)$/.exec(normalized);
+  if (shortCode) return shortCode[1].length;
+
+  return 0;
+}
+
+function uniqueDetectors(detectors) {
+  return [...new Set(detectors.filter(Boolean))];
+}
+
+function detectorListText(detectors, limit = 5) {
+  const visible = detectors.slice(0, limit);
+  const suffix = detectors.length > visible.length ? ` 等 ${detectors.length} 個` : "";
+  return `${visible.join("、")}${suffix}`;
+}
+
+function extractDetectorCodes(text) {
+  const codes = [];
+  const normalized = normalizeLooseText(text);
+  const remainder = normalized
+    .replace(DETECTOR_SCAN_PATTERN, (match) => {
+      const detector = normalizeDetectorCode(match);
+      if (!detector) return match;
+      codes.push(detector);
+      return " ";
+    })
+    .replace(/[,\uFF0C\u3001;\uFF1B]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return {
+    codes: uniqueDetectors(codes),
+    remainder,
+  };
+}
+
+function createDetectorTokenInput(options) {
+  const { shell, list, input, allowFreeText = false } = options;
+  let detectors = [];
+  let autoCommitTimer = null;
+
+  function render() {
+    list.innerHTML = detectors
+      .map((detector) => `
+        <span class="detector-token">
+          <span>${detector}</span>
+          <button type="button" data-token-value="${detector}" aria-label="移除 ${detector}">×</button>
+        </span>
+      `)
+      .join("");
+  }
+
+  function add(nextDetectors) {
+    const before = detectors.length;
+    detectors = uniqueDetectors([...detectors, ...nextDetectors]);
+    if (detectors.length !== before) render();
+    return detectors.length !== before;
+  }
+
+  function commitInput(options = {}) {
+    const rawValue = input.value;
+    const extracted = extractDetectorCodes(rawValue);
+    const hasDetectorText = extracted.codes.length > 0;
+
+    if (!hasDetectorText) return false;
+
+    const shouldCommit =
+      options.force ||
+      /[\s,\uFF0C\u3001;\uFF1B]/.test(rawValue) ||
+      normalizeDetectorCode(rawValue);
+
+    if (!shouldCommit) return false;
+
+    add(extracted.codes);
+    input.value = allowFreeText ? extracted.remainder : "";
+    return true;
+  }
+
+  function scheduleAutoCommit() {
+    window.clearTimeout(autoCommitTimer);
+    autoCommitTimer = window.setTimeout(() => {
+      commitInput({ force: false });
+    }, DETECTOR_AUTO_COMMIT_DELAY);
+  }
+
+  shell.addEventListener("click", () => input.focus());
+
+  list.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-token-value]");
+    if (!button) return;
+
+    detectors = detectors.filter((detector) => detector !== button.dataset.tokenValue);
+    render();
+    input.focus();
+  });
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Backspace" && input.value === "" && detectors.length > 0) {
+      detectors.pop();
+      render();
+      return;
+    }
+
+    if (event.key === " " || event.key === "," || event.key === "、") {
+      const committed = commitInput({ force: true });
+      if (committed && input.value === "") {
+        event.preventDefault();
+      }
+    }
+
+    if (event.key === "Enter") {
+      commitInput({ force: true });
+    }
+  });
+
+  input.addEventListener("input", () => {
+    const rawValue = input.value;
+    if (/[\n,\uFF0C\u3001;\uFF1B]/.test(rawValue) || /\s/.test(rawValue.trim())) {
+      commitInput({ force: true });
+      return;
+    }
+
+    if (normalizeDetectorCode(rawValue) && detectorNumberDigitLength(rawValue) >= 2) {
+      scheduleAutoCommit();
+      return;
+    }
+
+    window.clearTimeout(autoCommitTimer);
+  });
+
+  input.addEventListener("blur", () => commitInput({ force: true }));
+
+  return {
+    getDetectors: () => [...detectors],
+    getText: () => input.value.trim(),
+    setDetectors(nextDetectors) {
+      detectors = uniqueDetectors(nextDetectors);
+      input.value = "";
+      render();
+    },
+    clear() {
+      detectors = [];
+      input.value = "";
+      render();
+    },
+    commit: () => commitInput({ force: true }),
+    focus: () => input.focus(),
+  };
+}
+
 function resourceUrl(relativePath) {
   return relativePath.split("/").map((part) => encodeURIComponent(part)).join("/");
 }
+
+const tokenInputs = {
+  global: createDetectorTokenInput({
+    shell: dom.searchTokenInput,
+    list: dom.searchTokens,
+    input: dom.searchInput,
+    allowFreeText: true,
+  }),
+  pdf: createDetectorTokenInput({
+    shell: dom.pdfSearchTokenInput,
+    list: dom.pdfSearchTokens,
+    input: dom.pdfSearchInput,
+  }),
+  overlay: createDetectorTokenInput({
+    shell: dom.pdfSearchOverlayTokenInput,
+    list: dom.pdfSearchOverlayTokens,
+    input: dom.pdfSearchOverlayInput,
+  }),
+};
 
 function fileName(relativePath) {
   return relativePath.split("/").at(-1) || relativePath;
@@ -221,12 +433,12 @@ function markActiveFloor() {
   });
 }
 
-function parseQuery(query) {
-  const normalized = normalizeText(query);
+function parseQuery(query, detectors = []) {
+  const extracted = extractDetectorCodes(query);
+  const parsedDetectors = uniqueDetectors([...detectors, ...extracted.codes]);
+  const normalized = normalizeText(extracted.remainder);
   const buildings = [...state.buildingsByName.keys()].sort((left, right) => right.length - left.length);
   const building = buildings.find((name) => normalized.includes(normalizeText(name))) || null;
-  const detectorMatch = normalized.match(/(?:\d+:)?(M\d+-\d+)/);
-  const detector = detectorMatch ? detectorMatch[1] : null;
   const candidateFloors = building
     ? state.buildingsByName.get(building).floors.map((floor) => floor.label)
     : [...new Set(state.index.files.map((file) => file.floor))];
@@ -234,41 +446,55 @@ function parseQuery(query) {
     .sort((left, right) => normalizeText(right).length - normalizeText(left).length)
     .find((label) => normalized.includes(normalizeText(label))) || null;
 
-  return { query, normalized, building, floor, detector };
+  return {
+    query,
+    normalized,
+    building,
+    floor,
+    detector: parsedDetectors[0] || null,
+    detectors: parsedDetectors,
+  };
 }
 
-function handleSearch(query) {
+function handleSearch(query, detectors = []) {
   if (!state.index || !state.buildingData) {
     renderResults([], "索引載入中，請稍候再搜尋。");
     return;
   }
 
   const trimmed = query.trim();
-  if (!trimmed) {
+  const parsed = parseQuery(trimmed, detectors);
+
+  if (!trimmed && parsed.detectors.length === 0) {
     renderResults([], "請輸入探測器編號、棟別或樓層。");
     return;
   }
-
-  const parsed = parseQuery(trimmed);
 
   if (parsed.building) {
     selectBuilding(parsed.building, { openFirstFloor: false });
   }
 
-  if (!parsed.detector) {
+  if (parsed.detectors.length === 0) {
     handleNavigationSearch(parsed);
     return;
   }
 
-  const results = searchDetector(parsed);
+  const results = searchDetectors(parsed);
 
   if (parsed.building && parsed.floor && results.length > 0) {
-    openResult(results[0]);
-    renderResults(results, `已找到 ${results.length} 筆符合 ${parsed.detector} 的位置，並開啟第一筆。`);
+    if (parsed.detectors.length === 1) {
+      openResult(results[0]);
+      renderResults(results, `已找到 ${results.length} 筆符合 ${parsed.detector} 的位置，並開啟第一筆。`);
+      return;
+    }
+
+    state.selectedResultId = results[0].id;
+    openFile(results[0].fileId, { page: results[0].page, markers: results });
+    renderResults(results, buildResultSummary(parsed, results), { detectors: parsed.detectors });
     return;
   }
 
-  renderResults(results, buildResultSummary(parsed, results.length));
+  renderResults(results, buildResultSummary(parsed, results), { detectors: parsed.detectors });
 }
 
 function handleNavigationSearch(parsed) {
@@ -290,14 +516,18 @@ function handleNavigationSearch(parsed) {
   renderResults([], "沒有偵測到探測器編號，請輸入例如 M1-66。");
 }
 
-function searchDetector(parsed) {
+function searchDetectors(parsed) {
   const buildingOrder = new Map(state.buildingData.buildings.map((building, index) => [building.name, index]));
+  const detectorOrder = new Map(parsed.detectors.map((detector, index) => [detector, index]));
+  const detectorSet = new Set(parsed.detectors);
 
   return state.index.entries
-    .filter((entry) => entry.normalizedDetector === parsed.detector)
+    .filter((entry) => detectorSet.has(entry.normalizedDetector))
     .filter((entry) => !parsed.building || entry.building === parsed.building)
     .filter((entry) => !parsed.floor || normalizeText(entry.floor) === normalizeText(parsed.floor))
     .sort((left, right) => {
+      const detectorDelta = (detectorOrder.get(left.normalizedDetector) ?? 999) - (detectorOrder.get(right.normalizedDetector) ?? 999);
+      if (detectorDelta) return detectorDelta;
       const buildingDelta = (buildingOrder.get(left.building) ?? 999) - (buildingOrder.get(right.building) ?? 999);
       if (buildingDelta) return buildingDelta;
       const floorDelta = floorSortValue(right.floor) - floorSortValue(left.floor);
@@ -306,9 +536,30 @@ function searchDetector(parsed) {
     });
 }
 
-function buildResultSummary(parsed, count) {
+function detectorSearchStats(detectors, results) {
+  const found = new Set(results.map((entry) => entry.normalizedDetector));
+  const missing = detectors.filter((detector) => !found.has(detector));
+  return { foundCount: found.size, missing };
+}
+
+function buildResultSummary(parsed, results) {
+  const count = results.length;
+  const detectors = parsed.detectors || [parsed.detector].filter(Boolean);
+  const scope = [parsed.building, parsed.floor].filter(Boolean).join(" ");
+
+  if (detectors.length > 1) {
+    const stats = detectorSearchStats(detectors, results);
+    const prefix = scope ? `${scope} ` : "";
+
+    if (count === 0) {
+      return `${prefix}找不到 ${detectorListText(detectors)}。`;
+    }
+
+    const missingText = stats.missing.length > 0 ? `，找不到 ${detectorListText(stats.missing)}` : "";
+    return `${prefix}搜尋 ${detectors.length} 個定址碼，找到 ${stats.foundCount} 個 / ${count} 筆位置${missingText}。`;
+  }
+
   if (count === 0) {
-    const scope = [parsed.building, parsed.floor].filter(Boolean).join(" ");
     return scope ? `${scope} 找不到 ${parsed.detector}。` : `找不到 ${parsed.detector}。`;
   }
 
@@ -319,30 +570,47 @@ function buildResultSummary(parsed, count) {
   return `找到 ${count} 筆 ${parsed.detector}，請選擇要查看的位置。`;
 }
 
-function renderResults(results, summary) {
-  dom.resultCount.textContent = `${results.length} 筆`;
-  dom.resultSummary.textContent = summary;
+function renderResultButton(entry) {
+  return `
+    <button class="result-item${entry.id === state.selectedResultId ? " is-active" : ""}" type="button" data-entry-id="${entry.id}">
+      <div class="result-title">
+        <strong>${entry.building} ${entry.floor}</strong>
+        <span>${entry.detector}</span>
+      </div>
+      <div class="result-meta">
+        <span class="pill">${entry.label}</span>
+        <span class="pill">第 ${entry.page} 頁</span>
+        <span class="pill">${fileName(entry.path)}</span>
+      </div>
+    </button>
+  `;
+}
 
-  if (results.length === 0) {
-    dom.resultsList.innerHTML = `<div class="message">${summary}</div>`;
-    return;
-  }
-
+function renderGroupedResults(results, detectors) {
   const visibleResults = results.slice(0, 160);
-  dom.resultsList.innerHTML = visibleResults
-    .map((entry) => `
-      <button class="result-item${entry.id === state.selectedResultId ? " is-active" : ""}" type="button" data-entry-id="${entry.id}">
-        <div class="result-title">
-          <strong>${entry.building} ${entry.floor}</strong>
-          <span>${entry.detector}</span>
-        </div>
-        <div class="result-meta">
-          <span class="pill">${entry.label}</span>
-          <span class="pill">第 ${entry.page} 頁</span>
-          <span class="pill">${fileName(entry.path)}</span>
-        </div>
-      </button>
-    `)
+  const visibleByDetector = new Map(detectors.map((detector) => [detector, []]));
+
+  visibleResults.forEach((entry) => {
+    if (!visibleByDetector.has(entry.normalizedDetector)) {
+      visibleByDetector.set(entry.normalizedDetector, []);
+    }
+    visibleByDetector.get(entry.normalizedDetector).push(entry);
+  });
+
+  dom.resultsList.innerHTML = detectors
+    .map((detector) => {
+      const entries = visibleByDetector.get(detector) || [];
+      const content = entries.length > 0
+        ? entries.map(renderResultButton).join("")
+        : `<div class="message result-group-empty">${detector} 找不到。</div>`;
+
+      return `
+        <section class="result-group">
+          <div class="result-group-title">${detector}</div>
+          ${content}
+        </section>
+      `;
+    })
     .join("");
 
   if (results.length > visibleResults.length) {
@@ -350,6 +618,34 @@ function renderResults(results, summary) {
     message.className = "message";
     message.textContent = `還有 ${results.length - visibleResults.length} 筆未顯示，請增加棟別或樓層條件。`;
     dom.resultsList.append(message);
+  }
+}
+
+function renderFlatResults(results) {
+  const visibleResults = results.slice(0, 160);
+  dom.resultsList.innerHTML = visibleResults.map(renderResultButton).join("");
+
+  if (results.length > visibleResults.length) {
+    const message = document.createElement("div");
+    message.className = "message";
+    message.textContent = `還有 ${results.length - visibleResults.length} 筆未顯示，請增加棟別或樓層條件。`;
+    dom.resultsList.append(message);
+  }
+}
+
+function renderResults(results, summary, options = {}) {
+  dom.resultCount.textContent = `${results.length} 筆`;
+  dom.resultSummary.textContent = summary;
+
+  if (results.length === 0 && (options.detectors?.length || 0) <= 1) {
+    dom.resultsList.innerHTML = `<div class="message">${summary}</div>`;
+    return;
+  }
+
+  if (options.detectors?.length > 1) {
+    renderGroupedResults(results, options.detectors);
+  } else {
+    renderFlatResults(results);
   }
 
   dom.resultsList.querySelectorAll("[data-entry-id]").forEach((button) => {
@@ -390,9 +686,8 @@ async function openFile(fileId, options = {}) {
   dom.currentFile.textContent = `${file.building} ${file.floor} - ${fileName(file.path)}`;
   dom.selectedFloorMeta.textContent = `${file.floor} / ${file.detectorCount.toLocaleString("zh-TW")} 筆標籤`;
   clearPdfSearchMessage();
-  if (dom.pdfSearchInput) {
-    dom.pdfSearchInput.value = "";
-  }
+  tokenInputs.pdf.clear();
+  tokenInputs.overlay.clear();
   setStatus("載入 PDF 中");
 
   try {
@@ -441,10 +736,8 @@ function maybeShowPdfSearchOverlay(fileId) {
   state.shownPdfSearchFileIds.add(fileId);
   dom.pdfSearchOverlay.style.top = `${dom.viewerShell.scrollTop + 24}px`;
   dom.pdfSearchOverlay.classList.remove("is-hidden");
-  if (dom.pdfSearchOverlayInput) {
-    dom.pdfSearchOverlayInput.value = "";
-    requestAnimationFrame(() => dom.pdfSearchOverlayInput.focus());
-  }
+  tokenInputs.overlay.clear();
+  requestAnimationFrame(() => tokenInputs.overlay.focus());
 }
 
 function hidePdfSearchOverlay() {
@@ -453,52 +746,60 @@ function hidePdfSearchOverlay() {
   }
 }
 
-async function handleCurrentPdfSearch(rawQuery) {
+async function handleCurrentPdfSearch(rawQuery, detectors = []) {
   if (!state.index || !state.selectedFileId) {
     setPdfSearchMessage("請先開啟一張 PDF 圖面。", { error: true });
     return;
   }
 
-  const normalized = normalizeText(rawQuery);
-  const detectorMatch = normalized.match(/(?:\d+:)?(M\d+-\d+)/);
-  const detector = detectorMatch ? detectorMatch[1] : null;
+  const requestedDetectors = uniqueDetectors([...detectors, ...extractDetectorCodes(rawQuery).codes]);
   const file = state.filesById.get(state.selectedFileId);
 
-  if (!detector) {
-    setPdfSearchMessage("請輸入定址碼，例如 M1-75。", { error: true });
+  if (requestedDetectors.length === 0) {
+    setPdfSearchMessage("請輸入定址碼，例如 M1-75 或 M175。", { error: true });
     return;
   }
 
+  const detectorOrder = new Map(requestedDetectors.map((detector, index) => [detector, index]));
+  const detectorSet = new Set(requestedDetectors);
   const results = state.index.entries
     .filter((entry) => entry.fileId === state.selectedFileId)
-    .filter((entry) => entry.normalizedDetector === detector)
-    .sort((left, right) => left.page - right.page || left.label.localeCompare(right.label, "zh-Hant"));
+    .filter((entry) => detectorSet.has(entry.normalizedDetector))
+    .sort((left, right) => {
+      const detectorDelta = (detectorOrder.get(left.normalizedDetector) ?? 999) - (detectorOrder.get(right.normalizedDetector) ?? 999);
+      if (detectorDelta) return detectorDelta;
+      return left.page - right.page || left.label.localeCompare(right.label, "zh-Hant");
+    });
 
   if (results.length === 0) {
     state.markers = [];
     state.selectedResultId = null;
     dom.markerLayer.innerHTML = "";
     updatePdfControls();
-    setPdfSearchMessage(`此圖面找不到 ${detector}。`, { error: true });
-    renderResults([], `${file.building} ${file.floor} 找不到 ${detector}。`);
+    setPdfSearchMessage(`此圖面找不到 ${detectorListText(requestedDetectors)}。`, { error: true });
+    renderResults([], `${file.building} ${file.floor} 找不到 ${detectorListText(requestedDetectors)}。`, {
+      detectors: requestedDetectors,
+    });
     return;
   }
 
   const firstResult = results[0];
+  const stats = detectorSearchStats(requestedDetectors, results);
+  const missingText = stats.missing.length > 0 ? `；找不到 ${detectorListText(stats.missing)}。` : "。";
   state.selectedResultId = firstResult.id;
-  state.markers = [firstResult];
+  state.markers = results;
   state.currentPage = firstResult.page;
   hidePdfSearchOverlay();
-  if (dom.pdfSearchInput) {
-    dom.pdfSearchInput.value = detector;
-  }
-  if (dom.pdfSearchOverlayInput) {
-    dom.pdfSearchOverlayInput.value = detector;
-  }
+  tokenInputs.pdf.setDetectors(requestedDetectors);
+  tokenInputs.overlay.setDetectors(requestedDetectors);
 
-  renderResults(results, `目前圖面找到 ${results.length} 筆 ${detector}，已圈選第一筆。`);
+  const summary = requestedDetectors.length > 1
+    ? `目前圖面搜尋 ${requestedDetectors.length} 個定址碼，找到 ${stats.foundCount} 個 / ${results.length} 筆位置${missingText}`
+    : `目前圖面找到 ${results.length} 筆 ${requestedDetectors[0]}，已圈選第一筆。`;
+
+  renderResults(results, summary, { detectors: requestedDetectors });
   await renderCurrentPage({ scrollToMarker: true });
-  setPdfSearchMessage(`已定位 ${firstResult.label}。`);
+  setPdfSearchMessage(requestedDetectors.length > 1 ? `已圈選 ${results.length} 筆${missingText}` : `已定位 ${firstResult.label}。`);
 }
 
 async function renderCurrentPage(options = {}) {
@@ -590,6 +891,131 @@ function convertMarkerToViewportRect(marker, viewport, baseViewport) {
   return { left, top, width, height };
 }
 
+function sanitizeFileName(value) {
+  return String(value || "")
+    .replace(/[\\/:*?"<>|]+/g, "-")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function currentMarkerElements() {
+  return [...dom.markerLayer.querySelectorAll(".detector-marker")];
+}
+
+function drawExportMarker(context, marker, rect, scale) {
+  const left = rect.left * scale;
+  const top = rect.top * scale;
+  const width = rect.width * scale;
+  const height = rect.height * scale;
+  const centerX = left + width / 2;
+  const centerY = top + height / 2;
+  const radiusX = Math.max(17 * scale, width / 2);
+  const radiusY = Math.max(12 * scale, height / 2);
+  const lineWidth = Math.max(4, 6 * scale);
+
+  context.save();
+  context.fillStyle = "rgba(255, 220, 92, 0.3)";
+  context.strokeStyle = "#e86a1c";
+  context.lineWidth = lineWidth;
+  context.shadowColor = "rgba(232, 106, 28, 0.34)";
+  context.shadowBlur = 20 * scale;
+  context.beginPath();
+  context.ellipse(centerX, centerY, radiusX, radiusY, 0, 0, Math.PI * 2);
+  context.fill();
+  context.stroke();
+  context.restore();
+
+  drawExportLabel(context, marker.label, centerX, top + height + 8 * scale, scale);
+}
+
+function drawRoundedRect(context, x, y, width, height, radius) {
+  if (typeof context.roundRect === "function") {
+    context.roundRect(x, y, width, height, radius);
+    return;
+  }
+
+  const safeRadius = Math.min(radius, width / 2, height / 2);
+  context.moveTo(x + safeRadius, y);
+  context.lineTo(x + width - safeRadius, y);
+  context.quadraticCurveTo(x + width, y, x + width, y + safeRadius);
+  context.lineTo(x + width, y + height - safeRadius);
+  context.quadraticCurveTo(x + width, y + height, x + width - safeRadius, y + height);
+  context.lineTo(x + safeRadius, y + height);
+  context.quadraticCurveTo(x, y + height, x, y + height - safeRadius);
+  context.lineTo(x, y + safeRadius);
+  context.quadraticCurveTo(x, y, x + safeRadius, y);
+}
+
+function drawExportLabel(context, label, centerX, y, scale) {
+  const fontSize = Math.max(14, 14 * scale);
+  const paddingX = 10 * scale;
+  const paddingY = 5 * scale;
+  const radius = 8 * scale;
+  const text = String(label || "");
+
+  context.save();
+  context.font = `900 ${fontSize}px "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif`;
+  const textWidth = context.measureText(text).width;
+  const labelWidth = textWidth + paddingX * 2;
+  const labelHeight = fontSize + paddingY * 2;
+  const x = Math.min(Math.max(0, centerX - labelWidth / 2), Math.max(0, context.canvas.width - labelWidth));
+  const top = Math.min(Math.max(0, y), Math.max(0, context.canvas.height - labelHeight));
+
+  context.fillStyle = "#c84c0b";
+  context.shadowColor = "rgba(74, 30, 11, 0.28)";
+  context.shadowBlur = 18 * scale;
+  context.beginPath();
+  drawRoundedRect(context, x, top, labelWidth, labelHeight, radius);
+  context.fill();
+
+  context.shadowColor = "transparent";
+  context.fillStyle = "#ffffff";
+  context.textBaseline = "middle";
+  context.fillText(text, x + paddingX, top + labelHeight / 2);
+  context.restore();
+}
+
+function saveCurrentPageImage() {
+  if (!state.pdfDoc || state.markers.length === 0 || !dom.pdfCanvas) return;
+
+  const pageMarkers = state.markers.filter((marker) => marker.page === state.currentPage);
+  if (pageMarkers.length === 0) {
+    setPdfSearchMessage("目前頁面沒有圈選標記，請先切到有標記的頁面。", { error: true });
+    return;
+  }
+
+  const exportCanvas = document.createElement("canvas");
+  exportCanvas.width = dom.pdfCanvas.width;
+  exportCanvas.height = dom.pdfCanvas.height;
+  const context = exportCanvas.getContext("2d");
+  context.fillStyle = "#ffffff";
+  context.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+  context.drawImage(dom.pdfCanvas, 0, 0);
+
+  const scale = exportCanvas.width / Math.max(1, dom.pdfCanvas.clientWidth);
+  const markerElements = currentMarkerElements();
+  pageMarkers.forEach((marker, index) => {
+    const element = markerElements[index];
+    if (!element) return;
+    drawExportMarker(context, marker, {
+      left: Number.parseFloat(element.style.left) || 0,
+      top: Number.parseFloat(element.style.top) || 0,
+      width: Number.parseFloat(element.style.width) || element.offsetWidth,
+      height: Number.parseFloat(element.style.height) || element.offsetHeight,
+    }, scale);
+  });
+
+  const file = state.filesById.get(state.selectedFileId);
+  const detectors = uniqueDetectors(pageMarkers.map((marker) => marker.normalizedDetector || marker.detector)).join("-");
+  const filename = sanitizeFileName(`${file?.building || "fire-map"}-${file?.floor || `page-${state.currentPage}`}-${detectors || "marked"}.png`);
+  const link = document.createElement("a");
+  link.href = exportCanvas.toDataURL("image/png");
+  link.download = filename;
+  link.click();
+  setPdfSearchMessage(`已儲存 ${filename}。`);
+}
+
 function scrollToFirstMarker() {
   const marker = dom.markerLayer.querySelector(".detector-marker");
   if (!marker) return;
@@ -614,6 +1040,7 @@ function updatePdfControls() {
   dom.fitButton.disabled = !hasPdf;
   dom.zoomInButton.disabled = !hasPdf || state.zoom >= MAX_ZOOM;
   dom.clearMarkerButton.disabled = !hasPdf || state.markers.length === 0;
+  dom.saveImageButton.disabled = !hasPdf || state.markers.length === 0;
   dom.openPdfButton.disabled = !hasPdf || !state.currentPath;
   dom.pageStatus.textContent = hasPdf ? `${state.currentPage} / ${state.currentPageCount}` : "-";
   dom.viewerShell.classList.toggle("is-zoomed", hasPdf && canUseTouchPan());
@@ -925,17 +1352,20 @@ function endPointerGesture(event) {
 
 dom.searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  handleSearch(dom.searchInput.value);
+  tokenInputs.global.commit();
+  handleSearch(tokenInputs.global.getText(), tokenInputs.global.getDetectors());
 });
 
 dom.pdfSearchForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  handleCurrentPdfSearch(dom.pdfSearchInput.value);
+  tokenInputs.pdf.commit();
+  handleCurrentPdfSearch(tokenInputs.pdf.getText(), tokenInputs.pdf.getDetectors());
 });
 
 dom.pdfSearchOverlayForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  handleCurrentPdfSearch(dom.pdfSearchOverlayInput.value);
+  tokenInputs.overlay.commit();
+  handleCurrentPdfSearch(tokenInputs.overlay.getText(), tokenInputs.overlay.getDetectors());
 });
 
 dom.pdfSearchOverlayClose.addEventListener("click", hidePdfSearchOverlay);
@@ -987,6 +1417,8 @@ dom.clearMarkerButton.addEventListener("click", () => {
   updatePdfControls();
   dom.resultsList.querySelectorAll(".result-item").forEach((button) => button.classList.remove("is-active"));
 });
+
+dom.saveImageButton.addEventListener("click", saveCurrentPageImage);
 
 dom.openPdfButton.addEventListener("click", () => {
   if (state.currentPath) {

@@ -18,13 +18,16 @@
         </div>
 
         <form class="search-bar" id="searchForm">
-          <input
-            id="searchInput"
-            type="search"
-            autocomplete="off"
-            placeholder="輸入 M1-66 或 長青樓 6F M2-66"
-            aria-label="搜尋探測器、棟別或樓層"
-          >
+          <div class="detector-token-input detector-token-input--global" id="searchTokenInput">
+            <div class="detector-token-list" id="searchTokens" aria-label="已加入搜尋定址碼"></div>
+            <input
+              id="searchInput"
+              type="text"
+              autocomplete="off"
+              placeholder="輸入 M1-66、M160 或 長青樓 6F"
+              aria-label="搜尋探測器、棟別或樓層"
+            >
+          </div>
           <button class="primary-button" type="submit">搜尋</button>
         </form>
 
@@ -56,13 +59,16 @@
           <div class="pdf-toolbar" id="pdfToolbar">
             <div class="current-file" id="currentFile">尚未開啟 PDF</div>
             <form class="pdf-search" id="pdfSearchForm">
-              <input
-                id="pdfSearchInput"
-                type="search"
-                autocomplete="off"
-                placeholder="搜尋定址碼"
-                aria-label="搜尋目前圖面的定址碼"
-              >
+              <div class="detector-token-input detector-token-input--compact" id="pdfSearchTokenInput">
+                <div class="detector-token-list" id="pdfSearchTokens" aria-label="已加入目前圖面搜尋定址碼"></div>
+                <input
+                  id="pdfSearchInput"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="搜尋定址碼"
+                  aria-label="搜尋目前圖面的定址碼"
+                >
+              </div>
               <button type="submit" class="tool-button" id="pdfSearchButton">搜尋</button>
               <span class="pdf-search-message" id="pdfSearchMessage"></span>
             </form>
@@ -74,6 +80,7 @@
               <button type="button" class="tool-button" id="fitButton" title="適合寬度">適合</button>
               <button type="button" class="tool-button" id="zoomInButton" title="放大">放大</button>
               <button type="button" class="tool-button" id="clearMarkerButton" title="清除標記">清除</button>
+              <button type="button" class="tool-button" id="saveImageButton" title="儲存圈選圖片">存圖</button>
               <button type="button" class="tool-button" id="openPdfButton" title="開啟原始 PDF">原始</button>
             </div>
           </div>
@@ -83,9 +90,9 @@
               <div class="empty-badge">使用說明</div>
               <h2>請搜尋探測器編號，或從左側選擇棟別與樓層。</h2>
               <ul>
-                <li>只輸入 <strong>M1-66</strong> 時，會先列出符合的棟別與樓層。</li>
+                <li>輸入 <strong>M1-66</strong> 或 <strong>M166</strong> 會自動變成搜尋標籤。</li>
+                <li>可一次加入多個定址碼標籤，再列出符合的棟別與樓層。</li>
                 <li>輸入 <strong>長青樓 6F M2-66</strong> 時，會直接開啟圖面並圈選標籤。</li>
-                <li>點選搜尋結果後，才會載入 PDF 並用粗線標示位置。</li>
               </ul>
             </div>
             <div class="pdf-search-overlay is-hidden" id="pdfSearchOverlay">
@@ -93,13 +100,16 @@
               <div class="overlay-kicker">目前圖面搜尋</div>
               <strong>搜尋定址碼</strong>
               <form id="pdfSearchOverlayForm">
-                <input
-                  id="pdfSearchOverlayInput"
-                  type="search"
-                  autocomplete="off"
-                  placeholder="例如 M1-75"
-                  aria-label="搜尋目前圖面的定址碼"
-                >
+                <div class="detector-token-input" id="pdfSearchOverlayTokenInput">
+                  <div class="detector-token-list" id="pdfSearchOverlayTokens" aria-label="已加入目前圖面搜尋定址碼"></div>
+                  <input
+                    id="pdfSearchOverlayInput"
+                    type="text"
+                    autocomplete="off"
+                    placeholder="例如 M1-75 或 M175"
+                    aria-label="搜尋目前圖面的定址碼"
+                  >
+                </div>
                 <button type="submit" class="primary-button">搜尋</button>
               </form>
             </div>
