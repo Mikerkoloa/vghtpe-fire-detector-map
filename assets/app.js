@@ -79,6 +79,10 @@ const state = {
   isTouchZooming: false,
   touchStartDistance: 0,
   touchStartZoom: 1,
+  touchStartScrollLeft: 0,
+  touchStartScrollTop: 0,
+  touchStartContentX: 0,
+  touchStartContentY: 0,
   touchZoomTimer: null,
   touchZoomFocus: null,
   activeTouchPointers: new Map(),
@@ -1306,16 +1310,61 @@ function endPan() {
   dom.viewerShell.classList.remove("is-panning");
 }
 
-function scheduleTouchZoom(nextZoom, focusPoint) {
-  state.zoom = clampZoom(nextZoom);
-  state.touchZoomFocus = focusPoint;
-  updatePdfControls();
+function beginTouchZoom(points) {
+  const focusPoint = pointCenter(points);
+  const shellRect = dom.viewerShell.getBoundingClientRect();
+  const offsetX = focusPoint.x - shellRect.left;
+  const offsetY = focusPoint.y - shellRect.top;
 
+  state.isTouchZooming = true;
+  state.isTouchPanning = false;
+  state.touchPanPointerId = null;
+  state.touchStartDistance = pointDistance(points);
+  state.touchStartZoom = state.zoom;
+  state.touchStartScrollLeft = dom.viewerShell.scrollLeft;
+  state.touchStartScrollTop = dom.viewerShell.scrollTop;
+  state.touchStartContentX = state.touchStartScrollLeft + offsetX;
+  state.touchStartContentY = state.touchStartScrollTop + offsetY;
+  state.touchZoomFocus = focusPoint;
+  dom.viewerShell.classList.add("is-panning", "is-touch-zooming");
+  dom.pdfPage.style.transformOrigin = "0 0";
+  dom.pdfPage.style.willChange = "transform";
+}
+
+function previewTouchZoom(points) {
+  if (state.touchStartDistance <= 0) return;
+
+  const distance = pointDistance(points);
+  const focusPoint = pointCenter(points);
+  const nextZoom = clampZoom(state.touchStartZoom * (distance / state.touchStartDistance));
+  const previewScale = nextZoom / state.touchStartZoom;
+  const shellRect = dom.viewerShell.getBoundingClientRect();
+  const offsetX = focusPoint.x - shellRect.left;
+  const offsetY = focusPoint.y - shellRect.top;
+
+  state.zoom = nextZoom;
+  state.touchZoomFocus = focusPoint;
+  dom.pdfPage.style.transform = `scale(${previewScale})`;
+  dom.viewerShell.scrollLeft = Math.max(0, state.touchStartContentX * previewScale - offsetX);
+  dom.viewerShell.scrollTop = Math.max(0, state.touchStartContentY * previewScale - offsetY);
+  updatePdfControls();
+}
+
+function resetTouchZoomPreview() {
   window.clearTimeout(state.touchZoomTimer);
-  state.touchZoomTimer = window.setTimeout(() => {
-    state.touchZoomTimer = null;
-    rerenderWithZoom(state.zoom, state.touchZoomFocus);
-  }, 55);
+  state.touchZoomTimer = null;
+  dom.pdfPage.style.transform = "";
+  dom.pdfPage.style.transformOrigin = "";
+  dom.pdfPage.style.willChange = "";
+  dom.viewerShell.classList.remove("is-touch-zooming");
+}
+
+function finishTouchZoom() {
+  const focusPoint = state.touchZoomFocus;
+  state.isTouchZooming = false;
+  state.touchStartDistance = 0;
+  resetTouchZoomPreview();
+  rerenderWithZoom(state.zoom, focusPoint);
 }
 
 function startTouchGesture(event) {
@@ -1324,12 +1373,7 @@ function startTouchGesture(event) {
 
   if (event.touches.length >= 2) {
     const points = touchPoints(event.touches);
-    state.isTouchZooming = true;
-    state.isTouchPanning = false;
-    state.touchStartDistance = pointDistance(points);
-    state.touchStartZoom = state.zoom;
-    state.touchZoomFocus = pointCenter(points);
-    dom.viewerShell.classList.add("is-panning");
+    beginTouchZoom(points);
     event.preventDefault();
     return;
   }
@@ -1350,11 +1394,7 @@ function moveTouchGesture(event) {
 
   if (state.isTouchZooming && event.touches.length >= 2) {
     const points = touchPoints(event.touches);
-    const distance = pointDistance(points);
-    const focusPoint = pointCenter(points);
-    if (state.touchStartDistance > 0) {
-      scheduleTouchZoom(state.touchStartZoom * (distance / state.touchStartDistance), focusPoint);
-    }
+    previewTouchZoom(points);
     event.preventDefault();
     return;
   }
@@ -1371,12 +1411,7 @@ function moveTouchGesture(event) {
 
 function endTouchGesture(event) {
   if (state.isTouchZooming && event.touches.length < 2) {
-    const focusPoint = state.touchZoomFocus;
-    window.clearTimeout(state.touchZoomTimer);
-    state.touchZoomTimer = null;
-    state.isTouchZooming = false;
-    state.touchStartDistance = 0;
-    rerenderWithZoom(state.zoom, focusPoint);
+    finishTouchZoom();
   }
 
   if (event.touches.length === 1 && canUseTouchPan()) {
@@ -1394,8 +1429,7 @@ function endTouchGesture(event) {
 }
 
 function cancelTouchGesture() {
-  window.clearTimeout(state.touchZoomTimer);
-  state.touchZoomTimer = null;
+  resetTouchZoomPreview();
   state.isTouchPanning = false;
   state.isTouchZooming = false;
   state.touchStartDistance = 0;
@@ -1413,13 +1447,7 @@ function startPointerGesture(event) {
 
   const points = activePointerPoints();
   if (points.length >= 2) {
-    state.isTouchZooming = true;
-    state.isTouchPanning = false;
-    state.touchPanPointerId = null;
-    state.touchStartDistance = pointDistance(points);
-    state.touchStartZoom = state.zoom;
-    state.touchZoomFocus = pointCenter(points);
-    dom.viewerShell.classList.add("is-panning");
+    beginTouchZoom(points);
     event.preventDefault();
     return;
   }
@@ -1444,11 +1472,7 @@ function movePointerGesture(event) {
   const points = activePointerPoints();
 
   if (state.isTouchZooming && points.length >= 2) {
-    const distance = pointDistance(points);
-    const focusPoint = pointCenter(points);
-    if (state.touchStartDistance > 0) {
-      scheduleTouchZoom(state.touchStartZoom * (distance / state.touchStartDistance), focusPoint);
-    }
+    previewTouchZoom(points);
     event.preventDefault();
     return;
   }
@@ -1472,12 +1496,7 @@ function endPointerGesture(event) {
 
   const points = activePointerPoints();
   if (state.isTouchZooming && points.length < 2) {
-    const focusPoint = state.touchZoomFocus;
-    window.clearTimeout(state.touchZoomTimer);
-    state.touchZoomTimer = null;
-    state.isTouchZooming = false;
-    state.touchStartDistance = 0;
-    rerenderWithZoom(state.zoom, focusPoint);
+    finishTouchZoom();
   }
 
   if (points.length === 1 && canUseTouchPan()) {

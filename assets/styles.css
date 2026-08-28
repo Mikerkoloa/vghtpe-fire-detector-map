@@ -628,7 +628,13 @@ button {
   margin: 24px auto;
   background: #fff;
   box-shadow: var(--shadow);
+  transform-origin: 0 0;
   user-select: none;
+}
+
+.viewer-shell.is-touch-zooming .pdf-page {
+  transition: none;
+  will-change: transform;
 }
 
 #pdfCanvas {
