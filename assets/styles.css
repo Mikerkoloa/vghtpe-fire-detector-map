@@ -275,6 +275,16 @@ button {
   border-left: 1px solid var(--line);
 }
 
+.workspace,
+.results-panel {
+  scroll-margin-top: 12px;
+}
+
+.workspace.is-attention,
+.results-panel.is-attention {
+  animation: sectionAttention 1.15s ease-out;
+}
+
 .panel-heading {
   display: flex;
   align-items: center;
@@ -675,6 +685,18 @@ button {
   }
 }
 
+@keyframes sectionAttention {
+  0% {
+    box-shadow: inset 0 0 0 0 rgba(232, 106, 28, 0);
+  }
+  28% {
+    box-shadow: inset 0 0 0 4px rgba(232, 106, 28, 0.38);
+  }
+  100% {
+    box-shadow: inset 0 0 0 0 rgba(232, 106, 28, 0);
+  }
+}
+
 .result-summary {
   padding: 12px 16px;
   color: var(--muted);
@@ -779,6 +801,77 @@ button {
   border: 1px dashed var(--line-strong);
   border-radius: 8px;
   line-height: 1.7;
+}
+
+.image-export-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.image-export-dialog.is-hidden {
+  display: none;
+}
+
+.image-export-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 23, 20, 0.56);
+}
+
+.image-export-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(920px, 100%);
+  max-height: min(860px, calc(100dvh - 36px));
+  gap: 12px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(7, 28, 24, 0.28);
+}
+
+.image-export-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-right: 34px;
+}
+
+.image-export-heading strong {
+  color: var(--brand-strong);
+  font-size: 18px;
+}
+
+.image-export-hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.image-export-panel img {
+  display: block;
+  width: 100%;
+  max-height: min(620px, 62dvh);
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  touch-action: pinch-zoom;
+}
+
+.image-export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
 @media (max-width: 1180px) {
@@ -962,6 +1055,20 @@ button {
   .viewer-shell {
     height: 66dvh;
     min-height: 420px;
+  }
+
+  .image-export-dialog {
+    align-items: end;
+    padding: 10px;
+  }
+
+  .image-export-panel {
+    max-height: calc(100dvh - 20px);
+  }
+
+  .image-export-actions .primary-button,
+  .image-export-actions .tool-button {
+    flex: 1 1 120px;
   }
 
   .empty-state {

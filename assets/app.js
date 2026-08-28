@@ -39,9 +39,17 @@ const dom = {
   pdfPage: document.querySelector("#pdfPage"),
   pdfCanvas: document.querySelector("#pdfCanvas"),
   markerLayer: document.querySelector("#markerLayer"),
+  workspace: document.querySelector(".workspace"),
+  resultsPanel: document.querySelector(".results-panel"),
   resultCount: document.querySelector("#resultCount"),
   resultSummary: document.querySelector("#resultSummary"),
   resultsList: document.querySelector("#resultsList"),
+  imageExportDialog: document.querySelector("#imageExportDialog"),
+  imageExportBackdrop: document.querySelector("#imageExportBackdrop"),
+  imageExportClose: document.querySelector("#imageExportClose"),
+  imageExportPreview: document.querySelector("#imageExportPreview"),
+  imageExportShare: document.querySelector("#imageExportShare"),
+  imageExportDownload: document.querySelector("#imageExportDownload"),
 };
 
 const state = {
@@ -75,6 +83,7 @@ const state = {
   touchZoomFocus: null,
   activeTouchPointers: new Map(),
   touchPanPointerId: null,
+  imageExport: null,
 };
 
 const MIN_ZOOM = 0.45;
@@ -323,6 +332,32 @@ function setStatus(message) {
   dom.systemStatus.textContent = message;
 }
 
+function flashSection(element) {
+  if (!element) return;
+
+  element.classList.remove("is-attention");
+  void element.offsetWidth;
+  element.classList.add("is-attention");
+  window.setTimeout(() => element.classList.remove("is-attention"), 1200);
+}
+
+function scrollToSection(element) {
+  if (!element) return;
+
+  requestAnimationFrame(() => {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+    flashSection(element);
+  });
+}
+
+function showSearchResults() {
+  scrollToSection(dom.resultsPanel);
+}
+
+function showPdfWorkspace() {
+  scrollToSection(dom.workspace);
+}
+
 async function loadJson(url) {
   const response = await fetch(url);
   if (!response.ok) {
@@ -456,9 +491,14 @@ function parseQuery(query, detectors = []) {
   };
 }
 
+function presentSearchResults(results, summary, options = {}) {
+  renderResults(results, summary, options);
+  showSearchResults();
+}
+
 function handleSearch(query, detectors = []) {
   if (!state.index || !state.buildingData) {
-    renderResults([], "索引載入中，請稍候再搜尋。");
+    presentSearchResults([], "索引載入中，請稍候再搜尋。");
     return;
   }
 
@@ -466,7 +506,7 @@ function handleSearch(query, detectors = []) {
   const parsed = parseQuery(trimmed, detectors);
 
   if (!trimmed && parsed.detectors.length === 0) {
-    renderResults([], "請輸入探測器編號、棟別或樓層。");
+    presentSearchResults([], "請輸入探測器編號、棟別或樓層。");
     return;
   }
 
@@ -483,18 +523,18 @@ function handleSearch(query, detectors = []) {
 
   if (parsed.building && parsed.floor && results.length > 0) {
     if (parsed.detectors.length === 1) {
-      openResult(results[0]);
-      renderResults(results, `已找到 ${results.length} 筆符合 ${parsed.detector} 的位置，並開啟第一筆。`);
+      openResult(results[0], { scrollToViewer: false });
+      presentSearchResults(results, `已找到 ${results.length} 筆符合 ${parsed.detector} 的位置，並開啟第一筆。`);
       return;
     }
 
     state.selectedResultId = results[0].id;
     openFile(results[0].fileId, { page: results[0].page, markers: results });
-    renderResults(results, buildResultSummary(parsed, results), { detectors: parsed.detectors });
+    presentSearchResults(results, buildResultSummary(parsed, results), { detectors: parsed.detectors });
     return;
   }
 
-  renderResults(results, buildResultSummary(parsed, results), { detectors: parsed.detectors });
+  presentSearchResults(results, buildResultSummary(parsed, results), { detectors: parsed.detectors });
 }
 
 function handleNavigationSearch(parsed) {
@@ -503,17 +543,17 @@ function handleNavigationSearch(parsed) {
     const floor = building.floors.find((candidate) => normalizeText(candidate.label) === normalizeText(parsed.floor));
     if (floor) {
       openFile(floor.fileId, { markers: [] });
-      renderResults([], `已開啟 ${parsed.building} ${floor.label}。`);
+      presentSearchResults([], `已開啟 ${parsed.building} ${floor.label}。`);
       return;
     }
   }
 
   if (parsed.building) {
-    renderResults([], `已切換到 ${parsed.building}，請選擇樓層或輸入探測器編號。`);
+    presentSearchResults([], `已切換到 ${parsed.building}，請選擇樓層或輸入探測器編號。`);
     return;
   }
 
-  renderResults([], "沒有偵測到探測器編號，請輸入例如 M1-66。");
+  presentSearchResults([], "沒有偵測到探測器編號，請輸入例如 M1-66。");
 }
 
 function searchDetectors(parsed) {
@@ -651,15 +691,19 @@ function renderResults(results, summary, options = {}) {
   dom.resultsList.querySelectorAll("[data-entry-id]").forEach((button) => {
     button.addEventListener("click", () => {
       const entry = state.index.entries.find((candidate) => candidate.id === button.dataset.entryId);
-      if (entry) openResult(entry);
+      if (entry) openResult(entry, { scrollToViewer: true });
     });
   });
 }
 
-function openResult(entry) {
+function openResult(entry, options = {}) {
   state.selectedResultId = entry.id;
   selectBuilding(entry.building, { openFirstFloor: false });
-  openFile(entry.fileId, { page: entry.page, markers: [entry] });
+  const openPromise = openFile(entry.fileId, { page: entry.page, markers: [entry] });
+
+  if (options.scrollToViewer) {
+    Promise.resolve(openPromise).then(showPdfWorkspace);
+  }
 
   dom.resultsList.querySelectorAll(".result-item").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.entryId === entry.id);
@@ -777,7 +821,7 @@ async function handleCurrentPdfSearch(rawQuery, detectors = []) {
     dom.markerLayer.innerHTML = "";
     updatePdfControls();
     setPdfSearchMessage(`此圖面找不到 ${detectorListText(requestedDetectors)}。`, { error: true });
-    renderResults([], `${file.building} ${file.floor} 找不到 ${detectorListText(requestedDetectors)}。`, {
+    presentSearchResults([], `${file.building} ${file.floor} 找不到 ${detectorListText(requestedDetectors)}。`, {
       detectors: requestedDetectors,
     });
     return;
@@ -797,7 +841,7 @@ async function handleCurrentPdfSearch(rawQuery, detectors = []) {
     ? `目前圖面搜尋 ${requestedDetectors.length} 個定址碼，找到 ${stats.foundCount} 個 / ${results.length} 筆位置${missingText}`
     : `目前圖面找到 ${results.length} 筆 ${requestedDetectors[0]}，已圈選第一筆。`;
 
-  renderResults(results, summary, { detectors: requestedDetectors });
+  presentSearchResults(results, summary, { detectors: requestedDetectors });
   await renderCurrentPage({ scrollToMarker: true });
   setPdfSearchMessage(requestedDetectors.length > 1 ? `已圈選 ${results.length} 筆${missingText}` : `已定位 ${firstResult.label}。`);
 }
@@ -976,13 +1020,33 @@ function drawExportLabel(context, label, centerX, y, scale) {
   context.restore();
 }
 
-function saveCurrentPageImage() {
-  if (!state.pdfDoc || state.markers.length === 0 || !dom.pdfCanvas) return;
+function canvasToPngBlob(canvas) {
+  return new Promise((resolve, reject) => {
+    canvas.toBlob((blob) => {
+      if (blob) {
+        resolve(blob);
+        return;
+      }
+      reject(new Error("圖片產生失敗"));
+    }, "image/png");
+  });
+}
+
+function isTouchDevice() {
+  return window.matchMedia?.("(pointer: coarse)").matches || navigator.maxTouchPoints > 0 || window.innerWidth <= 960;
+}
+
+function isAppleMobile() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+}
+
+async function createCurrentPageImageFile() {
+  if (!state.pdfDoc || state.markers.length === 0 || !dom.pdfCanvas) return null;
 
   const pageMarkers = state.markers.filter((marker) => marker.page === state.currentPage);
   if (pageMarkers.length === 0) {
     setPdfSearchMessage("目前頁面沒有圈選標記，請先切到有標記的頁面。", { error: true });
-    return;
+    return null;
   }
 
   const exportCanvas = document.createElement("canvas");
@@ -1009,11 +1073,93 @@ function saveCurrentPageImage() {
   const file = state.filesById.get(state.selectedFileId);
   const detectors = uniqueDetectors(pageMarkers.map((marker) => marker.normalizedDetector || marker.detector)).join("-");
   const filename = sanitizeFileName(`${file?.building || "fire-map"}-${file?.floor || `page-${state.currentPage}`}-${detectors || "marked"}.png`);
+  const blob = await canvasToPngBlob(exportCanvas);
+
+  return {
+    blob,
+    file: new File([blob], filename, { type: "image/png" }),
+    filename,
+  };
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
-  link.href = exportCanvas.toDataURL("image/png");
+  link.href = url;
   link.download = filename;
+  document.body.append(link);
   link.click();
-  setPdfSearchMessage(`已儲存 ${filename}。`);
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1200);
+}
+
+function closeImageExportDialog() {
+  if (!dom.imageExportDialog) return;
+
+  dom.imageExportDialog.classList.add("is-hidden");
+  dom.imageExportDialog.setAttribute("aria-hidden", "true");
+  if (state.imageExport?.url) {
+    URL.revokeObjectURL(state.imageExport.url);
+  }
+  state.imageExport = null;
+  if (dom.imageExportPreview) {
+    dom.imageExportPreview.removeAttribute("src");
+  }
+}
+
+function openImageExportDialog(exported) {
+  if (!dom.imageExportDialog || !dom.imageExportPreview) return;
+
+  if (state.imageExport?.url) {
+    URL.revokeObjectURL(state.imageExport.url);
+  }
+  const url = URL.createObjectURL(exported.blob);
+  state.imageExport = { ...exported, url };
+  dom.imageExportPreview.src = url;
+  dom.imageExportDialog.classList.remove("is-hidden");
+  dom.imageExportDialog.setAttribute("aria-hidden", "false");
+}
+
+async function shareExportedImage(exported) {
+  if (!navigator.canShare || !navigator.share || !navigator.canShare({ files: [exported.file] })) {
+    return false;
+  }
+
+  await navigator.share({
+    files: [exported.file],
+    title: exported.filename,
+    text: "火警探測器圈選圖片",
+  });
+  return true;
+}
+
+async function saveCurrentPageImage() {
+  try {
+    const exported = await createCurrentPageImageFile();
+    if (!exported) return;
+
+    if (isAppleMobile() || isTouchDevice()) {
+      openImageExportDialog(exported);
+      try {
+        if (await shareExportedImage(exported)) {
+          setPdfSearchMessage("已開啟分享，可儲存圖片。");
+          return;
+        }
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          console.warn(error);
+        }
+      }
+      setPdfSearchMessage("圖片已開啟，請用分享或長按儲存。");
+      return;
+    }
+
+    downloadBlob(exported.blob, exported.filename);
+    setPdfSearchMessage(`已儲存 ${exported.filename}。`);
+  } catch (error) {
+    console.error(error);
+    setPdfSearchMessage(error.message || "圖片儲存失敗。", { error: true });
+  }
 }
 
 function scrollToFirstMarker() {
@@ -1420,6 +1566,33 @@ dom.clearMarkerButton.addEventListener("click", () => {
 
 dom.saveImageButton.addEventListener("click", saveCurrentPageImage);
 
+dom.imageExportShare.addEventListener("click", async () => {
+  if (!state.imageExport) return;
+
+  try {
+    if (await shareExportedImage(state.imageExport)) {
+      setPdfSearchMessage("已開啟分享，可儲存圖片。");
+      return;
+    }
+    setPdfSearchMessage("此瀏覽器不支援直接分享圖片。", { error: true });
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      console.error(error);
+      setPdfSearchMessage("分享圖片失敗。", { error: true });
+    }
+  }
+});
+
+dom.imageExportDownload.addEventListener("click", () => {
+  if (!state.imageExport) return;
+
+  downloadBlob(state.imageExport.blob, state.imageExport.filename);
+  setPdfSearchMessage(`已下載 ${state.imageExport.filename}。`);
+});
+
+dom.imageExportClose.addEventListener("click", closeImageExportDialog);
+dom.imageExportBackdrop.addEventListener("click", closeImageExportDialog);
+
 dom.openPdfButton.addEventListener("click", () => {
   if (state.currentPath) {
     window.open(resourceUrl(state.currentPath), "_blank", "noopener");
@@ -1429,6 +1602,12 @@ dom.openPdfButton.addEventListener("click", () => {
 window.addEventListener("resize", () => {
   if (state.pdfDoc) {
     renderCurrentPage();
+  }
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeImageExportDialog();
   }
 });
 

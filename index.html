@@ -131,6 +131,22 @@
       </main>
     </div>
 
+    <div class="image-export-dialog is-hidden" id="imageExportDialog" aria-hidden="true">
+      <div class="image-export-backdrop" id="imageExportBackdrop"></div>
+      <section class="image-export-panel" role="dialog" aria-modal="true" aria-labelledby="imageExportTitle">
+        <div class="image-export-heading">
+          <strong id="imageExportTitle">儲存圈選圖片</strong>
+          <button type="button" class="overlay-close" id="imageExportClose" aria-label="關閉圖片預覽">×</button>
+        </div>
+        <p class="image-export-hint">iPhone 可按分享儲存，或長按圖片。</p>
+        <img id="imageExportPreview" alt="圈選圖片預覽">
+        <div class="image-export-actions">
+          <button type="button" class="primary-button" id="imageExportShare">分享</button>
+          <button type="button" class="tool-button" id="imageExportDownload">下載</button>
+        </div>
+      </section>
+    </div>
+
     <script type="module" src="./assets/app.js?v=20260512k"></script>
   </body>
 </html>
