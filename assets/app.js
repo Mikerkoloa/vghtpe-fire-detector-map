@@ -30,6 +30,7 @@ const dom = {
   nextPageButton: document.querySelector("#nextPageButton"),
   zoomOutButton: document.querySelector("#zoomOutButton"),
   fitButton: document.querySelector("#fitButton"),
+  zoomStatus: document.querySelector("#zoomStatus"),
   zoomInButton: document.querySelector("#zoomInButton"),
   clearMarkerButton: document.querySelector("#clearMarkerButton"),
   saveImageButton: document.querySelector("#saveImageButton"),
@@ -1193,11 +1194,16 @@ function updatePdfControls() {
   dom.saveImageButton.disabled = !hasPdf || state.markers.length === 0;
   dom.openPdfButton.disabled = !hasPdf || !state.currentPath;
   dom.pageStatus.textContent = hasPdf ? `${state.currentPage} / ${state.currentPageCount}` : "-";
+  dom.zoomStatus.textContent = hasPdf ? zoomPercentText() : "-";
   dom.viewerShell.classList.toggle("is-zoomed", hasPdf && canUseTouchPan());
 }
 
 function clampZoom(value) {
   return Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, value));
+}
+
+function zoomPercentText() {
+  return `${Math.round(state.zoom * 100)}%`;
 }
 
 function isViewerControlTarget(target) {
