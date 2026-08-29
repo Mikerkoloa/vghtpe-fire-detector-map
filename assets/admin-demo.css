@@ -281,6 +281,10 @@ select:focus {
   padding: 18px;
 }
 
+.work-area--wide {
+  grid-column: 2 / -1;
+}
+
 .status-area {
   display: grid;
   align-content: start;
@@ -367,6 +371,21 @@ select:focus {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
+}
+
+.list-tools {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(180px, 240px);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.list-tools label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
 }
 
 .drop-zone {
@@ -562,6 +581,43 @@ tr:last-child td {
   border-bottom: 0;
 }
 
+.pdf-table {
+  min-width: 880px;
+}
+
+.pdf-table code {
+  display: block;
+  max-width: 520px;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.row-button {
+  min-height: 34px;
+  padding: 0 10px;
+  color: var(--brand-strong);
+  background: var(--surface-tint);
+  border: 1px solid #b8d7cf;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.row-button:hover {
+  color: #fff;
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+.empty-row {
+  color: var(--muted);
+  text-align: center;
+}
+
 .settings-grid {
   max-width: 760px;
 }
@@ -588,6 +644,7 @@ tr:last-child td {
   .login-panel,
   .dashboard,
   .form-grid,
+  .list-tools,
   .status-area {
     grid-template-columns: 1fr;
   }
@@ -625,16 +682,14 @@ tr:last-child td {
   }
 
   .admin-nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
-    overflow-x: auto;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 
   .nav-button {
-    flex: 0 0 auto;
-    min-width: 112px;
     text-align: center;
   }
 
@@ -645,6 +700,7 @@ tr:last-child td {
 
   .work-area,
   .status-area {
+    grid-column: auto;
     padding: 14px;
   }
 
@@ -657,5 +713,58 @@ tr:last-child td {
   .setting-row {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+
+  .pdf-table {
+    min-width: 0;
+  }
+
+  .pdf-table thead {
+    display: none;
+  }
+
+  .pdf-table,
+  .pdf-table tbody,
+  .pdf-table tr,
+  .pdf-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .pdf-table tr {
+    padding: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .pdf-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .pdf-table td {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 0;
+  }
+
+  .pdf-table td::before {
+    color: var(--muted);
+    content: attr(data-label);
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .pdf-table .empty-row {
+    display: block;
+    padding: 18px 0;
+  }
+
+  .pdf-table .empty-row::before {
+    content: "";
+  }
+
+  .pdf-table code {
+    max-width: none;
   }
 }

@@ -4,6 +4,7 @@ const dom = {
   dashboard: document.querySelector("#dashboard"),
   navButtons: [...document.querySelectorAll("[data-panel]")],
   panels: [...document.querySelectorAll(".work-area")],
+  statusArea: document.querySelector("#statusArea"),
   buildingSelect: document.querySelector("#buildingSelect"),
   floorSelect: document.querySelector("#floorSelect"),
   branchInput: document.querySelector("#branchInput"),
@@ -19,10 +20,15 @@ const dom = {
   uploadForm: document.querySelector("#uploadForm"),
   pipeline: document.querySelector("#pipeline"),
   historyBody: document.querySelector("#historyBody"),
+  pdfListSearch: document.querySelector("#pdfListSearch"),
+  pdfListBuildingFilter: document.querySelector("#pdfListBuildingFilter"),
+  pdfListCount: document.querySelector("#pdfListCount"),
+  pdfListBody: document.querySelector("#pdfListBody"),
 };
 
 const state = {
   buildings: [],
+  pdfItems: [],
   file: null,
 };
 
@@ -105,6 +111,76 @@ function fillBuildings(buildings) {
   fillFloors();
 }
 
+function flattenPdfItems(buildings) {
+  return buildings.flatMap((building) =>
+    building.floors.map((floor) => ({
+      building: building.name,
+      floor: floor.label,
+      path: floor.path || buildFallbackPath(building.name, floor.label),
+      detectorCount: floor.detectorCount || 0,
+      pageCount: floor.pageCount || 0,
+    }))
+  );
+}
+
+function buildFallbackPath(buildingName, floorLabel) {
+  return `火警圖 PDF/${buildingName}火警圖PDF/${buildingName}${floorLabel} 火警圖.pdf`;
+}
+
+function fillPdfBuildingFilter(buildings) {
+  dom.pdfListBuildingFilter.innerHTML = "";
+
+  const allOption = document.createElement("option");
+  allOption.value = "";
+  allOption.textContent = "全部棟別";
+  dom.pdfListBuildingFilter.append(allOption);
+
+  buildings.forEach((building) => {
+    const option = document.createElement("option");
+    option.value = building.name;
+    option.textContent = building.name;
+    dom.pdfListBuildingFilter.append(option);
+  });
+}
+
+function filteredPdfItems() {
+  const keyword = dom.pdfListSearch.value.trim().toLowerCase();
+  const buildingName = dom.pdfListBuildingFilter.value;
+
+  return state.pdfItems.filter((item) => {
+    const matchesBuilding = !buildingName || item.building === buildingName;
+    const haystack = `${item.building} ${item.floor} ${item.path}`.toLowerCase();
+    const matchesKeyword = !keyword || haystack.includes(keyword);
+    return matchesBuilding && matchesKeyword;
+  });
+}
+
+function renderPdfList() {
+  const items = filteredPdfItems();
+  dom.pdfListCount.textContent = `${items.length} 份 PDF`;
+  dom.pdfListBody.innerHTML = "";
+
+  if (items.length === 0) {
+    const row = document.createElement("tr");
+    row.innerHTML = `<td class="empty-row" colspan="6" data-label="">沒有符合的 PDF</td>`;
+    dom.pdfListBody.append(row);
+    return;
+  }
+
+  items.forEach((item) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td data-label="棟別">${item.building}</td>
+      <td data-label="樓層">${item.floor}</td>
+      <td data-label="定址碼">${item.detectorCount}</td>
+      <td data-label="頁數">${item.pageCount}</td>
+      <td data-label="GitHub 路徑"><code>${item.path}</code></td>
+      <td data-label="動作"><button class="row-button" type="button" data-update-pdf="${item.building}|${item.floor}">更新</button></td>
+    `;
+    dom.pdfListBody.append(row);
+  });
+}
+
 function setFile(file) {
   if (!file) return;
 
@@ -179,6 +255,8 @@ function activatePanel(panelId) {
   dom.panels.forEach((panel) => {
     panel.classList.toggle("is-hidden", panel.id !== panelId);
   });
+
+  dom.statusArea.classList.toggle("is-hidden", panelId !== "uploadPanel");
 }
 
 async function loadBuildings() {
@@ -186,7 +264,10 @@ async function loadBuildings() {
   if (!response.ok) throw new Error("buildings.json 載入失敗");
   const data = await response.json();
   state.buildings = data.buildings || [];
+  state.pdfItems = flattenPdfItems(state.buildings);
   fillBuildings(state.buildings);
+  fillPdfBuildingFilter(state.buildings);
+  renderPdfList();
 }
 
 dom.loginForm.addEventListener("submit", (event) => {
@@ -229,6 +310,21 @@ dom.preflightButton.addEventListener("click", () => {
   dom.checkTarget.textContent = building && floor ? `${building.name} ${floor.label}，索引將重新產生` : "等待選擇";
 });
 
+dom.pdfListSearch.addEventListener("input", renderPdfList);
+dom.pdfListBuildingFilter.addEventListener("change", renderPdfList);
+
+dom.pdfListBody.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-update-pdf]");
+  if (!button) return;
+
+  const [buildingName, floorLabel] = button.dataset.updatePdf.split("|");
+  dom.buildingSelect.value = buildingName;
+  fillFloors();
+  dom.floorSelect.value = floorLabel;
+  updatePreview();
+  activatePanel("uploadPanel");
+});
+
 dom.uploadForm.addEventListener("submit", (event) => {
   event.preventDefault();
   document.activeElement.blur();
@@ -241,5 +337,8 @@ loadBuildings().catch(() => {
     { name: "二門診", floors: [{ label: "1F" }, { label: "7F" }, { label: "8F" }] },
     { name: "思源樓", floors: [{ label: "1F" }, { label: "2F" }, { label: "RF" }] },
   ];
+  state.pdfItems = flattenPdfItems(state.buildings);
   fillBuildings(state.buildings);
+  fillPdfBuildingFilter(state.buildings);
+  renderPdfList();
 });

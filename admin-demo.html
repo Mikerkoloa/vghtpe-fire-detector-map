@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
     <title>PDF 管理後台 Demo</title>
-    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260829a">
+    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260829b">
   </head>
   <body>
     <div class="admin-app">
@@ -45,6 +45,7 @@
         <section class="dashboard is-hidden" id="dashboard" aria-label="PDF 管理工作台">
           <nav class="admin-nav" aria-label="管理功能">
             <button class="nav-button is-active" type="button" data-panel="uploadPanel">上傳圖面</button>
+            <button class="nav-button" type="button" data-panel="pdfListPanel">PDF 清單</button>
             <button class="nav-button" type="button" data-panel="historyPanel">發佈紀錄</button>
             <button class="nav-button" type="button" data-panel="settingsPanel">權限設定</button>
           </nav>
@@ -108,7 +109,7 @@
             </form>
           </section>
 
-          <aside class="status-area" aria-label="發佈狀態">
+          <aside class="status-area" id="statusArea" aria-label="發佈狀態">
             <section class="status-panel">
               <div class="section-heading section-heading--compact">
                 <div>
@@ -153,7 +154,44 @@
             </section>
           </aside>
 
-          <section class="work-area is-hidden" id="historyPanel">
+          <section class="work-area work-area--wide is-hidden" id="pdfListPanel">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow">PDF 資料</span>
+                <h2>目前 GitHub 圖面清單</h2>
+              </div>
+              <span class="state-label is-ready" id="pdfListCount">0 份 PDF</span>
+            </div>
+
+            <div class="list-tools" aria-label="PDF 清單篩選">
+              <label>
+                <span>搜尋</span>
+                <input id="pdfListSearch" type="search" autocomplete="off" placeholder="輸入棟別、樓層或檔名">
+              </label>
+              <label>
+                <span>棟別</span>
+                <select id="pdfListBuildingFilter"></select>
+              </label>
+            </div>
+
+            <div class="table-wrap">
+              <table class="pdf-table">
+                <thead>
+                  <tr>
+                    <th>棟別</th>
+                    <th>樓層</th>
+                    <th>定址碼</th>
+                    <th>頁數</th>
+                    <th>GitHub 路徑</th>
+                    <th>動作</th>
+                  </tr>
+                </thead>
+                <tbody id="pdfListBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="work-area work-area--wide is-hidden" id="historyPanel">
             <div class="section-heading">
               <div>
                 <span class="eyebrow">紀錄</span>
@@ -192,7 +230,7 @@
             </div>
           </section>
 
-          <section class="work-area is-hidden" id="settingsPanel">
+          <section class="work-area work-area--wide is-hidden" id="settingsPanel">
             <div class="section-heading">
               <div>
                 <span class="eyebrow">設定</span>
@@ -222,6 +260,6 @@
       </main>
     </div>
 
-    <script type="module" src="./assets/admin-demo.js?v=20260829a"></script>
+    <script type="module" src="./assets/admin-demo.js?v=20260829b"></script>
   </body>
 </html>
