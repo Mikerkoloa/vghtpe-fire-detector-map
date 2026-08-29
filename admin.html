@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
     <title>PDF 管理後台</title>
-    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260829f">
+    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260829g">
   </head>
   <body>
     <div class="admin-app">
@@ -73,13 +73,22 @@
               </fieldset>
 
               <div class="form-grid">
-                <label>
+                <label class="replace-field">
                   <span>棟別</span>
                   <select id="buildingSelect"></select>
                 </label>
-                <label>
+                <label class="replace-field">
                   <span>樓層</span>
                   <select id="floorSelect"></select>
+                </label>
+                <label class="create-field is-hidden">
+                  <span>新增棟別</span>
+                  <input id="newBuildingInput" type="text" list="buildingOptions" placeholder="例如：思源樓或新棟別">
+                  <datalist id="buildingOptions"></datalist>
+                </label>
+                <label class="create-field is-hidden">
+                  <span>新增樓層</span>
+                  <input id="newFloorInput" type="text" placeholder="例如：1F、B2F、RF">
                 </label>
                 <label>
                   <span>GitHub 分支</span>
@@ -285,6 +294,6 @@
       </main>
     </div>
 
-    <script type="module" src="./assets/admin-demo.js?v=20260829f"></script>
+    <script type="module" src="./assets/admin-demo.js?v=20260829g"></script>
   </body>
 </html>

@@ -8,8 +8,14 @@ const dom = {
   navButtons: [...document.querySelectorAll("[data-panel]")],
   panels: [...document.querySelectorAll(".work-area")],
   statusArea: document.querySelector("#statusArea"),
+  modeInputs: [...document.querySelectorAll('input[name="mode"]')],
   buildingSelect: document.querySelector("#buildingSelect"),
   floorSelect: document.querySelector("#floorSelect"),
+  buildingOptions: document.querySelector("#buildingOptions"),
+  newBuildingInput: document.querySelector("#newBuildingInput"),
+  newFloorInput: document.querySelector("#newFloorInput"),
+  replaceFields: [...document.querySelectorAll(".replace-field")],
+  createFields: [...document.querySelectorAll(".create-field")],
   branchInput: document.querySelector("#branchInput"),
   commitInput: document.querySelector("#commitInput"),
   updatedAtInput: document.querySelector("#updatedAtInput"),
@@ -51,6 +57,9 @@ function clearAdminData() {
   state.historyByPath = new Map();
   dom.buildingSelect.innerHTML = "";
   dom.floorSelect.innerHTML = "";
+  dom.buildingOptions.innerHTML = "";
+  dom.newBuildingInput.value = "";
+  dom.newFloorInput.value = "";
   dom.pdfListBuildingFilter.innerHTML = "";
   dom.pdfListCount.textContent = "尚未登入";
   dom.pdfListBody.innerHTML = `<tr><td class="empty-row" colspan="9" data-label="">登入後載入 PDF 清單</td></tr>`;
@@ -74,20 +83,62 @@ function selectedBuilding() {
   return state.buildings.find((building) => building.name === dom.buildingSelect.value);
 }
 
+function selectedMode() {
+  return new FormData(dom.uploadForm).get("mode") === "create" ? "create" : "replace";
+}
+
+function isCreateMode() {
+  return selectedMode() === "create";
+}
+
+function normalizeText(value) {
+  return String(value || "").normalize("NFKC").trim().replace(/\s+/g, " ");
+}
+
+function normalizeFloorLabel(value) {
+  return normalizeText(value).replace(/\s+/g, "").replace(/～/g, "~").toUpperCase();
+}
+
 function selectedFloor() {
   const building = selectedBuilding();
   if (!building) return null;
   return building.floors.find((floor) => floor.label === dom.floorSelect.value);
 }
 
+function buildingNameForPayload() {
+  if (!isCreateMode()) return dom.buildingSelect.value;
+  return normalizeText(dom.newBuildingInput.value) || dom.buildingSelect.value;
+}
+
+function floorLabelForPayload() {
+  if (!isCreateMode()) return dom.floorSelect.value;
+  return normalizeFloorLabel(dom.newFloorInput.value);
+}
+
+function existingTarget(buildingName = buildingNameForPayload(), floorLabel = floorLabelForPayload()) {
+  const building = state.buildings.find((item) => item.name === buildingName);
+  const floor = building?.floors.find((item) => item.label === floorLabel);
+  return {
+    building,
+    floor,
+    exists: Boolean(floor?.path),
+  };
+}
+
 function buildGithubPath() {
+  if (isCreateMode()) {
+    const buildingName = buildingNameForPayload();
+    const floorLabel = floorLabelForPayload();
+
+    if (!buildingName || !floorLabel) return "請輸入新增棟別與樓層";
+    return buildFallbackPath(buildingName, floorLabel);
+  }
+
   const building = selectedBuilding();
   const floor = selectedFloor();
 
   if (!building || !floor) return "尚未選擇棟別與樓層";
-  if (floor.path) return floor.path;
-
-  return buildFallbackPath(building.name, floor.label);
+  return floor.path || buildFallbackPath(building.name, floor.label);
 }
 
 function selectedHistory() {
@@ -110,13 +161,14 @@ function syncUpdateFieldsFromHistory() {
 }
 
 function updatePreview() {
-  const building = selectedBuilding();
-  const floor = selectedFloor();
-  const mode = new FormData(dom.uploadForm).get("mode");
-  const targetText = building && floor ? `${building.name} ${floor.label}` : "等待選擇";
+  const mode = selectedMode();
+  const buildingName = buildingNameForPayload();
+  const floorLabel = floorLabelForPayload();
+  const target = existingTarget(buildingName, floorLabel);
+  const targetText = buildingName && floorLabel ? `${buildingName} ${floorLabel}` : "等待選擇";
 
   dom.githubPath.textContent = buildGithubPath();
-  dom.checkTarget.textContent = targetText;
+  dom.checkTarget.textContent = mode === "create" && target.exists ? `${targetText} 已存在，請改用取代` : targetText;
   updateHistoryPreview();
 
   if (state.file) {
@@ -151,11 +203,16 @@ function fillFloors() {
 
 function fillBuildings(buildings) {
   dom.buildingSelect.innerHTML = "";
+  dom.buildingOptions.innerHTML = "";
   buildings.forEach((building) => {
     const option = document.createElement("option");
     option.value = building.name;
     option.textContent = building.name;
     dom.buildingSelect.append(option);
+
+    const dataOption = document.createElement("option");
+    dataOption.value = building.name;
+    dom.buildingOptions.append(dataOption);
   });
 
   fillFloors();
@@ -189,6 +246,19 @@ function buildHistoryMap(historyData) {
 
 function buildFallbackPath(buildingName, floorLabel) {
   return `火警圖 PDF/${buildingName}/${buildingName}${floorLabel} 火警圖.pdf`;
+}
+
+function syncModeFields() {
+  const createMode = isCreateMode();
+  dom.createFields.forEach((field) => field.classList.toggle("is-hidden", !createMode));
+  dom.replaceFields.forEach((field) => field.classList.toggle("is-hidden", createMode));
+  dom.floorSelect.disabled = createMode;
+  dom.newBuildingInput.disabled = !createMode;
+  dom.newFloorInput.disabled = !createMode;
+
+  if (createMode && !dom.newBuildingInput.value.trim()) {
+    dom.newBuildingInput.value = dom.buildingSelect.value;
+  }
 }
 
 function setApiMessage(message, tone = "") {
@@ -232,9 +302,9 @@ async function buildUploadPayload({ includeContent = false } = {}) {
   }
 
   return {
-    mode: new FormData(dom.uploadForm).get("mode"),
-    building: dom.buildingSelect.value,
-    floor: dom.floorSelect.value,
+    mode: selectedMode(),
+    building: buildingNameForPayload(),
+    floor: floorLabelForPayload(),
     path: buildGithubPath(),
     branch: dom.branchInput.value.trim() || "main",
     commitMessage: dom.commitInput.value.trim(),
@@ -401,9 +471,9 @@ function applyPipelineStatuses(steps) {
 }
 
 function addHistoryRow(uploadResult) {
-  const building = selectedBuilding();
-  const floor = selectedFloor();
-  const mode = new FormData(dom.uploadForm).get("mode") === "replace" ? "取代 PDF" : "新增 PDF";
+  const buildingName = buildingNameForPayload();
+  const floorLabel = floorLabelForPayload();
+  const mode = selectedMode() === "replace" ? "取代 PDF" : "新增 PDF";
   const now = new Date();
   const note = dom.updateNoteInput.value.trim() || "未填寫備註";
   const commitLabel = uploadResult?.commit?.sha ? uploadResult.commit.sha.slice(0, 12) : "等待 Vercel";
@@ -411,7 +481,7 @@ function addHistoryRow(uploadResult) {
 
   row.innerHTML = `
     <td>${now.toLocaleString("zh-TW", { hour12: false })}</td>
-    <td>${building ? building.name : "-"} ${floor ? floor.label : ""}</td>
+    <td>${buildingName || "-"} ${floorLabel || ""}</td>
     <td>${mode}</td>
     <td>${note}</td>
     <td>${uploadResult?.mode === "mock" ? "模擬完成" : "完成"}</td>
@@ -422,15 +492,14 @@ function addHistoryRow(uploadResult) {
 }
 
 function updateSelectedPdfHistory(historyRecord) {
-  const building = selectedBuilding();
-  const floor = selectedFloor();
-  if (!building || !floor) return;
-
+  const buildingName = buildingNameForPayload();
+  const floorLabel = floorLabelForPayload();
+  const target = existingTarget(buildingName, floorLabel);
   const pdfPath = buildGithubPath();
   const date = dom.updatedAtInput.value || todayString();
   const by = dom.updatedByInput.value.trim() || "admin";
   const note = dom.updateNoteInput.value.trim() || "未填寫備註";
-  const mode = new FormData(dom.uploadForm).get("mode");
+  const mode = selectedMode();
   const previous = state.historyByPath.get(pdfPath);
   const nextEntry = {
     date,
@@ -443,23 +512,39 @@ function updateSelectedPdfHistory(historyRecord) {
   const nextHistory = historyRecord
     ? {
         ...historyRecord,
-        detectorCount: floor.detectorCount || historyRecord.detectorCount || previous?.detectorCount || 0,
-        pageCount: floor.pageCount || historyRecord.pageCount || previous?.pageCount || 0,
+        detectorCount: target.floor?.detectorCount || historyRecord.detectorCount || previous?.detectorCount || 0,
+        pageCount: target.floor?.pageCount || historyRecord.pageCount || previous?.pageCount || 0,
         history: historyRecord.history || previous?.history || [],
       }
     : {
-    building: building.name,
-    floor: floor.label,
-    path: pdfPath,
-    latestUpdatedAt: date,
-    updatedBy: by,
-    note,
-    detectorCount: floor.detectorCount || previous?.detectorCount || 0,
-    pageCount: floor.pageCount || previous?.pageCount || 0,
-    history: [nextEntry, ...(previous?.history || [])],
-  };
+        building: buildingName,
+        floor: floorLabel,
+        path: pdfPath,
+        latestUpdatedAt: date,
+        updatedBy: by,
+        note,
+        detectorCount: target.floor?.detectorCount || previous?.detectorCount || 0,
+        pageCount: target.floor?.pageCount || previous?.pageCount || 0,
+        history: [nextEntry, ...(previous?.history || [])],
+      };
 
   state.historyByPath.set(pdfPath, nextHistory);
+  if (mode === "create" && !target.exists) {
+    let building = target.building;
+    if (!building) {
+      building = { name: buildingName, floors: [] };
+      state.buildings.push(building);
+      fillBuildings(state.buildings);
+      dom.buildingSelect.value = buildingName;
+    }
+    building.floors.push({
+      label: floorLabel,
+      path: pdfPath,
+      detectorCount: nextHistory.detectorCount || 0,
+      pageCount: nextHistory.pageCount || 0,
+    });
+    fillFloors();
+  }
   state.pdfItems = flattenPdfItems(state.buildings);
   renderPdfList();
   updatePreview();
@@ -538,6 +623,7 @@ async function loadBuildings() {
   state.historyByPath = buildHistoryMap(data.history || []);
   state.pdfItems = data.pdfItems || flattenPdfItems(state.buildings);
   fillBuildings(state.buildings);
+  syncModeFields();
   fillPdfBuildingFilter(state.buildings);
   renderPdfList();
   setApiMessage(`管理 API 已載入：${data.totals?.pdfs || state.pdfItems.length} 份 PDF。`, "ok");
@@ -580,7 +666,19 @@ dom.floorSelect.addEventListener("change", () => {
   syncUpdateFieldsFromHistory();
   updatePreview();
 });
-dom.uploadForm.addEventListener("change", updatePreview);
+dom.modeInputs.forEach((input) => {
+  input.addEventListener("change", () => {
+    syncModeFields();
+    syncUpdateFieldsFromHistory();
+    updatePreview();
+  });
+});
+dom.newBuildingInput.addEventListener("input", updatePreview);
+dom.newFloorInput.addEventListener("input", updatePreview);
+dom.uploadForm.addEventListener("change", () => {
+  syncModeFields();
+  updatePreview();
+});
 dom.updatedAtInput.addEventListener("input", updateHistoryPreview);
 dom.updatedByInput.addEventListener("input", updateHistoryPreview);
 dom.updateNoteInput.addEventListener("input", updateHistoryPreview);
@@ -626,6 +724,10 @@ dom.pdfListBody.addEventListener("click", (event) => {
   if (!button) return;
 
   const [buildingName, floorLabel] = button.dataset.updatePdf.split("|");
+  dom.uploadForm.querySelector('input[name="mode"][value="replace"]').checked = true;
+  dom.newBuildingInput.value = "";
+  dom.newFloorInput.value = "";
+  syncModeFields();
   dom.buildingSelect.value = buildingName;
   fillFloors();
   dom.floorSelect.value = floorLabel;
