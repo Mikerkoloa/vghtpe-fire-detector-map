@@ -45,6 +45,19 @@ const state = {
 
 const pipelineSteps = ["upload", "github", "index", "commit", "deploy"];
 
+function clearAdminData() {
+  state.buildings = [];
+  state.pdfItems = [];
+  state.historyByPath = new Map();
+  dom.buildingSelect.innerHTML = "";
+  dom.floorSelect.innerHTML = "";
+  dom.pdfListBuildingFilter.innerHTML = "";
+  dom.pdfListCount.textContent = "尚未登入";
+  dom.pdfListBody.innerHTML = `<tr><td class="empty-row" colspan="9" data-label="">登入後載入 PDF 清單</td></tr>`;
+  dom.githubPath.textContent = "登入後載入資料";
+  dom.checkTarget.textContent = "登入後載入資料";
+}
+
 function normalizeFileSize(size) {
   if (!size) return "-";
   const mb = size / 1024 / 1024;
@@ -535,20 +548,24 @@ dom.loginForm.addEventListener("submit", async (event) => {
   setLoginMessage("正在透過管理 API 驗證。", "warning");
 
   try {
-    await requestAdminApi("login", {
+    const result = await requestAdminApi("login", {
       username: dom.usernameInput.value,
       password: dom.passwordInput.value,
-    }).then((result) => {
-      state.authToken = result.token || "";
-      if (state.authToken) {
-        window.sessionStorage.setItem("adminDemoToken", state.authToken);
-      }
     });
+
+    state.authToken = result.token || "";
+    if (state.authToken) {
+      window.sessionStorage.setItem("adminDemoToken", state.authToken);
+    }
+
+    await loadBuildings();
     setLoginMessage("登入成功。", "ok");
     dom.loginPanel.classList.add("is-hidden");
     dom.dashboard.classList.remove("is-hidden");
-    await loadBuildings();
   } catch (error) {
+    window.sessionStorage.removeItem("adminDemoToken");
+    state.authToken = "";
+    clearAdminData();
     setLoginMessage(error.message, "error");
   }
 });
@@ -635,14 +652,5 @@ if (state.authToken) {
 }
 
 if (!state.authToken) {
-  state.buildings = [
-    { name: "長青樓", floors: [{ label: "6F" }, { label: "7F" }, { label: "B1F" }] },
-    { name: "二門診", floors: [{ label: "1F" }, { label: "7F" }, { label: "8F" }] },
-    { name: "思源樓", floors: [{ label: "1F" }, { label: "2F" }, { label: "RF" }] },
-  ];
-  state.historyByPath = new Map();
-  state.pdfItems = flattenPdfItems(state.buildings);
-  fillBuildings(state.buildings);
-  fillPdfBuildingFilter(state.buildings);
-  renderPdfList();
+  clearAdminData();
 }

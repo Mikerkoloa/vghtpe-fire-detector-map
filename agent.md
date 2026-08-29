@@ -317,6 +317,14 @@ vghtpe-fire-detector-map
 - 本機驗證：未登入讀 `/api/admin/data` 會 401；登入後回 133 PDFs、15 buildings、mode=mock；上傳含 `%PDF-` base64 測試檔會走 mock；瀏覽器流程可登入、篩選二門診 7F、送出 PDF 內容並完成 mock 上傳。
 - 後續上線後若 GitHub Actions 無法 push data JSON，需到 GitHub repository Settings > Actions > General，確認 Workflow permissions 允許 Read and write。
 
+## 2026-08-29 管理入口正式化
+
+- 使用者詢問 `admin-demo.html` 是否可用，後續要求改名，並回報線上 `admin-demo.html` 讀取的 PDF 清單很少。
+- 根因判斷：前端未登入時仍初始化三棟測試 fallback 清單，線上若 session/token 失效或尚未登入，容易讓畫面看起來像正式 PDF 清單很少。
+- 新增正式入口 `admin.html`；舊 `admin-demo.html` 改為自動轉址到 `admin.html`，舊連結不會壞。
+- `assets/admin-demo.js` 移除未登入 fallback 小清單；未登入時 PDF 清單只顯示「登入後載入 PDF 清單」，登入成功並讀到 `/api/admin/data` 後才顯示完整清單。
+- `admin.html` 密碼欄位不再預填 `demo1234`，避免正式站混淆；本機若未設定 env 仍可用 `admin/demo1234` 作為開發 fallback。
+
 ## 2026-08-28 多定址碼標籤搜尋
 
 - 全域搜尋與目前 PDF 搜尋都改為支援定址碼標籤。

@@ -19,7 +19,7 @@
 - 儲存圈選圖片在電腦會直接下載 PNG；手機或平板會開啟圖片預覽，並優先使用系統分享儲存。
 - 支援滑鼠滾輪縮放、左鍵拖曳移動圖面、雙擊圈選標記放大，手機可用兩指縮放並在放大後單指拖曳。
 - 版面支援桌機、平板、手機。
-- 提供 `admin-demo.html` 管理後台 Demo，已接上 `/api/admin/*` mock API，可先測登入、PDF 清單、預檢與模擬上傳流程。
+- 提供 `admin.html` 管理後台，已接上 `/api/admin/*`，可登入、查看 PDF 清單、預檢並上傳 PDF 到 GitHub。
 
 ## 啟動方式
 
@@ -49,7 +49,7 @@ https://vghtpe-fire-detector-map.vercel.app
 管理後台：
 
 ```text
-https://vghtpe-fire-detector-map.vercel.app/admin-demo.html
+https://vghtpe-fire-detector-map.vercel.app/admin.html
 ```
 
 ## PDF 管理後台環境變數
@@ -155,6 +155,7 @@ logs/server.pid
 ```text
 .
 ├─ index.html
+├─ admin.html
 ├─ admin-demo.html
 ├─ server.js
 ├─ package.json
