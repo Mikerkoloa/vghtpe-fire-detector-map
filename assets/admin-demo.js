@@ -1,6 +1,9 @@
 const dom = {
   loginPanel: document.querySelector("#loginPanel"),
   loginForm: document.querySelector("#loginForm"),
+  usernameInput: document.querySelector("#usernameInput"),
+  passwordInput: document.querySelector("#passwordInput"),
+  loginMessage: document.querySelector("#loginMessage"),
   dashboard: document.querySelector("#dashboard"),
   navButtons: [...document.querySelectorAll("[data-panel]")],
   panels: [...document.querySelectorAll(".work-area")],
@@ -16,6 +19,7 @@ const dom = {
   fileSummary: document.querySelector("#fileSummary"),
   dropZone: document.querySelector("#dropZone"),
   githubPath: document.querySelector("#githubPath"),
+  apiMessage: document.querySelector("#apiMessage"),
   formState: document.querySelector("#formState"),
   checkFile: document.querySelector("#checkFile"),
   checkTarget: document.querySelector("#checkTarget"),
@@ -35,6 +39,7 @@ const state = {
   pdfItems: [],
   historyByPath: new Map(),
   file: null,
+  lastPreflight: null,
 };
 
 const pipelineSteps = ["upload", "github", "index", "commit", "deploy"];
@@ -68,7 +73,7 @@ function buildGithubPath() {
   if (!building || !floor) return "尚未選擇棟別與樓層";
   if (floor.path) return floor.path;
 
-  return `火警圖 PDF/${building.name}火警圖PDF/${building.name}${floor.label} 火警圖.pdf`;
+  return buildFallbackPath(building.name, floor.label);
 }
 
 function selectedHistory() {
@@ -164,11 +169,93 @@ function flattenPdfItems(buildings) {
 }
 
 function buildHistoryMap(historyData) {
-  return new Map((historyData.files || []).map((item) => [item.path, item]));
+  const files = Array.isArray(historyData) ? historyData : historyData.files || [];
+  return new Map(files.map((item) => [item.path, item]));
 }
 
 function buildFallbackPath(buildingName, floorLabel) {
-  return `火警圖 PDF/${buildingName}火警圖PDF/${buildingName}${floorLabel} 火警圖.pdf`;
+  return `火警圖 PDF/${buildingName}/${buildingName}${floorLabel} 火警圖.pdf`;
+}
+
+function setApiMessage(message, tone = "") {
+  dom.apiMessage.textContent = message;
+  dom.apiMessage.classList.toggle("is-ok", tone === "ok");
+  dom.apiMessage.classList.toggle("is-warning", tone === "warning");
+  dom.apiMessage.classList.toggle("is-error", tone === "error");
+}
+
+function setLoginMessage(message, tone = "") {
+  dom.loginMessage.textContent = message;
+  dom.loginMessage.classList.toggle("is-ok", tone === "ok");
+  dom.loginMessage.classList.toggle("is-warning", tone === "warning");
+  dom.loginMessage.classList.toggle("is-error", tone === "error");
+}
+
+function buildUploadPayload() {
+  return {
+    mode: new FormData(dom.uploadForm).get("mode"),
+    building: dom.buildingSelect.value,
+    floor: dom.floorSelect.value,
+    path: buildGithubPath(),
+    branch: dom.branchInput.value.trim() || "main",
+    commitMessage: dom.commitInput.value.trim(),
+    updatedAt: dom.updatedAtInput.value || todayString(),
+    updatedBy: dom.updatedByInput.value.trim(),
+    note: dom.updateNoteInput.value.trim(),
+    file: state.file
+      ? {
+          name: state.file.name,
+          size: state.file.size,
+          type: state.file.type || "application/pdf",
+          lastModified: state.file.lastModified,
+        }
+      : null,
+  };
+}
+
+async function requestAdminApi(action, payload) {
+  const options = payload
+    ? {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(payload),
+      }
+    : undefined;
+  const response = await fetch(`/api/admin/${action}`, options);
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    const message = data.errors?.join("、") || data.error || "管理 API 執行失敗";
+    throw new Error(message);
+  }
+
+  return data;
+}
+
+function applyPreflightResult(result) {
+  state.lastPreflight = result;
+
+  const checks = new Map((result.checks || []).map((check) => [check.id, check]));
+  dom.checkFile.textContent = checks.get("file")?.message || "等待選擇";
+  dom.checkTarget.textContent = checks.get("target")?.message || "等待選擇";
+
+  const date = dom.updatedAtInput.value || todayString();
+  const by = dom.updatedByInput.value.trim() || "admin";
+  const note = dom.updateNoteInput.value.trim() || "未填寫備註";
+  dom.checkUpdate.textContent = `${date}，${by}，${note}`;
+
+  if (result.ok) {
+    const warningText = result.warnings?.length ? `，提醒：${result.warnings.join("、")}` : "";
+    setApiMessage(`預檢通過：${result.target.building} ${result.target.floor}${warningText}`, result.warnings?.length ? "warning" : "ok");
+    dom.formState.textContent = "預檢通過";
+    dom.formState.classList.add("is-ready");
+    return true;
+  }
+
+  setApiMessage(`預檢未通過：${(result.errors || []).join("、")}`, "error");
+  dom.formState.textContent = "預檢未通過";
+  dom.formState.classList.remove("is-ready");
+  return false;
 }
 
 function fillPdfBuildingFilter(buildings) {
@@ -231,14 +318,19 @@ function renderPdfList() {
 function setFile(file) {
   if (!file) return;
 
+  state.lastPreflight = null;
+
   if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
+    state.file = null;
     dom.fileSummary.textContent = "請選擇 PDF 檔案";
     dom.formState.textContent = "檔案格式不符";
     dom.formState.classList.remove("is-ready");
+    setApiMessage("檔案格式不符，請選擇 PDF。", "error");
     return;
   }
 
   state.file = file;
+  setApiMessage("已選擇 PDF，可先執行檢查索引。", "warning");
   updatePreview();
 }
 
@@ -256,7 +348,7 @@ function finishPipeline() {
   });
 }
 
-function addHistoryRow() {
+function addHistoryRow(uploadResult) {
   const building = selectedBuilding();
   const floor = selectedFloor();
   const mode = new FormData(dom.uploadForm).get("mode") === "replace" ? "取代 PDF" : "新增 PDF";
@@ -269,14 +361,14 @@ function addHistoryRow() {
     <td>${building ? building.name : "-"} ${floor ? floor.label : ""}</td>
     <td>${mode}</td>
     <td>${note}</td>
-    <td>完成</td>
-    <td>等待 Vercel</td>
+    <td>${uploadResult?.mode === "mock" ? "模擬完成" : "完成"}</td>
+    <td>${uploadResult?.commit?.sha || "等待 Vercel"}</td>
   `;
 
   dom.historyBody.prepend(row);
 }
 
-function updateSelectedPdfHistory() {
+function updateSelectedPdfHistory(historyRecord) {
   const building = selectedBuilding();
   const floor = selectedFloor();
   if (!building || !floor) return;
@@ -295,7 +387,14 @@ function updateSelectedPdfHistory() {
     note,
   };
 
-  const nextHistory = {
+  const nextHistory = historyRecord
+    ? {
+        ...historyRecord,
+        detectorCount: floor.detectorCount || historyRecord.detectorCount || previous?.detectorCount || 0,
+        pageCount: floor.pageCount || historyRecord.pageCount || previous?.pageCount || 0,
+        history: [...(historyRecord.history || []), ...(previous?.history || [])],
+      }
+    : {
     building: building.name,
     floor: floor.label,
     path: pdfPath,
@@ -316,22 +415,49 @@ function updateSelectedPdfHistory() {
 async function simulateUpload() {
   if (!state.file) {
     dom.fileSummary.textContent = "請先選擇要上傳的 PDF";
+    setApiMessage("請先選擇要上傳的 PDF。", "error");
     return;
   }
 
-  dom.formState.textContent = "發佈中";
+  const payload = buildUploadPayload();
+  let preflightResult;
+
+  try {
+    dom.formState.textContent = "API 預檢中";
+    dom.formState.classList.remove("is-ready");
+    setApiMessage("正在送出預檢到管理 API。", "warning");
+    preflightResult = await requestAdminApi("preflight", payload);
+  } catch (error) {
+    setApiMessage(error.message, "error");
+    dom.formState.textContent = "API 預檢失敗";
+    return;
+  }
+
+  if (!applyPreflightResult(preflightResult)) return;
+
+  dom.formState.textContent = "API 模擬發佈中";
   dom.formState.classList.remove("is-ready");
+  setApiMessage("管理 API 已接收上傳請求，正在模擬 GitHub 發佈流程。", "warning");
 
   for (let index = 0; index < pipelineSteps.length; index += 1) {
     setPipeline(index);
     await new Promise((resolve) => window.setTimeout(resolve, 650));
   }
 
-  finishPipeline();
-  dom.formState.textContent = "Demo 發佈完成";
-  dom.formState.classList.add("is-ready");
-  updateSelectedPdfHistory();
-  addHistoryRow();
+  try {
+    const uploadResult = await requestAdminApi("upload", payload);
+    finishPipeline();
+    dom.formState.textContent = "API 模擬完成";
+    dom.formState.classList.add("is-ready");
+    setApiMessage(`${uploadResult.message}；目標：${uploadResult.target.path}`, "ok");
+    updateSelectedPdfHistory(uploadResult.historyRecord);
+    addHistoryRow(uploadResult);
+    dom.formState.textContent = "API 模擬完成";
+    dom.formState.classList.add("is-ready");
+  } catch (error) {
+    setApiMessage(error.message, "error");
+    dom.formState.textContent = "API 發佈失敗";
+  }
 }
 
 function activatePanel(panelId) {
@@ -347,28 +473,33 @@ function activatePanel(panelId) {
 }
 
 async function loadBuildings() {
-  const [buildingResponse, historyResponse] = await Promise.all([
-    fetch("./data/buildings.json"),
-    fetch("./data/pdf-update-history.json"),
-  ]);
+  const data = await requestAdminApi("data");
 
-  if (!buildingResponse.ok) throw new Error("buildings.json 載入失敗");
-
-  const data = await buildingResponse.json();
-  const historyData = historyResponse.ok ? await historyResponse.json() : { files: [] };
   state.buildings = data.buildings || [];
-  state.historyByPath = buildHistoryMap(historyData);
-  state.pdfItems = flattenPdfItems(state.buildings);
+  state.historyByPath = buildHistoryMap(data.history || []);
+  state.pdfItems = data.pdfItems || flattenPdfItems(state.buildings);
   fillBuildings(state.buildings);
   fillPdfBuildingFilter(state.buildings);
   renderPdfList();
+  setApiMessage(`管理 API 已載入：${data.totals?.pdfs || state.pdfItems.length} 份 PDF。`, "ok");
 }
 
-dom.loginForm.addEventListener("submit", (event) => {
+dom.loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   document.activeElement.blur();
-  dom.loginPanel.classList.add("is-hidden");
-  dom.dashboard.classList.remove("is-hidden");
+  setLoginMessage("正在透過管理 API 驗證。", "warning");
+
+  try {
+    await requestAdminApi("login", {
+      username: dom.usernameInput.value,
+      password: dom.passwordInput.value,
+    });
+    setLoginMessage("登入成功。", "ok");
+    dom.loginPanel.classList.add("is-hidden");
+    dom.dashboard.classList.remove("is-hidden");
+  } catch (error) {
+    setLoginMessage(error.message, "error");
+  }
 });
 
 dom.navButtons.forEach((button) => {
@@ -404,10 +535,18 @@ dom.dropZone.addEventListener("drop", (event) => {
   setFile(event.dataTransfer.files[0]);
 });
 
-dom.preflightButton.addEventListener("click", () => {
-  const building = selectedBuilding();
-  const floor = selectedFloor();
-  dom.checkTarget.textContent = building && floor ? `${building.name} ${floor.label}，索引將重新產生` : "等待選擇";
+dom.preflightButton.addEventListener("click", async () => {
+  document.activeElement.blur();
+  dom.formState.textContent = "API 預檢中";
+  dom.formState.classList.remove("is-ready");
+  setApiMessage("正在送出預檢到管理 API。", "warning");
+
+  try {
+    applyPreflightResult(await requestAdminApi("preflight", buildUploadPayload()));
+  } catch (error) {
+    setApiMessage(error.message, "error");
+    dom.formState.textContent = "API 預檢失敗";
+  }
 });
 
 dom.pdfListSearch.addEventListener("input", renderPdfList);

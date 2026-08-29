@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
     <title>PDF 管理後台 Demo</title>
-    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260829c">
+    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260829d">
   </head>
   <body>
     <div class="admin-app">
@@ -31,15 +31,15 @@
           <form class="login-form" id="loginForm">
             <label>
               <span>帳號</span>
-              <input type="text" value="admin" autocomplete="username">
+              <input id="usernameInput" type="text" value="admin" autocomplete="username">
             </label>
             <label>
               <span>密碼</span>
-              <input type="password" value="demo1234" autocomplete="current-password">
+              <input id="passwordInput" type="password" value="demo1234" autocomplete="current-password">
             </label>
             <button type="submit">登入 Demo</button>
           </form>
-          <p class="hint">正式版會由 Vercel API 驗證，前端不會取得 GitHub token。</p>
+          <p class="hint" id="loginMessage">正式版會由 Vercel API 驗證，前端不會取得 GitHub token。</p>
         </section>
 
         <section class="dashboard is-hidden" id="dashboard" aria-label="PDF 管理工作台">
@@ -114,6 +114,8 @@
                 <span>預計 GitHub 路徑</span>
                 <code id="githubPath">尚未選擇棟別與樓層</code>
               </div>
+
+              <p class="api-message" id="apiMessage">管理 API 尚未執行檢查。</p>
 
               <div class="form-actions">
                 <button class="secondary-button" type="button" id="preflightButton">檢查索引</button>
@@ -283,6 +285,6 @@
       </main>
     </div>
 
-    <script type="module" src="./assets/admin-demo.js?v=20260829c"></script>
+    <script type="module" src="./assets/admin-demo.js?v=20260829d"></script>
   </body>
 </html>

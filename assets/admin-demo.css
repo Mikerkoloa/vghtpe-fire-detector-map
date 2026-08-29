@@ -182,6 +182,18 @@ h2 {
   font-size: 14px;
 }
 
+.hint.is-ok {
+  color: var(--ok);
+}
+
+.hint.is-warning {
+  color: var(--pending);
+}
+
+.hint.is-error {
+  color: #9d1c1c;
+}
+
 .login-form,
 .upload-form,
 .settings-grid {
@@ -455,6 +467,35 @@ textarea:focus {
   overflow-wrap: anywhere;
   font-family: Consolas, "Liberation Mono", monospace;
   font-size: 13px;
+}
+
+.api-message {
+  min-height: 40px;
+  padding: 10px 12px;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.api-message.is-ok {
+  color: var(--ok);
+  background: #eef9f2;
+  border-color: #b6dec5;
+}
+
+.api-message.is-warning {
+  color: var(--pending);
+  background: #fff8e9;
+  border-color: #eed093;
+}
+
+.api-message.is-error {
+  color: #9d1c1c;
+  background: #fff1f1;
+  border-color: #efb4b4;
 }
 
 .status-panel {

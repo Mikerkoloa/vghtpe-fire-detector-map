@@ -294,6 +294,15 @@ vghtpe-fire-detector-map
 - 已重新執行 `npm run build:pdf-history`，更新紀錄延續到新路徑；例如二門診 7F 路徑為 `火警圖 PDF/二門診/二門診7F 火警圖.pdf`，最後更新日期仍為 `2026-04-26`。
 - 驗證 `M1-66` 顯示 10 筆且不自動開 PDF；`長青樓 6F M2-66` 可開 PDF 並產生 1 個 `36:M2-66` 圈選；管理 Demo PDF 清單會顯示新路徑。
 
+## 2026-08-29 PDF 管理後台 3A API 骨架
+
+- 新增 `lib/admin-api.js`，集中處理管理後台資料讀取、登入驗證、預檢、模擬上傳。
+- 新增 Vercel Function 入口：`api/admin/login.js`、`api/admin/data.js`、`api/admin/preflight.js`、`api/admin/upload.js`。
+- `server.js` 已支援本機 `/api/admin/{login,data,preflight,upload}`，因此 `PORT=4213 node server.js` 可直接測管理 API。
+- `admin-demo.html` 與 `assets/admin-demo.js` 已改為呼叫管理 API：登入走 mock login，PDF 清單走 `/api/admin/data`，檢查索引走 `/api/admin/preflight`，上傳走 `/api/admin/upload`。
+- 目前 3A 仍不會真的寫入 GitHub；`upload` 回傳 `mode: "mock"`、`sha: "mock-pending"`，用來確認流程與畫面狀態。
+- 驗證結果：`/api/admin/data` 回 133 PDFs、15 buildings；正確帳密 `admin/demo1234` 登入 200，錯誤密碼 401；二門診 7F 預檢通過；瀏覽器流程可登入、篩選二門診 7F、帶入更新表單並完成 mock 上傳。
+
 ## 2026-08-28 多定址碼標籤搜尋
 
 - 全域搜尋與目前 PDF 搜尋都改為支援定址碼標籤。

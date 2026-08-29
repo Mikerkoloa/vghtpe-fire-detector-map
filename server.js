@@ -2,6 +2,7 @@ const fs = require("node:fs");
 const http = require("node:http");
 const path = require("node:path");
 const { URL } = require("node:url");
+const { handleNodeRequest } = require("./lib/admin-api");
 
 const ROOT = __dirname;
 const PORT = Number(process.env.PORT || 4173);
@@ -72,6 +73,14 @@ function sendFile(req, res, filePath) {
 }
 
 const server = http.createServer((req, res) => {
+  const url = new URL(req.url, `http://localhost:${PORT}`);
+  const apiMatch = /^\/api\/admin\/([a-z-]+)$/.exec(url.pathname);
+
+  if (apiMatch) {
+    handleNodeRequest(req, res, apiMatch[1]);
+    return;
+  }
+
   const filePath = resolveRequestPath(req.url);
   if (!filePath) {
     res.writeHead(403, { "content-type": "text/plain; charset=utf-8" });
