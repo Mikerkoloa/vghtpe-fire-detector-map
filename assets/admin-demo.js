@@ -9,6 +9,9 @@ const dom = {
   floorSelect: document.querySelector("#floorSelect"),
   branchInput: document.querySelector("#branchInput"),
   commitInput: document.querySelector("#commitInput"),
+  updatedAtInput: document.querySelector("#updatedAtInput"),
+  updatedByInput: document.querySelector("#updatedByInput"),
+  updateNoteInput: document.querySelector("#updateNoteInput"),
   fileInput: document.querySelector("#fileInput"),
   fileSummary: document.querySelector("#fileSummary"),
   dropZone: document.querySelector("#dropZone"),
@@ -16,6 +19,7 @@ const dom = {
   formState: document.querySelector("#formState"),
   checkFile: document.querySelector("#checkFile"),
   checkTarget: document.querySelector("#checkTarget"),
+  checkUpdate: document.querySelector("#checkUpdate"),
   preflightButton: document.querySelector("#preflightButton"),
   uploadForm: document.querySelector("#uploadForm"),
   pipeline: document.querySelector("#pipeline"),
@@ -29,6 +33,7 @@ const dom = {
 const state = {
   buildings: [],
   pdfItems: [],
+  historyByPath: new Map(),
   file: null,
 };
 
@@ -39,6 +44,11 @@ function normalizeFileSize(size) {
   const mb = size / 1024 / 1024;
   if (mb >= 1) return `${mb.toFixed(2)} MB`;
   return `${Math.ceil(size / 1024)} KB`;
+}
+
+function todayString() {
+  const now = new Date();
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 }
 
 function selectedBuilding() {
@@ -61,6 +71,25 @@ function buildGithubPath() {
   return `火警圖 PDF/${building.name}火警圖PDF/${building.name}${floor.label} 火警圖.pdf`;
 }
 
+function selectedHistory() {
+  return state.historyByPath.get(buildGithubPath()) || null;
+}
+
+function updateHistoryPreview() {
+  const date = dom.updatedAtInput.value || todayString();
+  const by = dom.updatedByInput.value.trim() || "admin";
+  const note = dom.updateNoteInput.value.trim() || "未填寫備註";
+  dom.checkUpdate.textContent = `${date}，${by}，${note}`;
+}
+
+function syncUpdateFieldsFromHistory() {
+  const history = selectedHistory();
+  dom.updatedAtInput.value = history?.latestUpdatedAt || todayString();
+  dom.updatedByInput.value = history?.updatedBy || "admin";
+  dom.updateNoteInput.value = history?.note || "";
+  updateHistoryPreview();
+}
+
 function updatePreview() {
   const building = selectedBuilding();
   const floor = selectedFloor();
@@ -69,6 +98,7 @@ function updatePreview() {
 
   dom.githubPath.textContent = buildGithubPath();
   dom.checkTarget.textContent = targetText;
+  updateHistoryPreview();
 
   if (state.file) {
     dom.formState.textContent = mode === "replace" ? "準備取代圖面" : "準備新增圖面";
@@ -96,6 +126,7 @@ function fillFloors() {
     dom.floorSelect.append(option);
   });
 
+  syncUpdateFieldsFromHistory();
   updatePreview();
 }
 
@@ -113,14 +144,27 @@ function fillBuildings(buildings) {
 
 function flattenPdfItems(buildings) {
   return buildings.flatMap((building) =>
-    building.floors.map((floor) => ({
-      building: building.name,
-      floor: floor.label,
-      path: floor.path || buildFallbackPath(building.name, floor.label),
-      detectorCount: floor.detectorCount || 0,
-      pageCount: floor.pageCount || 0,
-    }))
+    building.floors.map((floor) => {
+      const itemPath = floor.path || buildFallbackPath(building.name, floor.label);
+      const history = state.historyByPath.get(itemPath);
+
+      return {
+        building: building.name,
+        floor: floor.label,
+        path: itemPath,
+        detectorCount: floor.detectorCount || history?.detectorCount || 0,
+        pageCount: floor.pageCount || history?.pageCount || 0,
+        latestUpdatedAt: history?.latestUpdatedAt || "",
+        updatedBy: history?.updatedBy || "",
+        note: history?.note || "",
+        history: history?.history || [],
+      };
+    })
   );
+}
+
+function buildHistoryMap(historyData) {
+  return new Map((historyData.files || []).map((item) => [item.path, item]));
 }
 
 function buildFallbackPath(buildingName, floorLabel) {
@@ -149,7 +193,7 @@ function filteredPdfItems() {
 
   return state.pdfItems.filter((item) => {
     const matchesBuilding = !buildingName || item.building === buildingName;
-    const haystack = `${item.building} ${item.floor} ${item.path}`.toLowerCase();
+    const haystack = `${item.building} ${item.floor} ${item.path} ${item.latestUpdatedAt} ${item.updatedBy} ${item.note}`.toLowerCase();
     const matchesKeyword = !keyword || haystack.includes(keyword);
     return matchesBuilding && matchesKeyword;
   });
@@ -162,7 +206,7 @@ function renderPdfList() {
 
   if (items.length === 0) {
     const row = document.createElement("tr");
-    row.innerHTML = `<td class="empty-row" colspan="6" data-label="">沒有符合的 PDF</td>`;
+    row.innerHTML = `<td class="empty-row" colspan="9" data-label="">沒有符合的 PDF</td>`;
     dom.pdfListBody.append(row);
     return;
   }
@@ -172,8 +216,11 @@ function renderPdfList() {
     row.innerHTML = `
       <td data-label="棟別">${item.building}</td>
       <td data-label="樓層">${item.floor}</td>
+      <td data-label="最後更新">${item.latestUpdatedAt || "-"}</td>
+      <td data-label="更新人">${item.updatedBy || "-"}</td>
       <td data-label="定址碼">${item.detectorCount}</td>
       <td data-label="頁數">${item.pageCount}</td>
+      <td data-label="備註">${item.note || "-"}</td>
       <td data-label="GitHub 路徑"><code>${item.path}</code></td>
       <td data-label="動作"><button class="row-button" type="button" data-update-pdf="${item.building}|${item.floor}">更新</button></td>
     `;
@@ -214,17 +261,56 @@ function addHistoryRow() {
   const floor = selectedFloor();
   const mode = new FormData(dom.uploadForm).get("mode") === "replace" ? "取代 PDF" : "新增 PDF";
   const now = new Date();
+  const note = dom.updateNoteInput.value.trim() || "未填寫備註";
   const row = document.createElement("tr");
 
   row.innerHTML = `
     <td>${now.toLocaleString("zh-TW", { hour12: false })}</td>
     <td>${building ? building.name : "-"} ${floor ? floor.label : ""}</td>
     <td>${mode}</td>
+    <td>${note}</td>
     <td>完成</td>
     <td>等待 Vercel</td>
   `;
 
   dom.historyBody.prepend(row);
+}
+
+function updateSelectedPdfHistory() {
+  const building = selectedBuilding();
+  const floor = selectedFloor();
+  if (!building || !floor) return;
+
+  const pdfPath = buildGithubPath();
+  const date = dom.updatedAtInput.value || todayString();
+  const by = dom.updatedByInput.value.trim() || "admin";
+  const note = dom.updateNoteInput.value.trim() || "未填寫備註";
+  const mode = new FormData(dom.uploadForm).get("mode");
+  const previous = state.historyByPath.get(pdfPath);
+  const nextEntry = {
+    date,
+    action: mode === "replace" ? "replace" : "create",
+    by,
+    commit: "demo-pending",
+    note,
+  };
+
+  const nextHistory = {
+    building: building.name,
+    floor: floor.label,
+    path: pdfPath,
+    latestUpdatedAt: date,
+    updatedBy: by,
+    note,
+    detectorCount: floor.detectorCount || previous?.detectorCount || 0,
+    pageCount: floor.pageCount || previous?.pageCount || 0,
+    history: [nextEntry, ...(previous?.history || [])],
+  };
+
+  state.historyByPath.set(pdfPath, nextHistory);
+  state.pdfItems = flattenPdfItems(state.buildings);
+  renderPdfList();
+  updatePreview();
 }
 
 async function simulateUpload() {
@@ -244,6 +330,7 @@ async function simulateUpload() {
   finishPipeline();
   dom.formState.textContent = "Demo 發佈完成";
   dom.formState.classList.add("is-ready");
+  updateSelectedPdfHistory();
   addHistoryRow();
 }
 
@@ -260,10 +347,17 @@ function activatePanel(panelId) {
 }
 
 async function loadBuildings() {
-  const response = await fetch("./data/buildings.json");
-  if (!response.ok) throw new Error("buildings.json 載入失敗");
-  const data = await response.json();
+  const [buildingResponse, historyResponse] = await Promise.all([
+    fetch("./data/buildings.json"),
+    fetch("./data/pdf-update-history.json"),
+  ]);
+
+  if (!buildingResponse.ok) throw new Error("buildings.json 載入失敗");
+
+  const data = await buildingResponse.json();
+  const historyData = historyResponse.ok ? await historyResponse.json() : { files: [] };
   state.buildings = data.buildings || [];
+  state.historyByPath = buildHistoryMap(historyData);
   state.pdfItems = flattenPdfItems(state.buildings);
   fillBuildings(state.buildings);
   fillPdfBuildingFilter(state.buildings);
@@ -282,8 +376,14 @@ dom.navButtons.forEach((button) => {
 });
 
 dom.buildingSelect.addEventListener("change", fillFloors);
-dom.floorSelect.addEventListener("change", updatePreview);
+dom.floorSelect.addEventListener("change", () => {
+  syncUpdateFieldsFromHistory();
+  updatePreview();
+});
 dom.uploadForm.addEventListener("change", updatePreview);
+dom.updatedAtInput.addEventListener("input", updateHistoryPreview);
+dom.updatedByInput.addEventListener("input", updateHistoryPreview);
+dom.updateNoteInput.addEventListener("input", updateHistoryPreview);
 
 dom.fileInput.addEventListener("change", () => {
   setFile(dom.fileInput.files[0]);
@@ -321,6 +421,7 @@ dom.pdfListBody.addEventListener("click", (event) => {
   dom.buildingSelect.value = buildingName;
   fillFloors();
   dom.floorSelect.value = floorLabel;
+  syncUpdateFieldsFromHistory();
   updatePreview();
   activatePanel("uploadPanel");
 });
@@ -337,6 +438,7 @@ loadBuildings().catch(() => {
     { name: "二門診", floors: [{ label: "1F" }, { label: "7F" }, { label: "8F" }] },
     { name: "思源樓", floors: [{ label: "1F" }, { label: "2F" }, { label: "RF" }] },
   ];
+  state.historyByPath = new Map();
   state.pdfItems = flattenPdfItems(state.buildings);
   fillBuildings(state.buildings);
   fillPdfBuildingFilter(state.buildings);

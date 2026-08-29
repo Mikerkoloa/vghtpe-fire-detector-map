@@ -5,6 +5,7 @@
   "description": "臺北榮民總醫院火警探測器圖面查詢單頁工具",
   "scripts": {
     "build:index": "node scripts/build-index.js",
+    "build:pdf-history": "node scripts/build-pdf-history.js",
     "start": "node server.js",
     "push": "powershell -ExecutionPolicy Bypass -File scripts/push.ps1",
     "win:start": "powershell -ExecutionPolicy Bypass -File scripts/windows/start-background.ps1",

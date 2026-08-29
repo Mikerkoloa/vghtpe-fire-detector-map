@@ -276,6 +276,9 @@ vghtpe-fire-detector-map
 - `assets/admin-demo.js` 會讀取現有 `data/buildings.json` 產生棟別與樓層選單，並模擬上傳到 GitHub、重建索引、commit、等待 Vercel 部署。
 - `assets/admin-demo.css` 以工作台版面為主，桌面三欄、手機單欄，輸入與按鈕維持 16px 避免 iPhone Safari 放大。
 - 後續新增「PDF 清單」頁籤，從 `buildings.json` 攤平成 PDF 清單，可依棟別篩選、關鍵字搜尋，並可點「更新」帶回上傳表單。
+- 第一階段新增 `data/pdf-update-history.json` 更新紀錄資料層，先不搬動既有 PDF 路徑。
+- 新增 `scripts/build-pdf-history.js` 與 `npm run build:pdf-history`，會從 `buildings.json` 產生 133 筆 PDF 更新紀錄，並嘗試把資料夾內的民國日期轉為西元日期。
+- 管理 Demo 的上傳頁新增更新日期、更新人員、更新備註；PDF 清單新增最後更新、更新人、備註，Demo 上傳完成後會即時更新畫面中的紀錄。
 
 ## 2026-08-28 多定址碼標籤搜尋
 

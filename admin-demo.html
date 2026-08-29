@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
     <title>PDF 管理後台 Demo</title>
-    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260829b">
+    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260829c">
   </head>
   <body>
     <div class="admin-app">
@@ -89,7 +89,20 @@
                   <span>Commit 訊息</span>
                   <input id="commitInput" type="text" value="Update fire map PDF">
                 </label>
+                <label>
+                  <span>更新日期</span>
+                  <input id="updatedAtInput" type="date">
+                </label>
+                <label>
+                  <span>更新人員</span>
+                  <input id="updatedByInput" type="text" value="admin">
+                </label>
               </div>
+
+              <label class="note-field">
+                <span>更新備註</span>
+                <textarea id="updateNoteInput" rows="3" placeholder="例如：更新 7F 探測器位置、替換最新版圖面"></textarea>
+              </label>
 
               <label class="drop-zone" id="dropZone">
                 <input id="fileInput" type="file" accept="application/pdf,.pdf">
@@ -125,6 +138,10 @@
                 <div>
                   <dt>目標圖面</dt>
                   <dd id="checkTarget">等待選擇</dd>
+                </div>
+                <div>
+                  <dt>更新紀錄</dt>
+                  <dd id="checkUpdate">等待填寫</dd>
                 </div>
                 <div>
                   <dt>索引策略</dt>
@@ -180,8 +197,11 @@
                   <tr>
                     <th>棟別</th>
                     <th>樓層</th>
+                    <th>最後更新</th>
+                    <th>更新人</th>
                     <th>定址碼</th>
                     <th>頁數</th>
+                    <th>備註</th>
                     <th>GitHub 路徑</th>
                     <th>動作</th>
                   </tr>
@@ -206,6 +226,7 @@
                     <th>時間</th>
                     <th>圖面</th>
                     <th>動作</th>
+                    <th>備註</th>
                     <th>索引</th>
                     <th>部署</th>
                   </tr>
@@ -215,6 +236,7 @@
                     <td>2026-08-29 09:20</td>
                     <td>二門診 7F</td>
                     <td>取代 PDF</td>
+                    <td>更新探測器位置</td>
                     <td>完成</td>
                     <td>Production</td>
                   </tr>
@@ -222,6 +244,7 @@
                     <td>2026-08-28 16:40</td>
                     <td>思源樓 1F</td>
                     <td>取代 PDF</td>
+                    <td>更新最新版圖面</td>
                     <td>完成</td>
                     <td>Production</td>
                   </tr>
@@ -260,6 +283,6 @@
       </main>
     </div>
 
-    <script type="module" src="./assets/admin-demo.js?v=20260829b"></script>
+    <script type="module" src="./assets/admin-demo.js?v=20260829c"></script>
   </body>
 </html>

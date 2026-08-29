@@ -37,7 +37,8 @@ body {
 
 button,
 input,
-select {
+select,
+textarea {
   min-width: 0;
   font: inherit;
 }
@@ -189,7 +190,8 @@ h2 {
 }
 
 .login-form label,
-.form-grid label {
+.form-grid label,
+.note-field {
   display: grid;
   gap: 6px;
   color: var(--muted);
@@ -198,7 +200,8 @@ h2 {
 }
 
 input,
-select {
+select,
+textarea {
   width: 100%;
   min-height: 42px;
   padding: 0 12px;
@@ -210,8 +213,15 @@ select {
   outline: none;
 }
 
+textarea {
+  min-height: 84px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 4px rgba(232, 106, 28, 0.16);
 }
@@ -582,7 +592,7 @@ tr:last-child td {
 }
 
 .pdf-table {
-  min-width: 880px;
+  min-width: 1080px;
 }
 
 .pdf-table code {
