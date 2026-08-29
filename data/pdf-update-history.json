@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T10:35:21.414Z",
+  "generatedAt": "2026-08-29T10:35:52.238Z",
   "source": "data/buildings.json",
   "totals": {
     "files": 133
@@ -544,7 +544,7 @@
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入(測試)",
-      "detectorCount": 199,
+      "detectorCount": 193,
       "pageCount": 1,
       "history": [
         {

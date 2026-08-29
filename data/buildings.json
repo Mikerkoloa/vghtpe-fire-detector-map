@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T07:15:31.809Z",
+  "generatedAt": "2026-08-29T10:35:52.054Z",
   "groups": [
     {
       "id": "common",
@@ -286,7 +286,7 @@
           "label": "1F",
           "fileId": "pdf-0082",
           "path": "火警圖 PDF/思源樓/思源樓1F 火警圖.pdf",
-          "detectorCount": 199,
+          "detectorCount": 193,
           "pageCount": 1,
           "sortValue": 1
         },
@@ -299,7 +299,7 @@
           "sortValue": -1
         }
       ],
-      "totalDetectors": 1542
+      "totalDetectors": 1536
     },
     {
       "name": "一門診",
