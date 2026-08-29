@@ -364,6 +364,14 @@ function scrollToSection(element) {
   });
 }
 
+function blurActiveFormControl(form) {
+  const activeElement = document.activeElement;
+  if (!activeElement || !form.contains(activeElement)) return;
+  if (typeof activeElement.blur === "function") {
+    activeElement.blur();
+  }
+}
+
 function showSearchResults() {
   scrollToSection(dom.resultsPanel);
 }
@@ -1551,18 +1559,21 @@ function endPointerGesture(event) {
 dom.searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   tokenInputs.global.commit();
+  blurActiveFormControl(event.currentTarget);
   handleSearch(tokenInputs.global.getText(), tokenInputs.global.getDetectors());
 });
 
 dom.pdfSearchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   tokenInputs.pdf.commit();
+  blurActiveFormControl(event.currentTarget);
   handleCurrentPdfSearch(tokenInputs.pdf.getText(), tokenInputs.pdf.getDetectors());
 });
 
 dom.pdfSearchOverlayForm.addEventListener("submit", (event) => {
   event.preventDefault();
   tokenInputs.overlay.commit();
+  blurActiveFormControl(event.currentTarget);
   handleCurrentPdfSearch(tokenInputs.overlay.getText(), tokenInputs.overlay.getDetectors());
 });
 

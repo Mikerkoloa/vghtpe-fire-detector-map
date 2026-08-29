@@ -265,6 +265,9 @@ vghtpe-fire-detector-map
 - 判斷 Safari 可能未命中單純 `max-width: 960px` 的手機版媒體條件，或網域被設定為要求桌面版網站。
 - 手機版主要 layout 改為 `max-width: 960px`、`max-device-width: 960px` 或觸控裝置 `(hover: none) and (pointer: coarse)` 都套用。
 - 搜尋標籤輸入框的 `input` 全域固定 `font-size: 16px`，避免 iOS Safari/Chrome 聚焦時自動放大頁面。
+- 後續使用者回報 Safari 搜尋在下方後，按搜尋仍會放大且停在放大尺寸。
+- 補上 viewport `maximum-scale=1`、`text-size-adjust: 100%`、手機搜尋表單按鈕 16px，並在三個搜尋表單送出後主動 blur 目前焦點控制項。
+- `index.html` 的 CSS/JS query string 已更新，避免手機 Safari 快取舊檔。
 
 ## 2026-08-28 多定址碼標籤搜尋
 

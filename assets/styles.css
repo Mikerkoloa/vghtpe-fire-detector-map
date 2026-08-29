@@ -23,6 +23,8 @@
 html,
 body {
   height: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -1068,6 +1070,12 @@ button {
   .pdf-search {
     flex: none;
     width: 100%;
+  }
+
+  .search-bar button,
+  .pdf-search button,
+  .pdf-search-overlay button {
+    font-size: 16px;
   }
 
   .viewer-shell {
