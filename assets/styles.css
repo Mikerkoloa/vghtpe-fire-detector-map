@@ -929,6 +929,14 @@ button {
     justify-self: stretch;
   }
 
+  .detector-token-input input {
+    font-size: 16px;
+  }
+
+  .detector-token {
+    font-size: 14px;
+  }
+
   .app-shell {
     display: flex;
     flex: initial;
