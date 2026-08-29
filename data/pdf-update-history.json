@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T06:49:08.201Z",
+  "generatedAt": "2026-08-29T07:15:37.539Z",
   "source": "data/buildings.json",
   "totals": {
     "files": 133
@@ -8,7 +8,7 @@
     {
       "building": "長青樓",
       "floor": "R2F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓R2F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓R2F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -27,7 +27,7 @@
     {
       "building": "長青樓",
       "floor": "R1F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓R1F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓R1F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -46,7 +46,7 @@
     {
       "building": "長青樓",
       "floor": "12F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓12F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓12F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -65,7 +65,7 @@
     {
       "building": "長青樓",
       "floor": "11F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓11F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓11F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -84,7 +84,7 @@
     {
       "building": "長青樓",
       "floor": "10F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓10F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓10F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -103,7 +103,7 @@
     {
       "building": "長青樓",
       "floor": "9F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓9F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓9F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -122,7 +122,7 @@
     {
       "building": "長青樓",
       "floor": "8F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓8F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓8F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -141,7 +141,7 @@
     {
       "building": "長青樓",
       "floor": "7F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓7F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓7F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -160,7 +160,7 @@
     {
       "building": "長青樓",
       "floor": "6F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓6F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓6F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -179,7 +179,7 @@
     {
       "building": "長青樓",
       "floor": "5F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓5F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓5F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -198,7 +198,7 @@
     {
       "building": "長青樓",
       "floor": "4F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓4F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓4F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -217,7 +217,7 @@
     {
       "building": "長青樓",
       "floor": "3F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓3F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓3F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -236,7 +236,7 @@
     {
       "building": "長青樓",
       "floor": "2F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓2F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓2F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -255,7 +255,7 @@
     {
       "building": "長青樓",
       "floor": "1F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓1F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓1F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -274,7 +274,7 @@
     {
       "building": "長青樓",
       "floor": "B1F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓B1F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓B1F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -293,7 +293,7 @@
     {
       "building": "長青樓",
       "floor": "B2F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓B2F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓B2F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -312,7 +312,7 @@
     {
       "building": "長青樓",
       "floor": "B3F",
-      "path": "火警圖 PDF/114.8.30 長青樓火警圖PDF/長青樓B3F 火警.pdf",
+      "path": "火警圖 PDF/長青樓/長青樓B3F 火警.pdf",
       "latestUpdatedAt": "2025-08-30",
       "updatedBy": "system",
       "note": "從既有資料夾日期 114.08.30 初始匯入",
@@ -331,7 +331,7 @@
     {
       "building": "思源樓",
       "floor": "RF",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓RF 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓RF 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -350,7 +350,7 @@
     {
       "building": "思源樓",
       "floor": "11F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓11F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓11F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -369,7 +369,7 @@
     {
       "building": "思源樓",
       "floor": "10F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓10F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓10F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -388,7 +388,7 @@
     {
       "building": "思源樓",
       "floor": "9F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓9F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓9F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -407,7 +407,7 @@
     {
       "building": "思源樓",
       "floor": "8F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓8F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓8F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -426,7 +426,7 @@
     {
       "building": "思源樓",
       "floor": "7F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓7F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓7F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -445,7 +445,7 @@
     {
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -464,7 +464,7 @@
     {
       "building": "思源樓",
       "floor": "5F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓5F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓5F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -483,11 +483,11 @@
     {
       "building": "思源樓",
       "floor": "4F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓4F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓4F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
-      "detectorCount": 109,
+      "detectorCount": 111,
       "pageCount": 1,
       "history": [
         {
@@ -502,7 +502,7 @@
     {
       "building": "思源樓",
       "floor": "3F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓3F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓3F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -521,7 +521,7 @@
     {
       "building": "思源樓",
       "floor": "2F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓2F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -540,7 +540,7 @@
     {
       "building": "思源樓",
       "floor": "1F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓1F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -559,7 +559,7 @@
     {
       "building": "思源樓",
       "floor": "B1F",
-      "path": "火警圖 PDF/115..04.25 思源樓火警圖PDF/思源樓B1F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓B1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -578,7 +578,7 @@
     {
       "building": "一門診",
       "floor": "RF",
-      "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診RF 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診RF 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -597,7 +597,7 @@
     {
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -616,7 +616,7 @@
     {
       "building": "一門診",
       "floor": "3F",
-      "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診3F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診3F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -635,7 +635,7 @@
     {
       "building": "一門診",
       "floor": "2F",
-      "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診2F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -654,7 +654,7 @@
     {
       "building": "一門診",
       "floor": "1MF",
-      "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診1MF 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診1MF 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -673,7 +673,7 @@
     {
       "building": "一門診",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診1F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -692,7 +692,7 @@
     {
       "building": "一門診",
       "floor": "B1F",
-      "path": "火警圖 PDF/115.04.26 一門診火警圖PDF/一門診B1F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診B1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -711,7 +711,7 @@
     {
       "building": "二門診",
       "floor": "RF",
-      "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診RF 火警圖.pdf",
+      "path": "火警圖 PDF/二門診/二門診RF 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -730,7 +730,7 @@
     {
       "building": "二門診",
       "floor": "8F",
-      "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診8F 火警圖.pdf",
+      "path": "火警圖 PDF/二門診/二門診8F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -749,7 +749,7 @@
     {
       "building": "二門診",
       "floor": "7F",
-      "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診7F 火警圖.pdf",
+      "path": "火警圖 PDF/二門診/二門診7F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -768,7 +768,7 @@
     {
       "building": "二門診",
       "floor": "6F",
-      "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診6F 火警圖.pdf",
+      "path": "火警圖 PDF/二門診/二門診6F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -787,7 +787,7 @@
     {
       "building": "二門診",
       "floor": "5F",
-      "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診5F 火警圖.pdf",
+      "path": "火警圖 PDF/二門診/二門診5F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -806,7 +806,7 @@
     {
       "building": "二門診",
       "floor": "4F",
-      "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/二門診/二門診4F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -825,7 +825,7 @@
     {
       "building": "二門診",
       "floor": "3F",
-      "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診3F 火警圖.pdf",
+      "path": "火警圖 PDF/二門診/二門診3F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -844,7 +844,7 @@
     {
       "building": "二門診",
       "floor": "2F",
-      "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診2F 火警圖.pdf",
+      "path": "火警圖 PDF/二門診/二門診2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -863,7 +863,7 @@
     {
       "building": "二門診",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診1F 火警圖.pdf",
+      "path": "火警圖 PDF/二門診/二門診1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -882,7 +882,7 @@
     {
       "building": "二門診",
       "floor": "B1F",
-      "path": "火警圖 PDF/115.04.26 二門診火警圖PDF/二門診B1F 火警圖.pdf",
+      "path": "火警圖 PDF/二門診/二門診B1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -901,7 +901,7 @@
     {
       "building": "三門診",
       "floor": "R2F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診R2F.pdf",
+      "path": "火警圖 PDF/三門診/三門診R2F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -920,7 +920,7 @@
     {
       "building": "三門診",
       "floor": "R1F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診R1F.pdf",
+      "path": "火警圖 PDF/三門診/三門診R1F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -939,7 +939,7 @@
     {
       "building": "三門診",
       "floor": "9F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診9F.pdf",
+      "path": "火警圖 PDF/三門診/三門診9F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -958,7 +958,7 @@
     {
       "building": "三門診",
       "floor": "8F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診8F.pdf",
+      "path": "火警圖 PDF/三門診/三門診8F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -977,7 +977,7 @@
     {
       "building": "三門診",
       "floor": "7F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診7F.pdf",
+      "path": "火警圖 PDF/三門診/三門診7F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -996,7 +996,7 @@
     {
       "building": "三門診",
       "floor": "6F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診6F.pdf",
+      "path": "火警圖 PDF/三門診/三門診6F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -1015,7 +1015,7 @@
     {
       "building": "三門診",
       "floor": "5F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診5F.pdf",
+      "path": "火警圖 PDF/三門診/三門診5F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -1034,7 +1034,7 @@
     {
       "building": "三門診",
       "floor": "4F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診4F.pdf",
+      "path": "火警圖 PDF/三門診/三門診4F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -1053,7 +1053,7 @@
     {
       "building": "三門診",
       "floor": "3F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診3F.pdf",
+      "path": "火警圖 PDF/三門診/三門診3F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -1072,7 +1072,7 @@
     {
       "building": "三門診",
       "floor": "2F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診2F.pdf",
+      "path": "火警圖 PDF/三門診/三門診2F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -1091,7 +1091,7 @@
     {
       "building": "三門診",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診1F.pdf",
+      "path": "火警圖 PDF/三門診/三門診1F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -1110,7 +1110,7 @@
     {
       "building": "三門診",
       "floor": "B1F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診B1F.pdf",
+      "path": "火警圖 PDF/三門診/三門診B1F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -1129,7 +1129,7 @@
     {
       "building": "三門診",
       "floor": "B2F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診B2F.pdf",
+      "path": "火警圖 PDF/三門診/三門診B2F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -1148,7 +1148,7 @@
     {
       "building": "三門診",
       "floor": "B3F",
-      "path": "火警圖 PDF/115.04.19 三門診火警圖PDF/三門診B3F.pdf",
+      "path": "火警圖 PDF/三門診/三門診B3F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.19 初始匯入",
@@ -1167,7 +1167,7 @@
     {
       "building": "重粒子",
       "floor": "RF",
-      "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子RF 火警圖.pdf",
+      "path": "火警圖 PDF/重粒子/重粒子RF 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1186,7 +1186,7 @@
     {
       "building": "重粒子",
       "floor": "4F",
-      "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子4F 火警圖.pdf",
+      "path": "火警圖 PDF/重粒子/重粒子4F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1205,7 +1205,7 @@
     {
       "building": "重粒子",
       "floor": "3F",
-      "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子3F 火警圖.pdf",
+      "path": "火警圖 PDF/重粒子/重粒子3F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1224,7 +1224,7 @@
     {
       "building": "重粒子",
       "floor": "2F",
-      "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子2F 火警圖.pdf",
+      "path": "火警圖 PDF/重粒子/重粒子2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1243,7 +1243,7 @@
     {
       "building": "重粒子",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子1F 火警圖.pdf",
+      "path": "火警圖 PDF/重粒子/重粒子1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1262,7 +1262,7 @@
     {
       "building": "重粒子",
       "floor": "B1F",
-      "path": "火警圖 PDF/115.04.26 重粒子火警圖PDF/重粒子B1F 火警圖.pdf",
+      "path": "火警圖 PDF/重粒子/重粒子B1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1281,7 +1281,7 @@
     {
       "building": "正子中心",
       "floor": "4F",
-      "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心4F 火警圖.pdf",
+      "path": "火警圖 PDF/正子中心/正子中心4F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1300,7 +1300,7 @@
     {
       "building": "正子中心",
       "floor": "3F",
-      "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心3F 火警圖.pdf",
+      "path": "火警圖 PDF/正子中心/正子中心3F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1319,7 +1319,7 @@
     {
       "building": "正子中心",
       "floor": "2F",
-      "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心2F 火警圖.pdf",
+      "path": "火警圖 PDF/正子中心/正子中心2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1338,11 +1338,11 @@
     {
       "building": "正子中心",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心1F 火警圖.pdf",
+      "path": "火警圖 PDF/正子中心/正子中心1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
-      "detectorCount": 32,
+      "detectorCount": 31,
       "pageCount": 1,
       "history": [
         {
@@ -1357,7 +1357,7 @@
     {
       "building": "正子中心",
       "floor": "B1F",
-      "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心B1F 火警圖.pdf",
+      "path": "火警圖 PDF/正子中心/正子中心B1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1376,7 +1376,7 @@
     {
       "building": "正子中心",
       "floor": "B2F",
-      "path": "火警圖 PDF/115.04.26 正子中心火警圖PDF/正子中心B2F 火警圖.pdf",
+      "path": "火警圖 PDF/正子中心/正子中心B2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1395,7 +1395,7 @@
     {
       "building": "身障中心",
       "floor": "8F",
-      "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心8F 火警圖.pdf",
+      "path": "火警圖 PDF/身障中心/身障中心8F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1414,7 +1414,7 @@
     {
       "building": "身障中心",
       "floor": "7F",
-      "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心7F 火警圖.pdf",
+      "path": "火警圖 PDF/身障中心/身障中心7F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1433,7 +1433,7 @@
     {
       "building": "身障中心",
       "floor": "6F",
-      "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心6F 火警圖.pdf",
+      "path": "火警圖 PDF/身障中心/身障中心6F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1452,7 +1452,7 @@
     {
       "building": "身障中心",
       "floor": "5F",
-      "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心5F 火警圖.pdf",
+      "path": "火警圖 PDF/身障中心/身障中心5F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1471,7 +1471,7 @@
     {
       "building": "身障中心",
       "floor": "4F",
-      "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心4F 火警圖.pdf",
+      "path": "火警圖 PDF/身障中心/身障中心4F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1490,7 +1490,7 @@
     {
       "building": "身障中心",
       "floor": "3F",
-      "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心3F 火警圖.pdf",
+      "path": "火警圖 PDF/身障中心/身障中心3F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1509,7 +1509,7 @@
     {
       "building": "身障中心",
       "floor": "2F",
-      "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心2F 火警圖.pdf",
+      "path": "火警圖 PDF/身障中心/身障中心2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1528,7 +1528,7 @@
     {
       "building": "身障中心",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心1F 火警圖.pdf",
+      "path": "火警圖 PDF/身障中心/身障中心1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1547,7 +1547,7 @@
     {
       "building": "身障中心",
       "floor": "洗衣工廠B1F",
-      "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心洗衣工廠B1F 火警圖.pdf",
+      "path": "火警圖 PDF/身障中心/身障中心洗衣工廠B1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1566,7 +1566,7 @@
     {
       "building": "身障中心",
       "floor": "B1F",
-      "path": "火警圖 PDF/115.04.25 身障中心火警圖PDF/身障中心B1F 火警圖.pdf",
+      "path": "火警圖 PDF/身障中心/身障中心B1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1585,7 +1585,7 @@
     {
       "building": "精神樓",
       "floor": "4F-RF",
-      "path": "火警圖 PDF/115.04.26 精神樓火警圖PDF/精神樓4F-RF 火警圖.pdf",
+      "path": "火警圖 PDF/精神樓/精神樓4F-RF 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1604,7 +1604,7 @@
     {
       "building": "精神樓",
       "floor": "3F",
-      "path": "火警圖 PDF/115.04.26 精神樓火警圖PDF/精神樓3F 火警圖.pdf",
+      "path": "火警圖 PDF/精神樓/精神樓3F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1623,7 +1623,7 @@
     {
       "building": "精神樓",
       "floor": "2F",
-      "path": "火警圖 PDF/115.04.26 精神樓火警圖PDF/精神樓2F 火警圖.pdf",
+      "path": "火警圖 PDF/精神樓/精神樓2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1642,7 +1642,7 @@
     {
       "building": "精神樓",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.26 精神樓火警圖PDF/精神樓1F 火警圖.pdf",
+      "path": "火警圖 PDF/精神樓/精神樓1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1661,7 +1661,7 @@
     {
       "building": "致德樓",
       "floor": "R3",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓R3 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓R3 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1680,7 +1680,7 @@
     {
       "building": "致德樓",
       "floor": "R2F",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓R2F 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓R2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1699,7 +1699,7 @@
     {
       "building": "致德樓",
       "floor": "R1F",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓R1F 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓R1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1718,7 +1718,7 @@
     {
       "building": "致德樓",
       "floor": "8F",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓8F 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓8F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1737,7 +1737,7 @@
     {
       "building": "致德樓",
       "floor": "7F",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓7F 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓7F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1756,7 +1756,7 @@
     {
       "building": "致德樓",
       "floor": "6F",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓6F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1775,7 +1775,7 @@
     {
       "building": "致德樓",
       "floor": "5F",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓5F 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓5F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1794,7 +1794,7 @@
     {
       "building": "致德樓",
       "floor": "4F",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓4F 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓4F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1813,7 +1813,7 @@
     {
       "building": "致德樓",
       "floor": "3F",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓3F 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓3F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1832,7 +1832,7 @@
     {
       "building": "致德樓",
       "floor": "2F",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓2F 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1851,7 +1851,7 @@
     {
       "building": "致德樓",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓1F 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1870,7 +1870,7 @@
     {
       "building": "致德樓",
       "floor": "B1F",
-      "path": "火警圖 PDF/115.04.25 致德樓火警圖PDF/致德樓B1F 火警圖.pdf",
+      "path": "火警圖 PDF/致德樓/致德樓B1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.25 初始匯入",
@@ -1889,7 +1889,7 @@
     {
       "building": "技警",
       "floor": "5F",
-      "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警5F 火警圖.pdf",
+      "path": "火警圖 PDF/技警/技警5F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1908,7 +1908,7 @@
     {
       "building": "技警",
       "floor": "4F",
-      "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警4F 火警圖.pdf",
+      "path": "火警圖 PDF/技警/技警4F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1927,7 +1927,7 @@
     {
       "building": "技警",
       "floor": "3F",
-      "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警3F 火警圖.pdf",
+      "path": "火警圖 PDF/技警/技警3F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1946,7 +1946,7 @@
     {
       "building": "技警",
       "floor": "2F",
-      "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警2F 火警圖.pdf",
+      "path": "火警圖 PDF/技警/技警2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1965,7 +1965,7 @@
     {
       "building": "技警",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警1F 火警圖.pdf",
+      "path": "火警圖 PDF/技警/技警1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -1984,7 +1984,7 @@
     {
       "building": "技警",
       "floor": "B1F",
-      "path": "火警圖 PDF/115.04.26 技警火警圖PDF/技警B1F 火警圖.pdf",
+      "path": "火警圖 PDF/技警/技警B1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2003,7 +2003,7 @@
     {
       "building": "醫護宿舍",
       "floor": "RF~R3F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍RF~R3F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍RF~R3F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2022,7 +2022,7 @@
     {
       "building": "醫護宿舍",
       "floor": "18F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍18F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍18F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2041,7 +2041,7 @@
     {
       "building": "醫護宿舍",
       "floor": "17F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍17F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍17F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2060,7 +2060,7 @@
     {
       "building": "醫護宿舍",
       "floor": "16F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍16F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍16F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2079,7 +2079,7 @@
     {
       "building": "醫護宿舍",
       "floor": "15F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍15F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍15F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2098,7 +2098,7 @@
     {
       "building": "醫護宿舍",
       "floor": "14F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍14F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍14F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2117,7 +2117,7 @@
     {
       "building": "醫護宿舍",
       "floor": "13F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍13F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍13F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2136,7 +2136,7 @@
     {
       "building": "醫護宿舍",
       "floor": "12F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍12F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍12F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2155,7 +2155,7 @@
     {
       "building": "醫護宿舍",
       "floor": "11F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍11F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍11F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2174,7 +2174,7 @@
     {
       "building": "醫護宿舍",
       "floor": "10F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍10F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍10F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2193,7 +2193,7 @@
     {
       "building": "醫護宿舍",
       "floor": "9F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍9F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍9F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2212,7 +2212,7 @@
     {
       "building": "醫護宿舍",
       "floor": "8F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍8F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍8F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2231,7 +2231,7 @@
     {
       "building": "醫護宿舍",
       "floor": "7F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍7F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍7F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2250,7 +2250,7 @@
     {
       "building": "醫護宿舍",
       "floor": "6F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍6F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍6F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2269,7 +2269,7 @@
     {
       "building": "醫護宿舍",
       "floor": "5F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍5F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍5F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2288,7 +2288,7 @@
     {
       "building": "醫護宿舍",
       "floor": "4F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍4F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍4F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2307,7 +2307,7 @@
     {
       "building": "醫護宿舍",
       "floor": "3F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍3F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍3F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2326,7 +2326,7 @@
     {
       "building": "醫護宿舍",
       "floor": "2F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍2F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍2F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2345,7 +2345,7 @@
     {
       "building": "醫護宿舍",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.26 醫護宿舍火警圖PDF/醫護宿舍1F 火警圖.pdf",
+      "path": "火警圖 PDF/醫護宿舍/醫護宿舍1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2364,7 +2364,7 @@
     {
       "building": "2號門停車場",
       "floor": "B1F",
-      "path": "火警圖 PDF/115.04.26 2號門停車場火警圖PDF/2號門停車場B1F火警圖.pdf",
+      "path": "火警圖 PDF/2號門停車場/2號門停車場B1F火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2383,7 +2383,7 @@
     {
       "building": "2號門停車場",
       "floor": "B2F",
-      "path": "火警圖 PDF/115.04.26 2號門停車場火警圖PDF/2號門停車場B2F火警圖.pdf",
+      "path": "火警圖 PDF/2號門停車場/2號門停車場B2F火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2402,7 +2402,7 @@
     {
       "building": "2號門停車場",
       "floor": "B3F",
-      "path": "火警圖 PDF/115.04.26 2號門停車場火警圖PDF/2號門停車場B3F火警圖.pdf",
+      "path": "火警圖 PDF/2號門停車場/2號門停車場B3F火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2421,7 +2421,7 @@
     {
       "building": "3號門停車場",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.26 3號門停車場火警圖PDF/3號門停車場1F火警圖.pdf",
+      "path": "火警圖 PDF/3號門停車場/3號門停車場1F火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2440,7 +2440,7 @@
     {
       "building": "3號門停車場",
       "floor": "B1F",
-      "path": "火警圖 PDF/115.04.26 3號門停車場火警圖PDF/3號門停車場B1F火警圖.pdf",
+      "path": "火警圖 PDF/3號門停車場/3號門停車場B1F火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2459,7 +2459,7 @@
     {
       "building": "3號門停車場",
       "floor": "B2F",
-      "path": "火警圖 PDF/115.04.26 3號門停車場火警圖PDF/3號門停車場B2F火警圖.pdf",
+      "path": "火警圖 PDF/3號門停車場/3號門停車場B2F火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2478,7 +2478,7 @@
     {
       "building": "3號門停車場",
       "floor": "B3F",
-      "path": "火警圖 PDF/115.04.26 3號門停車場火警圖PDF/3號門停車場B3F火警圖.pdf",
+      "path": "火警圖 PDF/3號門停車場/3號門停車場B3F火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2497,7 +2497,7 @@
     {
       "building": "地下連通道",
       "floor": "1F",
-      "path": "火警圖 PDF/115.04.26 地下連通道火警圖PDF/地下連通道1F 火警圖.pdf",
+      "path": "火警圖 PDF/地下連通道/地下連通道1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
@@ -2516,7 +2516,7 @@
     {
       "building": "地下連通道",
       "floor": "B1F",
-      "path": "火警圖 PDF/115.04.26 地下連通道火警圖PDF/地下連通道B1F 火警圖.pdf",
+      "path": "火警圖 PDF/地下連通道/地下連通道B1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-26",
       "updatedBy": "system",
       "note": "從既有資料夾日期 115.04.26 初始匯入",
