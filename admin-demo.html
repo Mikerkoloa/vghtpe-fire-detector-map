@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+    <title>PDF 管理後台 Demo</title>
+    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260829a">
+  </head>
+  <body>
+    <div class="admin-app">
+      <header class="admin-header">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">北榮</div>
+          <div class="brand-copy">
+            <strong>PDF 管理後台 Demo</strong>
+            <span>上傳圖面、重建索引、發佈到 GitHub</span>
+          </div>
+        </div>
+        <div class="header-actions">
+          <span class="env-pill">GitHub Token: Vercel Env</span>
+          <a class="ghost-button" href="./index.html">回查詢頁</a>
+        </div>
+      </header>
+
+      <main class="admin-shell">
+        <section class="login-panel" id="loginPanel" aria-labelledby="loginTitle">
+          <div>
+            <span class="eyebrow">管理員登入</span>
+            <h1 id="loginTitle">輸入管理密碼後進入 PDF 發佈流程</h1>
+          </div>
+          <form class="login-form" id="loginForm">
+            <label>
+              <span>帳號</span>
+              <input type="text" value="admin" autocomplete="username">
+            </label>
+            <label>
+              <span>密碼</span>
+              <input type="password" value="demo1234" autocomplete="current-password">
+            </label>
+            <button type="submit">登入 Demo</button>
+          </form>
+          <p class="hint">正式版會由 Vercel API 驗證，前端不會取得 GitHub token。</p>
+        </section>
+
+        <section class="dashboard is-hidden" id="dashboard" aria-label="PDF 管理工作台">
+          <nav class="admin-nav" aria-label="管理功能">
+            <button class="nav-button is-active" type="button" data-panel="uploadPanel">上傳圖面</button>
+            <button class="nav-button" type="button" data-panel="historyPanel">發佈紀錄</button>
+            <button class="nav-button" type="button" data-panel="settingsPanel">權限設定</button>
+          </nav>
+
+          <section class="work-area" id="uploadPanel">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow">上傳作業</span>
+                <h2>新增或取代 PDF 圖面</h2>
+              </div>
+              <span class="state-label" id="formState">尚未選擇檔案</span>
+            </div>
+
+            <form class="upload-form" id="uploadForm">
+              <fieldset class="mode-control">
+                <legend>作業類型</legend>
+                <label>
+                  <input type="radio" name="mode" value="replace" checked>
+                  <span>取代既有圖面</span>
+                </label>
+                <label>
+                  <input type="radio" name="mode" value="create">
+                  <span>新增新圖面</span>
+                </label>
+              </fieldset>
+
+              <div class="form-grid">
+                <label>
+                  <span>棟別</span>
+                  <select id="buildingSelect"></select>
+                </label>
+                <label>
+                  <span>樓層</span>
+                  <select id="floorSelect"></select>
+                </label>
+                <label>
+                  <span>GitHub 分支</span>
+                  <input id="branchInput" type="text" value="main">
+                </label>
+                <label>
+                  <span>Commit 訊息</span>
+                  <input id="commitInput" type="text" value="Update fire map PDF">
+                </label>
+              </div>
+
+              <label class="drop-zone" id="dropZone">
+                <input id="fileInput" type="file" accept="application/pdf,.pdf">
+                <span class="drop-title">選擇或拖拉 PDF 到這裡</span>
+                <span class="drop-subtitle" id="fileSummary">只接受 PDF，正式版上傳後會重建索引</span>
+              </label>
+
+              <div class="path-preview">
+                <span>預計 GitHub 路徑</span>
+                <code id="githubPath">尚未選擇棟別與樓層</code>
+              </div>
+
+              <div class="form-actions">
+                <button class="secondary-button" type="button" id="preflightButton">檢查索引</button>
+                <button class="primary-button" type="submit">上傳並發佈</button>
+              </div>
+            </form>
+          </section>
+
+          <aside class="status-area" aria-label="發佈狀態">
+            <section class="status-panel">
+              <div class="section-heading section-heading--compact">
+                <div>
+                  <span class="eyebrow">預檢結果</span>
+                  <h2>上傳前確認</h2>
+                </div>
+              </div>
+              <dl class="check-list">
+                <div>
+                  <dt>PDF 檔案</dt>
+                  <dd id="checkFile">等待選擇</dd>
+                </div>
+                <div>
+                  <dt>目標圖面</dt>
+                  <dd id="checkTarget">等待選擇</dd>
+                </div>
+                <div>
+                  <dt>索引策略</dt>
+                  <dd>上傳後自動重建</dd>
+                </div>
+                <div>
+                  <dt>部署方式</dt>
+                  <dd>GitHub commit 觸發 Vercel</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="status-panel">
+              <div class="section-heading section-heading--compact">
+                <div>
+                  <span class="eyebrow">發佈流程</span>
+                  <h2>目前狀態</h2>
+                </div>
+              </div>
+              <ol class="pipeline" id="pipeline">
+                <li data-step="upload"><span></span>等待上傳 PDF</li>
+                <li data-step="github"><span></span>寫入 GitHub repository</li>
+                <li data-step="index"><span></span>重建搜尋索引</li>
+                <li data-step="commit"><span></span>commit PDF 與索引檔</li>
+                <li data-step="deploy"><span></span>等待 Vercel 部署完成</li>
+              </ol>
+            </section>
+          </aside>
+
+          <section class="work-area is-hidden" id="historyPanel">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow">紀錄</span>
+                <h2>最近發佈</h2>
+              </div>
+              <button class="secondary-button" type="button">重新整理</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>時間</th>
+                    <th>圖面</th>
+                    <th>動作</th>
+                    <th>索引</th>
+                    <th>部署</th>
+                  </tr>
+                </thead>
+                <tbody id="historyBody">
+                  <tr>
+                    <td>2026-08-29 09:20</td>
+                    <td>二門診 7F</td>
+                    <td>取代 PDF</td>
+                    <td>完成</td>
+                    <td>Production</td>
+                  </tr>
+                  <tr>
+                    <td>2026-08-28 16:40</td>
+                    <td>思源樓 1F</td>
+                    <td>取代 PDF</td>
+                    <td>完成</td>
+                    <td>Production</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="work-area is-hidden" id="settingsPanel">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow">設定</span>
+                <h2>管理權限與發佈環境</h2>
+              </div>
+            </div>
+            <div class="settings-grid">
+              <div class="setting-row">
+                <strong>登入方式</strong>
+                <span>Vercel API 驗證管理密碼</span>
+              </div>
+              <div class="setting-row">
+                <strong>GitHub 權限</strong>
+                <span>fine-grained token，限此 repository contents 讀寫</span>
+              </div>
+              <div class="setting-row">
+                <strong>索引重建</strong>
+                <span>GitHub Actions 執行 `node scripts/build-index.js`</span>
+              </div>
+              <div class="setting-row">
+                <strong>部署</strong>
+                <span>commit 到 main 後由 Vercel 自動部署</span>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./assets/admin-demo.js?v=20260829a"></script>
+  </body>
+</html>

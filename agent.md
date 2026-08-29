@@ -269,6 +269,13 @@ vghtpe-fire-detector-map
 - 補上 viewport `maximum-scale=1`、`text-size-adjust: 100%`、手機搜尋表單按鈕 16px，並在三個搜尋表單送出後主動 blur 目前焦點控制項。
 - `index.html` 的 CSS/JS query string 已更新，避免手機 Safari 快取舊檔。
 
+## 2026-08-29 PDF 管理後台前端 Demo
+
+- 新增純前端 `admin-demo.html`，用來討論 PDF 管理後台設計，不接真實 GitHub API。
+- Demo 包含管理員登入、上傳/取代 PDF、棟別樓層選擇、GitHub 路徑預覽、預檢結果、發佈流程、發佈紀錄、權限設定。
+- `assets/admin-demo.js` 會讀取現有 `data/buildings.json` 產生棟別與樓層選單，並模擬上傳到 GitHub、重建索引、commit、等待 Vercel 部署。
+- `assets/admin-demo.css` 以工作台版面為主，桌面三欄、手機單欄，輸入與按鈕維持 16px 避免 iPhone Safari 放大。
+
 ## 2026-08-28 多定址碼標籤搜尋
 
 - 全域搜尋與目前 PDF 搜尋都改為支援定址碼標籤。
