@@ -325,6 +325,14 @@ vghtpe-fire-detector-map
 - `assets/admin-demo.js` 移除未登入 fallback 小清單；未登入時 PDF 清單只顯示「登入後載入 PDF 清單」，登入成功並讀到 `/api/admin/data` 後才顯示完整清單。
 - `admin.html` 密碼欄位不再預填 `demo1234`，避免正式站混淆；本機若未設定 env 仍可用 `admin/demo1234` 作為開發 fallback。
 
+## 2026-08-29 管理 API 線上清單排查
+
+- 使用者回報用 Vercel 環境變數帳密登入時顯示 `Admin API error`。
+- 本機檢查：使用者瀏覽器曾在 `localhost:8777/admin-demo.html`，但此埠沒有 `server.js` API；本機管理 API 正確埠為 `localhost:4213`。
+- 線上未授權 `/api/admin/data` 已確認回 401，代表 API 路由存在。
+- 可能原因：Vercel Function bundle 未明確包含 `data/*.json`，導致登入成功後讀 `/api/admin/data` 時找不到 data 檔而 500。
+- 已在 `vercel.json` 加入 `functions.api/admin/*.js.includeFiles = data/*.json`，並讓前端錯誤訊息顯示 `detail`，未來排錯更清楚。
+
 ## 2026-08-28 多定址碼標籤搜尋
 
 - 全域搜尋與目前 PDF 搜尋都改為支援定址碼標籤。

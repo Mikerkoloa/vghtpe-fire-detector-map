@@ -2,5 +2,10 @@
   "installCommand": null,
   "buildCommand": null,
   "outputDirectory": ".",
-  "cleanUrls": false
+  "cleanUrls": false,
+  "functions": {
+    "api/admin/*.js": {
+      "includeFiles": "data/*.json"
+    }
+  }
 }

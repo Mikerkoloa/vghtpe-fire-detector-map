@@ -264,7 +264,8 @@ async function requestAdminApi(action, payload) {
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    const message = data.errors?.join("、") || data.error || "管理 API 執行失敗";
+    const detail = data.detail ? `：${data.detail}` : "";
+    const message = data.errors?.join("、") || `${data.error || "管理 API 執行失敗"}${detail}`;
     throw new Error(message);
   }
 
