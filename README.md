@@ -46,6 +46,33 @@ http://localhost:4173
 https://vghtpe-fire-detector-map.vercel.app
 ```
 
+管理後台：
+
+```text
+https://vghtpe-fire-detector-map.vercel.app/admin-demo.html
+```
+
+## PDF 管理後台環境變數
+
+管理後台會透過 Vercel Function 寫入 GitHub。機密值只放在 Vercel Environment Variables 或本機 `.env.local`，不要提交到 Git。
+
+必要變數：
+
+```env
+GITHUB_TOKEN=
+GITHUB_OWNER=Mikerkoloa
+GITHUB_REPO=vghtpe-fire-detector-map
+GITHUB_BRANCH=main
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=
+ADMIN_SESSION_SECRET=
+ADMIN_UPLOAD_LIMIT_MB=25
+```
+
+`GITHUB_TOKEN` 建議使用 GitHub fine-grained personal access token，只授權此 repository，並開 `Contents: Read and write`。
+
+正式上傳 PDF 後會 commit 到 GitHub，並由 GitHub Actions 重建搜尋索引。若 Actions 無法把 `data/*.json` 推回 repository，請到 GitHub repository 的 `Settings` → `Actions` → `General`，確認 Workflow permissions 允許 `Read and write permissions`。
+
 ## 更新 PDF 後重建索引
 
 新增、刪除或更換 `火警圖 PDF` 內的檔案後，請執行：

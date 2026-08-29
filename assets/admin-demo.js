@@ -40,6 +40,7 @@ const state = {
   historyByPath: new Map(),
   file: null,
   lastPreflight: null,
+  authToken: window.sessionStorage.getItem("adminDemoToken") || "",
 };
 
 const pipelineSteps = ["upload", "github", "index", "commit", "deploy"];
@@ -191,7 +192,32 @@ function setLoginMessage(message, tone = "") {
   dom.loginMessage.classList.toggle("is-error", tone === "error");
 }
 
-function buildUploadPayload() {
+function readFileAsBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+      const result = String(reader.result || "");
+      resolve(result.includes(",") ? result.split(",").pop() : result);
+    });
+    reader.addEventListener("error", () => reject(reader.error || new Error("PDF 讀取失敗")));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function buildUploadPayload({ includeContent = false } = {}) {
+  const file = state.file
+    ? {
+        name: state.file.name,
+        size: state.file.size,
+        type: state.file.type || "application/pdf",
+        lastModified: state.file.lastModified,
+      }
+    : null;
+
+  if (file && includeContent) {
+    file.contentBase64 = await readFileAsBase64(state.file);
+  }
+
   return {
     mode: new FormData(dom.uploadForm).get("mode"),
     building: dom.buildingSelect.value,
@@ -202,25 +228,25 @@ function buildUploadPayload() {
     updatedAt: dom.updatedAtInput.value || todayString(),
     updatedBy: dom.updatedByInput.value.trim(),
     note: dom.updateNoteInput.value.trim(),
-    file: state.file
-      ? {
-          name: state.file.name,
-          size: state.file.size,
-          type: state.file.type || "application/pdf",
-          lastModified: state.file.lastModified,
-        }
-      : null,
+    file,
   };
 }
 
 async function requestAdminApi(action, payload) {
+  const headers = payload ? { "content-type": "application/json" } : {};
+  if (state.authToken) {
+    headers.authorization = `Bearer ${state.authToken}`;
+  }
+
   const options = payload
     ? {
         method: "POST",
-        headers: { "content-type": "application/json" },
+        headers,
         body: JSON.stringify(payload),
       }
-    : undefined;
+    : {
+        headers,
+      };
   const response = await fetch(`/api/admin/${action}`, options);
   const data = await response.json().catch(() => ({}));
 
@@ -348,12 +374,25 @@ function finishPipeline() {
   });
 }
 
+function applyPipelineStatuses(steps) {
+  const firstPendingIndex = steps.findIndex((step) => step.status === "pending" || step.status === "mock");
+  const activeStep = firstPendingIndex === -1 ? "" : steps[firstPendingIndex].id;
+  const statuses = new Map(steps.map((step) => [step.id, step.status]));
+
+  dom.pipeline.querySelectorAll("li").forEach((item) => {
+    const status = statuses.get(item.dataset.step);
+    item.classList.toggle("is-done", status === "done");
+    item.classList.toggle("is-active", item.dataset.step === activeStep);
+  });
+}
+
 function addHistoryRow(uploadResult) {
   const building = selectedBuilding();
   const floor = selectedFloor();
   const mode = new FormData(dom.uploadForm).get("mode") === "replace" ? "取代 PDF" : "新增 PDF";
   const now = new Date();
   const note = dom.updateNoteInput.value.trim() || "未填寫備註";
+  const commitLabel = uploadResult?.commit?.sha ? uploadResult.commit.sha.slice(0, 12) : "等待 Vercel";
   const row = document.createElement("tr");
 
   row.innerHTML = `
@@ -362,7 +401,7 @@ function addHistoryRow(uploadResult) {
     <td>${mode}</td>
     <td>${note}</td>
     <td>${uploadResult?.mode === "mock" ? "模擬完成" : "完成"}</td>
-    <td>${uploadResult?.commit?.sha || "等待 Vercel"}</td>
+    <td>${commitLabel}</td>
   `;
 
   dom.historyBody.prepend(row);
@@ -392,7 +431,7 @@ function updateSelectedPdfHistory(historyRecord) {
         ...historyRecord,
         detectorCount: floor.detectorCount || historyRecord.detectorCount || previous?.detectorCount || 0,
         pageCount: floor.pageCount || historyRecord.pageCount || previous?.pageCount || 0,
-        history: [...(historyRecord.history || []), ...(previous?.history || [])],
+        history: historyRecord.history || previous?.history || [],
       }
     : {
     building: building.name,
@@ -419,7 +458,7 @@ async function simulateUpload() {
     return;
   }
 
-  const payload = buildUploadPayload();
+  const payload = await buildUploadPayload();
   let preflightResult;
 
   try {
@@ -435,9 +474,11 @@ async function simulateUpload() {
 
   if (!applyPreflightResult(preflightResult)) return;
 
-  dom.formState.textContent = "API 模擬發佈中";
+  const uploadPayload = await buildUploadPayload({ includeContent: true });
+
+  dom.formState.textContent = "API 發佈中";
   dom.formState.classList.remove("is-ready");
-  setApiMessage("管理 API 已接收上傳請求，正在模擬 GitHub 發佈流程。", "warning");
+  setApiMessage("管理 API 已接收上傳請求，正在送出發佈流程。", "warning");
 
   for (let index = 0; index < pipelineSteps.length; index += 1) {
     setPipeline(index);
@@ -445,14 +486,18 @@ async function simulateUpload() {
   }
 
   try {
-    const uploadResult = await requestAdminApi("upload", payload);
-    finishPipeline();
-    dom.formState.textContent = "API 模擬完成";
+    const uploadResult = await requestAdminApi("upload", uploadPayload);
+    if (uploadResult.mode === "mock") {
+      finishPipeline();
+    } else {
+      applyPipelineStatuses(uploadResult.pipeline || []);
+    }
+    dom.formState.textContent = uploadResult.mode === "mock" ? "API 模擬完成" : "已送出 GitHub";
     dom.formState.classList.add("is-ready");
     setApiMessage(`${uploadResult.message}；目標：${uploadResult.target.path}`, "ok");
     updateSelectedPdfHistory(uploadResult.historyRecord);
     addHistoryRow(uploadResult);
-    dom.formState.textContent = "API 模擬完成";
+    dom.formState.textContent = uploadResult.mode === "mock" ? "API 模擬完成" : "已送出 GitHub";
     dom.formState.classList.add("is-ready");
   } catch (error) {
     setApiMessage(error.message, "error");
@@ -493,10 +538,16 @@ dom.loginForm.addEventListener("submit", async (event) => {
     await requestAdminApi("login", {
       username: dom.usernameInput.value,
       password: dom.passwordInput.value,
+    }).then((result) => {
+      state.authToken = result.token || "";
+      if (state.authToken) {
+        window.sessionStorage.setItem("adminDemoToken", state.authToken);
+      }
     });
     setLoginMessage("登入成功。", "ok");
     dom.loginPanel.classList.add("is-hidden");
     dom.dashboard.classList.remove("is-hidden");
+    await loadBuildings();
   } catch (error) {
     setLoginMessage(error.message, "error");
   }
@@ -542,7 +593,7 @@ dom.preflightButton.addEventListener("click", async () => {
   setApiMessage("正在送出預檢到管理 API。", "warning");
 
   try {
-    applyPreflightResult(await requestAdminApi("preflight", buildUploadPayload()));
+    applyPreflightResult(await requestAdminApi("preflight", await buildUploadPayload()));
   } catch (error) {
     setApiMessage(error.message, "error");
     dom.formState.textContent = "API 預檢失敗";
@@ -571,7 +622,19 @@ dom.uploadForm.addEventListener("submit", (event) => {
   simulateUpload();
 });
 
-loadBuildings().catch(() => {
+if (state.authToken) {
+  dom.loginPanel.classList.add("is-hidden");
+  dom.dashboard.classList.remove("is-hidden");
+  loadBuildings().catch((error) => {
+    window.sessionStorage.removeItem("adminDemoToken");
+    state.authToken = "";
+    dom.loginPanel.classList.remove("is-hidden");
+    dom.dashboard.classList.add("is-hidden");
+    setLoginMessage(error.message, "error");
+  });
+}
+
+if (!state.authToken) {
   state.buildings = [
     { name: "長青樓", floors: [{ label: "6F" }, { label: "7F" }, { label: "B1F" }] },
     { name: "二門診", floors: [{ label: "1F" }, { label: "7F" }, { label: "8F" }] },
@@ -582,4 +645,4 @@ loadBuildings().catch(() => {
   fillBuildings(state.buildings);
   fillPdfBuildingFilter(state.buildings);
   renderPdfList();
-});
+}

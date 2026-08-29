@@ -303,6 +303,20 @@ vghtpe-fire-detector-map
 - 目前 3A 仍不會真的寫入 GitHub；`upload` 回傳 `mode: "mock"`、`sha: "mock-pending"`，用來確認流程與畫面狀態。
 - 驗證結果：`/api/admin/data` 回 133 PDFs、15 buildings；正確帳密 `admin/demo1234` 登入 200，錯誤密碼 401；二門診 7F 預檢通過；瀏覽器流程可登入、篩選二門診 7F、帶入更新表單並完成 mock 上傳。
 
+## 2026-08-29 PDF 管理後台 3B GitHub 上傳
+
+- 使用者已在 Vercel 設定環境變數後，開始把 `/api/admin/upload` 從 mock 擴充為真實 GitHub 寫入。
+- 新增 `.env.example`，列出 `GITHUB_TOKEN`、`GITHUB_OWNER`、`GITHUB_REPO`、`GITHUB_BRANCH`、`ADMIN_USERNAME`、`ADMIN_PASSWORD`、`ADMIN_SESSION_SECRET`、`ADMIN_UPLOAD_LIMIT_MB`。
+- `.gitignore` 已加入 `.env.local` 與 `.env.*.local`，避免本機 pull Vercel secret 後誤上傳。
+- `server.js` 會自動讀取本機 `.env.local`，因此本機測試真實 GitHub env 時可直接用 `PORT=4213 node server.js`。
+- 管理登入改為讀 `ADMIN_USERNAME` / `ADMIN_PASSWORD`，登入成功會回 HMAC session token；`data`、`preflight`、`upload` 都需要 `Authorization: Bearer ...`。
+- 前端會把 PDF File 轉成 base64 後送到 `/api/admin/upload`；token 保存在 `sessionStorage`。
+- 若 GitHub env 未設定完整且不是 Vercel runtime，upload 會走本機 mock；若在 Vercel runtime 但 env 不完整，會回錯誤。
+- GitHub env 完整時，upload 會用 GitHub Git API 在同一個 commit 寫入目標 PDF 與 `data/pdf-update-history.json`，commit 後回傳 GitHub commit sha。
+- 新增 `.github/workflows/rebuild-pdf-index.yml`：當 `main` 收到 PDF 或索引腳本變更時，安裝 `poppler-utils`，執行 `npm run build:index` 與 `npm run build:pdf-history`，再 commit 更新後的 data JSON。
+- 本機驗證：未登入讀 `/api/admin/data` 會 401；登入後回 133 PDFs、15 buildings、mode=mock；上傳含 `%PDF-` base64 測試檔會走 mock；瀏覽器流程可登入、篩選二門診 7F、送出 PDF 內容並完成 mock 上傳。
+- 後續上線後若 GitHub Actions 無法 push data JSON，需到 GitHub repository Settings > Actions > General，確認 Workflow permissions 允許 Read and write。
+
 ## 2026-08-28 多定址碼標籤搜尋
 
 - 全域搜尋與目前 PDF 搜尋都改為支援定址碼標籤。

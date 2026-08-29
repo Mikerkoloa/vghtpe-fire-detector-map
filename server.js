@@ -20,6 +20,29 @@ const mimeTypes = new Map([
   [".jpeg", "image/jpeg"],
 ]);
 
+function loadLocalEnv() {
+  const envPath = path.join(ROOT, ".env.local");
+  if (!fs.existsSync(envPath)) return;
+
+  const lines = fs.readFileSync(envPath, "utf8").split(/\r?\n/);
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+
+    const equalsIndex = trimmed.indexOf("=");
+    if (equalsIndex === -1) continue;
+
+    const key = trimmed.slice(0, equalsIndex).trim();
+    const rawValue = trimmed.slice(equalsIndex + 1).trim();
+    const value = rawValue.replace(/^["']|["']$/g, "");
+    if (key && process.env[key] === undefined) {
+      process.env[key] = value;
+    }
+  }
+}
+
+loadLocalEnv();
+
 function resolveRequestPath(requestUrl) {
   const url = new URL(requestUrl, `http://localhost:${PORT}`);
   const pathname = decodeURIComponent(url.pathname);
