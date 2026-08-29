@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T07:15:37.539Z",
+  "generatedAt": "2026-08-29T10:35:21.414Z",
   "source": "data/buildings.json",
   "totals": {
     "files": 133
@@ -543,10 +543,17 @@
       "path": "火警圖 PDF/思源樓/思源樓1F 火警圖.pdf",
       "latestUpdatedAt": "2026-04-25",
       "updatedBy": "system",
-      "note": "從既有資料夾日期 115.04.25 初始匯入",
+      "note": "從既有資料夾日期 115.04.25 初始匯入(測試)",
       "detectorCount": 199,
       "pageCount": 1,
       "history": [
+        {
+          "date": "2026-04-25",
+          "action": "replace",
+          "by": "system",
+          "commit": "same-commit",
+          "note": "從既有資料夾日期 115.04.25 初始匯入(測試)"
+        },
         {
           "date": "2026-04-25",
           "action": "initial-import",
