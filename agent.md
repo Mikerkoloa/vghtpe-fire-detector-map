@@ -259,6 +259,13 @@ vghtpe-fire-detector-map
 - 手冊內容分成一般使用者與維護者：搜尋方式、選棟別樓層、PDF 操作、更新 PDF、Windows 背景啟動。
 - 已用桌面與 430px 手機尺寸檢查；手機版 `scrollWidth = 430`、`clientWidth = 430`，沒有水平溢出。
 
+## 2026-08-29 iPhone Safari 搜尋版面修正
+
+- 使用者回報 iPhone Safari 搜尋結果仍在右側，Chrome 則正常顯示在下方。
+- 判斷 Safari 可能未命中單純 `max-width: 960px` 的手機版媒體條件，或網域被設定為要求桌面版網站。
+- 手機版主要 layout 改為 `max-width: 960px`、`max-device-width: 960px` 或觸控裝置 `(hover: none) and (pointer: coarse)` 都套用。
+- 搜尋標籤輸入框的 `input` 全域固定 `font-size: 16px`，避免 iOS Safari/Chrome 聚焦時自動放大頁面。
+
 ## 2026-08-28 多定址碼標籤搜尋
 
 - 全域搜尋與目前 PDF 搜尋都改為支援定址碼標籤。

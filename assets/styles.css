@@ -194,6 +194,7 @@ button {
   background: transparent;
   border: 0;
   border-radius: 8px;
+  font-size: 16px;
   outline: none;
 }
 
@@ -902,7 +903,7 @@ button {
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 960px), (max-device-width: 960px), (hover: none) and (pointer: coarse) {
   html,
   body {
     height: auto;
@@ -927,10 +928,6 @@ button {
 
   .manual-button {
     justify-self: stretch;
-  }
-
-  .detector-token-input input {
-    font-size: 16px;
   }
 
   .detector-token {
@@ -1012,7 +1009,7 @@ button {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 640px), (max-device-width: 640px) {
   .app-header {
     padding: 12px;
   }
@@ -1102,7 +1099,7 @@ button {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 380px), (max-device-width: 380px) {
   .building-groups {
     grid-template-columns: 1fr;
   }
