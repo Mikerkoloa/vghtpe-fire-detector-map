@@ -42,11 +42,42 @@ function historyKey(item) {
   return `${item.building}::${item.floor}::${item.path}`;
 }
 
+function buildingFloorKey(item) {
+  return `${item.building}::${item.floor}`;
+}
+
 function loadExistingHistory() {
-  if (!fs.existsSync(HISTORY_PATH)) return new Map();
+  if (!fs.existsSync(HISTORY_PATH)) {
+    return {
+      byExactPath: new Map(),
+      byBuildingFloor: new Map(),
+    };
+  }
 
   const data = JSON.parse(fs.readFileSync(HISTORY_PATH, "utf8"));
-  return new Map((data.files || []).map((item) => [historyKey(item), item]));
+  const byExactPath = new Map();
+  const buildingFloorGroups = new Map();
+
+  for (const item of data.files || []) {
+    byExactPath.set(historyKey(item), item);
+
+    const key = buildingFloorKey(item);
+    const group = buildingFloorGroups.get(key) || [];
+    group.push(item);
+    buildingFloorGroups.set(key, group);
+  }
+
+  const byBuildingFloor = new Map();
+  for (const [key, group] of buildingFloorGroups.entries()) {
+    if (group.length === 1) {
+      byBuildingFloor.set(key, group[0]);
+    }
+  }
+
+  return {
+    byExactPath,
+    byBuildingFloor,
+  };
 }
 
 function build() {
@@ -64,11 +95,14 @@ function build() {
         path: floor.path,
       };
       const key = historyKey(item);
-      const previous = existing.get(key);
+      const previous = existing.byExactPath.get(key) || existing.byBuildingFloor.get(buildingFloorKey(item));
 
       if (previous) {
         files.push({
           ...previous,
+          building: building.name,
+          floor: floor.label,
+          path: floor.path,
           detectorCount: floor.detectorCount || 0,
           pageCount: floor.pageCount || 0,
         });

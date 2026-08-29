@@ -280,6 +280,13 @@ vghtpe-fire-detector-map
 - 新增 `scripts/build-pdf-history.js` 與 `npm run build:pdf-history`，會從 `buildings.json` 產生 133 筆 PDF 更新紀錄，並嘗試把資料夾內的民國日期轉為西元日期。
 - 管理 Demo 的上傳頁新增更新日期、更新人員、更新備註；PDF 清單新增最後更新、更新人、備註，Demo 上傳完成後會即時更新畫面中的紀錄。
 
+## 2026-08-29 PDF 路徑整理 2A
+
+- 新增 `scripts/migrate-pdf-paths.js` 與 npm scripts：`npm run migrate:pdf-paths` 只做 dry-run，`npm run migrate:pdf-paths:apply` 才正式搬 PDF。
+- 新路徑規則定為 `火警圖 PDF/{棟別}/{原PDF檔名}`，日期不再放在資料夾名稱裡。
+- dry-run 結果：133 份 PDF 會搬移、0 份已是新路徑，沒有缺檔或目標衝突。
+- `scripts/build-pdf-history.js` 已補強：未來正式搬移後會先用完整 path 找既有紀錄，找不到時改用棟別 + 樓層延續歷史紀錄，避免更新紀錄斷掉。
+
 ## 2026-08-28 多定址碼標籤搜尋
 
 - 全域搜尋與目前 PDF 搜尋都改為支援定址碼標籤。

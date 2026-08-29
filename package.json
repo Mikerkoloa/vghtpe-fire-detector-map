@@ -6,6 +6,8 @@
   "scripts": {
     "build:index": "node scripts/build-index.js",
     "build:pdf-history": "node scripts/build-pdf-history.js",
+    "migrate:pdf-paths": "node scripts/migrate-pdf-paths.js",
+    "migrate:pdf-paths:apply": "node scripts/migrate-pdf-paths.js --apply",
     "start": "node server.js",
     "push": "powershell -ExecutionPolicy Bypass -File scripts/push.ps1",
     "win:start": "powershell -ExecutionPolicy Bypass -File scripts/windows/start-background.ps1",
