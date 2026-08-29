@@ -92,7 +92,8 @@ const state = {
 };
 
 const MIN_ZOOM = 0.45;
-const MAX_ZOOM = 4;
+const MAX_ZOOM = 8;
+const MAX_RENDER_PIXELS = 24_000_000;
 const EXPORT_IMAGE_SCALE = 2;
 const DETECTOR_SCAN_PATTERN = /(?:\d+:)?M\d+-\d+|M[1-9]\d*/gi;
 const DETECTOR_AUTO_COMMIT_DELAY = 520;
@@ -332,6 +333,13 @@ function floorSortValue(label) {
   const basement = /^B(\d+)F?$/.exec(target);
   if (basement) return -Number(basement[1]);
   return -9999;
+}
+
+function canvasRenderScale(viewport) {
+  const deviceScale = window.devicePixelRatio || 1;
+  const cssPixels = Math.max(1, viewport.width * viewport.height);
+  const maxScale = Math.sqrt(MAX_RENDER_PIXELS / cssPixels);
+  return Math.max(1, Math.min(deviceScale, maxScale));
 }
 
 function setStatus(message) {
@@ -861,7 +869,7 @@ async function renderCurrentPage(options = {}) {
   const availableWidth = Math.max(320, dom.viewerShell.clientWidth - 48);
   const fitScale = Math.max(0.18, Math.min(2.2, availableWidth / baseViewport.width));
   const viewport = page.getViewport({ scale: fitScale * state.zoom });
-  const deviceScale = window.devicePixelRatio || 1;
+  const deviceScale = canvasRenderScale(viewport);
   const nextCanvas = document.createElement("canvas");
 
   nextCanvas.id = "pdfCanvas";
