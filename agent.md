@@ -341,6 +341,14 @@ vghtpe-fire-detector-map
 - 若新增時輸入的棟別與樓層已存在 PDF，例如 `思源樓 1F`，預檢與上傳都會擋下，提示改用「取代既有圖面」，避免不小心覆蓋。
 - 新增路徑規則維持 `火警圖 PDF/{棟別}/{棟別}{樓層} 火警圖.pdf`，例如 `火警圖 PDF/思源樓/思源樓13F 火警圖.pdf`。
 
+## 2026-08-30 專案 Icon
+
+- 新增 `assets/icons/fire-map-icon.svg`、`assets/icons/fire-map-maskable.svg`、`assets/icons/apple-touch-icon.png`、`assets/icons/fire-map-icon-512.png`。
+- Icon 設計語意為「PDF 圖紙上的火警探測器定位」，使用深綠、青藍、紅橘，避免直接仿作正式院徽。
+- `index.html`、`admin.html`、`admin-demo.html` 已加入 SVG favicon、Apple touch icon、`theme-color` 與 `site.webmanifest`。
+- `server.js` 已加入 `.webmanifest` MIME：`application/manifest+json; charset=utf-8`。
+- 已用 Chrome headless 產生 512px 與 64px 預覽，64px 小尺寸仍能辨識圖紙與火警定位符號。
+
 ## 2026-08-28 多定址碼標籤搜尋
 
 - 全域搜尋與目前 PDF 搜尋都改為支援定址碼標籤。

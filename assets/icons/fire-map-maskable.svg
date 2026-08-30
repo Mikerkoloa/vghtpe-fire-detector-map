@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Fire Detector Map App Icon</title>
+  <desc id="desc">A simplified fire detector marker for app launchers.</desc>
+  <rect width="512" height="512" fill="#075e50"/>
+  <circle cx="256" cy="256" r="180" fill="#f8fbfa"/>
+  <path d="M174 220h164M174 260h104M174 300h164" fill="none" stroke="#b7c8c2" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="292" cy="270" r="86" fill="#fff4cc"/>
+  <circle cx="292" cy="270" r="62" fill="none" stroke="#e86a1c" stroke-width="24"/>
+  <circle cx="292" cy="270" r="20" fill="#e86a1c"/>
+  <path d="M292 106c26 34 44 58 44 86 0 27-19 46-44 46s-44-19-44-46c0-23 14-40 26-54 3 19 11 31 23 39 7-17 5-40-5-71z" fill="#e86a1c"/>
+</svg>

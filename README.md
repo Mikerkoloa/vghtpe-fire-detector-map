@@ -21,6 +21,7 @@
 - 版面支援桌機、平板、手機。
 - 提供 `admin.html` 管理後台，已接上 `/api/admin/*`，可登入、查看 PDF 清單、預檢並上傳 PDF 到 GitHub。
 - 管理後台分成「取代既有圖面」與「新增新圖面」：取代只能選既有棟別樓層；新增可輸入新棟別或新樓層，但若同一棟別樓層已存在 PDF，會要求改用取代。
+- 已加入專案 icon、iPhone 主畫面 icon 與 web app manifest，瀏覽器分頁與安裝式捷徑會使用「PDF 圖面定位 + 火警」圖示。
 
 ## 啟動方式
 
@@ -170,8 +171,10 @@ logs/server.pid
 │  ├─ app.js
 │  ├─ admin-demo.js
 │  ├─ admin-demo.css
+│  ├─ icons/
 │  ├─ styles.css
 │  └─ vendor/pdfjs/
+├─ site.webmanifest
 ├─ data/
 │  ├─ buildings.json
 │  └─ fire-map-index.json

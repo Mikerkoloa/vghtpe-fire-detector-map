@@ -1,0 +1,35 @@
+{
+  "name": "臺北榮民總醫院火警探測器圖面查詢",
+  "short_name": "火警圖查詢",
+  "description": "搜尋火警探測器定址碼並在 PDF 圖面中定位。",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#edf3f1",
+  "theme_color": "#075e50",
+  "icons": [
+    {
+      "src": "./assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/fire-map-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/fire-map-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/fire-map-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
