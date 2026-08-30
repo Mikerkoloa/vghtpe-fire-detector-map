@@ -265,6 +265,40 @@ textarea:focus {
   border: 1px solid #b8d7cf;
 }
 
+.back-to-top {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 70;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  color: #fff;
+  background: var(--brand);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  box-shadow: 0 12px 28px rgba(22, 35, 31, 0.24);
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  background: var(--brand-strong);
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: 190px minmax(0, 1fr) 360px;
@@ -747,6 +781,14 @@ tr:last-child td {
   .nav-button:hover,
   .nav-button.is-active {
     box-shadow: inset 0 -4px 0 var(--accent);
+  }
+
+  .back-to-top {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
   }
 
   .work-area,

@@ -38,6 +38,7 @@ const dom = {
   pdfListBuildingFilter: document.querySelector("#pdfListBuildingFilter"),
   pdfListCount: document.querySelector("#pdfListCount"),
   pdfListBody: document.querySelector("#pdfListBody"),
+  backToTopButton: document.querySelector("#backToTopButton"),
 };
 
 const state = {
@@ -47,6 +48,7 @@ const state = {
   file: null,
   lastPreflight: null,
   authToken: window.sessionStorage.getItem("adminDemoToken") || "",
+  backToTopTicking: false,
 };
 
 const pipelineSteps = ["upload", "github", "index", "commit", "deploy"];
@@ -629,6 +631,36 @@ async function loadBuildings() {
   setApiMessage(`管理 API 已載入：${data.totals?.pdfs || state.pdfItems.length} 份 PDF。`, "ok");
 }
 
+function getPageScrollTop() {
+  return window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+}
+
+function updateBackToTopVisibility() {
+  if (!dom.backToTopButton) return;
+
+  const threshold = Math.max(320, window.innerHeight * 0.55);
+  dom.backToTopButton.classList.toggle("is-visible", getPageScrollTop() > threshold);
+}
+
+function scheduleBackToTopVisibility() {
+  if (state.backToTopTicking) return;
+
+  state.backToTopTicking = true;
+  window.requestAnimationFrame(() => {
+    state.backToTopTicking = false;
+    updateBackToTopVisibility();
+  });
+}
+
+function scrollToPageTop() {
+  document.activeElement?.blur();
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+}
+
 dom.loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   document.activeElement.blur();
@@ -742,6 +774,10 @@ dom.uploadForm.addEventListener("submit", (event) => {
   simulateUpload();
 });
 
+window.addEventListener("scroll", scheduleBackToTopVisibility, { passive: true });
+window.addEventListener("resize", updateBackToTopVisibility);
+dom.backToTopButton?.addEventListener("click", scrollToPageTop);
+
 if (state.authToken) {
   dom.loginPanel.classList.add("is-hidden");
   dom.dashboard.classList.remove("is-hidden");
@@ -757,3 +793,5 @@ if (state.authToken) {
 if (!state.authToken) {
   clearAdminData();
 }
+
+updateBackToTopVisibility();

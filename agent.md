@@ -349,6 +349,12 @@ vghtpe-fire-detector-map
 - `server.js` 已加入 `.webmanifest` MIME：`application/manifest+json; charset=utf-8`。
 - 已用 Chrome headless 產生 512px 與 64px 預覽，64px 小尺寸仍能辨識圖紙與火警定位符號。
 
+## 2026-08-30 回到上方按鈕
+
+- 主查詢頁 `index.html` 與管理後台 `admin.html` 新增右下角浮動「回到上方」按鈕。
+- 按鈕在頁面滑動超過半個螢幕或 320px 後才顯示；按下會 blur 目前輸入欄位，再平滑捲回頁面頂端，避免 iPhone 鍵盤留在畫面上。
+- 手機版按鈕尺寸為 44px，並使用 safe-area inset 避開 iPhone 底部手勢區。
+
 ## 2026-08-28 多定址碼標籤搜尋
 
 - 全域搜尋與目前 PDF 搜尋都改為支援定址碼標籤。

@@ -51,6 +51,7 @@ const dom = {
   imageExportPreview: document.querySelector("#imageExportPreview"),
   imageExportShare: document.querySelector("#imageExportShare"),
   imageExportDownload: document.querySelector("#imageExportDownload"),
+  backToTopButton: document.querySelector("#backToTopButton"),
 };
 
 const state = {
@@ -89,6 +90,7 @@ const state = {
   activeTouchPointers: new Map(),
   touchPanPointerId: null,
   imageExport: null,
+  backToTopTicking: false,
 };
 
 const MIN_ZOOM = 0.45;
@@ -1556,6 +1558,36 @@ function endPointerGesture(event) {
   dom.viewerShell.classList.remove("is-panning");
 }
 
+function getPageScrollTop() {
+  return window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+}
+
+function updateBackToTopVisibility() {
+  if (!dom.backToTopButton) return;
+
+  const threshold = Math.max(320, window.innerHeight * 0.55);
+  dom.backToTopButton.classList.toggle("is-visible", getPageScrollTop() > threshold);
+}
+
+function scheduleBackToTopVisibility() {
+  if (state.backToTopTicking) return;
+
+  state.backToTopTicking = true;
+  window.requestAnimationFrame(() => {
+    state.backToTopTicking = false;
+    updateBackToTopVisibility();
+  });
+}
+
+function scrollToPageTop() {
+  document.activeElement?.blur();
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+}
+
 dom.searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   tokenInputs.global.commit();
@@ -1666,7 +1698,12 @@ window.addEventListener("resize", () => {
   if (state.pdfDoc) {
     renderCurrentPage();
   }
+  updateBackToTopVisibility();
 });
+
+window.addEventListener("scroll", scheduleBackToTopVisibility, { passive: true });
+
+dom.backToTopButton?.addEventListener("click", scrollToPageTop);
 
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
@@ -1674,4 +1711,5 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
+updateBackToTopVisibility();
 init();
