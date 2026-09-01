@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T14:59:40.089Z",
+  "generatedAt": "2026-09-01T15:08:00.047Z",
   "source": "data/buildings.json",
   "totals": {
     "files": 145
@@ -1006,10 +1006,17 @@
       "path": "火警圖 PDF/三門診/三門診6F.pdf",
       "latestUpdatedAt": "2026-04-19",
       "updatedBy": "system",
-      "note": "從既有資料夾日期 115.04.19 初始匯入",
+      "note": "取消多個圈起來的瑕疵問題",
       "detectorCount": 264,
       "pageCount": 1,
       "history": [
+        {
+          "date": "2026-04-19",
+          "action": "replace",
+          "by": "system",
+          "commit": "same-commit",
+          "note": "取消多個圈起來的瑕疵問題"
+        },
         {
           "date": "2026-04-19",
           "action": "initial-import",
