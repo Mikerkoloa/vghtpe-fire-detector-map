@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T14:34:57.433Z",
+  "generatedAt": "2026-09-01T14:57:52.318Z",
   "source": "data/buildings.json",
   "totals": {
     "files": 145
@@ -2504,7 +2504,7 @@
     {
       "building": "立體停車場",
       "floor": "10F",
-      "path": "火警圖 PDF/立體停車場/立體停車場10F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場10F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
@@ -2523,7 +2523,7 @@
     {
       "building": "立體停車場",
       "floor": "9F",
-      "path": "火警圖 PDF/立體停車場/立體停車場9F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場9F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
@@ -2542,7 +2542,7 @@
     {
       "building": "立體停車場",
       "floor": "8F",
-      "path": "火警圖 PDF/立體停車場/立體停車場8F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場8F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
@@ -2561,7 +2561,7 @@
     {
       "building": "立體停車場",
       "floor": "7F",
-      "path": "火警圖 PDF/立體停車場/立體停車場7F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場7F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
@@ -2580,7 +2580,7 @@
     {
       "building": "立體停車場",
       "floor": "6F",
-      "path": "火警圖 PDF/立體停車場/立體停車場6F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場6F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
@@ -2599,7 +2599,7 @@
     {
       "building": "立體停車場",
       "floor": "5F",
-      "path": "火警圖 PDF/立體停車場/立體停車場5F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場5F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
@@ -2618,7 +2618,7 @@
     {
       "building": "立體停車場",
       "floor": "4F",
-      "path": "火警圖 PDF/立體停車場/立體停車場4F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場4F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
@@ -2637,7 +2637,7 @@
     {
       "building": "立體停車場",
       "floor": "3F",
-      "path": "火警圖 PDF/立體停車場/立體停車場3F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場3F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
@@ -2656,7 +2656,7 @@
     {
       "building": "立體停車場",
       "floor": "2F",
-      "path": "火警圖 PDF/立體停車場/立體停車場2F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場2F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
@@ -2675,7 +2675,7 @@
     {
       "building": "立體停車場",
       "floor": "1F",
-      "path": "火警圖 PDF/立體停車場/立體停車場1F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場1F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
@@ -2694,7 +2694,7 @@
     {
       "building": "立體停車場",
       "floor": "B1F",
-      "path": "火警圖 PDF/立體停車場/立體停車場B1F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場B1F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
@@ -2713,7 +2713,7 @@
     {
       "building": "立體停車場",
       "floor": "B2F",
-      "path": "火警圖 PDF/立體停車場/立體停車場B2F.pdf",
+      "path": "火警圖 PDF/立體停車場/立體停車場B2F 火警圖.pdf",
       "latestUpdatedAt": "2026-09-01",
       "updatedBy": "system",
       "note": "從既有 PDF 清單初始匯入",
