@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-29T10:35:52.238Z",
+  "generatedAt": "2026-09-01T14:32:35.511Z",
   "source": "data/buildings.json",
   "totals": {
-    "files": 133
+    "files": 145
   },
   "files": [
     {
@@ -2498,6 +2498,234 @@
           "by": "system",
           "commit": null,
           "note": "從既有資料夾日期 115.04.26 初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "10F",
+      "path": "火警圖 PDF/立體停車場/立體停車場10F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 8,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "9F",
+      "path": "火警圖 PDF/立體停車場/立體停車場9F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 18,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "8F",
+      "path": "火警圖 PDF/立體停車場/立體停車場8F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 18,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "7F",
+      "path": "火警圖 PDF/立體停車場/立體停車場7F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 18,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "6F",
+      "path": "火警圖 PDF/立體停車場/立體停車場6F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 18,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "5F",
+      "path": "火警圖 PDF/立體停車場/立體停車場5F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 18,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "4F",
+      "path": "火警圖 PDF/立體停車場/立體停車場4F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 18,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "3F",
+      "path": "火警圖 PDF/立體停車場/立體停車場3F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 18,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "2F",
+      "path": "火警圖 PDF/立體停車場/立體停車場2F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 18,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "1F",
+      "path": "火警圖 PDF/立體停車場/立體停車場1F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 20,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "B1F",
+      "path": "火警圖 PDF/立體停車場/立體停車場B1F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 18,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "立體停車場",
+      "floor": "B2F",
+      "path": "火警圖 PDF/立體停車場/立體停車場B2F.pdf",
+      "latestUpdatedAt": "2026-09-01",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 18,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-01",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
         }
       ]
     },

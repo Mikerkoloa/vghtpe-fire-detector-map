@@ -12,7 +12,7 @@ const BUILDING_GROUPS = [
   { id: "common", title: "常用", buildings: ["長青樓", "思源樓", "一門診", "二門診", "三門診"] },
   { id: "clinical", title: "醫療大樓 / 中心", buildings: ["重粒子", "正子中心", "身障中心", "精神樓", "致德樓"] },
   { id: "support", title: "行政 / 支援", buildings: ["技警", "醫護宿舍"] },
-  { id: "traffic", title: "停車場 / 通道", buildings: ["2號門停車場", "3號門停車場", "地下連通道"] },
+  { id: "traffic", title: "停車場 / 通道", buildings: ["2號門停車場", "3號門停車場", "立體停車場", "地下連通道"] },
   { id: "other", title: "其他", buildings: [] },
 ];
 
