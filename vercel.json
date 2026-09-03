@@ -3,6 +3,13 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "functions": {
     "api/admin/*.js": {
       "includeFiles": "data/*.json"

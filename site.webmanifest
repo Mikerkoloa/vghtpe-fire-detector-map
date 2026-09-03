@@ -2,7 +2,7 @@
   "name": "臺北榮民總醫院火警探測器圖面查詢",
   "short_name": "火警圖查詢",
   "description": "搜尋火警探測器定址碼並在 PDF 圖面中定位。",
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#edf3f1",
   "theme_color": "#075e50",

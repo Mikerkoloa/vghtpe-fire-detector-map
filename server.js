@@ -105,6 +105,15 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  if (url.pathname === "/index.html") {
+    res.writeHead(308, {
+      location: `/${url.search}`,
+      "content-type": "text/plain; charset=utf-8",
+    });
+    res.end("Redirecting to /");
+    return;
+  }
+
   const filePath = resolveRequestPath(req.url);
   if (!filePath) {
     res.writeHead(403, { "content-type": "text/plain; charset=utf-8" });

@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.2 - 2026-09-03
+
+- Added a Vercel permanent redirect from `/index.html` to `/`.
+- Updated the web app manifest start URL to open `/` instead of `/index.html`.
+- Updated local navigation links and the development server to use the same clean homepage URL.
+
 ## v0.2.1 - 2026-09-03
 
 - Moved the main query page version badge beside the brand title on desktop so the manual button stays in the header row.
