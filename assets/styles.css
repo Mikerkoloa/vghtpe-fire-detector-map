@@ -249,6 +249,13 @@ button {
   white-space: nowrap;
 }
 
+.brand .version-badge {
+  flex: 0 0 auto;
+  justify-self: auto;
+  min-width: auto;
+  padding: 6px 10px;
+}
+
 .manual-button {
   display: inline-flex;
   align-items: center;
@@ -977,10 +984,7 @@ button {
     gap: 12px;
   }
 
-  .system-status {
-    justify-self: stretch;
-  }
-
+  .system-status,
   .version-badge {
     justify-self: stretch;
   }

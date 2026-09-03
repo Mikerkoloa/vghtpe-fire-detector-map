@@ -134,12 +134,13 @@ PDF viewer 支援：
 
 版本管理：
 
-- 目前版本：`v0.2.0`。
+- 目前版本：`v0.2.1`。
 - `package.json` 的 `version` 是版本主來源，主查詢頁與管理後台 header 都會顯示同一版本。
+- 主查詢頁桌面版版本標籤放在「臺北榮民總醫院 / 火警探測器圖面查詢」品牌文字右側，不要作為獨立 header 欄位，以免把「使用手冊」擠到下一行。
 - `CHANGELOG.md` 記錄每次版本更新內容。
 - 更新版本時同步調整 `package.json`、`index.html`、`admin.html`、`CHANGELOG.md`。
 - 可執行 `npm run check:version` 確認版本號是否一致。
-- 若使用者要求正式發版，除了 commit/push，也應建立並推送 Git tag，例如 `git tag v0.2.0 && git push origin v0.2.0`。
+- 若使用者要求正式發版，除了 commit/push，也應建立並推送 Git tag，例如 `git tag v0.2.1 && git push origin v0.2.1`。
 
 ## 主要檔案
 
@@ -190,7 +191,7 @@ npm run check:version
 - 滾輪縮放與雙擊標記放大已測過。
 - `m3-15` 停 0.8 秒不會變標籤，補 `0` 後會變成 `M3-150`；停超過延遲才會提交 `M3-15`。
 - 定址碼標籤可點文字回編輯，並已驗證全域搜尋與目前圖面搜尋兩個入口。
-- `npm run check:version`：確認 `v0.2.0` 已同步到主頁、管理後台與 `CHANGELOG.md`。
+- `npm run check:version`：確認 `v0.2.1` 已同步到主頁、管理後台與 `CHANGELOG.md`。
 
 ## GitHub 上傳狀態
 

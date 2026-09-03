@@ -1,6 +1,6 @@
 {
   "name": "vghtpe-fire-detector-map",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "description": "臺北榮民總醫院火警探測器圖面查詢單頁工具",
   "scripts": {
