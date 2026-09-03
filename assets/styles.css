@@ -163,13 +163,24 @@ button {
   font-weight: 800;
 }
 
-.detector-token span {
+.detector-token-edit {
+  display: block;
+  min-width: 0;
+  padding: 0;
   overflow: visible;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  font: inherit;
   text-overflow: clip;
   white-space: nowrap;
 }
 
-.detector-token button {
+.detector-token-edit:hover {
+  color: var(--accent);
+}
+
+.detector-token-remove {
   display: grid;
   width: 18px;
   height: 18px;
@@ -182,7 +193,7 @@ button {
   line-height: 1;
 }
 
-.detector-token button:hover {
+.detector-token-remove:hover {
   color: #fff;
   background: var(--accent);
 }

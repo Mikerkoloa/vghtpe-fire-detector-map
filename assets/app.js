@@ -97,8 +97,9 @@ const MIN_ZOOM = 0.45;
 const MAX_ZOOM = 8;
 const MAX_RENDER_PIXELS = 24_000_000;
 const EXPORT_IMAGE_SCALE = 2;
-const DETECTOR_SCAN_PATTERN = /(?:\d+:)?M\d+-\d+|M[1-9]\d*/gi;
+const DETECTOR_SCAN_PATTERN = /(?:\d+:)?M\d+-\d+|M[1-9]\d+/gi;
 const DETECTOR_AUTO_COMMIT_DELAY = 520;
+const DETECTOR_PARTIAL_AUTO_COMMIT_DELAY = 1700;
 
 function normalizeText(value) {
   return String(value || "")
@@ -149,6 +150,20 @@ function detectorNumberDigitLength(value) {
   return 0;
 }
 
+function isDashedDetectorCode(value) {
+  return /^(?:\d+:)?M\d+-\d+$/.test(normalizeText(value));
+}
+
+function autoCommitDelayForDetector(value) {
+  if (!normalizeDetectorCode(value)) return null;
+
+  const digitLength = detectorNumberDigitLength(value);
+  if (digitLength >= 3) return DETECTOR_AUTO_COMMIT_DELAY;
+  if (digitLength === 2) return DETECTOR_PARTIAL_AUTO_COMMIT_DELAY;
+  if (isDashedDetectorCode(value)) return DETECTOR_PARTIAL_AUTO_COMMIT_DELAY;
+  return null;
+}
+
 function uniqueDetectors(detectors) {
   return [...new Set(detectors.filter(Boolean))];
 }
@@ -188,11 +203,25 @@ function createDetectorTokenInput(options) {
     list.innerHTML = detectors
       .map((detector) => `
         <span class="detector-token">
-          <span>${detector}</span>
-          <button type="button" data-token-value="${detector}" aria-label="移除 ${detector}">×</button>
+          <button type="button" class="detector-token-edit" data-token-edit="${detector}" aria-label="編輯 ${detector}">${detector}</button>
+          <button type="button" class="detector-token-remove" data-token-remove="${detector}" aria-label="移除 ${detector}">×</button>
         </span>
       `)
       .join("");
+  }
+
+  function focusInputEnd() {
+    input.focus();
+    const end = input.value.length;
+    input.setSelectionRange(end, end);
+  }
+
+  function editDetectorToken(detector) {
+    window.clearTimeout(autoCommitTimer);
+    detectors = detectors.filter((currentDetector) => currentDetector !== detector);
+    input.value = detector;
+    render();
+    focusInputEnd();
   }
 
   function add(nextDetectors) {
@@ -221,28 +250,36 @@ function createDetectorTokenInput(options) {
     return true;
   }
 
-  function scheduleAutoCommit() {
+  function scheduleAutoCommit(delay = DETECTOR_AUTO_COMMIT_DELAY) {
     window.clearTimeout(autoCommitTimer);
     autoCommitTimer = window.setTimeout(() => {
       commitInput({ force: false });
-    }, DETECTOR_AUTO_COMMIT_DELAY);
+    }, delay);
   }
 
   shell.addEventListener("click", () => input.focus());
 
   list.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-token-value]");
-    if (!button) return;
+    const removeButton = event.target.closest("[data-token-remove]");
+    if (removeButton) {
+      detectors = detectors.filter((detector) => detector !== removeButton.dataset.tokenRemove);
+      render();
+      input.focus();
+      return;
+    }
 
-    detectors = detectors.filter((detector) => detector !== button.dataset.tokenValue);
-    render();
-    input.focus();
+    const editButton = event.target.closest("[data-token-edit]");
+    if (editButton) {
+      editDetectorToken(editButton.dataset.tokenEdit);
+    }
   });
 
   input.addEventListener("keydown", (event) => {
     if (event.key === "Backspace" && input.value === "" && detectors.length > 0) {
-      detectors.pop();
+      const detector = detectors.pop();
       render();
+      input.value = detector;
+      focusInputEnd();
       return;
     }
 
@@ -265,8 +302,9 @@ function createDetectorTokenInput(options) {
       return;
     }
 
-    if (normalizeDetectorCode(rawValue) && detectorNumberDigitLength(rawValue) >= 2) {
-      scheduleAutoCommit();
+    const autoCommitDelay = autoCommitDelayForDetector(rawValue);
+    if (autoCommitDelay !== null) {
+      scheduleAutoCommit(autoCommitDelay);
       return;
     }
 
