@@ -110,6 +110,7 @@ button {
   color: rgba(255, 255, 255, 0.84);
 }
 
+.version-badge,
 .env-pill,
 .ghost-button {
   display: inline-flex;
@@ -125,6 +126,11 @@ button {
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.version-badge {
+  font-weight: 900;
+  letter-spacing: 0;
 }
 
 .admin-shell {

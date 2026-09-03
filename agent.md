@@ -132,11 +132,22 @@ PDF viewer 支援：
 - 清除標記。
 - 開啟原始 PDF。
 
+版本管理：
+
+- 目前版本：`v0.2.0`。
+- `package.json` 的 `version` 是版本主來源，主查詢頁與管理後台 header 都會顯示同一版本。
+- `CHANGELOG.md` 記錄每次版本更新內容。
+- 更新版本時同步調整 `package.json`、`index.html`、`admin.html`、`CHANGELOG.md`。
+- 可執行 `npm run check:version` 確認版本號是否一致。
+- 若使用者要求正式發版，除了 commit/push，也應建立並推送 Git tag，例如 `git tag v0.2.0 && git push origin v0.2.0`。
+
 ## 主要檔案
 
 - `index.html`：頁面結構。
 - `assets/styles.css`：版面與互動樣式。
 - `assets/app.js`：搜尋、PDF.js 渲染、標記、縮放、拖曳、目前圖面搜尋。
+- `CHANGELOG.md`：版本更新紀錄。
+- `scripts/check-version.js`：檢查頁面、後台與 changelog 的版本號是否同步。
 - `scripts/build-index.js`：呼叫 Poppler `pdftotext` 建立索引。
 - `server.js`：本機靜態伺服器，支援 PDF range request。
 - `data/fire-map-index.json`：探測器標籤索引。
@@ -161,6 +172,12 @@ http://localhost:4173
 node scripts/build-index.js
 ```
 
+## 更新版本後
+
+```powershell
+npm run check:version
+```
+
 ## 已做過的驗證
 
 - `M1-66`：只顯示結果，不開 PDF。
@@ -173,6 +190,7 @@ node scripts/build-index.js
 - 滾輪縮放與雙擊標記放大已測過。
 - `m3-15` 停 0.8 秒不會變標籤，補 `0` 後會變成 `M3-150`；停超過延遲才會提交 `M3-15`。
 - 定址碼標籤可點文字回編輯，並已驗證全域搜尋與目前圖面搜尋兩個入口。
+- `npm run check:version`：確認 `v0.2.0` 已同步到主頁、管理後台與 `CHANGELOG.md`。
 
 ## GitHub 上傳狀態
 

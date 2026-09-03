@@ -229,7 +229,8 @@ button {
   background: var(--accent-strong);
 }
 
-.system-status {
+.system-status,
+.version-badge {
   justify-self: end;
   min-width: 156px;
   padding: 8px 12px;
@@ -239,6 +240,13 @@ button {
   border-radius: 8px;
   font-size: 13px;
   text-align: center;
+}
+
+.version-badge {
+  min-width: 72px;
+  font-weight: 900;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .manual-button {
@@ -970,6 +978,10 @@ button {
   }
 
   .system-status {
+    justify-self: stretch;
+  }
+
+  .version-badge {
     justify-self: stretch;
   }
 
