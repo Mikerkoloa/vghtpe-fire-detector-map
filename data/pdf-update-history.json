@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T16:40:38.267Z",
+  "generatedAt": "2026-09-25T16:42:48.168Z",
   "source": "data/buildings.json",
   "totals": {
     "files": 145
@@ -313,12 +313,19 @@
       "building": "長青樓",
       "floor": "B3F",
       "path": "火警圖 PDF/長青樓/長青樓 B3F 20260904.pdf",
-      "latestUpdatedAt": "2025-09-04",
+      "latestUpdatedAt": "2026-09-04",
       "updatedBy": "system",
-      "note": "從既有資料夾日期 114.08.30 初始匯入",
+      "note": "更新圖面",
       "detectorCount": 256,
       "pageCount": 1,
       "history": [
+        {
+          "date": "2026-09-04",
+          "action": "history-correction",
+          "by": "system",
+          "commit": "same-commit",
+          "note": "更新圖面"
+        },
         {
           "date": "2025-09-04",
           "action": "replace",
