@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T03:48:33.739Z",
+  "generatedAt": "2026-09-25T03:49:01.385Z",
   "source": "data/buildings.json",
   "totals": {
     "files": 145
@@ -618,13 +618,20 @@
     {
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
-      "latestUpdatedAt": "2026-04-26",
-      "updatedBy": "system",
-      "note": "從既有資料夾日期 115.04.26 初始匯入",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
+      "latestUpdatedAt": "2026-09-03",
+      "updatedBy": "admin",
+      "note": "未填寫備註",
       "detectorCount": 55,
       "pageCount": 1,
       "history": [
+        {
+          "date": "2026-09-03",
+          "action": "replace",
+          "by": "admin",
+          "commit": "same-commit",
+          "note": "未填寫備註"
+        },
         {
           "date": "2026-04-26",
           "action": "initial-import",
