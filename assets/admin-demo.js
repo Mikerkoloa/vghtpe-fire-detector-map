@@ -128,10 +128,12 @@ function existingTarget(buildingName = buildingNameForPayload(), floorLabel = fl
 }
 
 function buildGithubPath() {
-  if (isCreateMode()) {
-    const buildingName = buildingNameForPayload();
-    const floorLabel = floorLabelForPayload();
+  const buildingName = buildingNameForPayload();
+  const floorLabel = floorLabelForPayload();
+  const uploadedPath = buildUploadedFilePath(buildingName, state.file?.name);
+  if (uploadedPath) return uploadedPath;
 
+  if (isCreateMode()) {
     if (!buildingName || !floorLabel) return "請輸入新增棟別與樓層";
     return buildFallbackPath(buildingName, floorLabel);
   }
@@ -248,6 +250,16 @@ function buildHistoryMap(historyData) {
 
 function buildFallbackPath(buildingName, floorLabel) {
   return `火警圖 PDF/${buildingName}/${buildingName}${floorLabel} 火警圖.pdf`;
+}
+
+function sanitizePdfFileName(fileName) {
+  return String(fileName || "").normalize("NFKC").trim().split(/[\\/]/).pop();
+}
+
+function buildUploadedFilePath(buildingName, fileName) {
+  const safeFileName = sanitizePdfFileName(fileName);
+  if (!buildingName || !safeFileName) return "";
+  return `火警圖 PDF/${buildingName}/${safeFileName}`;
 }
 
 function syncModeFields() {
@@ -493,11 +505,12 @@ function addHistoryRow(uploadResult) {
   dom.historyBody.prepend(row);
 }
 
-function updateSelectedPdfHistory(historyRecord) {
+function updateSelectedPdfHistory(historyRecord, uploadTarget = null) {
   const buildingName = buildingNameForPayload();
   const floorLabel = floorLabelForPayload();
   const target = existingTarget(buildingName, floorLabel);
-  const pdfPath = buildGithubPath();
+  const pdfPath = uploadTarget?.path || buildGithubPath();
+  const oldPath = uploadTarget?.oldPath || target.floor?.path || "";
   const date = dom.updatedAtInput.value || todayString();
   const by = dom.updatedByInput.value.trim() || "admin";
   const note = dom.updateNoteInput.value.trim() || "未填寫備註";
@@ -530,6 +543,12 @@ function updateSelectedPdfHistory(historyRecord) {
         history: [nextEntry, ...(previous?.history || [])],
       };
 
+  if (oldPath && oldPath !== pdfPath) {
+    state.historyByPath.delete(oldPath);
+  }
+  if (target.floor) {
+    target.floor.path = pdfPath;
+  }
   state.historyByPath.set(pdfPath, nextHistory);
   if (mode === "create" && !target.exists) {
     let building = target.building;
@@ -596,7 +615,7 @@ async function simulateUpload() {
     dom.formState.textContent = uploadResult.mode === "mock" ? "API 模擬完成" : "已送出 GitHub";
     dom.formState.classList.add("is-ready");
     setApiMessage(`${uploadResult.message}；目標：${uploadResult.target.path}`, "ok");
-    updateSelectedPdfHistory(uploadResult.historyRecord);
+    updateSelectedPdfHistory(uploadResult.historyRecord, uploadResult.target);
     addHistoryRow(uploadResult);
     dom.formState.textContent = uploadResult.mode === "mock" ? "API 模擬完成" : "已送出 GitHub";
     dom.formState.classList.add("is-ready");

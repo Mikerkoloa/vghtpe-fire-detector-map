@@ -57,6 +57,7 @@ const dom = {
 const state = {
   index: null,
   buildingData: null,
+  historyByPath: new Map(),
   filesById: new Map(),
   buildingsByName: new Map(),
   selectedBuilding: null,
@@ -172,6 +173,35 @@ function detectorListText(detectors, limit = 5) {
   const visible = detectors.slice(0, limit);
   const suffix = detectors.length > visible.length ? ` 等 ${detectors.length} 個` : "";
   return `${visible.join("、")}${suffix}`;
+}
+
+function fileUpdateLabel(file) {
+  const history = state.historyByPath.get(file.path);
+  const latestEntry = history?.history?.[0];
+  const updatedAt = history?.latestUpdatedAt || latestEntry?.date || "";
+
+  if (!updatedAt || latestEntry?.action === "initial-import") return "";
+
+  const date = /^(\d{4})-(\d{2})-(\d{2})/.exec(updatedAt);
+  if (!date) return "";
+  return `${date[1]}年${date[2]}月${date[3]}日更新`;
+}
+
+function renderCurrentFile(file) {
+  const updateLabel = fileUpdateLabel(file);
+  dom.currentFile.replaceChildren();
+
+  const name = document.createElement("span");
+  name.className = "current-file-name";
+  name.textContent = `${file.building} ${file.floor} - ${fileName(file.path)}`;
+  dom.currentFile.append(name);
+
+  if (updateLabel) {
+    const update = document.createElement("span");
+    update.className = "current-file-updated";
+    update.textContent = updateLabel;
+    dom.currentFile.append(update);
+  }
 }
 
 function extractDetectorCodes(text) {
@@ -430,13 +460,15 @@ async function loadJson(url) {
 
 async function init() {
   try {
-    const [index, buildingData] = await Promise.all([
+    const [index, buildingData, historyData] = await Promise.all([
       loadJson("./data/fire-map-index.json"),
       loadJson("./data/buildings.json"),
+      loadJson("./data/pdf-update-history.json"),
     ]);
 
     state.index = index;
     state.buildingData = buildingData;
+    state.historyByPath = new Map((historyData.files || []).map((item) => [item.path, item]));
     state.filesById = new Map(index.files.map((file) => [file.id, file]));
     state.buildingsByName = new Map(buildingData.buildings.map((building) => [building.name, building]));
 
@@ -789,7 +821,7 @@ async function openFile(fileId, options = {}) {
   markActiveFloor();
   dom.emptyState.hidden = true;
   dom.pdfPage.hidden = false;
-  dom.currentFile.textContent = `${file.building} ${file.floor} - ${fileName(file.path)}`;
+  renderCurrentFile(file);
   dom.selectedFloorMeta.textContent = `${file.floor} / ${file.detectorCount.toLocaleString("zh-TW")} 筆標籤`;
   clearPdfSearchMessage();
   tokenInputs.pdf.clear();

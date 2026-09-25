@@ -66,6 +66,14 @@
 - 搜尋後若找到，圈選第一筆並捲動到位置。
 - 中央搜尋框關閉後，工具列仍有「搜尋定址碼」小搜尋框。
 
+PDF 檔名與更新紀錄規則：
+
+- 後續新增或取代 PDF 時，檔名統一使用「棟別樓層 YYYYMMDD.pdf」，例如 `思源樓6F 20260910.pdf`。
+- 檔名中的 `YYYYMMDD` 是圖面版本日期；管理後台的「更新日期」是系統上傳/發佈日期，兩者要分開保存。
+- 主查詢頁只對管理後台或後續人工更新的 PDF 顯示 `YYYY年MM月DD日更新`；初始匯入資料不顯示更新日期。
+- 取代既有樓層且新檔名不同時，新檔會成為該樓層正式路徑，舊 PDF 必須從 repository 移除，避免同一樓層同時出現兩份 PDF。
+- 管理後台上傳 API 已設計為：取代模式使用上傳 PDF 的檔名建立新路徑，若舊路徑不同，會在同一個 GitHub commit 中刪除舊 PDF。
+
 多定址碼標籤輸入：
 
 - 全域搜尋、工具列目前圖面搜尋、中央彈窗搜尋共用同一套定址碼標籤輸入元件。
@@ -134,13 +142,13 @@ PDF viewer 支援：
 
 版本管理：
 
-- 目前版本：`v0.2.2`。
+- 目前版本：`v0.2.3`。
 - `package.json` 的 `version` 是版本主來源，主查詢頁與管理後台 header 都會顯示同一版本。
 - 主查詢頁桌面版版本標籤放在「臺北榮民總醫院 / 火警探測器圖面查詢」品牌文字右側，不要作為獨立 header 欄位，以免把「使用手冊」擠到下一行。
 - `CHANGELOG.md` 記錄每次版本更新內容。
 - 更新版本時同步調整 `package.json`、`index.html`、`admin.html`、`CHANGELOG.md`。
 - 可執行 `npm run check:version` 確認版本號是否一致。
-- 若使用者要求正式發版，除了 commit/push，也應建立並推送 Git tag，例如 `git tag v0.2.2 && git push origin v0.2.2`。
+- 若使用者要求正式發版，除了 commit/push，也應建立並推送 Git tag，例如 `git tag v0.2.3 && git push origin v0.2.3`。
 - Vercel 以 `vercel.json` 將 `/index.html` 永久轉址到 `/`；不要打開首頁連結時主動使用 `/index.html`。
 - `site.webmanifest` 的 `start_url` 使用 `./`，讓安裝到手機桌面後也從乾淨首頁網址開啟。
 - 本機 `server.js` 也會將 `/index.html` 以 308 轉到 `/`，方便本機與 Vercel 行為一致。
@@ -156,6 +164,7 @@ PDF viewer 支援：
 - `server.js`：本機靜態伺服器，支援 PDF range request。
 - `data/fire-map-index.json`：探測器標籤索引。
 - `data/buildings.json`：棟別與樓層資料。
+- `data/pdf-update-history.json`：PDF 更新紀錄，主查詢頁會用它顯示後續更新日期。
 
 ## 本機啟動
 
@@ -194,7 +203,7 @@ npm run check:version
 - 滾輪縮放與雙擊標記放大已測過。
 - `m3-15` 停 0.8 秒不會變標籤，補 `0` 後會變成 `M3-150`；停超過延遲才會提交 `M3-15`。
 - 定址碼標籤可點文字回編輯，並已驗證全域搜尋與目前圖面搜尋兩個入口。
-- `npm run check:version`：確認 `v0.2.2` 已同步到主頁、管理後台與 `CHANGELOG.md`。
+- `npm run check:version`：確認 `v0.2.3` 已同步到主頁、管理後台與 `CHANGELOG.md`。
 
 ## GitHub 上傳狀態
 

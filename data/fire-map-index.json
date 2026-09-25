@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-03T15:10:42.446Z",
+  "generatedAt": "2026-09-25T03:36:41.263Z",
   "pdfRoot": "火警圖 PDF",
   "totals": {
     "files": 145,
-    "entries": 11931,
+    "entries": 11936,
     "buildings": 16
   },
   "files": [
@@ -21,7 +21,7 @@
         }
       ],
       "detectorCount": 36,
-      "updatedAt": "2026-09-03T15:10:07.498Z"
+      "updatedAt": "2026-07-27T12:43:59.005Z"
     },
     {
       "id": "pdf-0002",
@@ -37,7 +37,7 @@
         }
       ],
       "detectorCount": 66,
-      "updatedAt": "2026-09-03T15:10:07.498Z"
+      "updatedAt": "2026-07-27T12:43:59.005Z"
     },
     {
       "id": "pdf-0003",
@@ -53,7 +53,7 @@
         }
       ],
       "detectorCount": 54,
-      "updatedAt": "2026-09-03T15:10:07.499Z"
+      "updatedAt": "2026-07-27T12:43:59.006Z"
     },
     {
       "id": "pdf-0004",
@@ -69,7 +69,7 @@
         }
       ],
       "detectorCount": 8,
-      "updatedAt": "2026-09-03T15:10:07.500Z"
+      "updatedAt": "2026-07-27T12:43:59.006Z"
     },
     {
       "id": "pdf-0005",
@@ -85,7 +85,7 @@
         }
       ],
       "detectorCount": 52,
-      "updatedAt": "2026-09-03T15:10:07.500Z"
+      "updatedAt": "2026-07-27T12:43:59.008Z"
     },
     {
       "id": "pdf-0006",
@@ -101,7 +101,7 @@
         }
       ],
       "detectorCount": 30,
-      "updatedAt": "2026-09-03T15:10:07.501Z"
+      "updatedAt": "2026-07-27T12:43:59.008Z"
     },
     {
       "id": "pdf-0007",
@@ -117,7 +117,7 @@
         }
       ],
       "detectorCount": 39,
-      "updatedAt": "2026-09-03T15:10:07.502Z"
+      "updatedAt": "2026-07-27T12:43:59.008Z"
     },
     {
       "id": "pdf-0008",
@@ -133,7 +133,7 @@
         }
       ],
       "detectorCount": 24,
-      "updatedAt": "2026-09-03T15:10:07.503Z"
+      "updatedAt": "2026-07-27T12:43:59.010Z"
     },
     {
       "id": "pdf-0009",
@@ -149,7 +149,7 @@
         }
       ],
       "detectorCount": 23,
-      "updatedAt": "2026-09-03T15:10:07.504Z"
+      "updatedAt": "2026-07-27T12:43:59.010Z"
     },
     {
       "id": "pdf-0010",
@@ -165,7 +165,7 @@
         }
       ],
       "detectorCount": 40,
-      "updatedAt": "2026-09-03T15:10:07.504Z"
+      "updatedAt": "2026-07-27T12:43:59.011Z"
     },
     {
       "id": "pdf-0011",
@@ -181,7 +181,7 @@
         }
       ],
       "detectorCount": 54,
-      "updatedAt": "2026-09-03T15:10:07.505Z"
+      "updatedAt": "2026-07-27T12:43:59.012Z"
     },
     {
       "id": "pdf-0012",
@@ -197,7 +197,7 @@
         }
       ],
       "detectorCount": 55,
-      "updatedAt": "2026-09-03T15:10:07.506Z"
+      "updatedAt": "2026-07-27T12:43:59.012Z"
     },
     {
       "id": "pdf-0013",
@@ -213,7 +213,7 @@
         }
       ],
       "detectorCount": 40,
-      "updatedAt": "2026-09-03T15:10:07.506Z"
+      "updatedAt": "2026-07-27T12:43:59.013Z"
     },
     {
       "id": "pdf-0014",
@@ -229,7 +229,7 @@
         }
       ],
       "detectorCount": 2,
-      "updatedAt": "2026-09-03T15:10:07.507Z"
+      "updatedAt": "2026-07-27T12:43:59.014Z"
     },
     {
       "id": "pdf-0015",
@@ -245,7 +245,7 @@
         }
       ],
       "detectorCount": 44,
-      "updatedAt": "2026-09-03T15:10:07.534Z"
+      "updatedAt": "2026-07-27T12:43:59.014Z"
     },
     {
       "id": "pdf-0016",
@@ -261,7 +261,7 @@
         }
       ],
       "detectorCount": 68,
-      "updatedAt": "2026-09-03T15:10:07.534Z"
+      "updatedAt": "2026-07-27T12:43:59.016Z"
     },
     {
       "id": "pdf-0017",
@@ -277,7 +277,7 @@
         }
       ],
       "detectorCount": 61,
-      "updatedAt": "2026-09-03T15:10:07.535Z"
+      "updatedAt": "2026-07-27T12:43:59.016Z"
     },
     {
       "id": "pdf-0018",
@@ -293,7 +293,7 @@
         }
       ],
       "detectorCount": 83,
-      "updatedAt": "2026-09-03T15:10:07.536Z"
+      "updatedAt": "2026-07-27T12:43:59.017Z"
     },
     {
       "id": "pdf-0019",
@@ -309,7 +309,7 @@
         }
       ],
       "detectorCount": 88,
-      "updatedAt": "2026-09-03T15:10:07.536Z"
+      "updatedAt": "2026-07-27T12:43:59.017Z"
     },
     {
       "id": "pdf-0020",
@@ -325,7 +325,7 @@
         }
       ],
       "detectorCount": 75,
-      "updatedAt": "2026-09-03T15:10:07.537Z"
+      "updatedAt": "2026-07-27T12:43:59.018Z"
     },
     {
       "id": "pdf-0021",
@@ -341,7 +341,7 @@
         }
       ],
       "detectorCount": 73,
-      "updatedAt": "2026-09-03T15:10:07.538Z"
+      "updatedAt": "2026-07-27T12:43:59.019Z"
     },
     {
       "id": "pdf-0022",
@@ -357,7 +357,7 @@
         }
       ],
       "detectorCount": 75,
-      "updatedAt": "2026-09-03T15:10:07.539Z"
+      "updatedAt": "2026-07-27T12:59:18.140Z"
     },
     {
       "id": "pdf-0023",
@@ -373,7 +373,7 @@
         }
       ],
       "detectorCount": 86,
-      "updatedAt": "2026-09-03T15:10:07.539Z"
+      "updatedAt": "2026-07-27T12:43:59.020Z"
     },
     {
       "id": "pdf-0024",
@@ -389,7 +389,7 @@
         }
       ],
       "detectorCount": 10,
-      "updatedAt": "2026-09-03T15:10:07.539Z"
+      "updatedAt": "2026-07-27T12:43:59.020Z"
     },
     {
       "id": "pdf-0025",
@@ -405,7 +405,7 @@
         }
       ],
       "detectorCount": 122,
-      "updatedAt": "2026-09-03T15:10:07.508Z"
+      "updatedAt": "2026-07-27T12:43:58.968Z"
     },
     {
       "id": "pdf-0026",
@@ -421,7 +421,7 @@
         }
       ],
       "detectorCount": 196,
-      "updatedAt": "2026-09-03T15:10:07.508Z"
+      "updatedAt": "2026-07-27T12:43:58.969Z"
     },
     {
       "id": "pdf-0027",
@@ -437,7 +437,7 @@
         }
       ],
       "detectorCount": 217,
-      "updatedAt": "2026-09-03T15:10:07.509Z"
+      "updatedAt": "2026-07-27T12:43:58.970Z"
     },
     {
       "id": "pdf-0028",
@@ -453,7 +453,7 @@
         }
       ],
       "detectorCount": 221,
-      "updatedAt": "2026-09-03T15:10:07.511Z"
+      "updatedAt": "2026-07-27T12:43:58.972Z"
     },
     {
       "id": "pdf-0029",
@@ -469,7 +469,7 @@
         }
       ],
       "detectorCount": 239,
-      "updatedAt": "2026-09-03T15:10:07.514Z"
+      "updatedAt": "2026-07-27T12:43:58.975Z"
     },
     {
       "id": "pdf-0030",
@@ -485,7 +485,7 @@
         }
       ],
       "detectorCount": 264,
-      "updatedAt": "2026-09-03T15:10:07.515Z"
+      "updatedAt": "2026-09-03T13:57:15.933Z"
     },
     {
       "id": "pdf-0031",
@@ -501,7 +501,7 @@
         }
       ],
       "detectorCount": 271,
-      "updatedAt": "2026-09-03T15:10:07.522Z"
+      "updatedAt": "2026-07-27T12:43:58.983Z"
     },
     {
       "id": "pdf-0032",
@@ -517,7 +517,7 @@
         }
       ],
       "detectorCount": 242,
-      "updatedAt": "2026-09-03T15:10:07.527Z"
+      "updatedAt": "2026-07-27T12:43:58.988Z"
     },
     {
       "id": "pdf-0033",
@@ -533,7 +533,7 @@
         }
       ],
       "detectorCount": 217,
-      "updatedAt": "2026-09-03T15:10:07.530Z"
+      "updatedAt": "2026-07-27T12:43:58.991Z"
     },
     {
       "id": "pdf-0034",
@@ -549,7 +549,7 @@
         }
       ],
       "detectorCount": 172,
-      "updatedAt": "2026-09-03T15:10:07.530Z"
+      "updatedAt": "2026-07-27T12:43:58.991Z"
     },
     {
       "id": "pdf-0035",
@@ -565,7 +565,7 @@
         }
       ],
       "detectorCount": 123,
-      "updatedAt": "2026-09-03T15:10:07.531Z"
+      "updatedAt": "2026-07-27T12:43:58.992Z"
     },
     {
       "id": "pdf-0036",
@@ -581,7 +581,7 @@
         }
       ],
       "detectorCount": 127,
-      "updatedAt": "2026-09-03T15:10:07.532Z"
+      "updatedAt": "2026-07-27T12:43:58.993Z"
     },
     {
       "id": "pdf-0037",
@@ -597,7 +597,7 @@
         }
       ],
       "detectorCount": 31,
-      "updatedAt": "2026-09-03T15:10:07.532Z"
+      "updatedAt": "2026-07-27T12:43:58.993Z"
     },
     {
       "id": "pdf-0038",
@@ -613,7 +613,7 @@
         }
       ],
       "detectorCount": 4,
-      "updatedAt": "2026-09-03T15:10:07.533Z"
+      "updatedAt": "2026-07-27T12:43:58.994Z"
     },
     {
       "id": "pdf-0039",
@@ -629,7 +629,7 @@
         }
       ],
       "detectorCount": 31,
-      "updatedAt": "2026-09-03T15:10:07.555Z"
+      "updatedAt": "2026-07-29T10:49:31.796Z"
     },
     {
       "id": "pdf-0040",
@@ -645,7 +645,7 @@
         }
       ],
       "detectorCount": 28,
-      "updatedAt": "2026-09-03T15:10:07.555Z"
+      "updatedAt": "2026-07-27T12:43:59.027Z"
     },
     {
       "id": "pdf-0041",
@@ -661,7 +661,7 @@
         }
       ],
       "detectorCount": 23,
-      "updatedAt": "2026-09-03T15:10:07.555Z"
+      "updatedAt": "2026-07-27T12:43:59.027Z"
     },
     {
       "id": "pdf-0042",
@@ -677,7 +677,7 @@
         }
       ],
       "detectorCount": 17,
-      "updatedAt": "2026-09-03T15:10:07.555Z"
+      "updatedAt": "2026-07-27T12:43:59.027Z"
     },
     {
       "id": "pdf-0043",
@@ -693,7 +693,7 @@
         }
       ],
       "detectorCount": 34,
-      "updatedAt": "2026-09-03T15:10:07.555Z"
+      "updatedAt": "2026-07-27T12:43:59.027Z"
     },
     {
       "id": "pdf-0044",
@@ -709,7 +709,7 @@
         }
       ],
       "detectorCount": 15,
-      "updatedAt": "2026-09-03T15:10:07.556Z"
+      "updatedAt": "2026-07-27T12:43:59.027Z"
     },
     {
       "id": "pdf-0045",
@@ -725,7 +725,7 @@
         }
       ],
       "detectorCount": 8,
-      "updatedAt": "2026-09-03T15:10:07.556Z"
+      "updatedAt": "2026-09-01T14:27:18.313Z"
     },
     {
       "id": "pdf-0046",
@@ -741,7 +741,7 @@
         }
       ],
       "detectorCount": 20,
-      "updatedAt": "2026-09-03T15:10:07.557Z"
+      "updatedAt": "2026-09-01T14:27:32.179Z"
     },
     {
       "id": "pdf-0047",
@@ -757,7 +757,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-03T15:10:07.557Z"
+      "updatedAt": "2026-09-01T14:27:23.987Z"
     },
     {
       "id": "pdf-0048",
@@ -773,7 +773,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-03T15:10:07.557Z"
+      "updatedAt": "2026-09-01T14:27:25.776Z"
     },
     {
       "id": "pdf-0049",
@@ -789,7 +789,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-03T15:10:07.558Z"
+      "updatedAt": "2026-09-01T14:27:28.513Z"
     },
     {
       "id": "pdf-0050",
@@ -805,7 +805,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-03T15:10:07.558Z"
+      "updatedAt": "2026-09-01T14:27:30.465Z"
     },
     {
       "id": "pdf-0051",
@@ -821,7 +821,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-03T15:10:07.559Z"
+      "updatedAt": "2026-09-01T14:27:10.432Z"
     },
     {
       "id": "pdf-0052",
@@ -837,7 +837,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-03T15:10:07.559Z"
+      "updatedAt": "2026-09-01T14:27:11.985Z"
     },
     {
       "id": "pdf-0053",
@@ -853,7 +853,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-03T15:10:07.559Z"
+      "updatedAt": "2026-09-01T14:27:13.409Z"
     },
     {
       "id": "pdf-0054",
@@ -869,7 +869,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-03T15:10:07.560Z"
+      "updatedAt": "2026-09-01T14:27:14.816Z"
     },
     {
       "id": "pdf-0055",
@@ -885,7 +885,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-03T15:10:07.560Z"
+      "updatedAt": "2026-09-01T14:27:19.851Z"
     },
     {
       "id": "pdf-0056",
@@ -901,7 +901,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-03T15:10:07.560Z"
+      "updatedAt": "2026-09-01T14:27:22.240Z"
     },
     {
       "id": "pdf-0057",
@@ -917,7 +917,7 @@
         }
       ],
       "detectorCount": 6,
-      "updatedAt": "2026-09-03T15:10:07.540Z"
+      "updatedAt": "2026-07-27T12:43:59.021Z"
     },
     {
       "id": "pdf-0058",
@@ -933,7 +933,7 @@
         }
       ],
       "detectorCount": 97,
-      "updatedAt": "2026-09-03T15:10:07.541Z"
+      "updatedAt": "2026-07-27T12:43:59.022Z"
     },
     {
       "id": "pdf-0059",
@@ -949,7 +949,7 @@
         }
       ],
       "detectorCount": 55,
-      "updatedAt": "2026-09-03T15:10:07.551Z"
+      "updatedAt": "2026-07-27T12:43:59.022Z"
     },
     {
       "id": "pdf-0060",
@@ -965,7 +965,7 @@
         }
       ],
       "detectorCount": 25,
-      "updatedAt": "2026-09-03T15:10:07.552Z"
+      "updatedAt": "2026-07-27T12:43:59.023Z"
     },
     {
       "id": "pdf-0061",
@@ -981,7 +981,7 @@
         }
       ],
       "detectorCount": 28,
-      "updatedAt": "2026-09-03T15:10:07.552Z"
+      "updatedAt": "2026-07-27T12:43:59.023Z"
     },
     {
       "id": "pdf-0062",
@@ -997,7 +997,7 @@
         }
       ],
       "detectorCount": 32,
-      "updatedAt": "2026-09-03T15:10:07.553Z"
+      "updatedAt": "2026-07-27T12:43:59.024Z"
     },
     {
       "id": "pdf-0063",
@@ -1013,7 +1013,7 @@
         }
       ],
       "detectorCount": 13,
-      "updatedAt": "2026-09-03T15:10:07.553Z"
+      "updatedAt": "2026-07-27T12:43:59.025Z"
     },
     {
       "id": "pdf-0064",
@@ -1029,7 +1029,7 @@
         }
       ],
       "detectorCount": 16,
-      "updatedAt": "2026-09-03T15:10:07.554Z"
+      "updatedAt": "2026-07-27T12:43:59.026Z"
     },
     {
       "id": "pdf-0065",
@@ -1045,7 +1045,7 @@
         }
       ],
       "detectorCount": 112,
-      "updatedAt": "2026-09-03T15:10:07.569Z"
+      "updatedAt": "2026-07-27T12:43:59.000Z"
     },
     {
       "id": "pdf-0066",
@@ -1061,7 +1061,7 @@
         }
       ],
       "detectorCount": 92,
-      "updatedAt": "2026-09-03T15:10:07.571Z"
+      "updatedAt": "2026-07-27T12:43:59.001Z"
     },
     {
       "id": "pdf-0067",
@@ -1077,7 +1077,7 @@
         }
       ],
       "detectorCount": 77,
-      "updatedAt": "2026-09-03T15:10:07.571Z"
+      "updatedAt": "2026-07-27T12:43:59.002Z"
     },
     {
       "id": "pdf-0068",
@@ -1093,7 +1093,7 @@
         }
       ],
       "detectorCount": 73,
-      "updatedAt": "2026-09-03T15:10:07.571Z"
+      "updatedAt": "2026-07-27T12:43:59.002Z"
     },
     {
       "id": "pdf-0069",
@@ -1109,7 +1109,7 @@
         }
       ],
       "detectorCount": 78,
-      "updatedAt": "2026-09-03T15:10:07.571Z"
+      "updatedAt": "2026-07-27T12:43:59.002Z"
     },
     {
       "id": "pdf-0070",
@@ -1125,7 +1125,7 @@
         }
       ],
       "detectorCount": 78,
-      "updatedAt": "2026-09-03T15:10:07.572Z"
+      "updatedAt": "2026-07-27T12:43:59.002Z"
     },
     {
       "id": "pdf-0071",
@@ -1141,7 +1141,7 @@
         }
       ],
       "detectorCount": 80,
-      "updatedAt": "2026-09-03T15:10:07.572Z"
+      "updatedAt": "2026-07-27T12:43:59.002Z"
     },
     {
       "id": "pdf-0072",
@@ -1157,7 +1157,7 @@
         }
       ],
       "detectorCount": 86,
-      "updatedAt": "2026-09-03T15:10:07.572Z"
+      "updatedAt": "2026-07-27T12:43:59.003Z"
     },
     {
       "id": "pdf-0073",
@@ -1173,7 +1173,7 @@
         }
       ],
       "detectorCount": 66,
-      "updatedAt": "2026-09-03T15:10:07.573Z"
+      "updatedAt": "2026-07-27T12:43:59.004Z"
     },
     {
       "id": "pdf-0074",
@@ -1189,7 +1189,7 @@
         }
       ],
       "detectorCount": 166,
-      "updatedAt": "2026-09-03T15:10:07.573Z"
+      "updatedAt": "2026-07-27T12:43:59.003Z"
     },
     {
       "id": "pdf-0075",
@@ -1205,7 +1205,7 @@
         }
       ],
       "detectorCount": 156,
-      "updatedAt": "2026-09-03T15:10:07.615Z"
+      "updatedAt": "2026-07-27T12:43:58.948Z"
     },
     {
       "id": "pdf-0076",
@@ -1221,7 +1221,7 @@
         }
       ],
       "detectorCount": 134,
-      "updatedAt": "2026-09-03T15:10:07.617Z"
+      "updatedAt": "2026-07-27T12:43:58.949Z"
     },
     {
       "id": "pdf-0077",
@@ -1237,7 +1237,7 @@
         }
       ],
       "detectorCount": 152,
-      "updatedAt": "2026-09-03T15:10:07.617Z"
+      "updatedAt": "2026-07-27T12:43:58.949Z"
     },
     {
       "id": "pdf-0078",
@@ -1253,7 +1253,7 @@
         }
       ],
       "detectorCount": 153,
-      "updatedAt": "2026-09-03T15:10:07.617Z"
+      "updatedAt": "2026-07-27T12:43:58.950Z"
     },
     {
       "id": "pdf-0079",
@@ -1269,7 +1269,7 @@
         }
       ],
       "detectorCount": 164,
-      "updatedAt": "2026-09-03T15:10:07.618Z"
+      "updatedAt": "2026-07-27T12:43:58.951Z"
     },
     {
       "id": "pdf-0080",
@@ -1285,7 +1285,7 @@
         }
       ],
       "detectorCount": 138,
-      "updatedAt": "2026-09-03T15:10:07.619Z"
+      "updatedAt": "2026-07-27T12:43:58.951Z"
     },
     {
       "id": "pdf-0081",
@@ -1301,7 +1301,7 @@
         }
       ],
       "detectorCount": 148,
-      "updatedAt": "2026-09-03T15:10:07.620Z"
+      "updatedAt": "2026-07-27T12:43:58.952Z"
     },
     {
       "id": "pdf-0082",
@@ -1317,7 +1317,7 @@
         }
       ],
       "detectorCount": 132,
-      "updatedAt": "2026-09-03T15:10:07.621Z"
+      "updatedAt": "2026-07-27T12:43:58.953Z"
     },
     {
       "id": "pdf-0083",
@@ -1333,7 +1333,7 @@
         }
       ],
       "detectorCount": 137,
-      "updatedAt": "2026-09-03T15:10:07.621Z"
+      "updatedAt": "2026-07-27T12:43:58.954Z"
     },
     {
       "id": "pdf-0084",
@@ -1349,7 +1349,7 @@
         }
       ],
       "detectorCount": 134,
-      "updatedAt": "2026-09-03T15:10:07.622Z"
+      "updatedAt": "2026-07-27T12:43:58.954Z"
     },
     {
       "id": "pdf-0085",
@@ -1365,7 +1365,7 @@
         }
       ],
       "detectorCount": 134,
-      "updatedAt": "2026-09-03T15:10:07.622Z"
+      "updatedAt": "2026-07-27T12:43:58.955Z"
     },
     {
       "id": "pdf-0086",
@@ -1381,7 +1381,7 @@
         }
       ],
       "detectorCount": 133,
-      "updatedAt": "2026-09-03T15:10:07.623Z"
+      "updatedAt": "2026-07-27T12:43:58.955Z"
     },
     {
       "id": "pdf-0087",
@@ -1397,7 +1397,7 @@
         }
       ],
       "detectorCount": 216,
-      "updatedAt": "2026-09-03T15:10:07.624Z"
+      "updatedAt": "2026-07-27T12:43:58.956Z"
     },
     {
       "id": "pdf-0088",
@@ -1413,7 +1413,7 @@
         }
       ],
       "detectorCount": 189,
-      "updatedAt": "2026-09-03T15:10:07.624Z"
+      "updatedAt": "2026-07-27T12:43:58.957Z"
     },
     {
       "id": "pdf-0089",
@@ -1429,7 +1429,7 @@
         }
       ],
       "detectorCount": 241,
-      "updatedAt": "2026-09-03T15:10:07.625Z"
+      "updatedAt": "2026-07-27T12:43:58.957Z"
     },
     {
       "id": "pdf-0090",
@@ -1445,7 +1445,7 @@
         }
       ],
       "detectorCount": 26,
-      "updatedAt": "2026-09-03T15:10:07.626Z"
+      "updatedAt": "2026-07-27T12:43:58.958Z"
     },
     {
       "id": "pdf-0091",
@@ -1461,7 +1461,7 @@
         }
       ],
       "detectorCount": 1,
-      "updatedAt": "2026-09-03T15:10:07.626Z"
+      "updatedAt": "2026-07-27T12:43:58.958Z"
     },
     {
       "id": "pdf-0092",
@@ -1477,7 +1477,7 @@
         }
       ],
       "detectorCount": 114,
-      "updatedAt": "2026-09-03T15:10:07.542Z"
+      "updatedAt": "2026-07-27T12:43:58.959Z"
     },
     {
       "id": "pdf-0093",
@@ -1493,7 +1493,7 @@
         }
       ],
       "detectorCount": 118,
-      "updatedAt": "2026-09-03T15:10:07.542Z"
+      "updatedAt": "2026-07-27T12:43:58.959Z"
     },
     {
       "id": "pdf-0094",
@@ -1509,7 +1509,7 @@
         }
       ],
       "detectorCount": 193,
-      "updatedAt": "2026-09-03T15:10:07.543Z"
+      "updatedAt": "2026-08-29T10:55:03.239Z"
     },
     {
       "id": "pdf-0095",
@@ -1525,7 +1525,7 @@
         }
       ],
       "detectorCount": 123,
-      "updatedAt": "2026-09-03T15:10:07.544Z"
+      "updatedAt": "2026-07-27T12:43:58.961Z"
     },
     {
       "id": "pdf-0096",
@@ -1541,7 +1541,7 @@
         }
       ],
       "detectorCount": 136,
-      "updatedAt": "2026-09-03T15:10:07.545Z"
+      "updatedAt": "2026-07-27T12:43:58.962Z"
     },
     {
       "id": "pdf-0097",
@@ -1557,7 +1557,7 @@
         }
       ],
       "detectorCount": 111,
-      "updatedAt": "2026-09-03T15:10:07.546Z"
+      "updatedAt": "2026-08-22T01:04:53.487Z"
     },
     {
       "id": "pdf-0098",
@@ -1573,23 +1573,23 @@
         }
       ],
       "detectorCount": 138,
-      "updatedAt": "2026-09-03T15:10:07.547Z"
+      "updatedAt": "2026-07-27T12:43:58.964Z"
     },
     {
       "id": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "pageCount": 1,
       "pages": [
         {
           "page": 1,
-          "width": 841.92004,
-          "height": 1190.52002
+          "width": 842,
+          "height": 1191
         }
       ],
-      "detectorCount": 104,
-      "updatedAt": "2026-09-03T15:10:07.547Z"
+      "detectorCount": 109,
+      "updatedAt": "2026-09-25T03:35:44.515Z"
     },
     {
       "id": "pdf-0100",
@@ -1605,7 +1605,7 @@
         }
       ],
       "detectorCount": 118,
-      "updatedAt": "2026-09-03T15:10:07.548Z"
+      "updatedAt": "2026-07-27T12:43:58.965Z"
     },
     {
       "id": "pdf-0101",
@@ -1621,7 +1621,7 @@
         }
       ],
       "detectorCount": 115,
-      "updatedAt": "2026-09-03T15:10:07.548Z"
+      "updatedAt": "2026-07-27T12:43:58.965Z"
     },
     {
       "id": "pdf-0102",
@@ -1637,7 +1637,7 @@
         }
       ],
       "detectorCount": 121,
-      "updatedAt": "2026-09-03T15:10:07.549Z"
+      "updatedAt": "2026-07-27T12:43:58.966Z"
     },
     {
       "id": "pdf-0103",
@@ -1653,7 +1653,7 @@
         }
       ],
       "detectorCount": 129,
-      "updatedAt": "2026-09-03T15:10:07.550Z"
+      "updatedAt": "2026-07-27T12:43:58.967Z"
     },
     {
       "id": "pdf-0104",
@@ -1669,7 +1669,7 @@
         }
       ],
       "detectorCount": 16,
-      "updatedAt": "2026-09-03T15:10:07.550Z"
+      "updatedAt": "2026-07-27T12:43:58.967Z"
     },
     {
       "id": "pdf-0105",
@@ -1685,7 +1685,7 @@
         }
       ],
       "detectorCount": 119,
-      "updatedAt": "2026-09-03T15:10:07.563Z"
+      "updatedAt": "2026-07-27T12:43:58.994Z"
     },
     {
       "id": "pdf-0106",
@@ -1701,7 +1701,7 @@
         }
       ],
       "detectorCount": 51,
-      "updatedAt": "2026-09-03T15:10:07.563Z"
+      "updatedAt": "2026-07-27T12:43:58.995Z"
     },
     {
       "id": "pdf-0107",
@@ -1717,7 +1717,7 @@
         }
       ],
       "detectorCount": 64,
-      "updatedAt": "2026-09-03T15:10:07.564Z"
+      "updatedAt": "2026-07-27T12:43:58.995Z"
     },
     {
       "id": "pdf-0108",
@@ -1733,7 +1733,7 @@
         }
       ],
       "detectorCount": 116,
-      "updatedAt": "2026-09-03T15:10:07.564Z"
+      "updatedAt": "2026-07-27T12:43:58.996Z"
     },
     {
       "id": "pdf-0109",
@@ -1749,7 +1749,7 @@
         }
       ],
       "detectorCount": 119,
-      "updatedAt": "2026-09-03T15:10:07.565Z"
+      "updatedAt": "2026-07-27T12:43:58.996Z"
     },
     {
       "id": "pdf-0110",
@@ -1765,7 +1765,7 @@
         }
       ],
       "detectorCount": 101,
-      "updatedAt": "2026-09-03T15:10:07.566Z"
+      "updatedAt": "2026-07-27T12:43:58.997Z"
     },
     {
       "id": "pdf-0111",
@@ -1781,7 +1781,7 @@
         }
       ],
       "detectorCount": 104,
-      "updatedAt": "2026-09-03T15:10:07.567Z"
+      "updatedAt": "2026-07-27T12:43:58.998Z"
     },
     {
       "id": "pdf-0112",
@@ -1797,7 +1797,7 @@
         }
       ],
       "detectorCount": 125,
-      "updatedAt": "2026-09-03T15:10:07.567Z"
+      "updatedAt": "2026-07-27T12:43:58.998Z"
     },
     {
       "id": "pdf-0113",
@@ -1813,7 +1813,7 @@
         }
       ],
       "detectorCount": 122,
-      "updatedAt": "2026-09-03T15:10:07.568Z"
+      "updatedAt": "2026-07-27T12:43:58.999Z"
     },
     {
       "id": "pdf-0114",
@@ -1829,7 +1829,7 @@
         }
       ],
       "detectorCount": 22,
-      "updatedAt": "2026-09-03T15:10:07.568Z"
+      "updatedAt": "2026-07-27T12:43:58.999Z"
     },
     {
       "id": "pdf-0115",
@@ -1845,7 +1845,7 @@
         }
       ],
       "detectorCount": 33,
-      "updatedAt": "2026-09-03T15:10:07.568Z"
+      "updatedAt": "2026-07-27T12:43:58.999Z"
     },
     {
       "id": "pdf-0116",
@@ -1861,7 +1861,7 @@
         }
       ],
       "detectorCount": 8,
-      "updatedAt": "2026-09-03T15:10:07.568Z"
+      "updatedAt": "2026-07-27T12:43:58.999Z"
     },
     {
       "id": "pdf-0117",
@@ -1877,7 +1877,7 @@
         }
       ],
       "detectorCount": 82,
-      "updatedAt": "2026-09-03T15:10:07.610Z"
+      "updatedAt": "2026-07-27T12:43:59.062Z"
     },
     {
       "id": "pdf-0118",
@@ -1893,7 +1893,7 @@
         }
       ],
       "detectorCount": 95,
-      "updatedAt": "2026-09-03T15:10:07.611Z"
+      "updatedAt": "2026-07-27T12:43:59.063Z"
     },
     {
       "id": "pdf-0119",
@@ -1909,7 +1909,7 @@
         }
       ],
       "detectorCount": 77,
-      "updatedAt": "2026-09-03T15:10:07.612Z"
+      "updatedAt": "2026-07-27T12:43:59.064Z"
     },
     {
       "id": "pdf-0120",
@@ -1925,7 +1925,7 @@
         }
       ],
       "detectorCount": 67,
-      "updatedAt": "2026-09-03T15:10:07.613Z"
+      "updatedAt": "2026-07-27T12:43:59.065Z"
     },
     {
       "id": "pdf-0121",
@@ -1941,7 +1941,7 @@
         }
       ],
       "detectorCount": 154,
-      "updatedAt": "2026-09-03T15:10:07.614Z"
+      "updatedAt": "2026-07-27T12:43:59.066Z"
     },
     {
       "id": "pdf-0122",
@@ -1957,7 +1957,7 @@
         }
       ],
       "detectorCount": 12,
-      "updatedAt": "2026-09-03T15:10:07.615Z"
+      "updatedAt": "2026-07-27T12:43:59.066Z"
     },
     {
       "id": "pdf-0123",
@@ -1973,7 +1973,7 @@
         }
       ],
       "detectorCount": 55,
-      "updatedAt": "2026-09-03T15:10:07.560Z"
+      "updatedAt": "2026-07-27T12:43:59.027Z"
     },
     {
       "id": "pdf-0124",
@@ -1989,7 +1989,7 @@
         }
       ],
       "detectorCount": 67,
-      "updatedAt": "2026-09-03T15:10:07.562Z"
+      "updatedAt": "2026-07-27T12:43:59.029Z"
     },
     {
       "id": "pdf-0125",
@@ -2005,7 +2005,7 @@
         }
       ],
       "detectorCount": 74,
-      "updatedAt": "2026-09-03T15:10:07.562Z"
+      "updatedAt": "2026-07-27T12:43:59.029Z"
     },
     {
       "id": "pdf-0126",
@@ -2021,7 +2021,7 @@
         }
       ],
       "detectorCount": 74,
-      "updatedAt": "2026-09-03T15:10:07.562Z"
+      "updatedAt": "2026-07-27T12:43:59.029Z"
     },
     {
       "id": "pdf-0127",
@@ -2037,7 +2037,7 @@
         }
       ],
       "detectorCount": 58,
-      "updatedAt": "2026-09-03T15:10:07.575Z"
+      "updatedAt": "2026-07-27T12:43:59.031Z"
     },
     {
       "id": "pdf-0128",
@@ -2053,7 +2053,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-03T15:10:07.577Z"
+      "updatedAt": "2026-07-27T12:43:59.033Z"
     },
     {
       "id": "pdf-0129",
@@ -2069,7 +2069,7 @@
         }
       ],
       "detectorCount": 61,
-      "updatedAt": "2026-09-03T15:10:07.579Z"
+      "updatedAt": "2026-07-27T12:43:59.034Z"
     },
     {
       "id": "pdf-0130",
@@ -2085,7 +2085,7 @@
         }
       ],
       "detectorCount": 58,
-      "updatedAt": "2026-09-03T15:10:07.581Z"
+      "updatedAt": "2026-07-27T12:43:59.036Z"
     },
     {
       "id": "pdf-0131",
@@ -2101,7 +2101,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-03T15:10:07.582Z"
+      "updatedAt": "2026-07-27T12:43:59.037Z"
     },
     {
       "id": "pdf-0132",
@@ -2117,7 +2117,7 @@
         }
       ],
       "detectorCount": 60,
-      "updatedAt": "2026-09-03T15:10:07.584Z"
+      "updatedAt": "2026-07-27T12:43:59.039Z"
     },
     {
       "id": "pdf-0133",
@@ -2133,7 +2133,7 @@
         }
       ],
       "detectorCount": 58,
-      "updatedAt": "2026-09-03T15:10:07.586Z"
+      "updatedAt": "2026-07-27T12:43:59.040Z"
     },
     {
       "id": "pdf-0134",
@@ -2149,7 +2149,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-03T15:10:07.587Z"
+      "updatedAt": "2026-07-27T12:43:59.042Z"
     },
     {
       "id": "pdf-0135",
@@ -2165,7 +2165,7 @@
         }
       ],
       "detectorCount": 61,
-      "updatedAt": "2026-09-03T15:10:07.590Z"
+      "updatedAt": "2026-07-27T12:43:59.044Z"
     },
     {
       "id": "pdf-0136",
@@ -2181,7 +2181,7 @@
         }
       ],
       "detectorCount": 60,
-      "updatedAt": "2026-09-03T15:10:07.593Z"
+      "updatedAt": "2026-07-27T12:43:59.047Z"
     },
     {
       "id": "pdf-0137",
@@ -2197,7 +2197,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-03T15:10:07.595Z"
+      "updatedAt": "2026-07-27T12:43:59.049Z"
     },
     {
       "id": "pdf-0138",
@@ -2213,7 +2213,7 @@
         }
       ],
       "detectorCount": 61,
-      "updatedAt": "2026-09-03T15:10:07.597Z"
+      "updatedAt": "2026-07-27T12:43:59.050Z"
     },
     {
       "id": "pdf-0139",
@@ -2229,7 +2229,7 @@
         }
       ],
       "detectorCount": 58,
-      "updatedAt": "2026-09-03T15:10:07.599Z"
+      "updatedAt": "2026-07-27T12:43:59.052Z"
     },
     {
       "id": "pdf-0140",
@@ -2245,7 +2245,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-03T15:10:07.600Z"
+      "updatedAt": "2026-07-27T12:43:59.054Z"
     },
     {
       "id": "pdf-0141",
@@ -2261,7 +2261,7 @@
         }
       ],
       "detectorCount": 61,
-      "updatedAt": "2026-09-03T15:10:07.602Z"
+      "updatedAt": "2026-07-27T12:43:59.055Z"
     },
     {
       "id": "pdf-0142",
@@ -2277,7 +2277,7 @@
         }
       ],
       "detectorCount": 58,
-      "updatedAt": "2026-09-03T15:10:07.604Z"
+      "updatedAt": "2026-07-27T12:43:59.057Z"
     },
     {
       "id": "pdf-0143",
@@ -2293,7 +2293,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-03T15:10:07.606Z"
+      "updatedAt": "2026-07-27T12:43:59.059Z"
     },
     {
       "id": "pdf-0144",
@@ -2309,7 +2309,7 @@
         }
       ],
       "detectorCount": 62,
-      "updatedAt": "2026-09-03T15:10:07.608Z"
+      "updatedAt": "2026-07-27T12:43:59.060Z"
     },
     {
       "id": "pdf-0145",
@@ -2325,7 +2325,7 @@
         }
       ],
       "detectorCount": 28,
-      "updatedAt": "2026-09-03T15:10:07.609Z"
+      "updatedAt": "2026-07-27T12:43:59.061Z"
     }
   ],
   "entries": [
@@ -155136,1872 +155136,1962 @@
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-1",
-      "detector": "M6-1",
-      "normalizedLabel": "M6-1",
-      "normalizedDetector": "M6-1",
-      "xMin": 88.080965,
-      "yMin": 190.583484,
-      "xMax": 100.317556,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-4",
+      "detector": "M6-4",
+      "normalizedLabel": "M6-4",
+      "normalizedDetector": "M6-4",
+      "xMin": 269.28,
+      "yMin": 200.180566,
+      "xMax": 279.339379,
+      "yMax": 205.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0002",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
       "label": "M6-2",
       "detector": "M6-2",
       "normalizedLabel": "M6-2",
       "normalizedDetector": "M6-2",
-      "xMin": 179.774397,
-      "yMin": 190.583484,
-      "xMax": 192.010988,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "xMin": 157.68,
+      "yMin": 212.180566,
+      "xMax": 167.739379,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0003",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-4",
-      "detector": "M6-4",
-      "normalizedLabel": "M6-4",
-      "normalizedDetector": "M6-4",
-      "xMin": 279.723993,
-      "yMin": 190.583484,
-      "xMax": 291.960585,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-1",
+      "detector": "M6-1",
+      "normalizedLabel": "M6-1",
+      "normalizedDetector": "M6-1",
+      "xMin": 85.32,
+      "yMin": 212.300566,
+      "xMax": 95.379379,
+      "yMax": 217.479452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0004",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
       "label": "M6-5",
       "detector": "M6-5",
       "normalizedLabel": "M6-5",
       "normalizedDetector": "M6-5",
-      "xMin": 333.022826,
-      "yMin": 190.583484,
-      "xMax": 345.259417,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "xMin": 328.56,
+      "yMin": 212.180566,
+      "xMax": 338.619379,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0005",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
       "label": "M6-6",
       "detector": "M6-6",
       "normalizedLabel": "M6-6",
       "normalizedDetector": "M6-6",
-      "xMin": 408.246001,
-      "yMin": 190.583484,
-      "xMax": 420.482592,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "xMin": 405,
+      "yMin": 212.180566,
+      "xMax": 415.059379,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0006",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
       "label": "M6-47",
       "detector": "M6-47",
       "normalizedLabel": "M6-47",
       "normalizedDetector": "M6-47",
-      "xMin": 466.566912,
-      "yMin": 190.583484,
-      "xMax": 481.935553,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "xMin": 464.4,
+      "yMin": 212.180566,
+      "xMax": 476.914609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0007",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
       "label": "M6-48",
       "detector": "M6-48",
       "normalizedLabel": "M6-48",
       "normalizedDetector": "M6-48",
-      "xMin": 551.888245,
-      "yMin": 190.583484,
-      "xMax": 567.256886,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "xMin": 551.16,
+      "yMin": 212.180566,
+      "xMax": 563.674609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0008",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-7",
-      "detector": "M6-7",
-      "normalizedLabel": "M6-7",
-      "normalizedDetector": "M6-7",
-      "xMin": 359.764465,
-      "yMin": 256.223938,
-      "xMax": 372.001057,
-      "yMax": 262.250432,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-50",
+      "detector": "M6-50",
+      "normalizedLabel": "M6-50",
+      "normalizedDetector": "M6-50",
+      "xMin": 607.2,
+      "yMin": 212.180566,
+      "xMax": 619.714609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0009",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-3",
-      "detector": "M6-3",
-      "normalizedLabel": "M6-3",
-      "normalizedDetector": "M6-3",
-      "xMin": 199.08362,
-      "yMin": 256.584883,
-      "xMax": 211.320211,
-      "yMax": 262.611377,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-51",
+      "detector": "M6-51",
+      "normalizedLabel": "M6-51",
+      "normalizedDetector": "M6-51",
+      "xMin": 657.84,
+      "yMin": 212.180566,
+      "xMax": 670.354609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0010",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-50",
-      "detector": "M6-50",
-      "normalizedLabel": "M6-50",
-      "normalizedDetector": "M6-50",
-      "xMin": 606.861104,
-      "yMin": 190.583484,
-      "xMax": 622.229744,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-52",
+      "detector": "M6-52",
+      "normalizedLabel": "M6-52",
+      "normalizedDetector": "M6-52",
+      "xMin": 706.92,
+      "yMin": 212.180566,
+      "xMax": 719.434609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0011",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-51",
-      "detector": "M6-51",
-      "normalizedLabel": "M6-51",
-      "normalizedDetector": "M6-51",
-      "xMin": 656.649882,
-      "yMin": 190.583484,
-      "xMax": 672.018522,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-53",
+      "detector": "M6-53",
+      "normalizedLabel": "M6-53",
+      "normalizedDetector": "M6-53",
+      "xMin": 757.92,
+      "yMin": 212.180566,
+      "xMax": 770.434609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0012",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-52",
-      "detector": "M6-52",
-      "normalizedLabel": "M6-52",
-      "normalizedDetector": "M6-52",
-      "xMin": 704.872635,
-      "yMin": 190.583484,
-      "xMax": 720.241276,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-55",
+      "detector": "M6-55",
+      "normalizedLabel": "M6-55",
+      "normalizedDetector": "M6-55",
+      "xMin": 803.28,
+      "yMin": 212.180566,
+      "xMax": 815.794609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0013",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-53",
-      "detector": "M6-53",
-      "normalizedLabel": "M6-53",
-      "normalizedDetector": "M6-53",
-      "xMin": 755.039419,
-      "yMin": 190.583484,
-      "xMax": 770.408059,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-56",
+      "detector": "M6-56",
+      "normalizedLabel": "M6-56",
+      "normalizedDetector": "M6-56",
+      "xMin": 852.48,
+      "yMin": 212.180566,
+      "xMax": 864.994609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0014",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-49",
-      "detector": "M6-49",
-      "normalizedLabel": "M6-49",
-      "normalizedDetector": "M6-49",
-      "xMin": 537.727644,
-      "yMin": 256.223938,
-      "xMax": 553.096284,
-      "yMax": 262.250432,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-57",
+      "detector": "M6-57",
+      "normalizedLabel": "M6-57",
+      "normalizedDetector": "M6-57",
+      "xMin": 902.16,
+      "yMin": 212.180566,
+      "xMax": 914.674609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0015",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-55",
-      "detector": "M6-55",
-      "normalizedLabel": "M6-55",
-      "normalizedDetector": "M6-55",
-      "xMin": 799.428113,
-      "yMin": 190.583484,
-      "xMax": 814.796753,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-58",
+      "detector": "M6-58",
+      "normalizedLabel": "M6-58",
+      "normalizedDetector": "M6-58",
+      "xMin": 953.64,
+      "yMin": 212.180566,
+      "xMax": 966.154609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0016",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-56",
-      "detector": "M6-56",
-      "normalizedLabel": "M6-56",
-      "normalizedDetector": "M6-56",
-      "xMin": 847.92087,
-      "yMin": 190.583484,
-      "xMax": 863.28951,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-59",
+      "detector": "M6-59",
+      "normalizedLabel": "M6-59",
+      "normalizedDetector": "M6-59",
+      "xMin": 998.76,
+      "yMin": 212.180566,
+      "xMax": 1011.274609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0017",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-57",
-      "detector": "M6-57",
-      "normalizedLabel": "M6-57",
-      "normalizedDetector": "M6-57",
-      "xMin": 896.629631,
-      "yMin": 190.583484,
-      "xMax": 911.998271,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-61",
+      "detector": "M6-61",
+      "normalizedLabel": "M6-61",
+      "normalizedDetector": "M6-61",
+      "xMin": 1053.6,
+      "yMin": 212.180566,
+      "xMax": 1066.114609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0018",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-22",
-      "detector": "M6-22",
-      "normalizedLabel": "M6-22",
-      "normalizedDetector": "M6-22",
-      "xMin": 31.319435,
-      "yMin": 315.504914,
-      "xMax": 46.688075,
-      "yMax": 321.531408,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-62",
+      "detector": "M6-62",
+      "normalizedLabel": "M6-62",
+      "normalizedDetector": "M6-62",
+      "xMin": 1099.8,
+      "yMin": 212.180566,
+      "xMax": 1112.314609,
+      "yMax": 217.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0019",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-9",
-      "detector": "M6-9",
-      "normalizedLabel": "M6-9",
-      "normalizedDetector": "M6-9",
-      "xMin": 431.766167,
-      "yMin": 288.143604,
-      "xMax": 444.002758,
-      "yMax": 294.170098,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-78",
+      "detector": "M6-78",
+      "normalizedLabel": "M6-78",
+      "normalizedDetector": "M6-78",
+      "xMin": 269.28,
+      "yMin": 232.100566,
+      "xMax": 281.794609,
+      "yMax": 237.279452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0020",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-15",
-      "detector": "M6-15",
-      "normalizedLabel": "M6-15",
-      "normalizedDetector": "M6-15",
-      "xMin": 271.444561,
-      "yMin": 289.704224,
-      "xMax": 286.813201,
-      "yMax": 295.730718,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-7",
+      "detector": "M6-7",
+      "normalizedLabel": "M6-7",
+      "normalizedDetector": "M6-7",
+      "xMin": 355.68,
+      "yMin": 279.020566,
+      "xMax": 365.739379,
+      "yMax": 284.199452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0021",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-43",
-      "detector": "M6-43",
-      "normalizedLabel": "M6-43",
-      "normalizedDetector": "M6-43",
-      "xMin": 557.529705,
-      "yMin": 288.863756,
-      "xMax": 572.898345,
-      "yMax": 294.89025,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-3",
+      "detector": "M6-3",
+      "normalizedLabel": "M6-3",
+      "normalizedDetector": "M6-3",
+      "xMin": 192.24,
+      "yMin": 279.380566,
+      "xMax": 202.299379,
+      "yMax": 284.559452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0022",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-12",
-      "detector": "M6-12",
-      "normalizedLabel": "M6-12",
-      "normalizedDetector": "M6-12",
-      "xMin": 369.124963,
-      "yMin": 297.744668,
-      "xMax": 384.493604,
-      "yMax": 303.771162,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-49",
+      "detector": "M6-49",
+      "normalizedLabel": "M6-49",
+      "normalizedDetector": "M6-49",
+      "xMin": 536.88,
+      "yMin": 279.020566,
+      "xMax": 549.394609,
+      "yMax": 284.199452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0023",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-67",
-      "detector": "M6-67",
-      "normalizedLabel": "M6-67",
-      "normalizedDetector": "M6-67",
-      "xMin": 657.850183,
-      "yMin": 286.704909,
-      "xMax": 673.218824,
-      "yMax": 292.731403,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-54",
+      "detector": "M6-54",
+      "normalizedLabel": "M6-54",
+      "normalizedDetector": "M6-54",
+      "xMin": 775.8,
+      "yMin": 279.020566,
+      "xMax": 788.314609,
+      "yMax": 284.199452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0024",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-64",
-      "detector": "M6-64",
-      "normalizedLabel": "M6-64",
-      "normalizedDetector": "M6-64",
-      "xMin": 612.970867,
-      "yMin": 288.504485,
-      "xMax": 628.339508,
-      "yMax": 294.530979,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-60",
+      "detector": "M6-60",
+      "normalizedLabel": "M6-60",
+      "normalizedDetector": "M6-60",
+      "xMin": 1007.76,
+      "yMin": 283.100566,
+      "xMax": 1020.274609,
+      "yMax": 288.279452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0025",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-71",
-      "detector": "M6-71",
-      "normalizedLabel": "M6-71",
-      "normalizedDetector": "M6-71",
-      "xMin": 799.452435,
-      "yMin": 296.783886,
-      "xMax": 814.821075,
-      "yMax": 302.81038,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-8",
+      "detector": "M6-8",
+      "normalizedLabel": "M6-8",
+      "normalizedDetector": "M6-8",
+      "xMin": 338.76,
+      "yMin": 291.980566,
+      "xMax": 348.819379,
+      "yMax": 297.159452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0026",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-69",
-      "detector": "M6-69",
-      "normalizedLabel": "M6-69",
-      "normalizedDetector": "M6-69",
-      "xMin": 741.011959,
-      "yMin": 313.705306,
-      "xMax": 756.380599,
-      "yMax": 319.7318,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-76",
+      "detector": "M6-76",
+      "normalizedLabel": "M6-76",
+      "normalizedDetector": "M6-76",
+      "xMin": 951.36,
+      "yMin": 292.340566,
+      "xMax": 963.874609,
+      "yMax": 297.519452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0027",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-20",
-      "detector": "M6-20",
-      "normalizedLabel": "M6-20",
-      "normalizedDetector": "M6-20",
-      "xMin": 141.483273,
-      "yMin": 333.504084,
-      "xMax": 156.851913,
-      "yMax": 339.530578,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-16",
+      "detector": "M6-16",
+      "normalizedLabel": "M6-16",
+      "normalizedDetector": "M6-16",
+      "xMin": 229.44,
+      "yMin": 313.100566,
+      "xMax": 241.954609,
+      "yMax": 318.279452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0028",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-18",
-      "detector": "M6-18",
-      "normalizedLabel": "M6-18",
-      "normalizedDetector": "M6-18",
-      "xMin": 162.363776,
-      "yMin": 338.904517,
-      "xMax": 177.732416,
-      "yMax": 344.931011,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-19",
+      "detector": "M6-19",
+      "normalizedLabel": "M6-19",
+      "normalizedDetector": "M6-19",
+      "xMin": 160.8,
+      "yMin": 317.780566,
+      "xMax": 173.314609,
+      "yMax": 322.959452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0029",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-10",
-      "detector": "M6-10",
-      "normalizedLabel": "M6-10",
-      "normalizedDetector": "M6-10",
-      "xMin": 427.085918,
-      "yMin": 327.864726,
-      "xMax": 442.454558,
-      "yMax": 333.89122,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-20",
+      "detector": "M6-20",
+      "normalizedLabel": "M6-20",
+      "normalizedDetector": "M6-20",
+      "xMin": 114.24,
+      "yMin": 320.180566,
+      "xMax": 126.754609,
+      "yMax": 325.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0030",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-42",
-      "detector": "M6-42",
-      "normalizedLabel": "M6-42",
-      "normalizedDetector": "M6-42",
-      "xMin": 545.647806,
-      "yMin": 349.105482,
-      "xMax": 561.016446,
-      "yMax": 355.131977,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-105",
+      "detector": "M6-105",
+      "normalizedLabel": "M6-105",
+      "normalizedDetector": "M6-105",
+      "xMin": 525.24,
+      "yMin": 300.860566,
+      "xMax": 540.209839,
+      "yMax": 306.039452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0031",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-100",
-      "detector": "M6-100",
-      "normalizedLabel": "M6-100",
-      "normalizedDetector": "M6-100",
-      "xMin": 331.206732,
-      "yMin": 356.185177,
-      "xMax": 349.545419,
-      "yMax": 362.211671,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-9",
+      "detector": "M6-9",
+      "normalizedLabel": "M6-9",
+      "normalizedDetector": "M6-9",
+      "xMin": 429,
+      "yMin": 311.540566,
+      "xMax": 439.059379,
+      "yMax": 316.719452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0032",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-26",
-      "detector": "M6-26",
-      "normalizedLabel": "M6-26",
-      "normalizedDetector": "M6-26",
-      "xMin": 200.762913,
-      "yMin": 390.146626,
-      "xMax": 216.131553,
-      "yMax": 396.17312,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-15",
+      "detector": "M6-15",
+      "normalizedLabel": "M6-15",
+      "normalizedDetector": "M6-15",
+      "xMin": 265.8,
+      "yMin": 313.100566,
+      "xMax": 278.314609,
+      "yMax": 318.279452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0033",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-65",
-      "detector": "M6-65",
-      "normalizedLabel": "M6-65",
-      "normalizedDetector": "M6-65",
-      "xMin": 606.850314,
-      "yMin": 355.705622,
-      "xMax": 622.218954,
-      "yMax": 361.732116,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-22",
+      "detector": "M6-22",
+      "normalizedLabel": "M6-22",
+      "normalizedDetector": "M6-22",
+      "xMin": 21.48,
+      "yMin": 339.380566,
+      "xMax": 33.994609,
+      "yMax": 344.559452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0034",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-45",
-      "detector": "M6-45",
-      "normalizedLabel": "M6-45",
-      "normalizedDetector": "M6-45",
-      "xMin": 501.366717,
-      "yMin": 356.185177,
-      "xMax": 516.735357,
-      "yMax": 362.211671,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-67",
+      "detector": "M6-67",
+      "normalizedLabel": "M6-67",
+      "normalizedDetector": "M6-67",
+      "xMin": 659.04,
+      "yMin": 310.100566,
+      "xMax": 671.554609,
+      "yMax": 315.279452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0035",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-101",
-      "detector": "M6-101",
-      "normalizedLabel": "M6-101",
-      "normalizedDetector": "M6-101",
-      "xMin": 332.284482,
-      "yMin": 372.986282,
-      "xMax": 350.623169,
-      "yMax": 379.012776,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-64",
+      "detector": "M6-64",
+      "normalizedLabel": "M6-64",
+      "normalizedDetector": "M6-64",
+      "xMin": 613.44,
+      "yMin": 311.900566,
+      "xMax": 625.954609,
+      "yMax": 317.079452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0036",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-23",
-      "detector": "M6-23",
-      "normalizedLabel": "M6-23",
-      "normalizedDetector": "M6-23",
-      "xMin": 32.400506,
-      "yMin": 390.985452,
-      "xMax": 47.769146,
-      "yMax": 397.011946,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-43",
+      "detector": "M6-43",
+      "normalizedLabel": "M6-43",
+      "normalizedDetector": "M6-43",
+      "xMin": 557.04,
+      "yMin": 312.260566,
+      "xMax": 569.554609,
+      "yMax": 317.439452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0037",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-80",
-      "detector": "M6-80",
-      "normalizedLabel": "M6-80",
-      "normalizedDetector": "M6-80",
-      "xMin": 979.574493,
-      "yMin": 323.184477,
-      "xMax": 994.943134,
-      "yMax": 329.210971,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-96",
+      "detector": "M6-96",
+      "normalizedLabel": "M6-96",
+      "normalizedDetector": "M6-96",
+      "xMin": 489.24,
+      "yMin": 317.180566,
+      "xMax": 501.754609,
+      "yMax": 322.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0038",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-72",
-      "detector": "M6-72",
-      "normalizedLabel": "M6-72",
-      "normalizedDetector": "M6-72",
-      "xMin": 799.093164,
-      "yMin": 339.744984,
-      "xMax": 814.461804,
-      "yMax": 345.771479,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-12",
+      "detector": "M6-12",
+      "normalizedLabel": "M6-12",
+      "normalizedDetector": "M6-12",
+      "xMin": 365.28,
+      "yMin": 321.380566,
+      "xMax": 377.794609,
+      "yMax": 326.559452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0039",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-99",
-      "detector": "M6-99",
-      "normalizedLabel": "M6-99",
-      "normalizedDetector": "M6-99",
-      "xMin": 331.206732,
-      "yMin": 344.304918,
-      "xMax": 346.575373,
-      "yMax": 350.331413,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-70",
+      "detector": "M6-70",
+      "normalizedLabel": "M6-70",
+      "normalizedDetector": "M6-70",
+      "xMin": 740.16,
+      "yMin": 310.340566,
+      "xMax": 752.674609,
+      "yMax": 315.519452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0040",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-17",
-      "detector": "M6-17",
-      "normalizedLabel": "M6-17",
-      "normalizedDetector": "M6-17",
-      "xMin": 236.644269,
-      "yMin": 354.505884,
-      "xMax": 252.012909,
-      "yMax": 360.532378,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-71",
+      "detector": "M6-71",
+      "normalizedLabel": "M6-71",
+      "normalizedDetector": "M6-71",
+      "xMin": 803.16,
+      "yMin": 320.300566,
+      "xMax": 815.674609,
+      "yMax": 325.479452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0041",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-63",
-      "detector": "M6-63",
-      "normalizedLabel": "M6-63",
-      "normalizedDetector": "M6-63",
-      "xMin": 1103.418141,
-      "yMin": 310.824665,
-      "xMax": 1118.786781,
-      "yMax": 316.851159,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-44",
+      "detector": "M6-44",
+      "normalizedLabel": "M6-44",
+      "normalizedDetector": "M6-44",
+      "xMin": 510.36,
+      "yMin": 324.620566,
+      "xMax": 522.874609,
+      "yMax": 329.799452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0042",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-75",
-      "detector": "M6-75",
-      "normalizedLabel": "M6-75",
-      "normalizedDetector": "M6-75",
-      "xMin": 907.094879,
-      "yMin": 326.183792,
-      "xMax": 922.463519,
-      "yMax": 332.210286,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-10",
+      "detector": "M6-10",
+      "normalizedLabel": "M6-10",
+      "normalizedDetector": "M6-10",
+      "xMin": 401.4,
+      "yMin": 335.060566,
+      "xMax": 413.914609,
+      "yMax": 340.239452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0043",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-68",
-      "detector": "M6-68",
-      "normalizedLabel": "M6-68",
-      "normalizedDetector": "M6-68",
-      "xMin": 710.290422,
-      "yMin": 328.344281,
-      "xMax": 725.659062,
-      "yMax": 334.370775,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-21",
+      "detector": "M6-21",
+      "normalizedLabel": "M6-21",
+      "normalizedDetector": "M6-21",
+      "xMin": 108.6,
+      "yMin": 345.740566,
+      "xMax": 121.114609,
+      "yMax": 350.919452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0044",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-14",
-      "detector": "M6-14",
-      "normalizedLabel": "M6-14",
-      "normalizedDetector": "M6-14",
-      "xMin": 272.163071,
-      "yMin": 340.82605,
-      "xMax": 287.531711,
-      "yMax": 346.852544,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-79",
+      "detector": "M6-79",
+      "normalizedLabel": "M6-79",
+      "normalizedDetector": "M6-79",
+      "xMin": 958.56,
+      "yMin": 322.700566,
+      "xMax": 971.074609,
+      "yMax": 327.879452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0045",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-79",
-      "detector": "M6-79",
-      "normalizedLabel": "M6-79",
-      "normalizedDetector": "M6-79",
-      "xMin": 952.216435,
-      "yMin": 299.064722,
-      "xMax": 967.585075,
-      "yMax": 305.091216,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-74",
+      "detector": "M6-74",
+      "normalizedLabel": "M6-74",
+      "normalizedDetector": "M6-74",
+      "xMin": 854.16,
+      "yMin": 334.340566,
+      "xMax": 866.674609,
+      "yMax": 339.519452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0046",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-74",
-      "detector": "M6-74",
-      "normalizedLabel": "M6-74",
-      "normalizedDetector": "M6-74",
-      "xMin": 849.493196,
-      "yMin": 310.463752,
-      "xMax": 864.861836,
-      "yMax": 316.490246,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-69",
+      "detector": "M6-69",
+      "normalizedLabel": "M6-69",
+      "normalizedDetector": "M6-69",
+      "xMin": 743.76,
+      "yMin": 337.580566,
+      "xMax": 756.274609,
+      "yMax": 342.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0047",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-46",
-      "detector": "M6-46",
-      "normalizedLabel": "M6-46",
-      "normalizedDetector": "M6-46",
-      "xMin": 452.168097,
-      "yMin": 320.064848,
-      "xMax": 467.536738,
-      "yMax": 326.091342,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-14",
+      "detector": "M6-14",
+      "normalizedLabel": "M6-14",
+      "normalizedDetector": "M6-14",
+      "xMin": 266.52,
+      "yMin": 365.180566,
+      "xMax": 279.034609,
+      "yMax": 370.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0048",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-13",
-      "detector": "M6-13",
-      "normalizedLabel": "M6-13",
-      "normalizedDetector": "M6-13",
-      "xMin": 305.524684,
-      "yMin": 322.345652,
-      "xMax": 320.893324,
-      "yMax": 328.372146,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-72",
+      "detector": "M6-72",
+      "normalizedLabel": "M6-72",
+      "normalizedDetector": "M6-72",
+      "xMin": 802.8,
+      "yMin": 363.980566,
+      "xMax": 815.314609,
+      "yMax": 369.159452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0049",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-31",
-      "detector": "M6-31",
-      "normalizedLabel": "M6-31",
-      "normalizedDetector": "M6-31",
-      "xMin": 379.446244,
-      "yMin": 373.947032,
-      "xMax": 394.814884,
-      "yMax": 379.973526,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-99",
+      "detector": "M6-99",
+      "normalizedLabel": "M6-99",
+      "normalizedDetector": "M6-99",
+      "xMin": 326.64,
+      "yMin": 368.660566,
+      "xMax": 339.154609,
+      "yMax": 373.839452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0050",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-62",
-      "detector": "M6-62",
-      "normalizedLabel": "M6-62",
-      "normalizedDetector": "M6-62",
-      "xMin": 1090.924667,
-      "yMin": 190.583484,
-      "xMax": 1106.293307,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-17",
+      "detector": "M6-17",
+      "normalizedLabel": "M6-17",
+      "normalizedDetector": "M6-17",
+      "xMin": 229.44,
+      "yMin": 379.100566,
+      "xMax": 241.954609,
+      "yMax": 384.279452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0051",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-70",
-      "detector": "M6-70",
-      "normalizedLabel": "M6-70",
-      "normalizedDetector": "M6-70",
-      "xMin": 737.531448,
-      "yMin": 287.06579,
-      "xMax": 752.900089,
-      "yMax": 293.092284,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-80",
+      "detector": "M6-80",
+      "normalizedLabel": "M6-80",
+      "normalizedDetector": "M6-80",
+      "xMin": 986.4,
+      "yMin": 347.180566,
+      "xMax": 998.914609,
+      "yMax": 352.359452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0052",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-44",
-      "detector": "M6-44",
-      "normalizedLabel": "M6-44",
-      "normalizedDetector": "M6-44",
-      "xMin": 512.167552,
-      "yMin": 299.903515,
-      "xMax": 527.536192,
-      "yMax": 305.930009,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-75",
+      "detector": "M6-75",
+      "normalizedLabel": "M6-75",
+      "normalizedDetector": "M6-75",
+      "xMin": 912.72,
+      "yMin": 350.300566,
+      "xMax": 925.234609,
+      "yMax": 355.479452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0053",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-21",
-      "detector": "M6-21",
-      "normalizedLabel": "M6-21",
-      "normalizedDetector": "M6-21",
-      "xMin": 126.601398,
-      "yMin": 315.504914,
-      "xMax": 141.970039,
-      "yMax": 321.531408,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-68",
+      "detector": "M6-68",
+      "normalizedLabel": "M6-68",
+      "normalizedDetector": "M6-68",
+      "xMin": 712.44,
+      "yMin": 352.460566,
+      "xMax": 724.954609,
+      "yMax": 357.639452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0054",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-61",
-      "detector": "M6-61",
-      "normalizedLabel": "M6-61",
-      "normalizedDetector": "M6-61",
-      "xMin": 1045.563958,
-      "yMin": 190.583484,
-      "xMax": 1060.932598,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-18",
+      "detector": "M6-18",
+      "normalizedLabel": "M6-18",
+      "normalizedDetector": "M6-18",
+      "xMin": 146.64,
+      "yMin": 363.500566,
+      "xMax": 159.154609,
+      "yMax": 368.679452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0055",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-60",
-      "detector": "M6-60",
-      "normalizedLabel": "M6-60",
-      "normalizedDetector": "M6-60",
-      "xMin": 1000.576261,
-      "yMin": 260.184035,
-      "xMax": 1015.944901,
-      "yMax": 266.210529,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-63",
+      "detector": "M6-63",
+      "normalizedLabel": "M6-63",
+      "normalizedDetector": "M6-63",
+      "xMin": 1112.52,
+      "yMin": 334.580566,
+      "xMax": 1125.034609,
+      "yMax": 339.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0056",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-76",
-      "detector": "M6-76",
-      "normalizedLabel": "M6-76",
-      "normalizedDetector": "M6-76",
-      "xMin": 945.014784,
-      "yMin": 269.303902,
-      "xMax": 960.383424,
-      "yMax": 275.330397,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-46",
+      "detector": "M6-46",
+      "normalizedLabel": "M6-46",
+      "normalizedDetector": "M6-46",
+      "xMin": 449.76,
+      "yMin": 344.060566,
+      "xMax": 462.274609,
+      "yMax": 349.239452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0057",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-8",
-      "detector": "M6-8",
-      "normalizedLabel": "M6-8",
-      "normalizedDetector": "M6-8",
-      "xMin": 333.004667,
-      "yMin": 275.302531,
-      "xMax": 345.241258,
-      "yMax": 281.329026,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-13",
+      "detector": "M6-13",
+      "normalizedLabel": "M6-13",
+      "normalizedDetector": "M6-13",
+      "xMin": 300.48,
+      "yMin": 346.340566,
+      "xMax": 312.994609,
+      "yMax": 351.519452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0058",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-19",
-      "detector": "M6-19",
-      "normalizedLabel": "M6-19",
-      "normalizedDetector": "M6-19",
-      "xMin": 176.283886,
-      "yMin": 294.023527,
-      "xMax": 191.652526,
-      "yMax": 300.050022,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-11",
+      "detector": "M6-11",
+      "normalizedLabel": "M6-11",
+      "normalizedDetector": "M6-11",
+      "xMin": 401.4,
+      "yMin": 370.580566,
+      "xMax": 413.914609,
+      "yMax": 375.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0059",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-59",
-      "detector": "M6-59",
-      "normalizedLabel": "M6-59",
-      "normalizedDetector": "M6-59",
-      "xMin": 991.563114,
-      "yMin": 190.583484,
-      "xMax": 1006.931754,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-42",
+      "detector": "M6-42",
+      "normalizedLabel": "M6-42",
+      "normalizedDetector": "M6-42",
+      "xMin": 544.92,
+      "yMin": 373.580566,
+      "xMax": 557.434609,
+      "yMax": 378.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0060",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-54",
-      "detector": "M6-54",
-      "normalizedLabel": "M6-54",
-      "normalizedDetector": "M6-54",
-      "xMin": 772.577313,
-      "yMin": 256.223938,
-      "xMax": 787.945953,
-      "yMax": 262.250432,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-100",
+      "detector": "M6-100",
+      "normalizedLabel": "M6-100",
+      "normalizedDetector": "M6-100",
+      "xMin": 326.64,
+      "yMin": 380.780566,
+      "xMax": 341.609839,
+      "yMax": 385.959452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0061",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-16",
-      "detector": "M6-16",
-      "normalizedLabel": "M6-16",
-      "normalizedDetector": "M6-16",
-      "xMin": 236.644269,
-      "yMin": 289.704224,
-      "xMax": 252.012909,
-      "yMax": 295.730718,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-65",
+      "detector": "M6-65",
+      "normalizedLabel": "M6-65",
+      "normalizedDetector": "M6-65",
+      "xMin": 607.2,
+      "yMin": 380.300566,
+      "xMax": 619.714609,
+      "yMax": 385.479452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0062",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-58",
-      "detector": "M6-58",
-      "normalizedLabel": "M6-58",
-      "normalizedDetector": "M6-58",
-      "xMin": 947.282423,
-      "yMin": 190.583484,
-      "xMax": 962.651063,
-      "yMax": 196.609978,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-45",
+      "detector": "M6-45",
+      "normalizedLabel": "M6-45",
+      "normalizedDetector": "M6-45",
+      "xMin": 499.8,
+      "yMin": 380.780566,
+      "xMax": 512.314609,
+      "yMax": 385.959452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0063",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-102",
-      "detector": "M6-102",
-      "normalizedLabel": "M6-102",
-      "normalizedDetector": "M6-102",
-      "xMin": 1002.016566,
-      "yMin": 344.543875,
-      "xMax": 1020.355252,
-      "yMax": 350.570369,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-101",
+      "detector": "M6-101",
+      "normalizedLabel": "M6-101",
+      "normalizedDetector": "M6-101",
+      "xMin": 279.96,
+      "yMin": 397.820566,
+      "xMax": 294.929839,
+      "yMax": 402.999452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0064",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-84",
-      "detector": "M6-84",
-      "normalizedLabel": "M6-84",
-      "normalizedDetector": "M6-84",
-      "xMin": 1103.777348,
-      "yMin": 350.305189,
-      "xMax": 1119.145988,
-      "yMax": 356.331683,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-106",
+      "detector": "M6-106",
+      "normalizedLabel": "M6-106",
+      "normalizedDetector": "M6-106",
+      "xMin": 485.76,
+      "yMin": 390.620566,
+      "xMax": 500.729839,
+      "yMax": 395.799452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0065",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-73",
-      "detector": "M6-73",
-      "normalizedLabel": "M6-73",
-      "normalizedDetector": "M6-73",
-      "xMin": 849.493196,
-      "yMin": 353.785731,
-      "xMax": 864.861836,
-      "yMax": 359.812226,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-102",
+      "detector": "M6-102",
+      "normalizedLabel": "M6-102",
+      "normalizedDetector": "M6-102",
+      "xMin": 1009.32,
+      "yMin": 368.900566,
+      "xMax": 1024.289839,
+      "yMax": 374.079452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0066",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-66",
-      "detector": "M6-66",
-      "normalizedLabel": "M6-66",
-      "normalizedDetector": "M6-66",
-      "xMin": 665.171225,
-      "yMin": 355.705622,
-      "xMax": 680.539865,
-      "yMax": 361.732116,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-84",
+      "detector": "M6-84",
+      "normalizedLabel": "M6-84",
+      "normalizedDetector": "M6-84",
+      "xMin": 1112.88,
+      "yMin": 374.780566,
+      "xMax": 1125.394609,
+      "yMax": 379.959452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0067",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-83",
-      "detector": "M6-83",
-      "normalizedLabel": "M6-83",
-      "normalizedDetector": "M6-83",
-      "xMin": 1048.937761,
-      "yMin": 327.985009,
-      "xMax": 1064.306401,
-      "yMax": 334.011503,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-73",
+      "detector": "M6-73",
+      "normalizedLabel": "M6-73",
+      "normalizedDetector": "M6-73",
+      "xMin": 854.16,
+      "yMin": 378.380566,
+      "xMax": 866.674609,
+      "yMax": 383.559452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0068",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-103",
-      "detector": "M6-103",
-      "normalizedLabel": "M6-103",
-      "normalizedDetector": "M6-103",
-      "xMin": 1002.016566,
-      "yMin": 356.425775,
-      "xMax": 1020.355252,
-      "yMax": 362.452269,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-66",
+      "detector": "M6-66",
+      "normalizedLabel": "M6-66",
+      "normalizedDetector": "M6-66",
+      "xMin": 666.6,
+      "yMin": 380.300566,
+      "xMax": 679.114609,
+      "yMax": 385.479452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0069",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-94",
-      "detector": "M6-94",
-      "normalizedLabel": "M6-94",
-      "normalizedDetector": "M6-94",
-      "xMin": 772.812919,
-      "yMin": 376.105879,
-      "xMax": 788.18156,
-      "yMax": 382.132373,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-83",
+      "detector": "M6-83",
+      "normalizedLabel": "M6-83",
+      "normalizedDetector": "M6-83",
+      "xMin": 1057.08,
+      "yMin": 351.980566,
+      "xMax": 1069.594609,
+      "yMax": 357.159452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0070",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-90",
-      "detector": "M6-90",
-      "normalizedLabel": "M6-90",
-      "normalizedDetector": "M6-90",
-      "xMin": 937.839498,
-      "yMin": 376.105879,
-      "xMax": 953.154137,
-      "yMax": 382.132373,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-103",
+      "detector": "M6-103",
+      "normalizedLabel": "M6-103",
+      "normalizedDetector": "M6-103",
+      "xMin": 1009.32,
+      "yMin": 381.020566,
+      "xMax": 1024.289839,
+      "yMax": 386.199452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0071",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
       "label": "M6-77",
       "detector": "M6-77",
       "normalizedLabel": "M6-77",
       "normalizedDetector": "M6-77",
-      "xMin": 965.415041,
-      "yMin": 365.42536,
-      "xMax": 980.783681,
-      "yMax": 371.451854,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "xMin": 972.12,
+      "yMin": 390.260566,
+      "xMax": 984.634609,
+      "yMax": 395.439452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0072",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-104",
-      "detector": "M6-104",
-      "normalizedLabel": "M6-104",
-      "normalizedDetector": "M6-104",
-      "xMin": 1002.496152,
-      "yMin": 373.467478,
-      "xMax": 1020.834839,
-      "yMax": 379.493972,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-31",
+      "detector": "M6-31",
+      "normalizedLabel": "M6-31",
+      "normalizedDetector": "M6-31",
+      "xMin": 375.72,
+      "yMin": 398.900566,
+      "xMax": 388.234609,
+      "yMax": 404.079452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0073",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-85",
-      "detector": "M6-85",
-      "normalizedLabel": "M6-85",
-      "normalizedDetector": "M6-85",
-      "xMin": 1146.618132,
-      "yMin": 376.105879,
-      "xMax": 1161.986772,
-      "yMax": 382.132373,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-94",
+      "detector": "M6-94",
+      "normalizedLabel": "M6-94",
+      "normalizedDetector": "M6-94",
+      "xMin": 776.16,
+      "yMin": 401.060566,
+      "xMax": 788.674609,
+      "yMax": 406.239452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0074",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-41",
-      "detector": "M6-41",
-      "normalizedLabel": "M6-41",
-      "normalizedDetector": "M6-41",
-      "xMin": 545.529164,
-      "yMin": 382.465421,
-      "xMax": 560.897804,
-      "yMax": 388.491915,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-90",
+      "detector": "M6-90",
+      "normalizedLabel": "M6-90",
+      "normalizedDetector": "M6-90",
+      "xMin": 944.04,
+      "yMin": 401.060566,
+      "xMax": 956.554609,
+      "yMax": 406.239452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0075",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-28",
-      "detector": "M6-28",
-      "normalizedLabel": "M6-28",
-      "normalizedDetector": "M6-28",
-      "xMin": 359.147387,
-      "yMin": 390.146626,
-      "xMax": 374.516027,
-      "yMax": 396.17312,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-104",
+      "detector": "M6-104",
+      "normalizedLabel": "M6-104",
+      "normalizedDetector": "M6-104",
+      "xMin": 1009.92,
+      "yMin": 398.300566,
+      "xMax": 1024.889839,
+      "yMax": 403.479452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0076",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-40",
-      "detector": "M6-40",
-      "normalizedLabel": "M6-40",
-      "normalizedDetector": "M6-40",
-      "xMin": 512.647106,
-      "yMin": 407.547601,
-      "xMax": 528.015746,
-      "yMax": 413.574095,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-85",
+      "detector": "M6-85",
+      "normalizedLabel": "M6-85",
+      "normalizedDetector": "M6-85",
+      "xMin": 1156.56,
+      "yMin": 401.060566,
+      "xMax": 1169.074609,
+      "yMax": 406.239452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0077",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-82",
-      "detector": "M6-82",
-      "normalizedLabel": "M6-82",
-      "normalizedDetector": "M6-82",
-      "xMin": 704.89002,
-      "yMin": 409.46585,
-      "xMax": 720.258661,
-      "yMax": 415.492344,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-41",
+      "detector": "M6-41",
+      "normalizedLabel": "M6-41",
+      "normalizedDetector": "M6-41",
+      "xMin": 544.68,
+      "yMin": 407.420566,
+      "xMax": 557.194609,
+      "yMax": 412.599452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0078",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-95",
-      "detector": "M6-95",
-      "normalizedLabel": "M6-95",
-      "normalizedDetector": "M6-95",
-      "xMin": 737.770405,
-      "yMin": 442.827462,
-      "xMax": 753.139045,
-      "yMax": 448.853956,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-23",
+      "detector": "M6-23",
+      "normalizedLabel": "M6-23",
+      "normalizedDetector": "M6-23",
+      "xMin": 22.56,
+      "yMin": 408.500566,
+      "xMax": 35.074609,
+      "yMax": 413.679452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0079",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-24",
-      "detector": "M6-24",
-      "normalizedLabel": "M6-24",
-      "normalizedDetector": "M6-24",
-      "xMin": 95.880505,
-      "yMin": 450.027471,
-      "xMax": 111.249145,
-      "yMax": 456.053966,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-28",
+      "detector": "M6-28",
+      "normalizedLabel": "M6-28",
+      "normalizedDetector": "M6-28",
+      "xMin": 355.08,
+      "yMin": 415.340566,
+      "xMax": 367.594609,
+      "yMax": 420.519452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0080",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-25",
-      "detector": "M6-25",
-      "normalizedLabel": "M6-25",
-      "normalizedDetector": "M6-25",
-      "xMin": 178.683331,
-      "yMin": 450.027471,
-      "xMax": 194.051971,
-      "yMax": 456.053966,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-26",
+      "detector": "M6-26",
+      "normalizedLabel": "M6-26",
+      "normalizedDetector": "M6-26",
+      "xMin": 193.8,
+      "yMin": 415.460566,
+      "xMax": 206.314609,
+      "yMax": 420.639452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0081",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-27",
-      "detector": "M6-27",
-      "normalizedLabel": "M6-27",
-      "normalizedDetector": "M6-27",
-      "xMin": 313.444845,
-      "yMin": 450.027471,
-      "xMax": 328.813485,
-      "yMax": 456.053966,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-40",
+      "detector": "M6-40",
+      "normalizedLabel": "M6-40",
+      "normalizedDetector": "M6-40",
+      "xMin": 511.32,
+      "yMin": 433.100566,
+      "xMax": 523.834609,
+      "yMax": 438.279452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0082",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-29",
-      "detector": "M6-29",
-      "normalizedLabel": "M6-29",
-      "normalizedDetector": "M6-29",
-      "xMin": 374.897805,
-      "yMin": 450.027471,
-      "xMax": 390.266445,
-      "yMax": 456.053966,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-82",
+      "detector": "M6-82",
+      "normalizedLabel": "M6-82",
+      "normalizedDetector": "M6-82",
+      "xMin": 707.04,
+      "yMin": 435.020566,
+      "xMax": 719.554609,
+      "yMax": 440.199452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0083",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-93",
-      "detector": "M6-93",
-      "normalizedLabel": "M6-93",
-      "normalizedDetector": "M6-93",
-      "xMin": 798.130772,
-      "yMin": 449.307287,
-      "xMax": 813.499412,
-      "yMax": 455.333781,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-95",
+      "detector": "M6-95",
+      "normalizedLabel": "M6-95",
+      "normalizedDetector": "M6-95",
+      "xMin": 740.4,
+      "yMin": 468.980566,
+      "xMax": 752.914609,
+      "yMax": 474.159452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0084",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-30",
-      "detector": "M6-30",
-      "normalizedLabel": "M6-30",
-      "normalizedDetector": "M6-30",
-      "xMin": 464.755209,
-      "yMin": 450.027471,
-      "xMax": 480.123849,
-      "yMax": 456.053966,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-24",
+      "detector": "M6-24",
+      "normalizedLabel": "M6-24",
+      "normalizedDetector": "M6-24",
+      "xMin": 87.12,
+      "yMin": 476.300566,
+      "xMax": 99.634609,
+      "yMax": 481.479452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0085",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-98",
-      "detector": "M6-98",
-      "normalizedLabel": "M6-98",
-      "normalizedDetector": "M6-98",
-      "xMin": 608.168694,
-      "yMin": 460.226763,
-      "xMax": 623.537334,
-      "yMax": 466.253257,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-25",
+      "detector": "M6-25",
+      "normalizedLabel": "M6-25",
+      "normalizedDetector": "M6-25",
+      "xMin": 155.04,
+      "yMin": 476.300566,
+      "xMax": 167.554609,
+      "yMax": 481.479452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0086",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-39",
-      "detector": "M6-39",
-      "normalizedLabel": "M6-39",
-      "normalizedDetector": "M6-39",
-      "xMin": 512.647106,
-      "yMin": 461.06723,
-      "xMax": 528.015746,
-      "yMax": 467.093724,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-27",
+      "detector": "M6-27",
+      "normalizedLabel": "M6-27",
+      "normalizedDetector": "M6-27",
+      "xMin": 308.52,
+      "yMin": 476.300566,
+      "xMax": 321.034609,
+      "yMax": 481.479452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0087",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-97",
-      "detector": "M6-97",
-      "normalizedLabel": "M6-97",
-      "normalizedDetector": "M6-97",
-      "xMin": 649.450468,
-      "yMin": 460.226763,
-      "xMax": 664.819108,
-      "yMax": 466.253257,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-29",
+      "detector": "M6-29",
+      "normalizedLabel": "M6-29",
+      "normalizedDetector": "M6-29",
+      "xMin": 371.16,
+      "yMin": 476.300566,
+      "xMax": 383.674609,
+      "yMax": 481.479452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0088",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-32",
-      "detector": "M6-32",
-      "normalizedLabel": "M6-32",
-      "normalizedDetector": "M6-32",
-      "xMin": 560.888291,
-      "yMin": 506.546416,
-      "xMax": 576.256931,
-      "yMax": 512.57291,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-93",
+      "detector": "M6-93",
+      "normalizedLabel": "M6-93",
+      "normalizedDetector": "M6-93",
+      "xMin": 801.84,
+      "yMin": 475.580566,
+      "xMax": 814.354609,
+      "yMax": 480.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0089",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-33",
-      "detector": "M6-33",
-      "normalizedLabel": "M6-33",
-      "normalizedDetector": "M6-33",
-      "xMin": 635.648677,
-      "yMin": 519.866978,
-      "xMax": 651.017317,
-      "yMax": 525.893472,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-30",
+      "detector": "M6-30",
+      "normalizedLabel": "M6-30",
+      "normalizedDetector": "M6-30",
+      "xMin": 449.04,
+      "yMin": 476.300566,
+      "xMax": 461.554609,
+      "yMax": 481.479452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0090",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-38",
-      "detector": "M6-38",
-      "normalizedLabel": "M6-38",
-      "normalizedDetector": "M6-38",
-      "xMin": 551.768423,
-      "yMin": 528.627639,
-      "xMax": 567.137063,
-      "yMax": 534.654133,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-98",
+      "detector": "M6-98",
+      "normalizedLabel": "M6-98",
+      "normalizedDetector": "M6-98",
+      "xMin": 608.52,
+      "yMin": 486.620566,
+      "xMax": 621.034609,
+      "yMax": 491.799452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0091",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M1-13",
-      "detector": "M1-13",
-      "normalizedLabel": "M1-13",
-      "normalizedDetector": "M1-13",
-      "xMin": 548.767435,
-      "yMin": 556.829416,
-      "xMax": 564.136075,
-      "yMax": 562.85591,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-39",
+      "detector": "M6-39",
+      "normalizedLabel": "M6-39",
+      "normalizedDetector": "M6-39",
+      "xMin": 511.32,
+      "yMin": 487.580566,
+      "xMax": 523.834609,
+      "yMax": 492.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0092",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M1-14",
-      "detector": "M1-14",
-      "normalizedLabel": "M1-14",
-      "normalizedDetector": "M1-14",
-      "xMin": 502.207185,
-      "yMin": 563.90911,
-      "xMax": 517.575825,
-      "yMax": 569.935604,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-97",
+      "detector": "M6-97",
+      "normalizedLabel": "M6-97",
+      "normalizedDetector": "M6-97",
+      "xMin": 650.52,
+      "yMin": 486.620566,
+      "xMax": 663.034609,
+      "yMax": 491.799452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0093",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M1-47",
-      "detector": "M1-47",
-      "normalizedLabel": "M1-47",
-      "normalizedDetector": "M1-47",
-      "xMin": 507.968531,
-      "yMin": 576.028325,
-      "xMax": 523.337171,
-      "yMax": 582.054819,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-32",
+      "detector": "M6-32",
+      "normalizedLabel": "M6-32",
+      "normalizedDetector": "M6-32",
+      "xMin": 560.4,
+      "yMin": 533.780566,
+      "xMax": 572.914609,
+      "yMax": 538.959452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0094",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-37",
-      "detector": "M6-37",
-      "normalizedLabel": "M6-37",
-      "normalizedDetector": "M6-37",
-      "xMin": 515.048225,
-      "yMin": 596.428614,
-      "xMax": 530.416865,
-      "yMax": 602.455108,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-33",
+      "detector": "M6-33",
+      "normalizedLabel": "M6-33",
+      "normalizedDetector": "M6-33",
+      "xMin": 636.48,
+      "yMin": 547.340566,
+      "xMax": 648.994609,
+      "yMax": 552.519452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0095",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-34",
-      "detector": "M6-34",
-      "normalizedLabel": "M6-34",
-      "normalizedDetector": "M6-34",
-      "xMin": 615.731226,
-      "yMin": 596.789527,
-      "xMax": 631.099866,
-      "yMax": 602.816021,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-38",
+      "detector": "M6-38",
+      "normalizedLabel": "M6-38",
+      "normalizedDetector": "M6-38",
+      "xMin": 551.04,
+      "yMin": 556.340566,
+      "xMax": 563.554609,
+      "yMax": 561.519452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0096",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-36",
-      "detector": "M6-36",
-      "normalizedLabel": "M6-36",
-      "normalizedDetector": "M6-36",
-      "xMin": 562.689541,
-      "yMin": 640.589403,
-      "xMax": 578.058181,
-      "yMax": 646.615897,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M1-13",
+      "detector": "M1-13",
+      "normalizedLabel": "M1-13",
+      "normalizedDetector": "M1-13",
+      "xMin": 548.04,
+      "yMin": 585.020566,
+      "xMax": 563.687081,
+      "yMax": 590.199452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0097",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-35",
-      "detector": "M6-35",
-      "normalizedLabel": "M6-35",
-      "normalizedDetector": "M6-35",
-      "xMin": 615.731226,
-      "yMin": 640.589403,
-      "xMax": 631.099866,
-      "yMax": 646.615897,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M1-14",
+      "detector": "M1-14",
+      "normalizedLabel": "M1-14",
+      "normalizedDetector": "M1-14",
+      "xMin": 500.76,
+      "yMin": 592.220566,
+      "xMax": 516.407081,
+      "yMax": 597.399452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0098",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-81",
-      "detector": "M6-81",
-      "normalizedLabel": "M6-81",
-      "normalizedDetector": "M6-81",
-      "xMin": 704.771315,
-      "yMin": 464.18686,
-      "xMax": 720.139955,
-      "yMax": 470.213354,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M1-47",
+      "detector": "M1-47",
+      "normalizedLabel": "M1-47",
+      "normalizedDetector": "M1-47",
+      "xMin": 506.52,
+      "yMin": 604.460566,
+      "xMax": 522.167081,
+      "yMax": 609.639452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0099",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-92",
-      "detector": "M6-92",
-      "normalizedLabel": "M6-92",
-      "normalizedDetector": "M6-92",
-      "xMin": 848.654403,
-      "yMin": 449.307287,
-      "xMax": 864.023043,
-      "yMax": 455.333781,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-37",
+      "detector": "M6-37",
+      "normalizedLabel": "M6-37",
+      "normalizedDetector": "M6-37",
+      "xMin": 513.72,
+      "yMin": 625.220566,
+      "xMax": 526.234609,
+      "yMax": 630.399452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0100",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-91",
-      "detector": "M6-91",
-      "normalizedLabel": "M6-91",
-      "normalizedDetector": "M6-91",
-      "xMin": 899.166351,
-      "yMin": 449.307287,
-      "xMax": 914.534991,
-      "yMax": 455.333781,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-34",
+      "detector": "M6-34",
+      "normalizedLabel": "M6-34",
+      "normalizedDetector": "M6-34",
+      "xMin": 616.2,
+      "yMin": 625.700566,
+      "xMax": 628.714609,
+      "yMax": 630.879452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0101",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-89",
-      "detector": "M6-89",
-      "normalizedLabel": "M6-89",
-      "normalizedDetector": "M6-89",
-      "xMin": 945.391073,
-      "yMin": 449.307287,
-      "xMax": 960.759713,
-      "yMax": 455.333781,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-36",
+      "detector": "M6-36",
+      "normalizedLabel": "M6-36",
+      "normalizedDetector": "M6-36",
+      "xMin": 562.2,
+      "yMin": 670.340566,
+      "xMax": 574.714609,
+      "yMax": 675.519452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0102",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-88",
-      "detector": "M6-88",
-      "normalizedLabel": "M6-88",
-      "normalizedDetector": "M6-88",
-      "xMin": 990.375296,
-      "yMin": 449.307287,
-      "xMax": 1005.743936,
-      "yMax": 455.333781,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-35",
+      "detector": "M6-35",
+      "normalizedLabel": "M6-35",
+      "normalizedDetector": "M6-35",
+      "xMin": 616.2,
+      "yMin": 670.340566,
+      "xMax": 628.714609,
+      "yMax": 675.519452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0103",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
-      "label": "M6-87",
-      "detector": "M6-87",
-      "normalizedLabel": "M6-87",
-      "normalizedDetector": "M6-87",
-      "xMin": 1041.352092,
-      "yMin": 449.307287,
-      "xMax": 1056.720732,
-      "yMax": 455.333781,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M6-81",
+      "detector": "M6-81",
+      "normalizedLabel": "M6-81",
+      "normalizedDetector": "M6-81",
+      "xMin": 706.8,
+      "yMin": 490.700566,
+      "xMax": 719.314609,
+      "yMax": 495.879452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0099-0104",
       "fileId": "pdf-0099",
       "building": "思源樓",
       "floor": "6F",
-      "path": "火警圖 PDF/思源樓/思源樓6F 火警圖.pdf",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
+      "page": 1,
+      "label": "M6-92",
+      "detector": "M6-92",
+      "normalizedLabel": "M6-92",
+      "normalizedDetector": "M6-92",
+      "xMin": 853.2,
+      "yMin": 475.580566,
+      "xMax": 865.714609,
+      "yMax": 480.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
+    },
+    {
+      "id": "pdf-0099-0105",
+      "fileId": "pdf-0099",
+      "building": "思源樓",
+      "floor": "6F",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
+      "page": 1,
+      "label": "M6-91",
+      "detector": "M6-91",
+      "normalizedLabel": "M6-91",
+      "normalizedDetector": "M6-91",
+      "xMin": 904.68,
+      "yMin": 475.580566,
+      "xMax": 917.194609,
+      "yMax": 480.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
+    },
+    {
+      "id": "pdf-0099-0106",
+      "fileId": "pdf-0099",
+      "building": "思源樓",
+      "floor": "6F",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
+      "page": 1,
+      "label": "M6-89",
+      "detector": "M6-89",
+      "normalizedLabel": "M6-89",
+      "normalizedDetector": "M6-89",
+      "xMin": 951.72,
+      "yMin": 475.580566,
+      "xMax": 964.234609,
+      "yMax": 480.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
+    },
+    {
+      "id": "pdf-0099-0107",
+      "fileId": "pdf-0099",
+      "building": "思源樓",
+      "floor": "6F",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
+      "page": 1,
+      "label": "M6-88",
+      "detector": "M6-88",
+      "normalizedLabel": "M6-88",
+      "normalizedDetector": "M6-88",
+      "xMin": 997.44,
+      "yMin": 475.580566,
+      "xMax": 1009.954609,
+      "yMax": 480.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
+    },
+    {
+      "id": "pdf-0099-0108",
+      "fileId": "pdf-0099",
+      "building": "思源樓",
+      "floor": "6F",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
+      "page": 1,
+      "label": "M6-87",
+      "detector": "M6-87",
+      "normalizedLabel": "M6-87",
+      "normalizedDetector": "M6-87",
+      "xMin": 1049.4,
+      "yMin": 475.580566,
+      "xMax": 1061.914609,
+      "yMax": 480.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
+    },
+    {
+      "id": "pdf-0099-0109",
+      "fileId": "pdf-0099",
+      "building": "思源樓",
+      "floor": "6F",
+      "path": "火警圖 PDF/思源樓/思源樓6F 20260910.pdf",
       "page": 1,
       "label": "M6-86",
       "detector": "M6-86",
       "normalizedLabel": "M6-86",
       "normalizedDetector": "M6-86",
-      "xMin": 1088.655311,
-      "yMin": 449.307287,
-      "xMax": 1104.023951,
-      "yMax": 455.333781,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "xMin": 1097.52,
+      "yMin": 475.580566,
+      "xMax": 1110.034609,
+      "yMax": 480.759452,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0100-0001",

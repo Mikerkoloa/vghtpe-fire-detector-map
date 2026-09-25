@@ -512,13 +512,28 @@ button {
 }
 
 .current-file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   flex: 1 1 220px;
   min-width: 0;
-  overflow: hidden;
   color: var(--muted);
   font-size: 13px;
+}
+
+.current-file-name {
+  min-width: 0;
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.current-file-updated {
+  flex: 0 0 auto;
+  color: var(--brand);
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 .pdf-search {
@@ -1124,6 +1139,9 @@ button {
 
   .current-file {
     flex: none;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .tool-button {

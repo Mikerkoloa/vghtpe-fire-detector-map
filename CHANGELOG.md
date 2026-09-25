@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.3 - 2026-09-25
+
+- Replaced `思源樓6F 火警圖.pdf` with `思源樓6F 20260910.pdf`.
+- Rebuilt the PDF index and history so 思源樓 6F uses the new file path and shows `2026年09月25日更新`.
+- Added the future PDF naming rule: `棟別樓層 YYYYMMDD.pdf`.
+- Updated the admin upload flow so replacing a floor can use the uploaded PDF filename as the new path and remove the old PDF path in the same GitHub commit.
+- Added main-page update-date display for non-initial PDF update records.
+
 ## v0.2.2 - 2026-09-03
 
 - Added a Vercel permanent redirect from `/index.html` to `/`.
