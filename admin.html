@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="./assets/icons/fire-map-icon.svg">
     <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="./site.webmanifest">
-    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260925a">
+    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260926a">
   </head>
   <body>
     <div class="admin-app">
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="header-actions">
-          <span class="version-badge" data-app-version="0.2.3">v0.2.3</span>
+          <span class="version-badge" data-app-version="0.2.4">v0.2.4</span>
           <span class="env-pill">GitHub Token: Vercel Env</span>
           <a class="ghost-button" href="./">回查詢頁</a>
         </div>
@@ -51,6 +51,7 @@
           <nav class="admin-nav" aria-label="管理功能">
             <button class="nav-button is-active" type="button" data-panel="uploadPanel">上傳圖面</button>
             <button class="nav-button" type="button" data-panel="pdfListPanel">PDF 清單</button>
+            <button class="nav-button" type="button" data-panel="historyCorrectionPanel">修正更新紀錄</button>
             <button class="nav-button" type="button" data-panel="historyPanel">發佈紀錄</button>
             <button class="nav-button" type="button" data-panel="settingsPanel">權限設定</button>
           </nav>
@@ -227,6 +228,61 @@
             </div>
           </section>
 
+          <section class="work-area work-area--wide is-hidden" id="historyCorrectionPanel">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow">資料修正</span>
+                <h2>修正 PDF 更新紀錄</h2>
+              </div>
+              <span class="state-label" id="historyCorrectionState">尚未選擇圖面</span>
+            </div>
+
+            <form class="history-correction-form" id="historyCorrectionForm">
+              <div class="form-grid">
+                <label>
+                  <span>棟別</span>
+                  <select id="historyBuildingSelect"></select>
+                </label>
+                <label>
+                  <span>樓層</span>
+                  <select id="historyFloorSelect"></select>
+                </label>
+                <label>
+                  <span>更新日期</span>
+                  <input id="historyUpdatedAtInput" type="date">
+                </label>
+                <label>
+                  <span>更新人員</span>
+                  <input id="historyUpdatedByInput" type="text" value="admin">
+                </label>
+                <label>
+                  <span>GitHub 分支</span>
+                  <input id="historyBranchInput" type="text" value="main">
+                </label>
+                <label>
+                  <span>Commit 訊息</span>
+                  <input id="historyCommitInput" type="text" value="Correct PDF update history">
+                </label>
+              </div>
+
+              <label class="note-field">
+                <span>修正備註</span>
+                <textarea id="historyNoteInput" rows="3" placeholder="例如：將長青樓 B3F 更新日期修正為 2026-09-04"></textarea>
+              </label>
+
+              <div class="path-preview">
+                <span>修正目標路徑</span>
+                <code id="historyTargetPath">尚未選擇圖面</code>
+              </div>
+
+              <p class="api-message" id="historyCorrectionMessage">可以從 PDF 清單點「修正紀錄」帶入資料，也可以在這裡選棟別與樓層。</p>
+
+              <div class="form-actions">
+                <button class="primary-button" type="submit">儲存修正</button>
+              </div>
+            </form>
+          </section>
+
           <section class="work-area work-area--wide is-hidden" id="historyPanel">
             <div class="section-heading">
               <div>
@@ -303,6 +359,6 @@
       <span aria-hidden="true">↑</span>
     </button>
 
-    <script type="module" src="./assets/admin-demo.js?v=20260925a"></script>
+    <script type="module" src="./assets/admin-demo.js?v=20260926a"></script>
   </body>
 </html>

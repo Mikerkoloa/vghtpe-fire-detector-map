@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.4 - 2026-09-26
+
+- Added an admin-only "修正更新紀錄" workflow for correcting a PDF update date, editor, and note without re-uploading the PDF.
+- Added a GitHub-backed `/api/admin/history` endpoint that updates `data/pdf-update-history.json`.
+- Updated the PDF replacement flow to commit `data/buildings.json` together with the uploaded PDF and history record so renamed PDF paths stay aligned before the index rebuild completes.
+
 ## v0.2.3 - 2026-09-25
 
 - Replaced `思源樓6F 火警圖.pdf` with `思源樓6F 20260910.pdf`.

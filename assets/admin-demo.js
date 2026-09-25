@@ -38,6 +38,17 @@ const dom = {
   pdfListBuildingFilter: document.querySelector("#pdfListBuildingFilter"),
   pdfListCount: document.querySelector("#pdfListCount"),
   pdfListBody: document.querySelector("#pdfListBody"),
+  historyCorrectionForm: document.querySelector("#historyCorrectionForm"),
+  historyCorrectionState: document.querySelector("#historyCorrectionState"),
+  historyBuildingSelect: document.querySelector("#historyBuildingSelect"),
+  historyFloorSelect: document.querySelector("#historyFloorSelect"),
+  historyUpdatedAtInput: document.querySelector("#historyUpdatedAtInput"),
+  historyUpdatedByInput: document.querySelector("#historyUpdatedByInput"),
+  historyBranchInput: document.querySelector("#historyBranchInput"),
+  historyCommitInput: document.querySelector("#historyCommitInput"),
+  historyNoteInput: document.querySelector("#historyNoteInput"),
+  historyTargetPath: document.querySelector("#historyTargetPath"),
+  historyCorrectionMessage: document.querySelector("#historyCorrectionMessage"),
   backToTopButton: document.querySelector("#backToTopButton"),
 };
 
@@ -47,6 +58,7 @@ const state = {
   historyByPath: new Map(),
   file: null,
   lastPreflight: null,
+  selectedHistoryPath: "",
   authToken: window.sessionStorage.getItem("adminDemoToken") || "",
   backToTopTicking: false,
 };
@@ -65,6 +77,10 @@ function clearAdminData() {
   dom.pdfListBuildingFilter.innerHTML = "";
   dom.pdfListCount.textContent = "尚未登入";
   dom.pdfListBody.innerHTML = `<tr><td class="empty-row" colspan="9" data-label="">登入後載入 PDF 清單</td></tr>`;
+  dom.historyBuildingSelect.innerHTML = "";
+  dom.historyFloorSelect.innerHTML = "";
+  dom.historyTargetPath.textContent = "登入後載入資料";
+  dom.historyCorrectionState.textContent = "尚未選擇圖面";
   dom.githubPath.textContent = "登入後載入資料";
   dom.checkTarget.textContent = "登入後載入資料";
 }
@@ -105,6 +121,23 @@ function selectedFloor() {
   const building = selectedBuilding();
   if (!building) return null;
   return building.floors.find((floor) => floor.label === dom.floorSelect.value);
+}
+
+function selectedHistoryBuilding() {
+  return state.buildings.find((building) => building.name === dom.historyBuildingSelect.value);
+}
+
+function selectedHistoryFloor() {
+  const building = selectedHistoryBuilding();
+  if (!building) return null;
+  return building.floors.find((floor) => floor.label === dom.historyFloorSelect.value);
+}
+
+function historyCorrectionTarget() {
+  const building = selectedHistoryBuilding();
+  const floor = selectedHistoryFloor();
+  if (!building || !floor) return null;
+  return state.pdfItems.find((item) => item.building === building.name && item.floor === floor.label) || null;
 }
 
 function buildingNameForPayload() {
@@ -205,9 +238,51 @@ function fillFloors() {
   updatePreview();
 }
 
+function syncHistoryCorrectionPreview() {
+  const target = historyCorrectionTarget();
+  const history = target ? state.historyByPath.get(target.path) : null;
+
+  state.selectedHistoryPath = target?.path || "";
+  dom.historyTargetPath.textContent = target?.path || "尚未選擇圖面";
+  dom.historyCorrectionState.textContent = target ? `${target.building} ${target.floor}` : "尚未選擇圖面";
+  dom.historyCorrectionState.classList.toggle("is-ready", Boolean(target));
+
+  if (target && !dom.historyUpdatedAtInput.value) {
+    dom.historyUpdatedAtInput.value = history?.latestUpdatedAt || todayString();
+  }
+  if (target && !dom.historyUpdatedByInput.value.trim()) {
+    dom.historyUpdatedByInput.value = history?.updatedBy || "admin";
+  }
+  if (target && !dom.historyNoteInput.value.trim()) {
+    dom.historyNoteInput.value = history?.note || "";
+  }
+}
+
+function fillHistoryFloors() {
+  const building = selectedHistoryBuilding();
+  dom.historyFloorSelect.innerHTML = "";
+  if (!building) {
+    syncHistoryCorrectionPreview();
+    return;
+  }
+
+  building.floors.forEach((floor) => {
+    const option = document.createElement("option");
+    option.value = floor.label;
+    option.textContent = floor.label;
+    dom.historyFloorSelect.append(option);
+  });
+
+  dom.historyUpdatedAtInput.value = "";
+  dom.historyUpdatedByInput.value = "";
+  dom.historyNoteInput.value = "";
+  syncHistoryCorrectionPreview();
+}
+
 function fillBuildings(buildings) {
   dom.buildingSelect.innerHTML = "";
   dom.buildingOptions.innerHTML = "";
+  dom.historyBuildingSelect.innerHTML = "";
   buildings.forEach((building) => {
     const option = document.createElement("option");
     option.value = building.name;
@@ -217,9 +292,15 @@ function fillBuildings(buildings) {
     const dataOption = document.createElement("option");
     dataOption.value = building.name;
     dom.buildingOptions.append(dataOption);
+
+    const historyOption = document.createElement("option");
+    historyOption.value = building.name;
+    historyOption.textContent = building.name;
+    dom.historyBuildingSelect.append(historyOption);
   });
 
   fillFloors();
+  fillHistoryFloors();
 }
 
 function flattenPdfItems(buildings) {
@@ -433,7 +514,12 @@ function renderPdfList() {
       <td data-label="頁數">${item.pageCount}</td>
       <td data-label="備註">${item.note || "-"}</td>
       <td data-label="GitHub 路徑"><code>${item.path}</code></td>
-      <td data-label="動作"><button class="row-button" type="button" data-update-pdf="${item.building}|${item.floor}">更新</button></td>
+      <td data-label="動作">
+        <span class="row-actions">
+          <button class="row-button" type="button" data-update-pdf="${item.building}|${item.floor}">更新</button>
+          <button class="row-button" type="button" data-correct-history="${item.path}">修正紀錄</button>
+        </span>
+      </td>
     `;
     dom.pdfListBody.append(row);
   });
@@ -569,6 +655,74 @@ function updateSelectedPdfHistory(historyRecord, uploadTarget = null) {
   state.pdfItems = flattenPdfItems(state.buildings);
   renderPdfList();
   updatePreview();
+  syncHistoryCorrectionPreview();
+}
+
+function setHistoryCorrectionMessage(message, tone = "") {
+  dom.historyCorrectionMessage.textContent = message;
+  dom.historyCorrectionMessage.classList.toggle("is-ok", tone === "ok");
+  dom.historyCorrectionMessage.classList.toggle("is-warning", tone === "warning");
+  dom.historyCorrectionMessage.classList.toggle("is-error", tone === "error");
+}
+
+function selectHistoryCorrectionTarget(item) {
+  if (!item) return;
+
+  dom.historyBuildingSelect.value = item.building;
+  fillHistoryFloors();
+  dom.historyFloorSelect.value = item.floor;
+  const history = state.historyByPath.get(item.path);
+  dom.historyUpdatedAtInput.value = history?.latestUpdatedAt || item.latestUpdatedAt || todayString();
+  dom.historyUpdatedByInput.value = history?.updatedBy || item.updatedBy || "admin";
+  dom.historyNoteInput.value = history?.note || item.note || "";
+  syncHistoryCorrectionPreview();
+}
+
+async function submitHistoryCorrection() {
+  const target = historyCorrectionTarget();
+  if (!target) {
+    setHistoryCorrectionMessage("請先選擇要修正的 PDF 圖面。", "error");
+    return;
+  }
+
+  const payload = {
+    building: target.building,
+    floor: target.floor,
+    path: target.path,
+    branch: dom.historyBranchInput.value.trim() || "main",
+    commitMessage: dom.historyCommitInput.value.trim(),
+    updatedAt: dom.historyUpdatedAtInput.value || todayString(),
+    updatedBy: dom.historyUpdatedByInput.value.trim(),
+    note: dom.historyNoteInput.value.trim(),
+  };
+
+  setHistoryCorrectionMessage("正在送出修正紀錄。", "warning");
+
+  try {
+    const result = await requestAdminApi("history", payload);
+    const nextRecord = result.historyRecord;
+    if (nextRecord) {
+      state.historyByPath.set(nextRecord.path, nextRecord);
+      state.pdfItems = state.pdfItems.map((item) =>
+        item.path === nextRecord.path
+          ? {
+              ...item,
+              latestUpdatedAt: nextRecord.latestUpdatedAt,
+              updatedBy: nextRecord.updatedBy,
+              note: nextRecord.note,
+              history: nextRecord.history || [],
+            }
+          : item
+      );
+      renderPdfList();
+      syncHistoryCorrectionPreview();
+    }
+
+    const commitLabel = result.commit?.sha ? result.commit.sha.slice(0, 12) : "mock";
+    setHistoryCorrectionMessage(`${result.message}；commit：${commitLabel}`, "ok");
+  } catch (error) {
+    setHistoryCorrectionMessage(error.message, "error");
+  }
 }
 
 async function simulateUpload() {
@@ -635,6 +789,9 @@ function activatePanel(panelId) {
   });
 
   dom.statusArea.classList.toggle("is-hidden", panelId !== "uploadPanel");
+  if (panelId === "historyCorrectionPanel") {
+    syncHistoryCorrectionPreview();
+  }
 }
 
 async function loadBuildings() {
@@ -713,6 +870,13 @@ dom.navButtons.forEach((button) => {
 });
 
 dom.buildingSelect.addEventListener("change", fillFloors);
+dom.historyBuildingSelect.addEventListener("change", fillHistoryFloors);
+dom.historyFloorSelect.addEventListener("change", () => {
+  dom.historyUpdatedAtInput.value = "";
+  dom.historyUpdatedByInput.value = "";
+  dom.historyNoteInput.value = "";
+  syncHistoryCorrectionPreview();
+});
 dom.floorSelect.addEventListener("change", () => {
   syncUpdateFieldsFromHistory();
   updatePreview();
@@ -771,6 +935,14 @@ dom.pdfListSearch.addEventListener("input", renderPdfList);
 dom.pdfListBuildingFilter.addEventListener("change", renderPdfList);
 
 dom.pdfListBody.addEventListener("click", (event) => {
+  const historyButton = event.target.closest("[data-correct-history]");
+  if (historyButton) {
+    const item = state.pdfItems.find((candidate) => candidate.path === historyButton.dataset.correctHistory);
+    selectHistoryCorrectionTarget(item);
+    activatePanel("historyCorrectionPanel");
+    return;
+  }
+
   const button = event.target.closest("[data-update-pdf]");
   if (!button) return;
 
@@ -785,6 +957,12 @@ dom.pdfListBody.addEventListener("click", (event) => {
   syncUpdateFieldsFromHistory();
   updatePreview();
   activatePanel("uploadPanel");
+});
+
+dom.historyCorrectionForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  document.activeElement.blur();
+  submitHistoryCorrection();
 });
 
 dom.uploadForm.addEventListener("submit", (event) => {

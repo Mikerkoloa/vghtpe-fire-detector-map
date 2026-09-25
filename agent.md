@@ -73,6 +73,7 @@ PDF 檔名與更新紀錄規則：
 - 主查詢頁只對管理後台或後續人工更新的 PDF 顯示 `YYYY年MM月DD日更新`；初始匯入資料不顯示更新日期。
 - 取代既有樓層且新檔名不同時，新檔會成為該樓層正式路徑，舊 PDF 必須從 repository 移除，避免同一樓層同時出現兩份 PDF。
 - 管理後台上傳 API 已設計為：取代模式使用上傳 PDF 的檔名建立新路徑，若舊路徑不同，會在同一個 GitHub commit 中刪除舊 PDF。
+- 若只是日期、更新人、備註寫錯，不需要重傳 PDF；使用管理後台「修正更新紀錄」功能，只更新 `data/pdf-update-history.json` 並保留一筆 `history-correction` 紀錄。
 
 多定址碼標籤輸入：
 
@@ -142,13 +143,13 @@ PDF viewer 支援：
 
 版本管理：
 
-- 目前版本：`v0.2.3`。
+- 目前版本：`v0.2.4`。
 - `package.json` 的 `version` 是版本主來源，主查詢頁與管理後台 header 都會顯示同一版本。
 - 主查詢頁桌面版版本標籤放在「臺北榮民總醫院 / 火警探測器圖面查詢」品牌文字右側，不要作為獨立 header 欄位，以免把「使用手冊」擠到下一行。
 - `CHANGELOG.md` 記錄每次版本更新內容。
 - 更新版本時同步調整 `package.json`、`index.html`、`admin.html`、`CHANGELOG.md`。
 - 可執行 `npm run check:version` 確認版本號是否一致。
-- 若使用者要求正式發版，除了 commit/push，也應建立並推送 Git tag，例如 `git tag v0.2.3 && git push origin v0.2.3`。
+- 若使用者要求正式發版，除了 commit/push，也應建立並推送 Git tag，例如 `git tag v0.2.4 && git push origin v0.2.4`。
 - Vercel 以 `vercel.json` 將 `/index.html` 永久轉址到 `/`；不要打開首頁連結時主動使用 `/index.html`。
 - `site.webmanifest` 的 `start_url` 使用 `./`，讓安裝到手機桌面後也從乾淨首頁網址開啟。
 - 本機 `server.js` 也會將 `/index.html` 以 308 轉到 `/`，方便本機與 Vercel 行為一致。
@@ -203,7 +204,7 @@ npm run check:version
 - 滾輪縮放與雙擊標記放大已測過。
 - `m3-15` 停 0.8 秒不會變標籤，補 `0` 後會變成 `M3-150`；停超過延遲才會提交 `M3-15`。
 - 定址碼標籤可點文字回編輯，並已驗證全域搜尋與目前圖面搜尋兩個入口。
-- `npm run check:version`：確認 `v0.2.3` 已同步到主頁、管理後台與 `CHANGELOG.md`。
+- `npm run check:version`：確認 `v0.2.4` 已同步到主頁、管理後台與 `CHANGELOG.md`。
 
 ## GitHub 上傳狀態
 
@@ -358,6 +359,8 @@ vghtpe-fire-detector-map
 - 前端會把 PDF File 轉成 base64 後送到 `/api/admin/upload`；token 保存在 `sessionStorage`。
 - 若 GitHub env 未設定完整且不是 Vercel runtime，upload 會走本機 mock；若在 Vercel runtime 但 env 不完整，會回錯誤。
 - GitHub env 完整時，upload 會用 GitHub Git API 在同一個 commit 寫入目標 PDF 與 `data/pdf-update-history.json`，commit 後回傳 GitHub commit sha。
+- `upload` 取代圖面時也會同步寫入 `data/buildings.json` 的樓層路徑，避免新檔名尚未完成索引重建前，後台或主頁資料仍指向舊 PDF。
+- 新增 `/api/admin/history`，供管理後台修正 PDF 更新紀錄的日期、更新人與備註；這個 API 不上傳 PDF，也不重建索引。
 - 新增 `.github/workflows/rebuild-pdf-index.yml`：當 `main` 收到 PDF 或索引腳本變更時，安裝 `poppler-utils`，執行 `npm run build:index` 與 `npm run build:pdf-history`，再 commit 更新後的 data JSON。
 - 本機驗證：未登入讀 `/api/admin/data` 會 401；登入後回 133 PDFs、15 buildings、mode=mock；上傳含 `%PDF-` base64 測試檔會走 mock；瀏覽器流程可登入、篩選二門診 7F、送出 PDF 內容並完成 mock 上傳。
 - 後續上線後若 GitHub Actions 無法 push data JSON，需到 GitHub repository Settings > Actions > General，確認 Workflow permissions 允許 Read and write。

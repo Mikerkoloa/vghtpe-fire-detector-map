@@ -686,6 +686,12 @@ tr:last-child td {
   line-height: 1.45;
 }
 
+.row-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
 .row-button {
   min-height: 34px;
   padding: 0 10px;
@@ -711,6 +717,12 @@ tr:last-child td {
 
 .settings-grid {
   max-width: 760px;
+}
+
+.history-correction-form {
+  display: grid;
+  max-width: 920px;
+  gap: 14px;
 }
 
 .is-hidden {
