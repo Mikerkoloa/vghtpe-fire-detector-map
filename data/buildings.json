@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T03:48:33.551Z",
+  "generatedAt": "2026-09-25T03:49:31.907Z",
   "groups": [
     {
       "id": "common",
@@ -317,8 +317,8 @@
         {
           "label": "4F",
           "fileId": "pdf-0012",
-          "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
-          "detectorCount": 55,
+          "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
+          "detectorCount": 59,
           "pageCount": 1,
           "sortValue": 4
         },
@@ -363,7 +363,7 @@
           "sortValue": -1
         }
       ],
-      "totalDetectors": 238
+      "totalDetectors": 242
     },
     {
       "name": "二門診",

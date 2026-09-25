@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-25T03:48:33.551Z",
+  "generatedAt": "2026-09-25T03:49:31.907Z",
   "pdfRoot": "火警圖 PDF",
   "totals": {
     "files": 145,
-    "entries": 11951,
+    "entries": 11955,
     "buildings": 16
   },
   "files": [
@@ -21,7 +21,7 @@
         }
       ],
       "detectorCount": 36,
-      "updatedAt": "2026-09-25T03:48:11.559Z"
+      "updatedAt": "2026-09-25T03:49:10.085Z"
     },
     {
       "id": "pdf-0002",
@@ -37,7 +37,7 @@
         }
       ],
       "detectorCount": 66,
-      "updatedAt": "2026-09-25T03:48:11.560Z"
+      "updatedAt": "2026-09-25T03:49:10.086Z"
     },
     {
       "id": "pdf-0003",
@@ -53,7 +53,7 @@
         }
       ],
       "detectorCount": 54,
-      "updatedAt": "2026-09-25T03:48:11.560Z"
+      "updatedAt": "2026-09-25T03:49:10.086Z"
     },
     {
       "id": "pdf-0004",
@@ -69,7 +69,7 @@
         }
       ],
       "detectorCount": 8,
-      "updatedAt": "2026-09-25T03:48:11.561Z"
+      "updatedAt": "2026-09-25T03:49:10.087Z"
     },
     {
       "id": "pdf-0005",
@@ -85,7 +85,7 @@
         }
       ],
       "detectorCount": 52,
-      "updatedAt": "2026-09-25T03:48:11.562Z"
+      "updatedAt": "2026-09-25T03:49:10.088Z"
     },
     {
       "id": "pdf-0006",
@@ -101,7 +101,7 @@
         }
       ],
       "detectorCount": 30,
-      "updatedAt": "2026-09-25T03:48:11.563Z"
+      "updatedAt": "2026-09-25T03:49:10.089Z"
     },
     {
       "id": "pdf-0007",
@@ -117,7 +117,7 @@
         }
       ],
       "detectorCount": 39,
-      "updatedAt": "2026-09-25T03:48:11.563Z"
+      "updatedAt": "2026-09-25T03:49:10.089Z"
     },
     {
       "id": "pdf-0008",
@@ -133,7 +133,7 @@
         }
       ],
       "detectorCount": 24,
-      "updatedAt": "2026-09-25T03:48:11.564Z"
+      "updatedAt": "2026-09-25T03:49:10.090Z"
     },
     {
       "id": "pdf-0009",
@@ -149,7 +149,7 @@
         }
       ],
       "detectorCount": 23,
-      "updatedAt": "2026-09-25T03:48:11.565Z"
+      "updatedAt": "2026-09-25T03:49:10.091Z"
     },
     {
       "id": "pdf-0010",
@@ -165,7 +165,7 @@
         }
       ],
       "detectorCount": 40,
-      "updatedAt": "2026-09-25T03:48:11.566Z"
+      "updatedAt": "2026-09-25T03:49:10.092Z"
     },
     {
       "id": "pdf-0011",
@@ -181,23 +181,23 @@
         }
       ],
       "detectorCount": 54,
-      "updatedAt": "2026-09-25T03:48:11.567Z"
+      "updatedAt": "2026-09-25T03:49:10.093Z"
     },
     {
       "id": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "pageCount": 1,
       "pages": [
         {
           "page": 1,
-          "width": 841.92004,
-          "height": 1190.52002
+          "width": 842,
+          "height": 1191
         }
       ],
-      "detectorCount": 55,
-      "updatedAt": "2026-09-25T03:48:11.567Z"
+      "detectorCount": 59,
+      "updatedAt": "2026-09-25T03:49:10.093Z"
     },
     {
       "id": "pdf-0013",
@@ -213,7 +213,7 @@
         }
       ],
       "detectorCount": 40,
-      "updatedAt": "2026-09-25T03:48:11.568Z"
+      "updatedAt": "2026-09-25T03:49:10.094Z"
     },
     {
       "id": "pdf-0014",
@@ -229,7 +229,7 @@
         }
       ],
       "detectorCount": 2,
-      "updatedAt": "2026-09-25T03:48:11.569Z"
+      "updatedAt": "2026-09-25T03:49:10.094Z"
     },
     {
       "id": "pdf-0015",
@@ -245,7 +245,7 @@
         }
       ],
       "detectorCount": 44,
-      "updatedAt": "2026-09-25T03:48:11.597Z"
+      "updatedAt": "2026-09-25T03:49:10.122Z"
     },
     {
       "id": "pdf-0016",
@@ -261,7 +261,7 @@
         }
       ],
       "detectorCount": 68,
-      "updatedAt": "2026-09-25T03:48:11.597Z"
+      "updatedAt": "2026-09-25T03:49:10.123Z"
     },
     {
       "id": "pdf-0017",
@@ -277,7 +277,7 @@
         }
       ],
       "detectorCount": 61,
-      "updatedAt": "2026-09-25T03:48:11.598Z"
+      "updatedAt": "2026-09-25T03:49:10.124Z"
     },
     {
       "id": "pdf-0018",
@@ -293,7 +293,7 @@
         }
       ],
       "detectorCount": 83,
-      "updatedAt": "2026-09-25T03:48:11.599Z"
+      "updatedAt": "2026-09-25T03:49:10.125Z"
     },
     {
       "id": "pdf-0019",
@@ -309,7 +309,7 @@
         }
       ],
       "detectorCount": 88,
-      "updatedAt": "2026-09-25T03:48:11.599Z"
+      "updatedAt": "2026-09-25T03:49:10.125Z"
     },
     {
       "id": "pdf-0020",
@@ -325,7 +325,7 @@
         }
       ],
       "detectorCount": 75,
-      "updatedAt": "2026-09-25T03:48:11.600Z"
+      "updatedAt": "2026-09-25T03:49:10.126Z"
     },
     {
       "id": "pdf-0021",
@@ -341,7 +341,7 @@
         }
       ],
       "detectorCount": 73,
-      "updatedAt": "2026-09-25T03:48:11.601Z"
+      "updatedAt": "2026-09-25T03:49:10.127Z"
     },
     {
       "id": "pdf-0022",
@@ -357,7 +357,7 @@
         }
       ],
       "detectorCount": 75,
-      "updatedAt": "2026-09-25T03:48:11.601Z"
+      "updatedAt": "2026-09-25T03:49:10.127Z"
     },
     {
       "id": "pdf-0023",
@@ -373,7 +373,7 @@
         }
       ],
       "detectorCount": 86,
-      "updatedAt": "2026-09-25T03:48:11.602Z"
+      "updatedAt": "2026-09-25T03:49:10.128Z"
     },
     {
       "id": "pdf-0024",
@@ -389,7 +389,7 @@
         }
       ],
       "detectorCount": 10,
-      "updatedAt": "2026-09-25T03:48:11.602Z"
+      "updatedAt": "2026-09-25T03:49:10.128Z"
     },
     {
       "id": "pdf-0025",
@@ -405,7 +405,7 @@
         }
       ],
       "detectorCount": 122,
-      "updatedAt": "2026-09-25T03:48:11.569Z"
+      "updatedAt": "2026-09-25T03:49:10.095Z"
     },
     {
       "id": "pdf-0026",
@@ -421,7 +421,7 @@
         }
       ],
       "detectorCount": 196,
-      "updatedAt": "2026-09-25T03:48:11.571Z"
+      "updatedAt": "2026-09-25T03:49:10.096Z"
     },
     {
       "id": "pdf-0027",
@@ -437,7 +437,7 @@
         }
       ],
       "detectorCount": 217,
-      "updatedAt": "2026-09-25T03:48:11.571Z"
+      "updatedAt": "2026-09-25T03:49:10.097Z"
     },
     {
       "id": "pdf-0028",
@@ -453,7 +453,7 @@
         }
       ],
       "detectorCount": 221,
-      "updatedAt": "2026-09-25T03:48:11.574Z"
+      "updatedAt": "2026-09-25T03:49:10.099Z"
     },
     {
       "id": "pdf-0029",
@@ -469,7 +469,7 @@
         }
       ],
       "detectorCount": 239,
-      "updatedAt": "2026-09-25T03:48:11.576Z"
+      "updatedAt": "2026-09-25T03:49:10.102Z"
     },
     {
       "id": "pdf-0030",
@@ -485,7 +485,7 @@
         }
       ],
       "detectorCount": 264,
-      "updatedAt": "2026-09-25T03:48:11.577Z"
+      "updatedAt": "2026-09-25T03:49:10.103Z"
     },
     {
       "id": "pdf-0031",
@@ -501,7 +501,7 @@
         }
       ],
       "detectorCount": 271,
-      "updatedAt": "2026-09-25T03:48:11.584Z"
+      "updatedAt": "2026-09-25T03:49:10.110Z"
     },
     {
       "id": "pdf-0032",
@@ -517,7 +517,7 @@
         }
       ],
       "detectorCount": 242,
-      "updatedAt": "2026-09-25T03:48:11.589Z"
+      "updatedAt": "2026-09-25T03:49:10.115Z"
     },
     {
       "id": "pdf-0033",
@@ -533,7 +533,7 @@
         }
       ],
       "detectorCount": 217,
-      "updatedAt": "2026-09-25T03:48:11.592Z"
+      "updatedAt": "2026-09-25T03:49:10.118Z"
     },
     {
       "id": "pdf-0034",
@@ -549,7 +549,7 @@
         }
       ],
       "detectorCount": 172,
-      "updatedAt": "2026-09-25T03:48:11.593Z"
+      "updatedAt": "2026-09-25T03:49:10.119Z"
     },
     {
       "id": "pdf-0035",
@@ -565,7 +565,7 @@
         }
       ],
       "detectorCount": 123,
-      "updatedAt": "2026-09-25T03:48:11.594Z"
+      "updatedAt": "2026-09-25T03:49:10.120Z"
     },
     {
       "id": "pdf-0036",
@@ -581,7 +581,7 @@
         }
       ],
       "detectorCount": 127,
-      "updatedAt": "2026-09-25T03:48:11.595Z"
+      "updatedAt": "2026-09-25T03:49:10.120Z"
     },
     {
       "id": "pdf-0037",
@@ -597,7 +597,7 @@
         }
       ],
       "detectorCount": 31,
-      "updatedAt": "2026-09-25T03:48:11.595Z"
+      "updatedAt": "2026-09-25T03:49:10.121Z"
     },
     {
       "id": "pdf-0038",
@@ -613,7 +613,7 @@
         }
       ],
       "detectorCount": 4,
-      "updatedAt": "2026-09-25T03:48:11.596Z"
+      "updatedAt": "2026-09-25T03:49:10.121Z"
     },
     {
       "id": "pdf-0039",
@@ -629,7 +629,7 @@
         }
       ],
       "detectorCount": 31,
-      "updatedAt": "2026-09-25T03:48:11.619Z"
+      "updatedAt": "2026-09-25T03:49:10.144Z"
     },
     {
       "id": "pdf-0040",
@@ -645,7 +645,7 @@
         }
       ],
       "detectorCount": 28,
-      "updatedAt": "2026-09-25T03:48:11.619Z"
+      "updatedAt": "2026-09-25T03:49:10.145Z"
     },
     {
       "id": "pdf-0041",
@@ -661,7 +661,7 @@
         }
       ],
       "detectorCount": 23,
-      "updatedAt": "2026-09-25T03:48:11.619Z"
+      "updatedAt": "2026-09-25T03:49:10.145Z"
     },
     {
       "id": "pdf-0042",
@@ -677,7 +677,7 @@
         }
       ],
       "detectorCount": 17,
-      "updatedAt": "2026-09-25T03:48:11.620Z"
+      "updatedAt": "2026-09-25T03:49:10.145Z"
     },
     {
       "id": "pdf-0043",
@@ -693,7 +693,7 @@
         }
       ],
       "detectorCount": 34,
-      "updatedAt": "2026-09-25T03:48:11.620Z"
+      "updatedAt": "2026-09-25T03:49:10.146Z"
     },
     {
       "id": "pdf-0044",
@@ -709,7 +709,7 @@
         }
       ],
       "detectorCount": 15,
-      "updatedAt": "2026-09-25T03:48:11.620Z"
+      "updatedAt": "2026-09-25T03:49:10.146Z"
     },
     {
       "id": "pdf-0045",
@@ -725,7 +725,7 @@
         }
       ],
       "detectorCount": 8,
-      "updatedAt": "2026-09-25T03:48:11.620Z"
+      "updatedAt": "2026-09-25T03:49:10.146Z"
     },
     {
       "id": "pdf-0046",
@@ -741,7 +741,7 @@
         }
       ],
       "detectorCount": 20,
-      "updatedAt": "2026-09-25T03:48:11.622Z"
+      "updatedAt": "2026-09-25T03:49:10.147Z"
     },
     {
       "id": "pdf-0047",
@@ -757,7 +757,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-25T03:48:11.622Z"
+      "updatedAt": "2026-09-25T03:49:10.147Z"
     },
     {
       "id": "pdf-0048",
@@ -773,7 +773,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-25T03:48:11.622Z"
+      "updatedAt": "2026-09-25T03:49:10.148Z"
     },
     {
       "id": "pdf-0049",
@@ -789,7 +789,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-25T03:48:11.622Z"
+      "updatedAt": "2026-09-25T03:49:10.148Z"
     },
     {
       "id": "pdf-0050",
@@ -805,7 +805,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-25T03:48:11.623Z"
+      "updatedAt": "2026-09-25T03:49:10.149Z"
     },
     {
       "id": "pdf-0051",
@@ -821,7 +821,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-25T03:48:11.623Z"
+      "updatedAt": "2026-09-25T03:49:10.149Z"
     },
     {
       "id": "pdf-0052",
@@ -837,7 +837,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-25T03:48:11.624Z"
+      "updatedAt": "2026-09-25T03:49:10.150Z"
     },
     {
       "id": "pdf-0053",
@@ -853,7 +853,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-25T03:48:11.624Z"
+      "updatedAt": "2026-09-25T03:49:10.150Z"
     },
     {
       "id": "pdf-0054",
@@ -869,7 +869,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-25T03:48:11.624Z"
+      "updatedAt": "2026-09-25T03:49:10.150Z"
     },
     {
       "id": "pdf-0055",
@@ -885,7 +885,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-25T03:48:11.625Z"
+      "updatedAt": "2026-09-25T03:49:10.151Z"
     },
     {
       "id": "pdf-0056",
@@ -901,7 +901,7 @@
         }
       ],
       "detectorCount": 18,
-      "updatedAt": "2026-09-25T03:48:11.625Z"
+      "updatedAt": "2026-09-25T03:49:10.151Z"
     },
     {
       "id": "pdf-0057",
@@ -917,7 +917,7 @@
         }
       ],
       "detectorCount": 6,
-      "updatedAt": "2026-09-25T03:48:11.603Z"
+      "updatedAt": "2026-09-25T03:49:10.129Z"
     },
     {
       "id": "pdf-0058",
@@ -933,7 +933,7 @@
         }
       ],
       "detectorCount": 97,
-      "updatedAt": "2026-09-25T03:48:11.604Z"
+      "updatedAt": "2026-09-25T03:49:10.130Z"
     },
     {
       "id": "pdf-0059",
@@ -949,7 +949,7 @@
         }
       ],
       "detectorCount": 55,
-      "updatedAt": "2026-09-25T03:48:11.615Z"
+      "updatedAt": "2026-09-25T03:49:10.141Z"
     },
     {
       "id": "pdf-0060",
@@ -965,7 +965,7 @@
         }
       ],
       "detectorCount": 25,
-      "updatedAt": "2026-09-25T03:48:11.616Z"
+      "updatedAt": "2026-09-25T03:49:10.142Z"
     },
     {
       "id": "pdf-0061",
@@ -981,7 +981,7 @@
         }
       ],
       "detectorCount": 28,
-      "updatedAt": "2026-09-25T03:48:11.616Z"
+      "updatedAt": "2026-09-25T03:49:10.142Z"
     },
     {
       "id": "pdf-0062",
@@ -997,7 +997,7 @@
         }
       ],
       "detectorCount": 32,
-      "updatedAt": "2026-09-25T03:48:11.617Z"
+      "updatedAt": "2026-09-25T03:49:10.143Z"
     },
     {
       "id": "pdf-0063",
@@ -1013,7 +1013,7 @@
         }
       ],
       "detectorCount": 13,
-      "updatedAt": "2026-09-25T03:48:11.617Z"
+      "updatedAt": "2026-09-25T03:49:10.143Z"
     },
     {
       "id": "pdf-0064",
@@ -1029,7 +1029,7 @@
         }
       ],
       "detectorCount": 16,
-      "updatedAt": "2026-09-25T03:48:11.618Z"
+      "updatedAt": "2026-09-25T03:49:10.144Z"
     },
     {
       "id": "pdf-0065",
@@ -1045,7 +1045,7 @@
         }
       ],
       "detectorCount": 112,
-      "updatedAt": "2026-09-25T03:48:11.635Z"
+      "updatedAt": "2026-09-25T03:49:10.161Z"
     },
     {
       "id": "pdf-0066",
@@ -1061,7 +1061,7 @@
         }
       ],
       "detectorCount": 92,
-      "updatedAt": "2026-09-25T03:48:11.635Z"
+      "updatedAt": "2026-09-25T03:49:10.162Z"
     },
     {
       "id": "pdf-0067",
@@ -1077,7 +1077,7 @@
         }
       ],
       "detectorCount": 77,
-      "updatedAt": "2026-09-25T03:48:11.636Z"
+      "updatedAt": "2026-09-25T03:49:10.162Z"
     },
     {
       "id": "pdf-0068",
@@ -1093,7 +1093,7 @@
         }
       ],
       "detectorCount": 73,
-      "updatedAt": "2026-09-25T03:48:11.636Z"
+      "updatedAt": "2026-09-25T03:49:10.163Z"
     },
     {
       "id": "pdf-0069",
@@ -1109,7 +1109,7 @@
         }
       ],
       "detectorCount": 78,
-      "updatedAt": "2026-09-25T03:48:11.637Z"
+      "updatedAt": "2026-09-25T03:49:10.163Z"
     },
     {
       "id": "pdf-0070",
@@ -1125,7 +1125,7 @@
         }
       ],
       "detectorCount": 78,
-      "updatedAt": "2026-09-25T03:48:11.637Z"
+      "updatedAt": "2026-09-25T03:49:10.163Z"
     },
     {
       "id": "pdf-0071",
@@ -1141,7 +1141,7 @@
         }
       ],
       "detectorCount": 80,
-      "updatedAt": "2026-09-25T03:48:11.637Z"
+      "updatedAt": "2026-09-25T03:49:10.163Z"
     },
     {
       "id": "pdf-0072",
@@ -1157,7 +1157,7 @@
         }
       ],
       "detectorCount": 86,
-      "updatedAt": "2026-09-25T03:48:11.637Z"
+      "updatedAt": "2026-09-25T03:49:10.164Z"
     },
     {
       "id": "pdf-0073",
@@ -1173,7 +1173,7 @@
         }
       ],
       "detectorCount": 66,
-      "updatedAt": "2026-09-25T03:48:11.639Z"
+      "updatedAt": "2026-09-25T03:49:10.165Z"
     },
     {
       "id": "pdf-0074",
@@ -1189,7 +1189,7 @@
         }
       ],
       "detectorCount": 166,
-      "updatedAt": "2026-09-25T03:48:11.638Z"
+      "updatedAt": "2026-09-25T03:49:10.165Z"
     },
     {
       "id": "pdf-0075",
@@ -1205,7 +1205,7 @@
         }
       ],
       "detectorCount": 256,
-      "updatedAt": "2026-09-25T03:48:11.681Z"
+      "updatedAt": "2026-09-25T03:49:10.208Z"
     },
     {
       "id": "pdf-0076",
@@ -1221,7 +1221,7 @@
         }
       ],
       "detectorCount": 156,
-      "updatedAt": "2026-09-25T03:48:11.682Z"
+      "updatedAt": "2026-09-25T03:49:10.209Z"
     },
     {
       "id": "pdf-0077",
@@ -1237,7 +1237,7 @@
         }
       ],
       "detectorCount": 134,
-      "updatedAt": "2026-09-25T03:48:11.683Z"
+      "updatedAt": "2026-09-25T03:49:10.209Z"
     },
     {
       "id": "pdf-0078",
@@ -1253,7 +1253,7 @@
         }
       ],
       "detectorCount": 152,
-      "updatedAt": "2026-09-25T03:48:11.684Z"
+      "updatedAt": "2026-09-25T03:49:10.210Z"
     },
     {
       "id": "pdf-0079",
@@ -1269,7 +1269,7 @@
         }
       ],
       "detectorCount": 153,
-      "updatedAt": "2026-09-25T03:48:11.684Z"
+      "updatedAt": "2026-09-25T03:49:10.211Z"
     },
     {
       "id": "pdf-0080",
@@ -1285,7 +1285,7 @@
         }
       ],
       "detectorCount": 164,
-      "updatedAt": "2026-09-25T03:48:11.685Z"
+      "updatedAt": "2026-09-25T03:49:10.211Z"
     },
     {
       "id": "pdf-0081",
@@ -1301,7 +1301,7 @@
         }
       ],
       "detectorCount": 138,
-      "updatedAt": "2026-09-25T03:48:11.686Z"
+      "updatedAt": "2026-09-25T03:49:10.212Z"
     },
     {
       "id": "pdf-0082",
@@ -1317,7 +1317,7 @@
         }
       ],
       "detectorCount": 148,
-      "updatedAt": "2026-09-25T03:48:11.687Z"
+      "updatedAt": "2026-09-25T03:49:10.213Z"
     },
     {
       "id": "pdf-0083",
@@ -1333,7 +1333,7 @@
         }
       ],
       "detectorCount": 132,
-      "updatedAt": "2026-09-25T03:48:11.687Z"
+      "updatedAt": "2026-09-25T03:49:10.214Z"
     },
     {
       "id": "pdf-0084",
@@ -1349,7 +1349,7 @@
         }
       ],
       "detectorCount": 137,
-      "updatedAt": "2026-09-25T03:48:11.688Z"
+      "updatedAt": "2026-09-25T03:49:10.215Z"
     },
     {
       "id": "pdf-0085",
@@ -1365,7 +1365,7 @@
         }
       ],
       "detectorCount": 134,
-      "updatedAt": "2026-09-25T03:48:11.689Z"
+      "updatedAt": "2026-09-25T03:49:10.215Z"
     },
     {
       "id": "pdf-0086",
@@ -1381,7 +1381,7 @@
         }
       ],
       "detectorCount": 134,
-      "updatedAt": "2026-09-25T03:48:11.690Z"
+      "updatedAt": "2026-09-25T03:49:10.216Z"
     },
     {
       "id": "pdf-0087",
@@ -1397,7 +1397,7 @@
         }
       ],
       "detectorCount": 133,
-      "updatedAt": "2026-09-25T03:48:11.690Z"
+      "updatedAt": "2026-09-25T03:49:10.217Z"
     },
     {
       "id": "pdf-0088",
@@ -1413,7 +1413,7 @@
         }
       ],
       "detectorCount": 216,
-      "updatedAt": "2026-09-25T03:48:11.691Z"
+      "updatedAt": "2026-09-25T03:49:10.217Z"
     },
     {
       "id": "pdf-0089",
@@ -1429,7 +1429,7 @@
         }
       ],
       "detectorCount": 189,
-      "updatedAt": "2026-09-25T03:48:11.691Z"
+      "updatedAt": "2026-09-25T03:49:10.218Z"
     },
     {
       "id": "pdf-0090",
@@ -1445,7 +1445,7 @@
         }
       ],
       "detectorCount": 26,
-      "updatedAt": "2026-09-25T03:48:11.692Z"
+      "updatedAt": "2026-09-25T03:49:10.219Z"
     },
     {
       "id": "pdf-0091",
@@ -1461,7 +1461,7 @@
         }
       ],
       "detectorCount": 1,
-      "updatedAt": "2026-09-25T03:48:11.692Z"
+      "updatedAt": "2026-09-25T03:49:10.219Z"
     },
     {
       "id": "pdf-0092",
@@ -1477,7 +1477,7 @@
         }
       ],
       "detectorCount": 114,
-      "updatedAt": "2026-09-25T03:48:11.605Z"
+      "updatedAt": "2026-09-25T03:49:10.131Z"
     },
     {
       "id": "pdf-0093",
@@ -1493,7 +1493,7 @@
         }
       ],
       "detectorCount": 118,
-      "updatedAt": "2026-09-25T03:48:11.606Z"
+      "updatedAt": "2026-09-25T03:49:10.131Z"
     },
     {
       "id": "pdf-0094",
@@ -1509,7 +1509,7 @@
         }
       ],
       "detectorCount": 193,
-      "updatedAt": "2026-09-25T03:48:11.606Z"
+      "updatedAt": "2026-09-25T03:49:10.132Z"
     },
     {
       "id": "pdf-0095",
@@ -1525,7 +1525,7 @@
         }
       ],
       "detectorCount": 123,
-      "updatedAt": "2026-09-25T03:48:11.607Z"
+      "updatedAt": "2026-09-25T03:49:10.133Z"
     },
     {
       "id": "pdf-0096",
@@ -1541,7 +1541,7 @@
         }
       ],
       "detectorCount": 136,
-      "updatedAt": "2026-09-25T03:48:11.608Z"
+      "updatedAt": "2026-09-25T03:49:10.134Z"
     },
     {
       "id": "pdf-0097",
@@ -1557,7 +1557,7 @@
         }
       ],
       "detectorCount": 111,
-      "updatedAt": "2026-09-25T03:48:11.609Z"
+      "updatedAt": "2026-09-25T03:49:10.135Z"
     },
     {
       "id": "pdf-0098",
@@ -1573,7 +1573,7 @@
         }
       ],
       "detectorCount": 138,
-      "updatedAt": "2026-09-25T03:48:11.610Z"
+      "updatedAt": "2026-09-25T03:49:10.136Z"
     },
     {
       "id": "pdf-0099",
@@ -1589,7 +1589,7 @@
         }
       ],
       "detectorCount": 109,
-      "updatedAt": "2026-09-25T03:48:11.611Z"
+      "updatedAt": "2026-09-25T03:49:10.137Z"
     },
     {
       "id": "pdf-0100",
@@ -1605,7 +1605,7 @@
         }
       ],
       "detectorCount": 118,
-      "updatedAt": "2026-09-25T03:48:11.612Z"
+      "updatedAt": "2026-09-25T03:49:10.137Z"
     },
     {
       "id": "pdf-0101",
@@ -1621,7 +1621,7 @@
         }
       ],
       "detectorCount": 115,
-      "updatedAt": "2026-09-25T03:48:11.612Z"
+      "updatedAt": "2026-09-25T03:49:10.138Z"
     },
     {
       "id": "pdf-0102",
@@ -1637,7 +1637,7 @@
         }
       ],
       "detectorCount": 121,
-      "updatedAt": "2026-09-25T03:48:11.613Z"
+      "updatedAt": "2026-09-25T03:49:10.139Z"
     },
     {
       "id": "pdf-0103",
@@ -1653,7 +1653,7 @@
         }
       ],
       "detectorCount": 129,
-      "updatedAt": "2026-09-25T03:48:11.614Z"
+      "updatedAt": "2026-09-25T03:49:10.140Z"
     },
     {
       "id": "pdf-0104",
@@ -1669,7 +1669,7 @@
         }
       ],
       "detectorCount": 16,
-      "updatedAt": "2026-09-25T03:48:11.614Z"
+      "updatedAt": "2026-09-25T03:49:10.140Z"
     },
     {
       "id": "pdf-0105",
@@ -1685,7 +1685,7 @@
         }
       ],
       "detectorCount": 119,
-      "updatedAt": "2026-09-25T03:48:11.628Z"
+      "updatedAt": "2026-09-25T03:49:10.154Z"
     },
     {
       "id": "pdf-0106",
@@ -1701,7 +1701,7 @@
         }
       ],
       "detectorCount": 51,
-      "updatedAt": "2026-09-25T03:48:11.628Z"
+      "updatedAt": "2026-09-25T03:49:10.154Z"
     },
     {
       "id": "pdf-0107",
@@ -1717,7 +1717,7 @@
         }
       ],
       "detectorCount": 64,
-      "updatedAt": "2026-09-25T03:48:11.629Z"
+      "updatedAt": "2026-09-25T03:49:10.155Z"
     },
     {
       "id": "pdf-0108",
@@ -1733,7 +1733,7 @@
         }
       ],
       "detectorCount": 116,
-      "updatedAt": "2026-09-25T03:48:11.629Z"
+      "updatedAt": "2026-09-25T03:49:10.155Z"
     },
     {
       "id": "pdf-0109",
@@ -1749,7 +1749,7 @@
         }
       ],
       "detectorCount": 119,
-      "updatedAt": "2026-09-25T03:48:11.630Z"
+      "updatedAt": "2026-09-25T03:49:10.156Z"
     },
     {
       "id": "pdf-0110",
@@ -1765,7 +1765,7 @@
         }
       ],
       "detectorCount": 101,
-      "updatedAt": "2026-09-25T03:48:11.631Z"
+      "updatedAt": "2026-09-25T03:49:10.157Z"
     },
     {
       "id": "pdf-0111",
@@ -1781,7 +1781,7 @@
         }
       ],
       "detectorCount": 104,
-      "updatedAt": "2026-09-25T03:48:11.632Z"
+      "updatedAt": "2026-09-25T03:49:10.158Z"
     },
     {
       "id": "pdf-0112",
@@ -1797,7 +1797,7 @@
         }
       ],
       "detectorCount": 125,
-      "updatedAt": "2026-09-25T03:48:11.632Z"
+      "updatedAt": "2026-09-25T03:49:10.158Z"
     },
     {
       "id": "pdf-0113",
@@ -1813,7 +1813,7 @@
         }
       ],
       "detectorCount": 122,
-      "updatedAt": "2026-09-25T03:48:11.633Z"
+      "updatedAt": "2026-09-25T03:49:10.159Z"
     },
     {
       "id": "pdf-0114",
@@ -1829,7 +1829,7 @@
         }
       ],
       "detectorCount": 22,
-      "updatedAt": "2026-09-25T03:48:11.633Z"
+      "updatedAt": "2026-09-25T03:49:10.159Z"
     },
     {
       "id": "pdf-0115",
@@ -1845,7 +1845,7 @@
         }
       ],
       "detectorCount": 33,
-      "updatedAt": "2026-09-25T03:48:11.634Z"
+      "updatedAt": "2026-09-25T03:49:10.160Z"
     },
     {
       "id": "pdf-0116",
@@ -1861,7 +1861,7 @@
         }
       ],
       "detectorCount": 8,
-      "updatedAt": "2026-09-25T03:48:11.634Z"
+      "updatedAt": "2026-09-25T03:49:10.160Z"
     },
     {
       "id": "pdf-0117",
@@ -1877,7 +1877,7 @@
         }
       ],
       "detectorCount": 82,
-      "updatedAt": "2026-09-25T03:48:11.675Z"
+      "updatedAt": "2026-09-25T03:49:10.202Z"
     },
     {
       "id": "pdf-0118",
@@ -1893,7 +1893,7 @@
         }
       ],
       "detectorCount": 95,
-      "updatedAt": "2026-09-25T03:48:11.677Z"
+      "updatedAt": "2026-09-25T03:49:10.203Z"
     },
     {
       "id": "pdf-0119",
@@ -1909,7 +1909,7 @@
         }
       ],
       "detectorCount": 77,
-      "updatedAt": "2026-09-25T03:48:11.677Z"
+      "updatedAt": "2026-09-25T03:49:10.204Z"
     },
     {
       "id": "pdf-0120",
@@ -1925,7 +1925,7 @@
         }
       ],
       "detectorCount": 67,
-      "updatedAt": "2026-09-25T03:48:11.678Z"
+      "updatedAt": "2026-09-25T03:49:10.205Z"
     },
     {
       "id": "pdf-0121",
@@ -1941,7 +1941,7 @@
         }
       ],
       "detectorCount": 154,
-      "updatedAt": "2026-09-25T03:48:11.680Z"
+      "updatedAt": "2026-09-25T03:49:10.206Z"
     },
     {
       "id": "pdf-0122",
@@ -1957,7 +1957,7 @@
         }
       ],
       "detectorCount": 12,
-      "updatedAt": "2026-09-25T03:48:11.680Z"
+      "updatedAt": "2026-09-25T03:49:10.207Z"
     },
     {
       "id": "pdf-0123",
@@ -1973,7 +1973,7 @@
         }
       ],
       "detectorCount": 55,
-      "updatedAt": "2026-09-25T03:48:11.625Z"
+      "updatedAt": "2026-09-25T03:49:10.151Z"
     },
     {
       "id": "pdf-0124",
@@ -1989,7 +1989,7 @@
         }
       ],
       "detectorCount": 67,
-      "updatedAt": "2026-09-25T03:48:11.627Z"
+      "updatedAt": "2026-09-25T03:49:10.152Z"
     },
     {
       "id": "pdf-0125",
@@ -2005,7 +2005,7 @@
         }
       ],
       "detectorCount": 74,
-      "updatedAt": "2026-09-25T03:48:11.627Z"
+      "updatedAt": "2026-09-25T03:49:10.153Z"
     },
     {
       "id": "pdf-0126",
@@ -2021,7 +2021,7 @@
         }
       ],
       "detectorCount": 74,
-      "updatedAt": "2026-09-25T03:48:11.627Z"
+      "updatedAt": "2026-09-25T03:49:10.153Z"
     },
     {
       "id": "pdf-0127",
@@ -2037,7 +2037,7 @@
         }
       ],
       "detectorCount": 58,
-      "updatedAt": "2026-09-25T03:48:11.641Z"
+      "updatedAt": "2026-09-25T03:49:10.167Z"
     },
     {
       "id": "pdf-0128",
@@ -2053,7 +2053,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-25T03:48:11.643Z"
+      "updatedAt": "2026-09-25T03:49:10.169Z"
     },
     {
       "id": "pdf-0129",
@@ -2069,7 +2069,7 @@
         }
       ],
       "detectorCount": 61,
-      "updatedAt": "2026-09-25T03:48:11.645Z"
+      "updatedAt": "2026-09-25T03:49:10.171Z"
     },
     {
       "id": "pdf-0130",
@@ -2085,7 +2085,7 @@
         }
       ],
       "detectorCount": 58,
-      "updatedAt": "2026-09-25T03:48:11.646Z"
+      "updatedAt": "2026-09-25T03:49:10.173Z"
     },
     {
       "id": "pdf-0131",
@@ -2101,7 +2101,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-25T03:48:11.648Z"
+      "updatedAt": "2026-09-25T03:49:10.174Z"
     },
     {
       "id": "pdf-0132",
@@ -2117,7 +2117,7 @@
         }
       ],
       "detectorCount": 60,
-      "updatedAt": "2026-09-25T03:48:11.650Z"
+      "updatedAt": "2026-09-25T03:49:10.176Z"
     },
     {
       "id": "pdf-0133",
@@ -2133,7 +2133,7 @@
         }
       ],
       "detectorCount": 58,
-      "updatedAt": "2026-09-25T03:48:11.651Z"
+      "updatedAt": "2026-09-25T03:49:10.178Z"
     },
     {
       "id": "pdf-0134",
@@ -2149,7 +2149,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-25T03:48:11.653Z"
+      "updatedAt": "2026-09-25T03:49:10.179Z"
     },
     {
       "id": "pdf-0135",
@@ -2165,7 +2165,7 @@
         }
       ],
       "detectorCount": 61,
-      "updatedAt": "2026-09-25T03:48:11.655Z"
+      "updatedAt": "2026-09-25T03:49:10.182Z"
     },
     {
       "id": "pdf-0136",
@@ -2181,7 +2181,7 @@
         }
       ],
       "detectorCount": 60,
-      "updatedAt": "2026-09-25T03:48:11.659Z"
+      "updatedAt": "2026-09-25T03:49:10.185Z"
     },
     {
       "id": "pdf-0137",
@@ -2197,7 +2197,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-25T03:48:11.661Z"
+      "updatedAt": "2026-09-25T03:49:10.187Z"
     },
     {
       "id": "pdf-0138",
@@ -2213,7 +2213,7 @@
         }
       ],
       "detectorCount": 61,
-      "updatedAt": "2026-09-25T03:48:11.662Z"
+      "updatedAt": "2026-09-25T03:49:10.189Z"
     },
     {
       "id": "pdf-0139",
@@ -2229,7 +2229,7 @@
         }
       ],
       "detectorCount": 58,
-      "updatedAt": "2026-09-25T03:48:11.664Z"
+      "updatedAt": "2026-09-25T03:49:10.190Z"
     },
     {
       "id": "pdf-0140",
@@ -2245,7 +2245,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-25T03:48:11.666Z"
+      "updatedAt": "2026-09-25T03:49:10.192Z"
     },
     {
       "id": "pdf-0141",
@@ -2261,7 +2261,7 @@
         }
       ],
       "detectorCount": 61,
-      "updatedAt": "2026-09-25T03:48:11.668Z"
+      "updatedAt": "2026-09-25T03:49:10.194Z"
     },
     {
       "id": "pdf-0142",
@@ -2277,7 +2277,7 @@
         }
       ],
       "detectorCount": 58,
-      "updatedAt": "2026-09-25T03:48:11.669Z"
+      "updatedAt": "2026-09-25T03:49:10.196Z"
     },
     {
       "id": "pdf-0143",
@@ -2293,7 +2293,7 @@
         }
       ],
       "detectorCount": 59,
-      "updatedAt": "2026-09-25T03:48:11.671Z"
+      "updatedAt": "2026-09-25T03:49:10.198Z"
     },
     {
       "id": "pdf-0144",
@@ -2309,7 +2309,7 @@
         }
       ],
       "detectorCount": 62,
-      "updatedAt": "2026-09-25T03:48:11.673Z"
+      "updatedAt": "2026-09-25T03:49:10.200Z"
     },
     {
       "id": "pdf-0145",
@@ -2325,7 +2325,7 @@
         }
       ],
       "detectorCount": 28,
-      "updatedAt": "2026-09-25T03:48:11.674Z"
+      "updatedAt": "2026-09-25T03:49:10.200Z"
     }
   ],
   "entries": [
@@ -10002,990 +10002,1062 @@
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-196",
-      "detector": "M1-196",
-      "normalizedLabel": "M1-196",
-      "normalizedDetector": "M1-196",
-      "xMin": 594.961554,
-      "yMin": 228.523319,
-      "xMax": 613.873127,
-      "yMax": 234.683656,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-196",
+      "detector": "M2-196",
+      "normalizedLabel": "M2-196",
+      "normalizedDetector": "M2-196",
+      "xMin": 585.84,
+      "yMin": 202.780632,
+      "xMax": 602.29934,
+      "yMax": 208.474818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0002",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-166",
-      "detector": "M1-166",
-      "normalizedLabel": "M1-166",
-      "normalizedDetector": "M1-166",
-      "xMin": 975.001674,
-      "yMin": 324.884365,
-      "xMax": 993.913247,
-      "yMax": 331.044702,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-202",
+      "detector": "M2-202",
+      "normalizedLabel": "M2-202",
+      "normalizedDetector": "M2-202",
+      "xMin": 469.2,
+      "yMin": 232.780632,
+      "xMax": 485.65934,
+      "yMax": 238.474818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0003",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-167",
-      "detector": "M1-167",
-      "normalizedLabel": "M1-167",
-      "normalizedDetector": "M1-167",
-      "xMin": 1062.122827,
-      "yMin": 324.884365,
-      "xMax": 1081.034399,
-      "yMax": 331.044702,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-166",
+      "detector": "M2-166",
+      "normalizedLabel": "M2-166",
+      "normalizedDetector": "M2-166",
+      "xMin": 1000.2,
+      "yMin": 307.900632,
+      "xMax": 1016.65934,
+      "yMax": 313.594818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0004",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-154",
-      "detector": "M1-154",
-      "normalizedLabel": "M1-154",
-      "normalizedDetector": "M1-154",
-      "xMin": 204.119953,
-      "yMin": 289.243825,
-      "xMax": 223.031525,
-      "yMax": 295.404162,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-167",
+      "detector": "M2-167",
+      "normalizedLabel": "M2-167",
+      "normalizedDetector": "M2-167",
+      "xMin": 1095.24,
+      "yMin": 307.900632,
+      "xMax": 1111.69934,
+      "yMax": 313.594818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0005",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-158",
-      "detector": "M1-158",
-      "normalizedLabel": "M1-158",
-      "normalizedDetector": "M1-158",
-      "xMin": 283.80035,
-      "yMin": 311.682364,
-      "xMax": 302.711922,
-      "yMax": 317.842701,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-204",
+      "detector": "M2-204",
+      "normalizedLabel": "M2-204",
+      "normalizedDetector": "M2-204",
+      "xMin": 41.76,
+      "yMin": 257.380632,
+      "xMax": 58.21934,
+      "yMax": 263.074818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0006",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-159",
-      "detector": "M1-159",
-      "normalizedLabel": "M1-159",
-      "normalizedDetector": "M1-159",
-      "xMin": 353.04145,
-      "yMin": 311.682364,
-      "xMax": 371.953022,
-      "yMax": 317.842701,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-154",
+      "detector": "M2-154",
+      "normalizedLabel": "M2-154",
+      "normalizedDetector": "M2-154",
+      "xMin": 159.48,
+      "yMin": 269.020632,
+      "xMax": 175.93934,
+      "yMax": 274.714818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0007",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-160",
-      "detector": "M1-160",
-      "normalizedLabel": "M1-160",
-      "normalizedDetector": "M1-160",
-      "xMin": 423.241046,
-      "yMin": 312.522974,
-      "xMax": 442.152618,
-      "yMax": 318.683311,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-158",
+      "detector": "M2-158",
+      "normalizedLabel": "M2-158",
+      "normalizedDetector": "M2-158",
+      "xMin": 246.48,
+      "yMin": 269.020632,
+      "xMax": 262.93934,
+      "yMax": 274.714818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0008",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-201",
-      "detector": "M1-201",
-      "normalizedLabel": "M1-201",
-      "normalizedDetector": "M1-201",
-      "xMin": 592.080931,
-      "yMin": 312.64425,
-      "xMax": 610.992503,
-      "yMax": 318.804587,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-159",
+      "detector": "M2-159",
+      "normalizedLabel": "M2-159",
+      "normalizedDetector": "M2-159",
+      "xMin": 321.96,
+      "yMin": 269.020632,
+      "xMax": 338.41934,
+      "yMax": 274.714818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0009",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-164",
-      "detector": "M1-164",
-      "normalizedLabel": "M1-164",
-      "normalizedDetector": "M1-164",
-      "xMin": 741.962636,
-      "yMin": 324.884365,
-      "xMax": 760.874208,
-      "yMax": 331.044702,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-160",
+      "detector": "M2-160",
+      "normalizedLabel": "M2-160",
+      "normalizedDetector": "M2-160",
+      "xMin": 398.64,
+      "yMin": 294.340632,
+      "xMax": 415.09934,
+      "yMax": 300.034818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0010",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-153",
-      "detector": "M1-153",
-      "normalizedLabel": "M1-153",
-      "normalizedDetector": "M1-153",
-      "xMin": 120.960571,
-      "yMin": 346.723202,
-      "xMax": 139.872143,
-      "yMax": 352.883539,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-201",
+      "detector": "M2-201",
+      "normalizedLabel": "M2-201",
+      "normalizedDetector": "M2-201",
+      "xMin": 582.72,
+      "yMin": 294.580632,
+      "xMax": 599.17934,
+      "yMax": 300.274818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0011",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-165",
-      "detector": "M1-165",
-      "normalizedLabel": "M1-165",
-      "normalizedDetector": "M1-165",
-      "xMin": 847.561931,
-      "yMin": 324.884365,
-      "xMax": 866.473503,
-      "yMax": 331.044702,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-164",
+      "detector": "M2-164",
+      "normalizedLabel": "M2-164",
+      "normalizedDetector": "M2-164",
+      "xMin": 746.16,
+      "yMin": 307.900632,
+      "xMax": 762.61934,
+      "yMax": 313.594818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0012",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-197",
-      "detector": "M1-197",
-      "normalizedLabel": "M1-197",
-      "normalizedDetector": "M1-197",
-      "xMin": 487.440199,
-      "yMin": 337.963412,
-      "xMax": 506.351771,
-      "yMax": 344.123749,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-165",
+      "detector": "M2-165",
+      "normalizedLabel": "M2-165",
+      "normalizedDetector": "M2-165",
+      "xMin": 861.36,
+      "yMin": 307.900632,
+      "xMax": 877.81934,
+      "yMax": 313.594818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0013",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-155",
-      "detector": "M1-155",
-      "normalizedLabel": "M1-155",
-      "normalizedDetector": "M1-155",
-      "xMin": 204.119953,
-      "yMin": 346.723202,
-      "xMax": 223.031525,
-      "yMax": 352.883539,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-197",
+      "detector": "M2-197",
+      "normalizedLabel": "M2-197",
+      "normalizedDetector": "M2-197",
+      "xMin": 468.48,
+      "yMin": 322.060632,
+      "xMax": 484.93934,
+      "yMax": 327.754818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0014",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-191",
-      "detector": "M1-191",
-      "normalizedLabel": "M1-191",
-      "normalizedDetector": "M1-191",
-      "xMin": 552.961744,
-      "yMin": 347.08203,
-      "xMax": 571.873316,
-      "yMax": 353.242367,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-153",
+      "detector": "M2-153",
+      "normalizedLabel": "M2-153",
+      "normalizedDetector": "M2-153",
+      "xMin": 68.88,
+      "yMin": 331.660632,
+      "xMax": 85.33934,
+      "yMax": 337.354818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0015",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-161",
-      "detector": "M1-161",
-      "normalizedLabel": "M1-161",
-      "normalizedDetector": "M1-161",
-      "xMin": 423.241046,
-      "yMin": 362.564952,
-      "xMax": 442.152618,
-      "yMax": 368.725289,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-155",
+      "detector": "M2-155",
+      "normalizedLabel": "M2-155",
+      "normalizedDetector": "M2-155",
+      "xMin": 159.48,
+      "yMin": 331.660632,
+      "xMax": 175.93934,
+      "yMax": 337.354818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0016",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-193",
-      "detector": "M1-193",
-      "normalizedLabel": "M1-193",
-      "normalizedDetector": "M1-193",
-      "xMin": 568.692594,
-      "yMin": 377.183609,
-      "xMax": 578.444482,
-      "yMax": 380.397757,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-205",
+      "detector": "M2-205",
+      "normalizedLabel": "M2-205",
+      "normalizedDetector": "M2-205",
+      "xMin": 246.48,
+      "yMin": 331.660632,
+      "xMax": 262.93934,
+      "yMax": 337.354818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0017",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-194",
-      "detector": "M1-194",
-      "normalizedLabel": "M1-194",
-      "normalizedDetector": "M1-194",
-      "xMin": 568.692594,
-      "yMin": 383.423976,
-      "xMax": 578.444482,
-      "yMax": 386.638125,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-206",
+      "detector": "M2-206",
+      "normalizedLabel": "M2-206",
+      "normalizedDetector": "M2-206",
+      "xMin": 321.96,
+      "yMin": 331.660632,
+      "xMax": 338.41934,
+      "yMax": 337.354818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0018",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-195",
-      "detector": "M1-195",
-      "normalizedLabel": "M1-195",
-      "normalizedDetector": "M1-195",
-      "xMin": 568.692594,
-      "yMin": 389.664344,
-      "xMax": 578.444482,
-      "yMax": 392.878492,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-191",
+      "detector": "M2-191",
+      "normalizedLabel": "M2-191",
+      "normalizedDetector": "M2-191",
+      "xMin": 540,
+      "yMin": 332.140632,
+      "xMax": 556.45934,
+      "yMax": 337.834818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0019",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "33:M1-7",
-      "detector": "M1-7",
-      "normalizedLabel": "33:M1-7",
-      "normalizedDetector": "M1-7",
-      "xMin": 250.681606,
-      "yMin": 404.32221,
-      "xMax": 271.414783,
-      "yMax": 410.482547,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-161",
+      "detector": "M2-161",
+      "normalizedLabel": "M2-161",
+      "normalizedDetector": "M2-161",
+      "xMin": 398.64,
+      "yMin": 348.940632,
+      "xMax": 415.09934,
+      "yMax": 354.634818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0020",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-200",
-      "detector": "M1-200",
-      "normalizedLabel": "M1-200",
-      "normalizedDetector": "M1-200",
-      "xMin": 490.3225,
-      "yMin": 400.481379,
-      "xMax": 509.234073,
-      "yMax": 406.641716,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-193",
+      "detector": "M2-193",
+      "normalizedLabel": "M2-193",
+      "normalizedDetector": "M2-193",
+      "xMin": 555.48,
+      "yMin": 364.521826,
+      "xMax": 566.08853,
+      "yMax": 367.457166,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0021",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-156",
-      "detector": "M1-156",
-      "normalizedLabel": "M1-156",
-      "normalizedDetector": "M1-156",
-      "xMin": 281.158923,
-      "yMin": 410.683159,
-      "xMax": 300.070496,
-      "yMax": 416.843496,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-194",
+      "detector": "M2-194",
+      "normalizedLabel": "M2-194",
+      "normalizedDetector": "M2-194",
+      "xMin": 555.48,
+      "yMin": 371.241826,
+      "xMax": 566.08853,
+      "yMax": 374.177166,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0022",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-193",
-      "detector": "M1-193",
-      "normalizedLabel": "M1-193",
-      "normalizedDetector": "M1-193",
-      "xMin": 634.082453,
-      "yMin": 408.163041,
-      "xMax": 652.994025,
-      "yMax": 414.323378,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-195",
+      "detector": "M2-195",
+      "normalizedLabel": "M2-195",
+      "normalizedDetector": "M2-195",
+      "xMin": 555.48,
+      "yMin": 378.081826,
+      "xMax": 566.08853,
+      "yMax": 381.017166,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0023",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-192",
-      "detector": "M1-192",
-      "normalizedLabel": "M1-192",
-      "normalizedDetector": "M1-192",
-      "xMin": 552.961744,
-      "yMin": 410.683159,
-      "xMax": 571.873316,
-      "yMax": 416.843496,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "33:M1-7",
+      "detector": "M1-7",
+      "normalizedLabel": "33:M1-7",
+      "normalizedDetector": "M1-7",
+      "xMin": 210.36,
+      "yMin": 394.420632,
+      "xMax": 228.436142,
+      "yMax": 400.114818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0024",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-163",
-      "detector": "M1-163",
-      "normalizedLabel": "M1-163",
-      "normalizedDetector": "M1-163",
-      "xMin": 687.721032,
-      "yMin": 408.041732,
-      "xMax": 706.632604,
-      "yMax": 414.202069,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-200",
+      "detector": "M2-200",
+      "normalizedLabel": "M2-200",
+      "normalizedDetector": "M2-200",
+      "xMin": 471.6,
+      "yMin": 390.340632,
+      "xMax": 488.05934,
+      "yMax": 396.034818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0025",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-168",
-      "detector": "M1-168",
-      "normalizedLabel": "M1-168",
-      "normalizedDetector": "M1-168",
-      "xMin": 975.122951,
-      "yMin": 415.244968,
-      "xMax": 994.034523,
-      "yMax": 421.405305,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-156",
+      "detector": "M2-156",
+      "normalizedLabel": "M2-156",
+      "normalizedDetector": "M2-156",
+      "xMin": 243.48,
+      "yMin": 401.380632,
+      "xMax": 259.93934,
+      "yMax": 407.074818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0026",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-199",
-      "detector": "M1-199",
-      "normalizedLabel": "M1-199",
-      "normalizedDetector": "M1-199",
-      "xMin": 396.481572,
-      "yMin": 432.764548,
-      "xMax": 415.393144,
-      "yMax": 438.924885,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-193",
+      "detector": "M2-193",
+      "normalizedLabel": "M2-193",
+      "normalizedDetector": "M2-193",
+      "xMin": 628.44,
+      "yMin": 398.620632,
+      "xMax": 644.89934,
+      "yMax": 404.314818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0027",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "33:M1-8",
-      "detector": "M1-8",
-      "normalizedLabel": "33:M1-8",
-      "normalizedDetector": "M1-8",
-      "xMin": 215.999579,
-      "yMin": 452.563371,
-      "xMax": 236.732756,
-      "yMax": 458.723708,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-192",
+      "detector": "M2-192",
+      "normalizedLabel": "M2-192",
+      "normalizedDetector": "M2-192",
+      "xMin": 540,
+      "yMin": 401.380632,
+      "xMax": 556.45934,
+      "yMax": 407.074818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0028",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-169",
-      "detector": "M1-169",
-      "normalizedLabel": "M1-169",
-      "normalizedDetector": "M1-169",
-      "xMin": 1047.842697,
-      "yMin": 477.163233,
-      "xMax": 1066.75427,
-      "yMax": 483.32357,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-163",
+      "detector": "M2-163",
+      "normalizedLabel": "M2-163",
+      "normalizedDetector": "M2-163",
+      "xMin": 687,
+      "yMin": 398.620632,
+      "xMax": 703.45934,
+      "yMax": 404.314818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0029",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-157",
-      "detector": "M1-157",
-      "normalizedLabel": "M1-157",
-      "normalizedDetector": "M1-157",
-      "xMin": 173.039544,
-      "yMin": 490.004729,
-      "xMax": 191.951116,
-      "yMax": 496.165066,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-168",
+      "detector": "M2-168",
+      "normalizedLabel": "M2-168",
+      "normalizedDetector": "M2-168",
+      "xMin": 1000.44,
+      "yMin": 406.420632,
+      "xMax": 1016.89934,
+      "yMax": 412.114818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0030",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-181",
-      "detector": "M1-181",
-      "normalizedLabel": "M1-181",
-      "normalizedDetector": "M1-181",
-      "xMin": 463.921854,
-      "yMin": 516.764203,
-      "xMax": 482.833426,
-      "yMax": 522.92454,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-199",
+      "detector": "M2-199",
+      "normalizedLabel": "M2-199",
+      "normalizedDetector": "M2-199",
+      "xMin": 369.36,
+      "yMin": 425.500632,
+      "xMax": 385.81934,
+      "yMax": 431.194818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0031",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-179",
-      "detector": "M1-179",
-      "normalizedLabel": "M1-179",
-      "normalizedDetector": "M1-179",
-      "xMin": 687.721032,
-      "yMin": 516.764203,
-      "xMax": 706.632604,
-      "yMax": 522.92454,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "33:M1-8",
+      "detector": "M1-8",
+      "normalizedLabel": "33:M1-8",
+      "normalizedDetector": "M1-8",
+      "xMin": 172.56,
+      "yMin": 447.100632,
+      "xMax": 190.636142,
+      "yMax": 452.794818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0032",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-170",
-      "detector": "M1-170",
-      "normalizedLabel": "M1-170",
-      "normalizedDetector": "M1-170",
-      "xMin": 1047.842697,
-      "yMin": 547.842933,
-      "xMax": 1066.75427,
-      "yMax": 554.00327,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-169",
+      "detector": "M2-169",
+      "normalizedLabel": "M2-169",
+      "normalizedDetector": "M2-169",
+      "xMin": 1079.76,
+      "yMin": 473.980632,
+      "xMax": 1096.21934,
+      "yMax": 479.674818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0033",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-180",
-      "detector": "M1-180",
-      "normalizedLabel": "M1-180",
-      "normalizedDetector": "M1-180",
-      "xMin": 588.962822,
-      "yMin": 555.28201,
-      "xMax": 607.874395,
-      "yMax": 561.442347,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-157",
+      "detector": "M2-157",
+      "normalizedLabel": "M2-157",
+      "normalizedDetector": "M2-157",
+      "xMin": 125.76,
+      "yMin": 487.900632,
+      "xMax": 142.21934,
+      "yMax": 493.594818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0034",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "33:M1-138",
-      "detector": "M1-138",
-      "normalizedLabel": "33:M1-138",
-      "normalizedDetector": "M1-138",
-      "xMin": 89.279777,
-      "yMin": 575.325096,
-      "xMax": 116.250572,
-      "yMax": 581.485433,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-181",
+      "detector": "M2-181",
+      "normalizedLabel": "M2-181",
+      "normalizedDetector": "M2-181",
+      "xMin": 442.92,
+      "yMin": 517.180632,
+      "xMax": 459.37934,
+      "yMax": 522.874818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0035",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "33:M1-9",
-      "detector": "M1-9",
-      "normalizedLabel": "33:M1-9",
-      "normalizedDetector": "M1-9",
-      "xMin": 210.841407,
-      "yMin": 587.324321,
-      "xMax": 231.574584,
-      "yMax": 593.484658,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-179",
+      "detector": "M2-179",
+      "normalizedLabel": "M2-179",
+      "normalizedDetector": "M2-179",
+      "xMin": 687,
+      "yMin": 517.180632,
+      "xMax": 703.45934,
+      "yMax": 522.874818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0036",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-162",
-      "detector": "M1-162",
-      "normalizedLabel": "M1-162",
-      "normalizedDetector": "M1-162",
-      "xMin": 208.560486,
-      "yMin": 600.88515,
-      "xMax": 227.472058,
-      "yMax": 607.045487,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-170",
+      "detector": "M2-170",
+      "normalizedLabel": "M2-170",
+      "normalizedDetector": "M2-170",
+      "xMin": 1079.76,
+      "yMin": 551.020632,
+      "xMax": 1096.21934,
+      "yMax": 556.714818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0037",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-184",
-      "detector": "M1-184",
-      "normalizedLabel": "M1-184",
-      "normalizedDetector": "M1-184",
-      "xMin": 372.12094,
-      "yMin": 610.724746,
-      "xMax": 391.032512,
-      "yMax": 616.885083,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-180",
+      "detector": "M2-180",
+      "normalizedLabel": "M2-180",
+      "normalizedDetector": "M2-180",
+      "xMin": 579.24,
+      "yMin": 559.180632,
+      "xMax": 595.69934,
+      "yMax": 564.874818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0038",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-189",
-      "detector": "M1-189",
-      "normalizedLabel": "M1-189",
-      "normalizedDetector": "M1-189",
-      "xMin": 209.638614,
-      "yMin": 618.283437,
-      "xMax": 228.550186,
-      "yMax": 624.443774,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "33:M1-138",
+      "detector": "M1-138",
+      "normalizedLabel": "33:M1-138",
+      "normalizedDetector": "M1-138",
+      "xMin": 34.32,
+      "yMin": 581.020632,
+      "xMax": 57.795194,
+      "yMax": 586.714818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0039",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-172",
-      "detector": "M1-172",
-      "normalizedLabel": "M1-172",
-      "normalizedDetector": "M1-172",
-      "xMin": 793.682444,
-      "yMin": 609.404049,
-      "xMax": 812.594017,
-      "yMax": 615.564386,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "33:M1-9",
+      "detector": "M1-9",
+      "normalizedLabel": "33:M1-9",
+      "normalizedDetector": "M1-9",
+      "xMin": 166.92,
+      "yMin": 594.100632,
+      "xMax": 184.996142,
+      "yMax": 599.794818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0040",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-198",
-      "detector": "M1-198",
-      "normalizedLabel": "M1-198",
-      "normalizedDetector": "M1-198",
-      "xMin": 456.839894,
-      "yMin": 615.522412,
-      "xMax": 475.751466,
-      "yMax": 621.682749,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-162",
+      "detector": "M2-162",
+      "normalizedLabel": "M2-162",
+      "normalizedDetector": "M2-162",
+      "xMin": 164.4,
+      "yMin": 608.860632,
+      "xMax": 180.85934,
+      "yMax": 614.554818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0041",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-178",
-      "detector": "M1-178",
-      "normalizedLabel": "M1-178",
-      "normalizedDetector": "M1-178",
-      "xMin": 1032.962833,
-      "yMin": 609.64494,
-      "xMax": 1051.874406,
-      "yMax": 615.805277,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-184",
+      "detector": "M2-184",
+      "normalizedLabel": "M2-184",
+      "normalizedDetector": "M2-184",
+      "xMin": 342.72,
+      "yMin": 619.540632,
+      "xMax": 359.17934,
+      "yMax": 625.234818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0042",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-190",
-      "detector": "M1-190",
-      "normalizedLabel": "M1-190",
-      "normalizedDetector": "M1-190",
-      "xMin": 106.799357,
-      "yMin": 626.923629,
-      "xMax": 125.710929,
-      "yMax": 633.083966,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-189",
+      "detector": "M2-189",
+      "normalizedLabel": "M2-189",
+      "normalizedDetector": "M2-189",
+      "xMin": 165.6,
+      "yMin": 627.820632,
+      "xMax": 182.05934,
+      "yMax": 633.514818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0043",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-171",
-      "detector": "M1-171",
-      "normalizedLabel": "M1-171",
-      "normalizedDetector": "M1-171",
-      "xMin": 1075.922918,
-      "yMin": 634.003894,
-      "xMax": 1094.83449,
-      "yMax": 640.164231,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-172",
+      "detector": "M2-172",
+      "normalizedLabel": "M2-172",
+      "normalizedDetector": "M2-172",
+      "xMin": 802.56,
+      "yMin": 618.100632,
+      "xMax": 819.01934,
+      "yMax": 623.794818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0044",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-228",
-      "detector": "M1-228",
-      "normalizedLabel": "M1-228",
-      "normalizedDetector": "M1-228",
-      "xMin": 146.641579,
-      "yMin": 651.045048,
-      "xMax": 165.553151,
-      "yMax": 657.205385,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-198",
+      "detector": "M2-198",
+      "normalizedLabel": "M2-198",
+      "normalizedDetector": "M2-198",
+      "xMin": 435.24,
+      "yMin": 624.820632,
+      "xMax": 451.69934,
+      "yMax": 630.514818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0045",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-229",
-      "detector": "M1-229",
-      "normalizedLabel": "M1-229",
-      "normalizedDetector": "M1-229",
-      "xMin": 1036.682388,
-      "yMin": 652.604975,
-      "xMax": 1055.59396,
-      "yMax": 658.765312,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-178",
+      "detector": "M2-178",
+      "normalizedLabel": "M2-178",
+      "normalizedDetector": "M2-178",
+      "xMin": 1063.44,
+      "yMin": 618.460632,
+      "xMax": 1079.89934,
+      "yMax": 624.154818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0046",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-174",
-      "detector": "M1-174",
-      "normalizedLabel": "M1-174",
-      "normalizedDetector": "M1-174",
-      "xMin": 985.924498,
-      "yMin": 660.161971,
-      "xMax": 1004.83607,
-      "yMax": 666.322308,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-190",
+      "detector": "M2-190",
+      "normalizedLabel": "M2-190",
+      "normalizedDetector": "M2-190",
+      "xMin": 53.52,
+      "yMin": 637.180632,
+      "xMax": 69.97934,
+      "yMax": 642.874818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0047",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-182",
-      "detector": "M1-182",
-      "normalizedLabel": "M1-182",
-      "normalizedDetector": "M1-182",
-      "xMin": 437.16238,
-      "yMin": 662.564169,
-      "xMax": 456.073952,
-      "yMax": 668.724506,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-171",
+      "detector": "M2-171",
+      "normalizedLabel": "M2-171",
+      "normalizedDetector": "M2-171",
+      "xMin": 1110.36,
+      "yMin": 644.860632,
+      "xMax": 1126.81934,
+      "yMax": 650.554818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0048",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-187",
-      "detector": "M1-187",
-      "normalizedLabel": "M1-187",
-      "normalizedDetector": "M1-187",
-      "xMin": 209.638614,
-      "yMin": 702.883468,
-      "xMax": 228.550186,
-      "yMax": 709.043805,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-228",
+      "detector": "M2-228",
+      "normalizedLabel": "M2-228",
+      "normalizedDetector": "M2-228",
+      "xMin": 96.84,
+      "yMin": 663.580632,
+      "xMax": 113.29934,
+      "yMax": 669.274818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0049",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-186",
-      "detector": "M1-186",
-      "normalizedLabel": "M1-186",
-      "normalizedDetector": "M1-186",
-      "xMin": 287.519905,
-      "yMin": 702.883468,
-      "xMax": 306.431477,
-      "yMax": 709.043805,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-229",
+      "detector": "M2-229",
+      "normalizedLabel": "M2-229",
+      "normalizedDetector": "M2-229",
+      "xMin": 1067.52,
+      "yMin": 665.260632,
+      "xMax": 1083.97934,
+      "yMax": 670.954818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0050",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-185",
-      "detector": "M1-185",
-      "normalizedLabel": "M1-185",
-      "normalizedDetector": "M1-185",
-      "xMin": 353.64283,
-      "yMin": 702.883468,
-      "xMax": 372.554402,
-      "yMax": 709.043805,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-174",
+      "detector": "M2-174",
+      "normalizedLabel": "M2-174",
+      "normalizedDetector": "M2-174",
+      "xMin": 1012.2,
+      "yMin": 673.540632,
+      "xMax": 1028.65934,
+      "yMax": 679.234818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0051",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-177",
-      "detector": "M1-177",
-      "normalizedLabel": "M1-177",
-      "normalizedDetector": "M1-177",
-      "xMin": 754.322349,
-      "yMin": 687.762729,
-      "xMax": 773.233922,
-      "yMax": 693.923066,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-182",
+      "detector": "M2-182",
+      "normalizedLabel": "M2-182",
+      "normalizedDetector": "M2-182",
+      "xMin": 413.64,
+      "yMin": 676.060632,
+      "xMax": 430.09934,
+      "yMax": 681.754818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0052",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-176",
-      "detector": "M1-176",
-      "normalizedLabel": "M1-176",
-      "normalizedDetector": "M1-176",
-      "xMin": 879.482916,
-      "yMin": 687.762729,
-      "xMax": 898.394488,
-      "yMax": 693.923066,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-177",
+      "detector": "M2-177",
+      "normalizedLabel": "M2-177",
+      "normalizedDetector": "M2-177",
+      "xMin": 759.6,
+      "yMin": 703.660632,
+      "xMax": 776.05934,
+      "yMax": 709.354818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0053",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-183",
-      "detector": "M1-183",
-      "normalizedLabel": "M1-183",
-      "normalizedDetector": "M1-183",
-      "xMin": 436.921473,
-      "yMin": 702.883468,
-      "xMax": 455.833045,
-      "yMax": 709.043805,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-187",
+      "detector": "M2-187",
+      "normalizedLabel": "M2-187",
+      "normalizedDetector": "M2-187",
+      "xMin": 165.6,
+      "yMin": 720.100632,
+      "xMax": 182.05934,
+      "yMax": 725.794818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0054",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-175",
-      "detector": "M1-175",
-      "normalizedLabel": "M1-175",
-      "normalizedDetector": "M1-175",
-      "xMin": 984.960869,
-      "yMin": 722.443407,
-      "xMax": 1003.872441,
-      "yMax": 728.603744,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-186",
+      "detector": "M2-186",
+      "normalizedLabel": "M2-186",
+      "normalizedDetector": "M2-186",
+      "xMin": 250.56,
+      "yMin": 720.100632,
+      "xMax": 267.01934,
+      "yMax": 725.794818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0012-0055",
       "fileId": "pdf-0012",
       "building": "一門診",
       "floor": "4F",
-      "path": "火警圖 PDF/一門診/一門診4F 火警圖.pdf",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
       "page": 1,
-      "label": "M1-173",
-      "detector": "M1-173",
-      "normalizedLabel": "M1-173",
-      "normalizedDetector": "M1-173",
-      "xMin": 593.640874,
-      "yMin": 730.125069,
-      "xMax": 612.552446,
-      "yMax": 736.285406,
-      "pageWidth": 841.92004,
-      "pageHeight": 1190.52002
+      "label": "M2-185",
+      "detector": "M2-185",
+      "normalizedLabel": "M2-185",
+      "normalizedDetector": "M2-185",
+      "xMin": 322.56,
+      "yMin": 720.100632,
+      "xMax": 339.01934,
+      "yMax": 725.794818,
+      "pageWidth": 842,
+      "pageHeight": 1191
+    },
+    {
+      "id": "pdf-0012-0056",
+      "fileId": "pdf-0012",
+      "building": "一門診",
+      "floor": "4F",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
+      "page": 1,
+      "label": "M2-176",
+      "detector": "M2-176",
+      "normalizedLabel": "M2-176",
+      "normalizedDetector": "M2-176",
+      "xMin": 896.04,
+      "yMin": 703.660632,
+      "xMax": 912.49934,
+      "yMax": 709.354818,
+      "pageWidth": 842,
+      "pageHeight": 1191
+    },
+    {
+      "id": "pdf-0012-0057",
+      "fileId": "pdf-0012",
+      "building": "一門診",
+      "floor": "4F",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
+      "page": 1,
+      "label": "M2-183",
+      "detector": "M2-183",
+      "normalizedLabel": "M2-183",
+      "normalizedDetector": "M2-183",
+      "xMin": 413.4,
+      "yMin": 720.100632,
+      "xMax": 429.85934,
+      "yMax": 725.794818,
+      "pageWidth": 842,
+      "pageHeight": 1191
+    },
+    {
+      "id": "pdf-0012-0058",
+      "fileId": "pdf-0012",
+      "building": "一門診",
+      "floor": "4F",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
+      "page": 1,
+      "label": "M2-175",
+      "detector": "M2-175",
+      "normalizedLabel": "M2-175",
+      "normalizedDetector": "M2-175",
+      "xMin": 1011.24,
+      "yMin": 741.340632,
+      "xMax": 1027.69934,
+      "yMax": 747.034818,
+      "pageWidth": 842,
+      "pageHeight": 1191
+    },
+    {
+      "id": "pdf-0012-0059",
+      "fileId": "pdf-0012",
+      "building": "一門診",
+      "floor": "4F",
+      "path": "火警圖 PDF/一門診/一門診4F 20260903.pdf",
+      "page": 1,
+      "label": "M2-173",
+      "detector": "M2-173",
+      "normalizedLabel": "M2-173",
+      "normalizedDetector": "M2-173",
+      "xMin": 584.4,
+      "yMin": 749.860632,
+      "xMax": 600.85934,
+      "yMax": 755.554818,
+      "pageWidth": 842,
+      "pageHeight": 1191
     },
     {
       "id": "pdf-0013-0001",

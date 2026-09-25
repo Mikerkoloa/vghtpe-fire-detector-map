@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T03:49:01.385Z",
+  "generatedAt": "2026-09-25T03:49:32.099Z",
   "source": "data/buildings.json",
   "totals": {
     "files": 145
@@ -622,7 +622,7 @@
       "latestUpdatedAt": "2026-09-03",
       "updatedBy": "admin",
       "note": "未填寫備註",
-      "detectorCount": 55,
+      "detectorCount": 59,
       "pageCount": 1,
       "history": [
         {
