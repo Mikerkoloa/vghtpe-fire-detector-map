@@ -900,7 +900,8 @@ button {
   line-height: 1.7;
 }
 
-.assistant-dialog {
+.assistant-dialog,
+.manual-dialog {
   position: fixed;
   inset: 0;
   z-index: 82;
@@ -909,11 +910,13 @@ button {
   padding: 18px;
 }
 
-.assistant-dialog.is-hidden {
+.assistant-dialog.is-hidden,
+.manual-dialog.is-hidden {
   display: none;
 }
 
-.assistant-backdrop {
+.assistant-backdrop,
+.manual-backdrop {
   position: absolute;
   inset: 0;
   background: rgba(10, 23, 20, 0.52);
@@ -945,6 +948,49 @@ button {
 .assistant-heading strong {
   color: var(--brand-strong);
   font-size: 22px;
+}
+
+.manual-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: min(1040px, 100%);
+  height: min(880px, calc(100dvh - 36px));
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 22px 68px rgba(7, 28, 24, 0.3);
+}
+
+.manual-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 52px 12px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.manual-heading strong {
+  color: var(--brand-strong);
+  font-size: 22px;
+}
+
+.manual-panel iframe {
+  width: 100%;
+  height: 100%;
+  background: #edf3f1;
+  border: 0;
+}
+
+.manual-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 18px 14px;
+  border-top: 1px solid var(--line);
 }
 
 .assistant-messages {
@@ -1259,6 +1305,22 @@ button {
   .assistant-panel {
     max-height: calc(100dvh - 24px);
     padding: 14px;
+  }
+
+  .manual-dialog {
+    padding: 10px;
+  }
+
+  .manual-panel {
+    height: calc(100dvh - 20px);
+  }
+
+  .manual-heading {
+    padding: 14px 48px 12px 14px;
+  }
+
+  .manual-actions {
+    padding: 10px 14px 12px;
   }
 
   .assistant-form {

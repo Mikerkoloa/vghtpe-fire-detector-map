@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="./assets/icons/fire-map-icon.svg">
     <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="./site.webmanifest">
-    <link rel="stylesheet" href="./assets/styles.css?v=20260926e">
+    <link rel="stylesheet" href="./assets/styles.css?v=20260926g">
   </head>
   <body>
     <div class="app">
@@ -19,7 +19,7 @@
             <strong>臺北榮民總醫院</strong>
             <span>火警探測器圖面查詢</span>
           </div>
-          <span class="version-badge" data-app-version="0.2.8">v0.2.8</span>
+          <span class="version-badge" data-app-version="0.2.10">v0.2.10</span>
         </div>
 
         <form class="search-bar" id="searchForm">
@@ -38,7 +38,7 @@
 
         <div class="system-status" id="systemStatus">載入索引中</div>
         <button class="assistant-button" type="button" id="assistantOpenButton">查詢助手</button>
-        <a class="manual-button" href="./manual.html" target="_blank" rel="noopener">使用手冊</a>
+        <button class="manual-button" type="button" id="manualOpenButton">使用手冊</button>
       </header>
 
       <main class="app-shell">
@@ -179,6 +179,28 @@
       </section>
     </div>
 
+    <div class="manual-dialog is-hidden" id="manualDialog" aria-hidden="true">
+      <div class="manual-backdrop" id="manualBackdrop"></div>
+      <section class="manual-panel" role="dialog" aria-modal="true" aria-labelledby="manualTitle">
+        <div class="manual-heading">
+          <div>
+            <span class="eyebrow">操作說明</span>
+            <strong id="manualTitle">使用手冊</strong>
+          </div>
+          <button type="button" class="overlay-close" id="manualCloseButton" aria-label="關閉使用手冊">×</button>
+        </div>
+        <iframe
+          id="manualFrame"
+          title="使用手冊"
+          data-src="./manual.html?embedded=1"
+          loading="lazy"
+        ></iframe>
+        <div class="manual-actions">
+          <a class="tool-button" href="./manual.html" target="_blank" rel="noopener">新頁面開啟</a>
+        </div>
+      </section>
+    </div>
+
     <div class="image-export-dialog is-hidden" id="imageExportDialog" aria-hidden="true">
       <div class="image-export-backdrop" id="imageExportBackdrop"></div>
       <section class="image-export-panel" role="dialog" aria-modal="true" aria-labelledby="imageExportTitle">
@@ -199,6 +221,6 @@
       <span aria-hidden="true">↑</span>
     </button>
 
-    <script type="module" src="./assets/app.js?v=20260926e"></script>
+    <script type="module" src="./assets/app.js?v=20260926g"></script>
   </body>
 </html>

@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.2.10 - 2026-09-26
+
+- Fixed PDF page printing to use a single A3 landscape page by default.
+- Prevented print output from spilling into a second blank page by fitting the generated image inside one A3 landscape print container.
+
+## v0.2.9 - 2026-09-26
+
+- Changed the main-page manual entry from opening a new tab to an in-page dialog.
+- Embedded `manual.html` in the dialog so the standalone manual page remains the single source for future manual updates.
+- Added query assistant usage guidance to the manual, including common examples and local recent-query behavior.
+
 ## v0.2.8 - 2026-09-26
 
 - Added a desktop toolbar print action next to image export.

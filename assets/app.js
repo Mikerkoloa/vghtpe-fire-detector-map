@@ -62,6 +62,11 @@ const dom = {
   assistantRecent: document.querySelector("#assistantRecent"),
   assistantRecentList: document.querySelector("#assistantRecentList"),
   assistantRecentClear: document.querySelector("#assistantRecentClear"),
+  manualOpenButton: document.querySelector("#manualOpenButton"),
+  manualDialog: document.querySelector("#manualDialog"),
+  manualBackdrop: document.querySelector("#manualBackdrop"),
+  manualCloseButton: document.querySelector("#manualCloseButton"),
+  manualFrame: document.querySelector("#manualFrame"),
   backToTopButton: document.querySelector("#backToTopButton"),
 };
 
@@ -1569,6 +1574,21 @@ function openAssistantDialog() {
   requestAnimationFrame(() => dom.assistantInput?.focus());
 }
 
+function closeManualDialog() {
+  dom.manualDialog?.classList.add("is-hidden");
+  dom.manualDialog?.setAttribute("aria-hidden", "true");
+}
+
+function openManualDialog() {
+  if (dom.manualFrame && !dom.manualFrame.src) {
+    dom.manualFrame.src = dom.manualFrame.dataset.src || "./manual.html?embedded=1";
+  }
+
+  dom.manualDialog?.classList.remove("is-hidden");
+  dom.manualDialog?.setAttribute("aria-hidden", "false");
+  requestAnimationFrame(() => dom.manualCloseButton?.focus());
+}
+
 async function openAssistantResult(resultId) {
   const result = state.assistantResults.get(resultId);
   if (!result || result.markers.length === 0) return;
@@ -1920,22 +1940,54 @@ function writePrintWindow(printWindow, imageUrl, title) {
   <meta charset="utf-8">
   <title>${safeTitle}</title>
   <style>
-    @page { margin: 8mm; }
+    @page {
+      size: A3 landscape;
+      margin: 0;
+    }
+
     html,
     body {
+      width: 420mm;
+      height: 297mm;
       margin: 0;
+      padding: 0;
+      overflow: hidden;
       background: #fff;
     }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .print-page {
+      display: flex;
+      width: 420mm;
+      height: 297mm;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
     img {
       display: block;
-      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
       height: auto;
+      object-fit: contain;
+      break-inside: avoid;
       page-break-inside: avoid;
     }
   </style>
 </head>
 <body>
-  <img src="${imageUrl}" alt="${safeTitle}">
+  <main class="print-page">
+    <img src="${imageUrl}" alt="${safeTitle}">
+  </main>
   <script>
     const image = document.querySelector("img");
     image.addEventListener("load", () => {
@@ -2510,6 +2562,10 @@ dom.assistantRecentList?.addEventListener("click", (event) => {
 
 dom.assistantRecentClear?.addEventListener("click", clearAssistantRecentQueries);
 
+dom.manualOpenButton?.addEventListener("click", openManualDialog);
+dom.manualCloseButton?.addEventListener("click", closeManualDialog);
+dom.manualBackdrop?.addEventListener("click", closeManualDialog);
+
 dom.openPdfButton.addEventListener("click", () => {
   if (state.currentPath) {
     window.open(resourceUrl(state.currentPath), "_blank", "noopener");
@@ -2530,6 +2586,11 @@ dom.backToTopButton?.addEventListener("click", scrollToPageTop);
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && !dom.assistantDialog?.classList.contains("is-hidden")) {
     closeAssistantDialog();
+    return;
+  }
+
+  if (event.key === "Escape" && !dom.manualDialog?.classList.contains("is-hidden")) {
+    closeManualDialog();
     return;
   }
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>使用手冊｜臺北榮民總醫院火警探測器圖面查詢</title>
-    <link rel="stylesheet" href="./assets/manual.css?v=20260514a">
+    <link rel="stylesheet" href="./assets/manual.css?v=20260926b">
   </head>
   <body>
     <header class="manual-hero">
@@ -24,7 +24,7 @@
           <p class="eyebrow">使用手冊</p>
           <h1>先找到圖面，再圈出探測器位置。</h1>
           <p class="hero-copy">
-            本手冊把查詢流程拆成清楚步驟：輸入定址碼、選擇棟別與樓層、在 PDF 中搜尋、更新圖資與 Windows 背景啟動。
+            本手冊把查詢流程拆成清楚步驟：輸入定址碼、使用查詢助手、選擇棟別與樓層、在 PDF 中搜尋、存圖列印。
           </p>
         </div>
         <div class="hero-panel" aria-label="快速範例">
@@ -42,20 +42,20 @@
           <strong>搜尋探測器</strong>
           <small>輸入 M1-66 或完整條件</small>
         </a>
-        <a href="#building" class="map-card">
+        <a href="#assistant" class="map-card">
           <span class="step-dot">2</span>
+          <strong>查詢助手</strong>
+          <small>用一句話快速整理圖面結果</small>
+        </a>
+        <a href="#building" class="map-card">
+          <span class="step-dot">3</span>
           <strong>選棟別樓層</strong>
           <small>不用下拉選單，直接點按鈕</small>
         </a>
         <a href="#viewer" class="map-card">
-          <span class="step-dot">3</span>
-          <strong>查看 PDF</strong>
-          <small>縮放、拖曳、圈選位置</small>
-        </a>
-        <a href="#maintain" class="map-card">
           <span class="step-dot">4</span>
-          <strong>維護資料</strong>
-          <small>更新 PDF、重建索引、背景啟動</small>
+          <strong>查看 PDF</strong>
+          <small>縮放、拖曳、圈選、存圖列印</small>
         </a>
       </section>
 
@@ -81,6 +81,47 @@
             <span class="tag">最完整</span>
             <code>長青樓 6F M2-66</code>
             <p>直接開啟該樓層 PDF，並圈出探測器編號文字標籤。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-grid" id="assistant">
+        <div class="section-heading">
+          <p class="eyebrow">快速找圖</p>
+          <h2>查詢助手</h2>
+          <p>按上方「查詢助手」後會跳出對話框。它會在瀏覽器本機解析文字，不需要連線到 OpenAI 或 Gemini，適合把一句話整理成可開啟的圖面結果。</p>
+        </div>
+
+        <div class="example-board">
+          <article class="example-card is-strong">
+            <span class="tag">全院找同一顆</span>
+            <code>M6-55</code>
+            <p>列出全院所有 `M6-55` 位置，再由使用者選要開哪一張圖。</p>
+          </article>
+          <article class="example-card">
+            <span class="tag">知道棟別，不確定樓層</span>
+            <code>身障 M6-55</code>
+            <p>在身障中心所有樓層中搜尋完整定址碼，例如可找到 `身障中心 1F M6-55`。</p>
+          </article>
+          <article class="example-card">
+            <span class="tag">知道棟別與樓層</span>
+            <code>長青B3 55 73</code>
+            <p>純數字需要搭配棟別與樓層，助手會在同一張圖內找尾號 55、73。</p>
+          </article>
+          <article class="example-card">
+            <span class="tag">多段查詢</span>
+            <code>長青B3 55 73、思源6樓 99</code>
+            <p>可用逗號或頓號分段，助手會整理成多張結果卡片。</p>
+          </article>
+          <article class="example-card">
+            <span class="tag">開啟並圈選</span>
+            <code>點「開啟並圈選」</code>
+            <p>會跳到對應 PDF，圈出找到的定址碼，並同步更新右側搜尋結果。</p>
+          </article>
+          <article class="example-card">
+            <span class="tag">最近查詢</span>
+            <code>保存在本機瀏覽器</code>
+            <p>最近查詢只存在使用者自己的瀏覽器，可點擊重查，也可按「清除」。</p>
           </article>
         </div>
       </section>
@@ -125,6 +166,7 @@
             <button>放大</button>
             <button>清除</button>
             <button>存圖</button>
+            <button>列印</button>
             <button>原始</button>
           </div>
           <div class="fake-plan">
@@ -154,58 +196,21 @@
             <p>有圈選標記時，可將目前頁面與標記儲存成 PNG 圖片；手機會開啟預覽與分享。</p>
           </article>
           <article>
+            <strong>列印</strong>
+            <p>開啟 PDF 後即可列印目前頁面；列印會以 A3 橫式呈現，若目前頁面有圈選標記會一起印出。</p>
+          </article>
+          <article>
             <strong>手機操作</strong>
             <p>兩指可放大或縮小 PDF，放大後可用單指拖曳移動圖面。</p>
           </article>
         </div>
       </section>
 
-      <section class="section-grid" id="maintain">
-        <div class="section-heading">
-          <p class="eyebrow">維護者</p>
-          <h2>更新 PDF 與背景啟動</h2>
-          <p>PDF 檔案有新增、刪除或替換時，一定要重新產生索引，搜尋結果才會跟著更新。</p>
-        </div>
-
-        <div class="maintenance-list">
-          <article class="command-card">
-            <span class="tag">更新 PDF 後</span>
-            <strong>重新建立索引</strong>
-            <pre><code>node scripts/build-index.js</code></pre>
-            <p>會更新 `data/fire-map-index.json` 與 `data/buildings.json`。</p>
-          </article>
-
-          <article class="command-card">
-            <span class="tag">本機背景執行</span>
-            <strong>Windows 10 啟動</strong>
-            <pre><code>npm run win:start
-npm run win:status
-npm run win:stop</code></pre>
-            <p>啟動後開啟 `http://localhost:4173`。</p>
-          </article>
-
-          <article class="command-card">
-            <span class="tag">重開機自動啟動</span>
-            <strong>註冊工作排程</strong>
-            <pre><code>npm run win:register
-npm run win:unregister</code></pre>
-            <p>目前設計為「登入 Windows 後自動啟動」。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="notice-section">
-        <div>
-          <p class="eyebrow">重要提醒</p>
-          <h2>搜尋不到或位置不對時</h2>
-        </div>
-        <ul>
-          <li>確認 PDF 是否已放入 `火警圖 PDF` 資料夾。</li>
-          <li>更新 PDF 後，必須重新執行 `node scripts/build-index.js`。</li>
-          <li>如果線上版仍是舊資料，請重新部署 Vercel，並在瀏覽器按 `Ctrl + F5` 強制重新整理。</li>
-          <li>目前圈選的是文字標籤，不是探測器圖符本體。</li>
-        </ul>
-      </section>
     </main>
+    <script>
+      if (new URLSearchParams(window.location.search).get("embedded") === "1") {
+        document.body.classList.add("is-embedded");
+      }
+    </script>
   </body>
 </html>
