@@ -1073,6 +1073,8 @@ function assistantBuildingAliases() {
     ["地下通道", "地下連通道"],
     ["連通道", "地下連通道"],
     ["立停", "立體停車場"],
+    ["職務官舍", "135職務官舍"],
+    ["職務官宿舍", "135職務官舍"],
   ]);
 
   state.buildingData.buildings.forEach((building) => {

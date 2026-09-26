@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-26T13:39:26.933Z",
+  "generatedAt": "2026-09-26T15:08:41.355Z",
   "source": "data/buildings.json",
   "totals": {
-    "files": 145
+    "files": 161
   },
   "files": [
     {
@@ -2414,6 +2414,310 @@
           "by": "system",
           "commit": null,
           "note": "從既有資料夾日期 115.04.26 初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "臨床訓練中心",
+      "floor": "3F-RF",
+      "path": "火警圖 PDF/臨床訓練中心/臨床訓練中心 3F-RF.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 4,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "臨床訓練中心",
+      "floor": "2F",
+      "path": "火警圖 PDF/臨床訓練中心/臨床訓練中心 2F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 2,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "臨床訓練中心",
+      "floor": "1F",
+      "path": "火警圖 PDF/臨床訓練中心/臨床訓練中心 1F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 16,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "RF",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 RF.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 0,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "11F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 11F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 6,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "10F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 10F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 6,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "9F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 9F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 6,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "8F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 8F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 6,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "7F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 7F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 6,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "6F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 6F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 6,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "5F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 5F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 6,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "4F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 4F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 6,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "3F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 3F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 6,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "2F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 2F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 6,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "1F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 1F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 8,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
+        }
+      ]
+    },
+    {
+      "building": "135職務官舍",
+      "floor": "B1F",
+      "path": "火警圖 PDF/135職務官舍/職務官宿舍 B1F.pdf",
+      "latestUpdatedAt": "2026-09-26",
+      "updatedBy": "system",
+      "note": "從既有 PDF 清單初始匯入",
+      "detectorCount": 7,
+      "pageCount": 1,
+      "history": [
+        {
+          "date": "2026-09-26",
+          "action": "initial-import",
+          "by": "system",
+          "commit": null,
+          "note": "從既有 PDF 清單初始匯入"
         }
       ]
     },

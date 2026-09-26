@@ -11,10 +11,14 @@ const BUILDINGS_PATH = path.join(DATA_DIR, "buildings.json");
 const BUILDING_GROUPS = [
   { id: "common", title: "常用", buildings: ["長青樓", "思源樓", "一門診", "二門診", "三門診"] },
   { id: "clinical", title: "醫療大樓 / 中心", buildings: ["重粒子", "正子中心", "身障中心", "精神樓", "致德樓"] },
-  { id: "support", title: "行政 / 支援", buildings: ["技警", "醫護宿舍"] },
+  { id: "support", title: "行政 / 支援 / 宿舍", buildings: ["技警", "醫護宿舍", "臨床訓練中心", "135職務官舍"] },
   { id: "traffic", title: "停車場 / 通道", buildings: ["2號門停車場", "3號門停車場", "立體停車場", "地下連通道"] },
   { id: "other", title: "其他", buildings: [] },
 ];
+
+const BUILDING_FILE_PREFIX_ALIASES = {
+  "135職務官舍": ["職務官宿舍", "職務官舍"],
+};
 
 function walkFiles(dir) {
   const result = [];
@@ -52,7 +56,7 @@ function parseBuildingName(filePath) {
   const folder = relative.split(path.sep)[0] || "";
   return folder
     .normalize("NFKC")
-    .replace(/^\d{2,4}(?:[.．]\d{0,2}){0,3}\s*/, "")
+    .replace(/^\d{2,4}[.．]\d{1,2}(?:[.．]\d{0,2}){0,2}\s*/, "")
     .replace(/火警圖\s*PDF$/i, "")
     .replace(/火警圖PDF$/i, "")
     .trim();
@@ -64,6 +68,9 @@ function parseFloorLabel(filePath, building) {
     .replace(new RegExp(`^${escapeRegExp(building)}\\s*`), "")
     .replace(/火警圖|火警/g, " ")
     .trim();
+  for (const alias of BUILDING_FILE_PREFIX_ALIASES[building] || []) {
+    remainder = remainder.replace(new RegExp(`^${escapeRegExp(alias)}\\s*`), "").trim();
+  }
 
   const range = remainder.match(/(?:RF|R\d+F?|\d+MF|\d+F|B\d+F?)\s*[~～-]\s*(?:RF|R\d+F?|\d+MF|\d+F|B\d+F?)/i);
   const single = remainder.match(/B\d+F?|R\d+F?|RF|\d+MF|\d+F/i);
