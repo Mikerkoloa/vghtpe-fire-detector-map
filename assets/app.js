@@ -34,6 +34,7 @@ const dom = {
   zoomInButton: document.querySelector("#zoomInButton"),
   clearMarkerButton: document.querySelector("#clearMarkerButton"),
   saveImageButton: document.querySelector("#saveImageButton"),
+  printImageButton: document.querySelector("#printImageButton"),
   openPdfButton: document.querySelector("#openPdfButton"),
   viewerShell: document.querySelector("#viewerShell"),
   emptyState: document.querySelector("#emptyState"),
@@ -1782,11 +1783,13 @@ function isAppleMobile() {
   return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 }
 
-async function createCurrentPageImageFile() {
-  if (!state.pdfDoc || state.markers.length === 0) return null;
+async function createCurrentPageImageFile(options = {}) {
+  if (!state.pdfDoc) return null;
 
+  const requireMarkers = options.requireMarkers !== false;
   const pageMarkers = state.markers.filter((marker) => marker.page === state.currentPage);
-  if (pageMarkers.length === 0) {
+  if (requireMarkers && state.markers.length === 0) return null;
+  if (requireMarkers && pageMarkers.length === 0) {
     setPdfSearchMessage("目前頁面沒有圈選標記，請先切到有標記的頁面。", { error: true });
     return null;
   }
@@ -1809,7 +1812,7 @@ async function createCurrentPageImageFile() {
 
   const file = state.filesById.get(state.selectedFileId);
   const detectors = uniqueDetectors(pageMarkers.map((marker) => marker.normalizedDetector || marker.detector)).join("-");
-  const filename = sanitizeFileName(`${file?.building || "fire-map"}-${file?.floor || `page-${state.currentPage}`}-${detectors || "marked"}.png`);
+  const filename = sanitizeFileName(`${file?.building || "fire-map"}-${file?.floor || `page-${state.currentPage}`}-${detectors || `page-${state.currentPage}`}.png`);
   const blob = await canvasToPngBlob(exportCanvas);
 
   return {
@@ -1899,6 +1902,84 @@ async function saveCurrentPageImage() {
   }
 }
 
+function writePrintWindow(printWindow, imageUrl, title) {
+  const safeTitle = title.replace(/[&<>"']/g, (character) => {
+    return {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      "\"": "&quot;",
+      "'": "&#39;",
+    }[character];
+  });
+
+  printWindow.document.open();
+  printWindow.document.write(`<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>${safeTitle}</title>
+  <style>
+    @page { margin: 8mm; }
+    html,
+    body {
+      margin: 0;
+      background: #fff;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      page-break-inside: avoid;
+    }
+  </style>
+</head>
+<body>
+  <img src="${imageUrl}" alt="${safeTitle}">
+  <script>
+    const image = document.querySelector("img");
+    image.addEventListener("load", () => {
+      window.focus();
+      window.print();
+    }, { once: true });
+  <\/script>
+</body>
+</html>`);
+  printWindow.document.close();
+}
+
+async function printCurrentPageImage() {
+  if (!state.pdfDoc) {
+    setPdfSearchMessage("請先開啟一張 PDF 圖面。", { error: true });
+    return;
+  }
+
+  const printWindow = window.open("", "_blank");
+  if (!printWindow) {
+    setPdfSearchMessage("瀏覽器阻擋了列印視窗，請允許彈出式視窗後再試。", { error: true });
+    return;
+  }
+
+  printWindow.document.write("<p style=\"font:16px sans-serif;padding:20px\">正在準備列印圖面...</p>");
+
+  try {
+    const exported = await createCurrentPageImageFile({ requireMarkers: false });
+    if (!exported) {
+      printWindow.close();
+      return;
+    }
+
+    const imageUrl = URL.createObjectURL(exported.blob);
+    writePrintWindow(printWindow, imageUrl, exported.filename);
+    window.setTimeout(() => URL.revokeObjectURL(imageUrl), 60_000);
+    setPdfSearchMessage(state.markers.length > 0 ? "已開啟列印視窗，圈選標記會一起列印。" : "已開啟列印視窗。");
+  } catch (error) {
+    console.error(error);
+    printWindow.close();
+    setPdfSearchMessage(error.message || "列印圖面失敗。", { error: true });
+  }
+}
+
 function scrollToFirstMarker() {
   const marker = dom.markerLayer.querySelector(".detector-marker");
   if (!marker) return;
@@ -1924,6 +2005,7 @@ function updatePdfControls() {
   dom.zoomInButton.disabled = !hasPdf || state.zoom >= MAX_ZOOM;
   dom.clearMarkerButton.disabled = !hasPdf || state.markers.length === 0;
   dom.saveImageButton.disabled = !hasPdf || state.markers.length === 0;
+  dom.printImageButton.disabled = !hasPdf;
   dom.openPdfButton.disabled = !hasPdf || !state.currentPath;
   dom.pageStatus.textContent = hasPdf ? `${state.currentPage} / ${state.currentPageCount}` : "-";
   dom.zoomStatus.textContent = hasPdf ? zoomPercentText() : "-";
@@ -2374,6 +2456,7 @@ dom.clearMarkerButton.addEventListener("click", () => {
 });
 
 dom.saveImageButton.addEventListener("click", saveCurrentPageImage);
+dom.printImageButton.addEventListener("click", printCurrentPageImage);
 
 dom.imageExportShare.addEventListener("click", async () => {
   if (!state.imageExport) return;

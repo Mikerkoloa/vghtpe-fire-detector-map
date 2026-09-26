@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.8 - 2026-09-26
+
+- Added a desktop toolbar print action next to image export.
+- Printing works for the current PDF page with or without detector markers; visible markers on that page are included in the print image.
+
 ## v0.2.7 - 2026-09-26
 
 - Added local browser recent queries to the query assistant, with one-tap replay and clear controls.
