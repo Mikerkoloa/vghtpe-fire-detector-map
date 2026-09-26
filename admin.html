@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="./assets/icons/fire-map-icon.svg">
     <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="./site.webmanifest">
-    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260926a">
+    <link rel="stylesheet" href="./assets/admin-demo.css?v=20260926b">
   </head>
   <body>
     <div class="admin-app">
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="header-actions">
-          <span class="version-badge" data-app-version="0.2.5">v0.2.5</span>
+          <span class="version-badge" data-app-version="0.2.7">v0.2.7</span>
           <span class="env-pill">GitHub Token: Vercel Env</span>
           <a class="ghost-button" href="./">回查詢頁</a>
         </div>
@@ -332,6 +332,26 @@
                 <h2>管理權限與發佈環境</h2>
               </div>
             </div>
+            <form class="settings-form" id="assistantSettingsForm">
+              <div class="form-grid">
+                <label>
+                  <span>查詢助手最近查詢筆數</span>
+                  <input id="assistantRecentLimitInput" type="number" min="0" max="50" step="1" inputmode="numeric">
+                </label>
+                <label>
+                  <span>設定分支</span>
+                  <input id="settingsBranchInput" type="text" value="main">
+                </label>
+                <label class="form-grid-wide">
+                  <span>Commit 訊息</span>
+                  <input id="settingsCommitInput" type="text" value="Update app settings">
+                </label>
+              </div>
+              <p class="api-message" id="settingsMessage">最近查詢會儲存在使用者自己的瀏覽器；這裡只控制最多保留幾筆。</p>
+              <div class="form-actions">
+                <button class="primary-button" type="submit">儲存設定</button>
+              </div>
+            </form>
             <div class="settings-grid">
               <div class="setting-row">
                 <strong>登入方式</strong>
@@ -359,6 +379,6 @@
       <span aria-hidden="true">↑</span>
     </button>
 
-    <script type="module" src="./assets/admin-demo.js?v=20260926a"></script>
+    <script type="module" src="./assets/admin-demo.js?v=20260926b"></script>
   </body>
 </html>

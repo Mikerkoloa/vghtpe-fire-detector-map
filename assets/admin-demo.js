@@ -49,6 +49,11 @@ const dom = {
   historyNoteInput: document.querySelector("#historyNoteInput"),
   historyTargetPath: document.querySelector("#historyTargetPath"),
   historyCorrectionMessage: document.querySelector("#historyCorrectionMessage"),
+  assistantSettingsForm: document.querySelector("#assistantSettingsForm"),
+  assistantRecentLimitInput: document.querySelector("#assistantRecentLimitInput"),
+  settingsBranchInput: document.querySelector("#settingsBranchInput"),
+  settingsCommitInput: document.querySelector("#settingsCommitInput"),
+  settingsMessage: document.querySelector("#settingsMessage"),
   backToTopButton: document.querySelector("#backToTopButton"),
 };
 
@@ -59,6 +64,11 @@ const state = {
   file: null,
   lastPreflight: null,
   selectedHistoryPath: "",
+  settings: {
+    assistant: {
+      recentQueryLimit: 10,
+    },
+  },
   authToken: window.sessionStorage.getItem("adminDemoToken") || "",
   backToTopTicking: false,
 };
@@ -83,6 +93,14 @@ function clearAdminData() {
   dom.historyCorrectionState.textContent = "尚未選擇圖面";
   dom.githubPath.textContent = "登入後載入資料";
   dom.checkTarget.textContent = "登入後載入資料";
+  state.settings = {
+    assistant: {
+      recentQueryLimit: 10,
+    },
+  };
+  dom.assistantRecentLimitInput.value = "";
+  dom.settingsMessage.textContent = "登入後載入設定。";
+  dom.settingsMessage.className = "api-message";
 }
 
 function normalizeFileSize(size) {
@@ -368,6 +386,43 @@ function setLoginMessage(message, tone = "") {
   dom.loginMessage.classList.toggle("is-ok", tone === "ok");
   dom.loginMessage.classList.toggle("is-warning", tone === "warning");
   dom.loginMessage.classList.toggle("is-error", tone === "error");
+}
+
+function setSettingsMessage(message, tone = "") {
+  dom.settingsMessage.textContent = message;
+  dom.settingsMessage.classList.toggle("is-ok", tone === "ok");
+  dom.settingsMessage.classList.toggle("is-warning", tone === "warning");
+  dom.settingsMessage.classList.toggle("is-error", tone === "error");
+}
+
+function fillSettingsForm(settings = state.settings) {
+  const limit = Number(settings.assistant?.recentQueryLimit);
+  dom.assistantRecentLimitInput.value = Number.isInteger(limit) ? String(limit) : "10";
+  dom.settingsBranchInput.value = dom.settingsBranchInput.value.trim() || "main";
+  dom.settingsCommitInput.value = dom.settingsCommitInput.value.trim() || "Update app settings";
+}
+
+async function submitAssistantSettings() {
+  const limit = Number(dom.assistantRecentLimitInput.value);
+  const payload = {
+    branch: dom.settingsBranchInput.value.trim() || "main",
+    commitMessage: dom.settingsCommitInput.value.trim() || "Update app settings",
+    assistant: {
+      recentQueryLimit: limit,
+    },
+  };
+
+  setSettingsMessage("正在儲存系統設定。", "warning");
+
+  try {
+    const result = await requestAdminApi("settings", payload);
+    state.settings = result.settings || state.settings;
+    fillSettingsForm(state.settings);
+    const commitLabel = result.commit?.sha ? result.commit.sha.slice(0, 12) : "mock";
+    setSettingsMessage(`${result.message}；commit：${commitLabel}`, "ok");
+  } catch (error) {
+    setSettingsMessage(error.message, "error");
+  }
 }
 
 function readFileAsBase64(file) {
@@ -800,11 +855,14 @@ async function loadBuildings() {
   state.buildings = data.buildings || [];
   state.historyByPath = buildHistoryMap(data.history || []);
   state.pdfItems = data.pdfItems || flattenPdfItems(state.buildings);
+  state.settings = data.settings || state.settings;
   fillBuildings(state.buildings);
+  fillSettingsForm(state.settings);
   syncModeFields();
   fillPdfBuildingFilter(state.buildings);
   renderPdfList();
   setApiMessage(`管理 API 已載入：${data.totals?.pdfs || state.pdfItems.length} 份 PDF。`, "ok");
+  setSettingsMessage("已載入目前系統設定。", "ok");
 }
 
 function getPageScrollTop() {
@@ -963,6 +1021,12 @@ dom.historyCorrectionForm.addEventListener("submit", (event) => {
   event.preventDefault();
   document.activeElement.blur();
   submitHistoryCorrection();
+});
+
+dom.assistantSettingsForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  document.activeElement.blur();
+  submitAssistantSettings();
 });
 
 dom.uploadForm.addEventListener("submit", (event) => {

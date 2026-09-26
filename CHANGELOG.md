@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.7 - 2026-09-26
+
+- Added local browser recent queries to the query assistant, with one-tap replay and clear controls.
+- Added admin-managed app settings in `data/app-settings.json`, including the assistant recent-query limit.
+- Expanded local assistant parsing for common request phrases, building aliases, and roof wording such as `頂樓` / `屋頂`.
+
+## v0.2.6 - 2026-09-26
+
+- Extended the local query assistant so a full detector code such as `M6-55` lists matching locations across the whole site.
+- Supports building-scoped full detector queries such as `身障 M6-55`, which searches all floors in that building and lets the user choose the result.
+- Added visible usage hints inside the assistant for full-site, building-scoped, and floor-required number searches.
+
 ## v0.2.5 - 2026-09-26
 
 - Added the first local-only "查詢助手" on the main page, opened from the header next to the manual link.

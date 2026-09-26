@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="./assets/icons/fire-map-icon.svg">
     <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="./site.webmanifest">
-    <link rel="stylesheet" href="./assets/styles.css?v=20260926b">
+    <link rel="stylesheet" href="./assets/styles.css?v=20260926d">
   </head>
   <body>
     <div class="app">
@@ -19,7 +19,7 @@
             <strong>臺北榮民總醫院</strong>
             <span>火警探測器圖面查詢</span>
           </div>
-          <span class="version-badge" data-app-version="0.2.5">v0.2.5</span>
+          <span class="version-badge" data-app-version="0.2.7">v0.2.7</span>
         </div>
 
         <form class="search-bar" id="searchForm">
@@ -143,7 +143,7 @@
       <section class="assistant-panel" role="dialog" aria-modal="true" aria-labelledby="assistantTitle">
         <div class="assistant-heading">
           <div>
-            <span class="eyebrow">本機解析</span>
+            <span class="eyebrow">快速找圖</span>
             <strong id="assistantTitle">查詢助手</strong>
           </div>
           <button type="button" class="overlay-close" id="assistantCloseButton" aria-label="關閉查詢助手">×</button>
@@ -151,15 +151,26 @@
         <div class="assistant-messages" id="assistantMessages">
           <div class="assistant-message assistant-message--assistant">
             <p>輸入棟別、樓層與號碼，我會整理成可開啟的圖面結果。</p>
-            <p class="assistant-example">例如：長青B3 55 73 65、思源6樓 55 99</p>
+            <div class="assistant-usage" aria-label="查詢助手可用輸入方式">
+              <span><strong>M6-55</strong> 全站列出所有位置</span>
+              <span><strong>身障 M6-55</strong> 在該棟自動找樓層</span>
+              <span><strong>長青B3 55 73</strong> 純數字需有樓層</span>
+            </div>
           </div>
+        </div>
+        <div class="assistant-recent is-hidden" id="assistantRecent" aria-label="最近查詢">
+          <div class="assistant-recent-heading">
+            <span>最近查詢</span>
+            <button type="button" id="assistantRecentClear">清除</button>
+          </div>
+          <div class="assistant-recent-list" id="assistantRecentList"></div>
         </div>
         <form class="assistant-form" id="assistantForm">
           <input
             id="assistantInput"
             type="text"
             autocomplete="off"
-            placeholder="例如：長青B3 55 73 65、思源6樓 55 99"
+            placeholder="例如：M6-55、身障 M6-55、長青B3 55 73"
             aria-label="輸入查詢助手文字"
           >
           <button class="primary-button" type="submit">查詢</button>
@@ -187,6 +198,6 @@
       <span aria-hidden="true">↑</span>
     </button>
 
-    <script type="module" src="./assets/app.js?v=20260926b"></script>
+    <script type="module" src="./assets/app.js?v=20260926d"></script>
   </body>
 </html>

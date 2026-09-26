@@ -435,6 +435,10 @@ textarea:focus {
   gap: 14px;
 }
 
+.form-grid-wide {
+  grid-column: 1 / -1;
+}
+
 .list-tools {
   display: grid;
   grid-template-columns: minmax(260px, 1fr) minmax(180px, 240px);
@@ -719,10 +723,15 @@ tr:last-child td {
   max-width: 760px;
 }
 
-.history-correction-form {
+.history-correction-form,
+.settings-form {
   display: grid;
   max-width: 920px;
   gap: 14px;
+}
+
+.settings-form {
+  margin-bottom: 18px;
 }
 
 .is-hidden {

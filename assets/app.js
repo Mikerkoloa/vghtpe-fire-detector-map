@@ -58,12 +58,20 @@ const dom = {
   assistantForm: document.querySelector("#assistantForm"),
   assistantInput: document.querySelector("#assistantInput"),
   assistantMessages: document.querySelector("#assistantMessages"),
+  assistantRecent: document.querySelector("#assistantRecent"),
+  assistantRecentList: document.querySelector("#assistantRecentList"),
+  assistantRecentClear: document.querySelector("#assistantRecentClear"),
   backToTopButton: document.querySelector("#backToTopButton"),
 };
 
 const state = {
   index: null,
   buildingData: null,
+  settings: {
+    assistant: {
+      recentQueryLimit: 10,
+    },
+  },
   historyByPath: new Map(),
   filesById: new Map(),
   buildingsByName: new Map(),
@@ -100,6 +108,7 @@ const state = {
   imageExport: null,
   assistantResults: new Map(),
   assistantResultCounter: 0,
+  assistantRecentQueries: [],
   backToTopTicking: false,
 };
 
@@ -110,6 +119,7 @@ const EXPORT_IMAGE_SCALE = 2;
 const DETECTOR_SCAN_PATTERN = /(?:\d+:)?M\d+-\d+|M[1-9]\d+/gi;
 const DETECTOR_AUTO_COMMIT_DELAY = 520;
 const DETECTOR_PARTIAL_AUTO_COMMIT_DELAY = 1700;
+const ASSISTANT_RECENT_STORAGE_KEY = "fireMapAssistantRecentQueries";
 
 function normalizeText(value) {
   return String(value || "")
@@ -473,14 +483,23 @@ async function loadJson(url) {
 
 async function init() {
   try {
-    const [index, buildingData, historyData] = await Promise.all([
+    const [index, buildingData, historyData, settingsData] = await Promise.all([
       loadJson("./data/fire-map-index.json"),
       loadJson("./data/buildings.json"),
       loadJson("./data/pdf-update-history.json"),
+      loadJson("./data/app-settings.json").catch(() => ({})),
     ]);
 
     state.index = index;
     state.buildingData = buildingData;
+    state.settings = {
+      ...state.settings,
+      ...settingsData,
+      assistant: {
+        ...state.settings.assistant,
+        ...(settingsData.assistant || {}),
+      },
+    };
     state.historyByPath = new Map((historyData.files || []).map((item) => [item.path, item]));
     state.filesById = new Map(index.files.map((file) => [file.id, file]));
     state.buildingsByName = new Map(buildingData.buildings.map((building) => [building.name, building]));
@@ -489,6 +508,8 @@ async function init() {
     setStatus(`${index.totals.files} 份 PDF / ${index.totals.entries.toLocaleString("zh-TW")} 筆標籤`);
 
     renderBuildings();
+    loadAssistantRecentQueries();
+    renderAssistantRecentQueries();
     selectBuilding(state.buildingsByName.has("長青樓") ? "長青樓" : buildingData.buildings[0]?.name, { openFirstFloor: false });
     renderResults([], "輸入探測器編號後會顯示可選位置。");
     updatePdfControls();
@@ -953,15 +974,108 @@ async function handleCurrentPdfSearch(rawQuery, detectors = []) {
   setPdfSearchMessage(requestedDetectors.length > 1 ? `已圈選 ${results.length} 筆${missingText}` : `已定位 ${firstResult.label}。`);
 }
 
+function assistantRecentLimit() {
+  const limit = Number(state.settings.assistant?.recentQueryLimit);
+  if (!Number.isInteger(limit)) return 10;
+  return Math.max(0, Math.min(50, limit));
+}
+
+function loadAssistantRecentQueries() {
+  const limit = assistantRecentLimit();
+  if (limit === 0) {
+    state.assistantRecentQueries = [];
+    return;
+  }
+
+  try {
+    const saved = JSON.parse(window.localStorage.getItem(ASSISTANT_RECENT_STORAGE_KEY) || "[]");
+    state.assistantRecentQueries = Array.isArray(saved)
+      ? saved.map((query) => String(query || "").trim()).filter(Boolean).slice(0, limit)
+      : [];
+  } catch {
+    state.assistantRecentQueries = [];
+  }
+}
+
+function saveAssistantRecentQueries() {
+  const limit = assistantRecentLimit();
+  if (limit === 0 || state.assistantRecentQueries.length === 0) {
+    window.localStorage.removeItem(ASSISTANT_RECENT_STORAGE_KEY);
+    return;
+  }
+
+  window.localStorage.setItem(ASSISTANT_RECENT_STORAGE_KEY, JSON.stringify(state.assistantRecentQueries.slice(0, limit)));
+}
+
+function renderAssistantRecentQueries() {
+  if (!dom.assistantRecent || !dom.assistantRecentList) return;
+
+  const limit = assistantRecentLimit();
+  const queries = state.assistantRecentQueries.slice(0, limit);
+  dom.assistantRecent.classList.toggle("is-hidden", queries.length === 0 || limit === 0);
+  dom.assistantRecentList.innerHTML = "";
+
+  queries.forEach((query) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "assistant-recent-item";
+    button.dataset.assistantRecentQuery = query;
+    button.textContent = query;
+    dom.assistantRecentList.append(button);
+  });
+}
+
+function rememberAssistantQuery(rawQuery) {
+  const limit = assistantRecentLimit();
+  const query = String(rawQuery || "").replace(/\s+/g, " ").trim();
+  if (!query || limit === 0) return;
+
+  state.assistantRecentQueries = [
+    query,
+    ...state.assistantRecentQueries.filter((item) => normalizeLooseText(item) !== normalizeLooseText(query)),
+  ].slice(0, limit);
+  saveAssistantRecentQueries();
+  renderAssistantRecentQueries();
+}
+
+function clearAssistantRecentQueries() {
+  state.assistantRecentQueries = [];
+  saveAssistantRecentQueries();
+  renderAssistantRecentQueries();
+}
+
+function normalizeAssistantInput(value) {
+  return normalizeLooseText(value)
+    .replace(/請幫我找|幫我找|幫忙找|我要看|我要找|請查詢|請搜尋|請定位|請查|搜尋|查詢|定位|找|查/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function assistantBuildingAliases() {
   if (!state.buildingData) return [];
 
   const aliases = [];
+  const manualAliases = new Map([
+    ["一門", "一門診"],
+    ["一診", "一門診"],
+    ["二門", "二門診"],
+    ["二診", "二門診"],
+    ["三門", "三門診"],
+    ["三診", "三門診"],
+    ["正子", "正子中心"],
+    ["身障", "身障中心"],
+    ["地下通道", "地下連通道"],
+    ["連通道", "地下連通道"],
+    ["立停", "立體停車場"],
+  ]);
+
   state.buildingData.buildings.forEach((building) => {
     const names = new Set([building.name]);
-    if (building.name.endsWith("樓")) {
-      names.add(building.name.slice(0, -1));
-    }
+    ["停車場", "中心", "樓"].forEach((suffix) => {
+      if (building.name.endsWith(suffix) && building.name.length > suffix.length) {
+        names.add(building.name.slice(0, -suffix.length));
+      }
+    });
 
     names.forEach((alias) => {
       if (!alias) return;
@@ -970,6 +1084,15 @@ function assistantBuildingAliases() {
         normalizedAlias: normalizeText(alias),
         building: building.name,
       });
+    });
+  });
+
+  manualAliases.forEach((building, alias) => {
+    if (!state.buildingsByName.has(building)) return;
+    aliases.push({
+      alias,
+      normalizedAlias: normalizeText(alias),
+      building,
     });
   });
 
@@ -1017,6 +1140,11 @@ function findExistingFloor(buildingName, floorLabel) {
 
 function parseAssistantFloor(segment, buildingName) {
   const loose = normalizeLooseText(segment).replace(/[，,、;；]+/g, " ");
+  if (/頂樓|屋頂/.test(loose)) {
+    const floor = findExistingFloor(buildingName, "RF");
+    if (floor) return floor;
+  }
+
   const basement = /地下([一二兩三四五六七八九十\d]+)樓?/.exec(loose);
   if (basement) {
     const floorNumber = chineseNumberToNumber(basement[1]);
@@ -1099,7 +1227,7 @@ function parseAssistantLooseNumbers(segment, target) {
 }
 
 function splitAssistantQuery(rawQuery) {
-  const query = normalizeLooseText(rawQuery).replace(/\s+/g, " ").trim();
+  const query = normalizeAssistantInput(rawQuery);
   const aliases = assistantBuildingAliases();
   if (!query || aliases.length === 0) return [];
 
@@ -1126,23 +1254,38 @@ function parseAssistantQuery(rawQuery) {
 
   segments.forEach((segment) => {
     const building = findAssistantBuilding(segment);
+    const detectors = extractDetectorCodes(segment).codes;
+
+    if (!building && detectors.length > 0) {
+      targets.push({
+        segment,
+        building: null,
+        floor: null,
+        detectors,
+        looseNumbers: [],
+      });
+      return;
+    }
+
     if (!building) {
       errors.push(`「${segment}」沒有辨識到棟別。`);
       return;
     }
 
     const floor = parseAssistantFloor(segment, building);
-    if (!floor) {
-      errors.push(`「${segment}」沒有辨識到 ${building} 的樓層。`);
+    const target = { segment, building, floor, detectors, looseNumbers: [] };
+
+    if (!floor && detectors.length === 0) {
+      errors.push(`「${segment}」需要補樓層，或改輸入完整定址碼，例如 ${building} M6-55。`);
       return;
     }
 
-    const detectors = extractDetectorCodes(segment).codes;
-    const target = { segment, building, floor, detectors, looseNumbers: [] };
-    target.looseNumbers = parseAssistantLooseNumbers(segment, target);
+    if (floor) {
+      target.looseNumbers = parseAssistantLooseNumbers(segment, target);
+    }
 
     if (target.detectors.length === 0 && target.looseNumbers.length === 0) {
-      errors.push(`「${building} ${floor.label}」沒有辨識到要找的號碼。`);
+      errors.push(`「${building}${floor ? ` ${floor.label}` : ""}」沒有辨識到要找的定址碼。`);
       return;
     }
 
@@ -1157,8 +1300,42 @@ function detectorNumberFromEntry(entry) {
   return match ? Number(match[1]) : null;
 }
 
-function buildAssistantResult(target) {
-  const fileEntries = state.index.entries.filter((entry) => entry.fileId === target.floor.fileId);
+function assistantTargetEntries(target) {
+  return state.index.entries
+    .filter((entry) => !target.building || entry.building === target.building)
+    .filter((entry) => !target.floor || entry.fileId === target.floor.fileId);
+}
+
+function findFloorByFile(file) {
+  return state.buildingsByName.get(file.building)?.floors.find((floor) => floor.fileId === file.id) || null;
+}
+
+function buildAssistantResultForFile(target, file, entries, missing = []) {
+  const seen = new Set();
+  const markers = entries.filter((entry) => {
+    if (seen.has(entry.id)) return false;
+    seen.add(entry.id);
+    return true;
+  }).sort((left, right) => {
+    return left.page - right.page || left.normalizedDetector.localeCompare(right.normalizedDetector, "zh-Hant") || left.label.localeCompare(right.label, "zh-Hant");
+  });
+
+  return {
+    id: `assistant-result-${++state.assistantResultCounter}`,
+    target: {
+      ...target,
+      building: file?.building || target.building,
+      floor: file ? findFloorByFile(file) : target.floor,
+    },
+    markers,
+    detectors: uniqueDetectors(markers.map((entry) => entry.normalizedDetector)),
+    missing,
+    file,
+  };
+}
+
+function buildAssistantLooseNumberResult(target) {
+  const fileEntries = assistantTargetEntries(target);
   const markers = [];
   const missing = [];
   const seen = new Set();
@@ -1183,10 +1360,6 @@ function buildAssistantResult(target) {
     order += 1;
   }
 
-  target.detectors.forEach((detector) => {
-    addEntries(fileEntries.filter((entry) => entry.normalizedDetector === detector), detector);
-  });
-
   target.looseNumbers.forEach((number) => {
     addEntries(fileEntries.filter((entry) => detectorNumberFromEntry(entry) === Number(number)), number);
   });
@@ -1197,15 +1370,68 @@ function buildAssistantResult(target) {
     return left.page - right.page || left.label.localeCompare(right.label, "zh-Hant");
   });
 
-  const detectors = uniqueDetectors(markers.map((entry) => entry.normalizedDetector));
+  const file = target.floor ? state.filesById.get(target.floor.fileId) : state.filesById.get(markers[0]?.fileId);
   return {
     id: `assistant-result-${++state.assistantResultCounter}`,
     target,
     markers,
-    detectors,
+    detectors: uniqueDetectors(markers.map((entry) => entry.normalizedDetector)),
     missing,
-    file: state.filesById.get(target.floor.fileId),
+    file,
   };
+}
+
+function buildAssistantDetectorResults(target) {
+  const detectorSet = new Set(target.detectors);
+  const scopedEntries = assistantTargetEntries(target).filter((entry) => detectorSet.has(entry.normalizedDetector));
+
+  if (target.floor) {
+    const file = state.filesById.get(target.floor.fileId);
+    const looseEntries = target.looseNumbers.flatMap((number) =>
+      assistantTargetEntries(target).filter((entry) => detectorNumberFromEntry(entry) === Number(number))
+    );
+    const entries = [...scopedEntries, ...looseEntries];
+    const found = new Set(entries.map((entry) => entry.normalizedDetector));
+    const missing = [...target.detectors, ...target.looseNumbers].filter((item) => !found.has(item) && !entries.some((entry) => detectorNumberFromEntry(entry) === Number(item)));
+    return [buildAssistantResultForFile(target, file, entries, missing)];
+  }
+
+  if (scopedEntries.length === 0) {
+    return [
+      {
+        id: `assistant-result-${++state.assistantResultCounter}`,
+        target,
+        markers: [],
+        detectors: [],
+        missing: target.detectors,
+        file: null,
+      },
+    ];
+  }
+
+  const byFile = new Map();
+  scopedEntries.forEach((entry) => {
+    if (!byFile.has(entry.fileId)) byFile.set(entry.fileId, []);
+    byFile.get(entry.fileId).push(entry);
+  });
+
+  return [...byFile.entries()]
+    .map(([fileId, entries]) => buildAssistantResultForFile(target, state.filesById.get(fileId), entries))
+    .sort((left, right) => {
+      const leftBuildingIndex = state.buildingData.buildings.findIndex((building) => building.name === left.file?.building);
+      const rightBuildingIndex = state.buildingData.buildings.findIndex((building) => building.name === right.file?.building);
+      const buildingDelta = (leftBuildingIndex === -1 ? 999 : leftBuildingIndex) - (rightBuildingIndex === -1 ? 999 : rightBuildingIndex);
+      if (buildingDelta) return buildingDelta;
+      return floorSortValue(right.file?.floor) - floorSortValue(left.file?.floor);
+    });
+}
+
+function buildAssistantResults(target) {
+  if (target.detectors.length > 0) {
+    return buildAssistantDetectorResults(target);
+  }
+
+  return [buildAssistantLooseNumberResult(target)];
 }
 
 function appendAssistantTextMessage(role, text) {
@@ -1220,13 +1446,20 @@ function appendAssistantTextMessage(role, text) {
 }
 
 function assistantResultSummary(result) {
-  const prefix = `${result.target.building} ${result.target.floor.label}`;
+  const prefix = result.file
+    ? `${result.file.building} ${result.file.floor}`
+    : [result.target.building || "全院", result.target.floor?.label].filter(Boolean).join(" ");
   if (result.markers.length === 0) {
     return `${prefix} 找不到 ${[...result.target.detectors, ...result.target.looseNumbers].join("、")}。`;
   }
 
   const missingText = result.missing.length > 0 ? `，找不到 ${result.missing.join("、")}` : "";
   return `${prefix} 找到 ${result.detectors.length} 個定址碼 / ${result.markers.length} 筆位置${missingText}。`;
+}
+
+function assistantResultTitle(result) {
+  if (result.file) return `${result.file.building} ${result.file.floor}`;
+  return [result.target.building || "全院", result.target.floor?.label].filter(Boolean).join(" ");
 }
 
 function renderAssistantResultCard(result) {
@@ -1239,7 +1472,7 @@ function renderAssistantResultCard(result) {
   title.className = "assistant-result-title";
 
   const strong = document.createElement("strong");
-  strong.textContent = `${result.target.building} ${result.target.floor.label}`;
+  strong.textContent = assistantResultTitle(result);
   const count = document.createElement("span");
   count.textContent = result.markers.length > 0 ? `${result.markers.length} 筆` : "找不到";
   title.append(strong, count);
@@ -1310,15 +1543,17 @@ function handleAssistantQuery(rawQuery) {
     return;
   }
 
-  const query = rawQuery.trim();
+  const displayQuery = String(rawQuery || "").replace(/\s+/g, " ").trim();
+  const query = normalizeAssistantInput(displayQuery);
   if (!query) {
     appendAssistantTextMessage("assistant", "請輸入例如：長青B3 55 73 65、思源6樓 55 99。");
     return;
   }
 
   const parsed = parseAssistantQuery(query);
-  const results = parsed.targets.map(buildAssistantResult);
-  renderAssistantResults(query, results, parsed.errors);
+  const results = parsed.targets.flatMap(buildAssistantResults);
+  rememberAssistantQuery(displayQuery || query);
+  renderAssistantResults(displayQuery || query, results, parsed.errors);
 }
 
 function closeAssistantDialog() {
@@ -1329,6 +1564,7 @@ function closeAssistantDialog() {
 function openAssistantDialog() {
   dom.assistantDialog?.classList.remove("is-hidden");
   dom.assistantDialog?.setAttribute("aria-hidden", "false");
+  renderAssistantRecentQueries();
   requestAnimationFrame(() => dom.assistantInput?.focus());
 }
 
@@ -1337,10 +1573,11 @@ async function openAssistantResult(resultId) {
   if (!result || result.markers.length === 0) return;
 
   const firstMarker = result.markers[0];
+  const fileId = result.file?.id || firstMarker.fileId;
   state.selectedResultId = firstMarker.id;
   renderResults(result.markers, assistantResultSummary(result), { detectors: result.detectors });
   closeAssistantDialog();
-  await openFile(result.target.floor.fileId, {
+  await openFile(fileId, {
     page: firstMarker.page,
     markers: result.markers,
   });
@@ -2181,6 +2418,14 @@ dom.assistantMessages?.addEventListener("click", (event) => {
   if (!button) return;
   openAssistantResult(button.dataset.assistantResultId);
 });
+
+dom.assistantRecentList?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-assistant-recent-query]");
+  if (!button) return;
+  handleAssistantQuery(button.dataset.assistantRecentQuery);
+});
+
+dom.assistantRecentClear?.addEventListener("click", clearAssistantRecentQueries);
 
 dom.openPdfButton.addEventListener("click", () => {
   if (state.currentPath) {

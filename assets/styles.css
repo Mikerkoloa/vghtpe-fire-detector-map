@@ -925,7 +925,7 @@ button {
   display: grid;
   width: min(760px, 100%);
   max-height: min(760px, calc(100dvh - 36px));
-  grid-template-rows: auto minmax(220px, 1fr) auto;
+  grid-template-rows: auto minmax(220px, 1fr) auto auto;
   gap: 14px;
   padding: 18px;
   background: #fff;
@@ -986,6 +986,32 @@ button {
   font-size: 13px;
 }
 
+.assistant-usage {
+  display: grid;
+  gap: 6px;
+}
+
+.assistant-usage span {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.assistant-usage strong {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  padding: 2px 8px;
+  color: var(--brand-strong);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+}
+
 .assistant-result-card {
   display: grid;
   gap: 10px;
@@ -1030,6 +1056,63 @@ button {
   border-radius: 999px;
   font-size: 13px;
   font-weight: 900;
+}
+
+.assistant-recent {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.assistant-recent-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.assistant-recent-heading button {
+  min-height: 28px;
+  padding: 0 9px;
+  color: var(--brand-strong);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.assistant-recent-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.assistant-recent-item {
+  max-width: 100%;
+  min-height: 30px;
+  padding: 4px 9px;
+  overflow: hidden;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.assistant-recent-item:hover {
+  color: var(--brand-strong);
+  border-color: var(--brand);
+  background: var(--surface-tint);
 }
 
 .assistant-form {
