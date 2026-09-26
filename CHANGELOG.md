@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.5 - 2026-09-26
+
+- Added the first local-only "查詢助手" on the main page, opened from the header next to the manual link.
+- Supports natural query groups such as `長青B3 55 73 65、思源6樓 55 99`, then opens the selected PDF and circles matching detector labels.
+- Added local parsing for common building aliases and floor phrasing such as `長青`, `思源`, `6樓`, `B3`, and `地下3樓`.
+
 ## v0.2.4 - 2026-09-26
 
 - Added an admin-only "修正更新紀錄" workflow for correcting a PDF update date, editor, and note without re-uploading the PDF.

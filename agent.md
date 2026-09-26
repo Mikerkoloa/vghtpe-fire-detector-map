@@ -143,13 +143,13 @@ PDF viewer 支援：
 
 版本管理：
 
-- 目前版本：`v0.2.4`。
+- 目前版本：`v0.2.5`。
 - `package.json` 的 `version` 是版本主來源，主查詢頁與管理後台 header 都會顯示同一版本。
 - 主查詢頁桌面版版本標籤放在「臺北榮民總醫院 / 火警探測器圖面查詢」品牌文字右側，不要作為獨立 header 欄位，以免把「使用手冊」擠到下一行。
 - `CHANGELOG.md` 記錄每次版本更新內容。
 - 更新版本時同步調整 `package.json`、`index.html`、`admin.html`、`CHANGELOG.md`。
 - 可執行 `npm run check:version` 確認版本號是否一致。
-- 若使用者要求正式發版，除了 commit/push，也應建立並推送 Git tag，例如 `git tag v0.2.4 && git push origin v0.2.4`。
+- 若使用者要求正式發版，除了 commit/push，也應建立並推送 Git tag，例如 `git tag v0.2.5 && git push origin v0.2.5`。
 - Vercel 以 `vercel.json` 將 `/index.html` 永久轉址到 `/`；不要打開首頁連結時主動使用 `/index.html`。
 - `site.webmanifest` 的 `start_url` 使用 `./`，讓安裝到手機桌面後也從乾淨首頁網址開啟。
 - 本機 `server.js` 也會將 `/index.html` 以 308 轉到 `/`，方便本機與 Vercel 行為一致。
@@ -166,6 +166,16 @@ PDF viewer 支援：
 - `data/fire-map-index.json`：探測器標籤索引。
 - `data/buildings.json`：棟別與樓層資料。
 - `data/pdf-update-history.json`：PDF 更新紀錄，主查詢頁會用它顯示後續更新日期。
+
+## 查詢助手第一版
+
+- 主查詢頁 header 在「使用手冊」左側新增「查詢助手」入口，不使用右下角浮動按鈕。
+- 第一版不接 OpenAI/Gemini，只在瀏覽器本機解析文字並使用既有 `fire-map-index.json` 搜尋。
+- 支援多段查詢，例如 `長青B3 55 73 65、思源6樓 55 99`，每段會整理成一張可開啟的圖面卡片。
+- 支援常用棟別簡稱，例如 `長青` 對應 `長青樓`、`思源` 對應 `思源樓`；其他以實際 `buildings.json` 棟別為主。
+- 支援樓層語意 `6F`、`6樓`、`B3`、`B3F`、`地下3樓`、`RF`、`R1F`。
+- 點「開啟並圈選」後會開啟對應 PDF，圈選同一張圖內找到的定址碼，並使用既有結果面板顯示命中清單。
+- 後續若第一版操作順暢，再提醒使用者評估「多候選選擇、聊天記錄、更多語句」。
 
 ## 本機啟動
 
@@ -204,7 +214,7 @@ npm run check:version
 - 滾輪縮放與雙擊標記放大已測過。
 - `m3-15` 停 0.8 秒不會變標籤，補 `0` 後會變成 `M3-150`；停超過延遲才會提交 `M3-15`。
 - 定址碼標籤可點文字回編輯，並已驗證全域搜尋與目前圖面搜尋兩個入口。
-- `npm run check:version`：確認 `v0.2.4` 已同步到主頁、管理後台與 `CHANGELOG.md`。
+- `npm run check:version`：確認 `v0.2.5` 已同步到主頁、管理後台與 `CHANGELOG.md`。
 
 ## GitHub 上傳狀態
 

@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="./assets/icons/fire-map-icon.svg">
     <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="./site.webmanifest">
-    <link rel="stylesheet" href="./assets/styles.css?v=20260926a">
+    <link rel="stylesheet" href="./assets/styles.css?v=20260926b">
   </head>
   <body>
     <div class="app">
@@ -19,7 +19,7 @@
             <strong>臺北榮民總醫院</strong>
             <span>火警探測器圖面查詢</span>
           </div>
-          <span class="version-badge" data-app-version="0.2.4">v0.2.4</span>
+          <span class="version-badge" data-app-version="0.2.5">v0.2.5</span>
         </div>
 
         <form class="search-bar" id="searchForm">
@@ -37,6 +37,7 @@
         </form>
 
         <div class="system-status" id="systemStatus">載入索引中</div>
+        <button class="assistant-button" type="button" id="assistantOpenButton">查詢助手</button>
         <a class="manual-button" href="./manual.html" target="_blank" rel="noopener">使用手冊</a>
       </header>
 
@@ -137,6 +138,35 @@
       </main>
     </div>
 
+    <div class="assistant-dialog is-hidden" id="assistantDialog" aria-hidden="true">
+      <div class="assistant-backdrop" id="assistantBackdrop"></div>
+      <section class="assistant-panel" role="dialog" aria-modal="true" aria-labelledby="assistantTitle">
+        <div class="assistant-heading">
+          <div>
+            <span class="eyebrow">本機解析</span>
+            <strong id="assistantTitle">查詢助手</strong>
+          </div>
+          <button type="button" class="overlay-close" id="assistantCloseButton" aria-label="關閉查詢助手">×</button>
+        </div>
+        <div class="assistant-messages" id="assistantMessages">
+          <div class="assistant-message assistant-message--assistant">
+            <p>輸入棟別、樓層與號碼，我會整理成可開啟的圖面結果。</p>
+            <p class="assistant-example">例如：長青B3 55 73 65、思源6樓 55 99</p>
+          </div>
+        </div>
+        <form class="assistant-form" id="assistantForm">
+          <input
+            id="assistantInput"
+            type="text"
+            autocomplete="off"
+            placeholder="例如：長青B3 55 73 65、思源6樓 55 99"
+            aria-label="輸入查詢助手文字"
+          >
+          <button class="primary-button" type="submit">查詢</button>
+        </form>
+      </section>
+    </div>
+
     <div class="image-export-dialog is-hidden" id="imageExportDialog" aria-hidden="true">
       <div class="image-export-backdrop" id="imageExportBackdrop"></div>
       <section class="image-export-panel" role="dialog" aria-modal="true" aria-labelledby="imageExportTitle">
@@ -157,6 +187,6 @@
       <span aria-hidden="true">↑</span>
     </button>
 
-    <script type="module" src="./assets/app.js?v=20260926a"></script>
+    <script type="module" src="./assets/app.js?v=20260926b"></script>
   </body>
 </html>

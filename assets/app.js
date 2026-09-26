@@ -51,6 +51,13 @@ const dom = {
   imageExportPreview: document.querySelector("#imageExportPreview"),
   imageExportShare: document.querySelector("#imageExportShare"),
   imageExportDownload: document.querySelector("#imageExportDownload"),
+  assistantOpenButton: document.querySelector("#assistantOpenButton"),
+  assistantDialog: document.querySelector("#assistantDialog"),
+  assistantBackdrop: document.querySelector("#assistantBackdrop"),
+  assistantCloseButton: document.querySelector("#assistantCloseButton"),
+  assistantForm: document.querySelector("#assistantForm"),
+  assistantInput: document.querySelector("#assistantInput"),
+  assistantMessages: document.querySelector("#assistantMessages"),
   backToTopButton: document.querySelector("#backToTopButton"),
 };
 
@@ -91,6 +98,8 @@ const state = {
   activeTouchPointers: new Map(),
   touchPanPointerId: null,
   imageExport: null,
+  assistantResults: new Map(),
+  assistantResultCounter: 0,
   backToTopTicking: false,
 };
 
@@ -138,6 +147,10 @@ function normalizeDetectorCode(value) {
   }
 
   return null;
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function detectorNumberDigitLength(value) {
@@ -938,6 +951,400 @@ async function handleCurrentPdfSearch(rawQuery, detectors = []) {
   presentSearchResults(results, summary, { detectors: requestedDetectors });
   await renderCurrentPage({ scrollToMarker: true });
   setPdfSearchMessage(requestedDetectors.length > 1 ? `已圈選 ${results.length} 筆${missingText}` : `已定位 ${firstResult.label}。`);
+}
+
+function assistantBuildingAliases() {
+  if (!state.buildingData) return [];
+
+  const aliases = [];
+  state.buildingData.buildings.forEach((building) => {
+    const names = new Set([building.name]);
+    if (building.name.endsWith("樓")) {
+      names.add(building.name.slice(0, -1));
+    }
+
+    names.forEach((alias) => {
+      if (!alias) return;
+      aliases.push({
+        alias,
+        normalizedAlias: normalizeText(alias),
+        building: building.name,
+      });
+    });
+  });
+
+  return aliases.sort((left, right) => right.normalizedAlias.length - left.normalizedAlias.length);
+}
+
+function findAssistantBuilding(segment) {
+  const normalized = normalizeText(segment);
+  return assistantBuildingAliases().find((item) => normalized.includes(item.normalizedAlias))?.building || null;
+}
+
+function chineseNumberToNumber(value) {
+  const normalized = normalizeText(value);
+  if (/^\d+$/.test(normalized)) return Number(normalized);
+
+  const digits = new Map([
+    ["零", 0],
+    ["一", 1],
+    ["二", 2],
+    ["兩", 2],
+    ["三", 3],
+    ["四", 4],
+    ["五", 5],
+    ["六", 6],
+    ["七", 7],
+    ["八", 8],
+    ["九", 9],
+  ]);
+
+  if (normalized === "十") return 10;
+  const tens = /^([一二兩三四五六七八九])?十([一二兩三四五六七八九])?$/.exec(normalized);
+  if (tens) {
+    return (digits.get(tens[1]) || 1) * 10 + (digits.get(tens[2]) || 0);
+  }
+
+  return digits.get(normalized) || null;
+}
+
+function findExistingFloor(buildingName, floorLabel) {
+  const building = state.buildingsByName.get(buildingName);
+  if (!building || !floorLabel) return null;
+  const normalizedFloor = normalizeText(floorLabel);
+  return building.floors.find((floor) => normalizeText(floor.label) === normalizedFloor) || null;
+}
+
+function parseAssistantFloor(segment, buildingName) {
+  const loose = normalizeLooseText(segment).replace(/[，,、;；]+/g, " ");
+  const basement = /地下([一二兩三四五六七八九十\d]+)樓?/.exec(loose);
+  if (basement) {
+    const floorNumber = chineseNumberToNumber(basement[1]);
+    const floor = findExistingFloor(buildingName, floorNumber ? `B${floorNumber}F` : "");
+    if (floor) return floor;
+  }
+
+  const basementCode = /B(\d+)F?(?!\d)/.exec(loose);
+  if (basementCode) {
+    const floor = findExistingFloor(buildingName, `B${Number(basementCode[1])}F`);
+    if (floor) return floor;
+  }
+
+  const roof = /R(\d+)F?(?!\d)/.exec(loose);
+  if (roof) {
+    const floor = findExistingFloor(buildingName, `R${Number(roof[1])}F`);
+    if (floor) return floor;
+  }
+
+  if (/(^|[^A-Z0-9])RF([^A-Z0-9]|$)/.test(loose)) {
+    const floor = findExistingFloor(buildingName, "RF");
+    if (floor) return floor;
+  }
+
+  const floorCode = /(\d+)F(?!\d)/.exec(loose);
+  if (floorCode) {
+    const floor = findExistingFloor(buildingName, `${Number(floorCode[1])}F`);
+    if (floor) return floor;
+  }
+
+  const floorText = /([一二兩三四五六七八九十\d]+)樓/.exec(loose);
+  if (floorText) {
+    const floorNumber = chineseNumberToNumber(floorText[1]);
+    const floor = findExistingFloor(buildingName, floorNumber ? `${floorNumber}F` : "");
+    if (floor) return floor;
+  }
+
+  return null;
+}
+
+function stripAssistantKnownTerms(segment, target) {
+  let value = normalizeLooseText(segment);
+
+  assistantBuildingAliases()
+    .filter((item) => item.building === target.building)
+    .forEach((item) => {
+      value = value.replace(new RegExp(escapeRegExp(item.alias), "g"), " ");
+    });
+
+  const floor = target.floor?.label || "";
+  if (floor) {
+    const floorNumber = /^(\d+)F$/.exec(floor);
+    const basement = /^B(\d+)F$/.exec(floor);
+    const roof = /^R(\d+)F$/.exec(floor);
+    const floorPatterns = [floor];
+
+    if (floorNumber) floorPatterns.push(`${floorNumber[1]}樓`);
+    if (basement) floorPatterns.push(`B${basement[1]}`, `B${basement[1]}F`, `地下${basement[1]}樓`);
+    if (roof) floorPatterns.push(`R${roof[1]}`, `R${roof[1]}F`);
+
+    floorPatterns.forEach((pattern) => {
+      value = value.replace(new RegExp(escapeRegExp(pattern), "gi"), " ");
+    });
+  }
+
+  return value
+    .replace(DETECTOR_SCAN_PATTERN, " ")
+    .replace(/[，,、;；/]+/g, " ");
+}
+
+function parseAssistantLooseNumbers(segment, target) {
+  return uniqueDetectors(
+    stripAssistantKnownTerms(segment, target)
+      .split(/[^\d]+/)
+      .map((token) => token.trim())
+      .filter(Boolean)
+      .map((token) => String(Number(token)))
+      .filter((token) => token !== "NaN" && Number(token) > 0)
+  );
+}
+
+function splitAssistantQuery(rawQuery) {
+  const query = normalizeLooseText(rawQuery).replace(/\s+/g, " ").trim();
+  const aliases = assistantBuildingAliases();
+  if (!query || aliases.length === 0) return [];
+
+  const aliasPattern = new RegExp(aliases.map((item) => escapeRegExp(item.alias)).join("|"), "g");
+  const matches = [...query.matchAll(aliasPattern)];
+  if (matches.length === 0) return [query];
+
+  return matches
+    .map((match, index) => query.slice(match.index, matches[index + 1]?.index ?? query.length).trim())
+    .filter(Boolean);
+}
+
+function parseAssistantQuery(rawQuery) {
+  const segments = splitAssistantQuery(rawQuery);
+  if (segments.length === 0) {
+    return {
+      targets: [],
+      errors: ["請輸入棟別、樓層與號碼。"],
+    };
+  }
+
+  const targets = [];
+  const errors = [];
+
+  segments.forEach((segment) => {
+    const building = findAssistantBuilding(segment);
+    if (!building) {
+      errors.push(`「${segment}」沒有辨識到棟別。`);
+      return;
+    }
+
+    const floor = parseAssistantFloor(segment, building);
+    if (!floor) {
+      errors.push(`「${segment}」沒有辨識到 ${building} 的樓層。`);
+      return;
+    }
+
+    const detectors = extractDetectorCodes(segment).codes;
+    const target = { segment, building, floor, detectors, looseNumbers: [] };
+    target.looseNumbers = parseAssistantLooseNumbers(segment, target);
+
+    if (target.detectors.length === 0 && target.looseNumbers.length === 0) {
+      errors.push(`「${building} ${floor.label}」沒有辨識到要找的號碼。`);
+      return;
+    }
+
+    targets.push(target);
+  });
+
+  return { targets, errors };
+}
+
+function detectorNumberFromEntry(entry) {
+  const match = /-(\d+)$/.exec(entry.normalizedDetector);
+  return match ? Number(match[1]) : null;
+}
+
+function buildAssistantResult(target) {
+  const fileEntries = state.index.entries.filter((entry) => entry.fileId === target.floor.fileId);
+  const markers = [];
+  const missing = [];
+  const seen = new Set();
+  const detectorOrder = new Map();
+  let order = 0;
+
+  function addEntries(entries, requestLabel) {
+    if (entries.length === 0) {
+      missing.push(requestLabel);
+      return;
+    }
+
+    entries.forEach((entry) => {
+      if (!detectorOrder.has(entry.normalizedDetector)) {
+        detectorOrder.set(entry.normalizedDetector, order);
+      }
+      if (!seen.has(entry.id)) {
+        seen.add(entry.id);
+        markers.push(entry);
+      }
+    });
+    order += 1;
+  }
+
+  target.detectors.forEach((detector) => {
+    addEntries(fileEntries.filter((entry) => entry.normalizedDetector === detector), detector);
+  });
+
+  target.looseNumbers.forEach((number) => {
+    addEntries(fileEntries.filter((entry) => detectorNumberFromEntry(entry) === Number(number)), number);
+  });
+
+  markers.sort((left, right) => {
+    const orderDelta = (detectorOrder.get(left.normalizedDetector) ?? 999) - (detectorOrder.get(right.normalizedDetector) ?? 999);
+    if (orderDelta) return orderDelta;
+    return left.page - right.page || left.label.localeCompare(right.label, "zh-Hant");
+  });
+
+  const detectors = uniqueDetectors(markers.map((entry) => entry.normalizedDetector));
+  return {
+    id: `assistant-result-${++state.assistantResultCounter}`,
+    target,
+    markers,
+    detectors,
+    missing,
+    file: state.filesById.get(target.floor.fileId),
+  };
+}
+
+function appendAssistantTextMessage(role, text) {
+  const message = document.createElement("div");
+  message.className = `assistant-message assistant-message--${role}`;
+  const paragraph = document.createElement("p");
+  paragraph.textContent = text;
+  message.append(paragraph);
+  dom.assistantMessages.append(message);
+  dom.assistantMessages.scrollTop = dom.assistantMessages.scrollHeight;
+  return message;
+}
+
+function assistantResultSummary(result) {
+  const prefix = `${result.target.building} ${result.target.floor.label}`;
+  if (result.markers.length === 0) {
+    return `${prefix} 找不到 ${[...result.target.detectors, ...result.target.looseNumbers].join("、")}。`;
+  }
+
+  const missingText = result.missing.length > 0 ? `，找不到 ${result.missing.join("、")}` : "";
+  return `${prefix} 找到 ${result.detectors.length} 個定址碼 / ${result.markers.length} 筆位置${missingText}。`;
+}
+
+function renderAssistantResultCard(result) {
+  state.assistantResults.set(result.id, result);
+
+  const card = document.createElement("div");
+  card.className = "assistant-result-card";
+
+  const title = document.createElement("div");
+  title.className = "assistant-result-title";
+
+  const strong = document.createElement("strong");
+  strong.textContent = `${result.target.building} ${result.target.floor.label}`;
+  const count = document.createElement("span");
+  count.textContent = result.markers.length > 0 ? `${result.markers.length} 筆` : "找不到";
+  title.append(strong, count);
+
+  const detectorList = document.createElement("div");
+  detectorList.className = "assistant-detector-list";
+  const visibleDetectors = result.detectors.length > 0 ? result.detectors : [...result.target.detectors, ...result.target.looseNumbers];
+  visibleDetectors.slice(0, 16).forEach((detector) => {
+    const chip = document.createElement("span");
+    chip.className = "assistant-detector";
+    chip.textContent = detector;
+    detectorList.append(chip);
+  });
+
+  if (visibleDetectors.length > 16) {
+    const more = document.createElement("span");
+    more.className = "assistant-detector";
+    more.textContent = `+${visibleDetectors.length - 16}`;
+    detectorList.append(more);
+  }
+
+  const detail = document.createElement("div");
+  detail.className = "assistant-result-detail";
+  detail.textContent = assistantResultSummary(result);
+
+  card.append(title, detectorList, detail);
+
+  if (result.markers.length > 0) {
+    const button = document.createElement("button");
+    button.className = "primary-button";
+    button.type = "button";
+    button.dataset.assistantResultId = result.id;
+    button.textContent = "開啟並圈選";
+    card.append(button);
+  }
+
+  return card;
+}
+
+function renderAssistantResults(rawQuery, results, errors) {
+  appendAssistantTextMessage("user", rawQuery);
+
+  const message = document.createElement("div");
+  message.className = "assistant-message assistant-message--assistant";
+
+  const intro = document.createElement("p");
+  const foundCount = results.filter((result) => result.markers.length > 0).length;
+  intro.textContent = foundCount > 0 ? `已整理 ${results.length} 組查詢結果。` : "沒有找到可開啟的圖面結果。";
+  message.append(intro);
+
+  errors.forEach((error) => {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = error;
+    message.append(paragraph);
+  });
+
+  results.forEach((result) => {
+    message.append(renderAssistantResultCard(result));
+  });
+
+  dom.assistantMessages.append(message);
+  dom.assistantMessages.scrollTop = dom.assistantMessages.scrollHeight;
+}
+
+function handleAssistantQuery(rawQuery) {
+  if (!state.index || !state.buildingData) {
+    appendAssistantTextMessage("assistant", "索引載入中，請稍候再查。");
+    return;
+  }
+
+  const query = rawQuery.trim();
+  if (!query) {
+    appendAssistantTextMessage("assistant", "請輸入例如：長青B3 55 73 65、思源6樓 55 99。");
+    return;
+  }
+
+  const parsed = parseAssistantQuery(query);
+  const results = parsed.targets.map(buildAssistantResult);
+  renderAssistantResults(query, results, parsed.errors);
+}
+
+function closeAssistantDialog() {
+  dom.assistantDialog?.classList.add("is-hidden");
+  dom.assistantDialog?.setAttribute("aria-hidden", "true");
+}
+
+function openAssistantDialog() {
+  dom.assistantDialog?.classList.remove("is-hidden");
+  dom.assistantDialog?.setAttribute("aria-hidden", "false");
+  requestAnimationFrame(() => dom.assistantInput?.focus());
+}
+
+async function openAssistantResult(resultId) {
+  const result = state.assistantResults.get(resultId);
+  if (!result || result.markers.length === 0) return;
+
+  const firstMarker = result.markers[0];
+  state.selectedResultId = firstMarker.id;
+  renderResults(result.markers, assistantResultSummary(result), { detectors: result.detectors });
+  closeAssistantDialog();
+  await openFile(result.target.floor.fileId, {
+    page: firstMarker.page,
+    markers: result.markers,
+  });
+  showPdfWorkspace();
 }
 
 async function renderCurrentPage(options = {}) {
@@ -1758,6 +2165,23 @@ dom.imageExportDownload.addEventListener("click", () => {
 dom.imageExportClose.addEventListener("click", closeImageExportDialog);
 dom.imageExportBackdrop.addEventListener("click", closeImageExportDialog);
 
+dom.assistantOpenButton?.addEventListener("click", openAssistantDialog);
+dom.assistantCloseButton?.addEventListener("click", closeAssistantDialog);
+dom.assistantBackdrop?.addEventListener("click", closeAssistantDialog);
+
+dom.assistantForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  document.activeElement?.blur();
+  handleAssistantQuery(dom.assistantInput.value);
+  dom.assistantInput.value = "";
+});
+
+dom.assistantMessages?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-assistant-result-id]");
+  if (!button) return;
+  openAssistantResult(button.dataset.assistantResultId);
+});
+
 dom.openPdfButton.addEventListener("click", () => {
   if (state.currentPath) {
     window.open(resourceUrl(state.currentPath), "_blank", "noopener");
@@ -1776,6 +2200,11 @@ window.addEventListener("scroll", scheduleBackToTopVisibility, { passive: true }
 dom.backToTopButton?.addEventListener("click", scrollToPageTop);
 
 window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !dom.assistantDialog?.classList.contains("is-hidden")) {
+    closeAssistantDialog();
+    return;
+  }
+
   if (event.key === "Escape") {
     closeImageExportDialog();
   }

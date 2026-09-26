@@ -54,7 +54,7 @@ button {
 
 .app-header {
   display: grid;
-  grid-template-columns: minmax(260px, 360px) minmax(300px, 1fr) max-content max-content;
+  grid-template-columns: minmax(260px, 360px) minmax(300px, 1fr) max-content max-content max-content;
   align-items: center;
   gap: 18px;
   padding: 14px 22px;
@@ -256,6 +256,7 @@ button {
   padding: 6px 10px;
 }
 
+.assistant-button,
 .manual-button {
   display: inline-flex;
   align-items: center;
@@ -272,6 +273,11 @@ button {
   white-space: nowrap;
 }
 
+.assistant-button {
+  font-family: inherit;
+}
+
+.assistant-button:hover,
 .manual-button:hover {
   background: rgba(255, 255, 255, 0.22);
 }
@@ -894,6 +900,161 @@ button {
   line-height: 1.7;
 }
 
+.assistant-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 82;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.assistant-dialog.is-hidden {
+  display: none;
+}
+
+.assistant-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 23, 20, 0.52);
+}
+
+.assistant-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(760px, 100%);
+  max-height: min(760px, calc(100dvh - 36px));
+  grid-template-rows: auto minmax(220px, 1fr) auto;
+  gap: 14px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 22px 68px rgba(7, 28, 24, 0.3);
+}
+
+.assistant-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-right: 34px;
+}
+
+.assistant-heading strong {
+  color: var(--brand-strong);
+  font-size: 22px;
+}
+
+.assistant-messages {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  overflow: auto;
+  padding: 2px;
+}
+
+.assistant-message {
+  display: grid;
+  gap: 8px;
+  max-width: 92%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+.assistant-message p {
+  margin: 0;
+}
+
+.assistant-message--assistant {
+  justify-self: start;
+  color: var(--ink);
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+}
+
+.assistant-message--user {
+  justify-self: end;
+  color: #fff;
+  background: var(--brand);
+}
+
+.assistant-example {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.assistant-result-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.assistant-result-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.assistant-result-title strong {
+  color: var(--brand-strong);
+  font-size: 17px;
+}
+
+.assistant-result-title span,
+.assistant-result-detail {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.assistant-detector-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.assistant-detector {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 8px;
+  color: var(--accent-strong);
+  background: #fff7ed;
+  border: 1px solid #efc49b;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.assistant-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 86px;
+  gap: 10px;
+}
+
+.assistant-form input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.assistant-form input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(232, 106, 28, 0.16);
+}
+
 .image-export-dialog {
   position: fixed;
   inset: 0;
@@ -1006,6 +1167,19 @@ button {
 
   .manual-button {
     justify-self: stretch;
+  }
+
+  .assistant-button {
+    justify-self: stretch;
+  }
+
+  .assistant-panel {
+    max-height: calc(100dvh - 24px);
+    padding: 14px;
+  }
+
+  .assistant-form {
+    grid-template-columns: 1fr;
   }
 
   .back-to-top {
