@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T15:09:45.827Z",
+  "generatedAt": "2026-10-27T14:34:03.709Z",
   "source": "data/buildings.json",
   "totals": {
     "files": 161
@@ -561,13 +561,20 @@
     {
       "building": "思源樓",
       "floor": "1F",
-      "path": "火警圖 PDF/思源樓/思源樓1F 火警圖.pdf",
-      "latestUpdatedAt": "2026-04-25",
-      "updatedBy": "system",
-      "note": "從既有資料夾日期 115.04.25 初始匯入(測試)",
-      "detectorCount": 193,
+      "path": "火警圖 PDF/思源樓/思源樓1F 火警圖 20261027.pdf",
+      "latestUpdatedAt": "2026-10-27",
+      "updatedBy": "admin",
+      "note": "更新思源樓 1F 圖面，使用 20261027 版本",
+      "detectorCount": 199,
       "pageCount": 1,
       "history": [
+        {
+          "date": "2026-10-27",
+          "action": "replace",
+          "by": "admin",
+          "commit": null,
+          "note": "取代 火警圖 PDF/思源樓/思源樓1F 火警圖.pdf，新檔名：思源樓1F 火警圖 20261027.pdf"
+        },
         {
           "date": "2026-04-25",
           "action": "replace",
